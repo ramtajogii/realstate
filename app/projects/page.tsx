@@ -1,107 +1,114 @@
+'use client'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
+import { ArrowRight, MapPin } from 'lucide-react'
 
-const projectData: Record<string, any> = {
-  '1': {
-    title: 'NextGrow Heights',
-    location: 'Gachibowli, Hyderabad',
-    type: 'Residential',
-    status: 'Ready to Move',
-    price: '₹65L - ₹1.2Cr',
-    beds: '2 & 3 BHK',
-    area: '1200 - 2100 sq ft',
-    floors: 'G + 20 Floors',
-    units: '280 Units',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    description: 'NextGrow Heights is a premium residential complex offering spacious 2 & 3 BHK apartments in the heart of Gachibowli. Designed for modern families, the project features world-class amenities and excellent connectivity.',
-    amenities: ['Swimming Pool', 'Gymnasium', 'Clubhouse', 'Children Play Area', '24/7 Security', 'Power Backup', 'Landscaped Gardens', 'Indoor Games', 'Party Hall', 'Jogging Track'],
-  },
+const projects = [
+  { id: 1, title: 'NextGrow Heights', location: 'Gachibowli, Hyderabad', type: 'Residential', status: 'Ready to Move', beds: '2 & 3 BHK', price: '₹65L - ₹1.2Cr', img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80' },
+  { id: 2, title: 'NextGrow Business Park', location: 'HITEC City, Hyderabad', type: 'Commercial', status: 'Under Construction', beds: 'Office Spaces', price: '₹1.5Cr - ₹5Cr', img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80' },
+  { id: 3, title: 'NextGrow Villas', location: 'Shamshabad, Hyderabad', type: 'Residential', status: 'New Launch', beds: '4 & 5 BHK', price: '₹2Cr - ₹4Cr', img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80' },
+  { id: 4, title: 'NextGrow Arcade', location: 'Banjara Hills, Hyderabad', type: 'Commercial', status: 'Ready to Move', beds: 'Retail & Office', price: '₹80L - ₹3Cr', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
+  { id: 5, title: 'NextGrow Serene', location: 'Kompally, Hyderabad', type: 'Residential', status: 'Under Construction', beds: '2 & 3 BHK', price: '₹45L - ₹90L', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
+  { id: 6, title: 'NextGrow Plaza', location: 'Secunderabad', type: 'Commercial', status: 'Ready to Move', beds: 'Mixed Use', price: '₹1Cr - ₹6Cr', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80' },
+]
+
+const filters = ['All', 'Residential', 'Commercial']
+const statusColors: Record<string, string> = {
+  'Ready to Move': 'bg-green-500',
+  'Under Construction': 'bg-yellow-500',
+  'New Launch': 'bg-[#F26522]',
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = projectData[params.id] || projectData['1']
+export default function ProjectsPage() {
+  const [active, setActive] = useState('All')
+
+  const filtered = active === 'All' ? projects : projects.filter((p) => p.type === active)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    )
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [active])
 
   return (
     <>
-      {/* Back */}
-      <div className="pt-24 pb-6 bg-[#111111]">
+      {/* Hero */}
+      <section className="relative h-72 md:h-80 flex items-center overflow-hidden">
+        <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <span className="text-[#F26522] text-xs uppercase tracking-widest">Our Portfolio</span>
+          <h1 className="font-display text-5xl font-bold text-white mt-3">All Projects</h1>
+        </div>
+      </section>
+
+      {/* Filter */}
+      <section className="py-16 bg-[#111111]">
         <div className="max-w-7xl mx-auto px-6">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-gray-400 hover:text-[#F26522] transition-colors text-sm">
-            <ArrowLeft size={16} /> Back to Projects
-          </Link>
-        </div>
-      </div>
-
-      {/* Hero Image */}
-      <div className="relative h-96 md:h-[500px]">
-        <Image src={project.img} alt={project.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-        <div className="absolute bottom-8 left-0 right-0 max-w-7xl mx-auto px-6">
-          <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-xs rounded-full mb-3">{project.status}</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white">{project.title}</h1>
-          <p className="text-gray-300 mt-2 flex items-center gap-2"><MapPin size={16} className="text-[#F26522]" />{project.location}</p>
-        </div>
-      </div>
-
-      {/* Details */}
-      <section className="bg-[#111111] py-16">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
-          {/* Main */}
-          <div className="lg:col-span-2">
-            {/* Quick Info */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              {[
-                { label: 'Price', value: project.price },
-                { label: 'Configuration', value: project.beds },
-                { label: 'Area', value: project.area },
-                { label: 'Floors', value: project.floors },
-              ].map((item) => (
-                <div key={item.label} className="bg-[#1A1A1A] rounded-xl p-4 text-center border border-white/10">
-                  <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">{item.label}</div>
-                  <div className="text-white font-semibold text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Description */}
-            <h2 className="font-display text-2xl font-bold text-white mb-4">About This Project</h2>
-            <div className="w-10 h-1 bg-[#F26522] mb-5" />
-            <p className="text-gray-400 leading-relaxed mb-8">{project.description}</p>
-
-            {/* Amenities */}
-            <h2 className="font-display text-2xl font-bold text-white mb-5">Amenities</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {project.amenities.map((a: string) => (
-                <div key={a} className="flex items-center gap-2 text-gray-300 text-sm">
-                  <CheckCircle size={16} className="text-[#F26522] shrink-0" /> {a}
-                </div>
-              ))}
-            </div>
+          <div className="flex justify-center gap-3 mb-14">
+            {filters.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActive(f)}
+                className={`px-7 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                  active === f
+                    ? 'bg-[#F26522] text-white shadow-lg shadow-orange-500/30'
+                    : 'bg-[#1A1A1A] text-gray-400 border border-white/10 hover:border-[#F26522]/40 hover:text-white'
+                }`}
+              >
+                {f}
+              </button>
+            ))}
           </div>
 
-          {/* Enquiry Sidebar */}
-          <div>
-            <div className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-7 sticky top-24">
-              <h3 className="font-display text-xl font-bold text-white mb-6">Enquire Now</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder="Your Name" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="email" placeholder="Email Address" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <textarea rows={3} placeholder="Your Message" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors resize-none" />
-                <button type="submit" className="w-full py-3 bg-[#F26522] text-white font-medium rounded-xl hover:bg-[#D4521A] transition-all duration-300">
-                  Send Enquiry
-                </button>
-              </form>
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
-                  <Phone size={16} className="text-[#F26522]" /> +91 98765 43210
-                </a>
-                <a href="mailto:info@nextgrow.in" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
-                  <Mail size={16} className="text-[#F26522]" /> info@nextgrow.in
-                </a>
-              </div>
-            </div>
+          {/* Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filtered.map((project, i) => (
+              <Link
+                key={project.id}
+                href={`/projects/${project.id}`}
+                className="project-card group bg-[#1A1A1A] rounded-2xl overflow-hidden border border-white/10 hover:border-[#F26522]/40 transition-all duration-300 reveal"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                {/* Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-700" />
+                  <span className={`absolute top-4 left-4 ${statusColors[project.status]} text-white text-xs px-3 py-1 rounded-full font-medium`}>
+                    {project.status}
+                  </span>
+                  <span className="absolute top-4 right-4 bg-black/60 backdrop-blur text-white text-xs px-3 py-1 rounded-full">
+                    {project.type}
+                  </span>
+                </div>
+
+                {/* Info */}
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-bold text-white group-hover:text-[#F26522] transition-colors duration-300 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm flex items-center gap-1 mb-3">
+                    <MapPin size={14} className="text-[#F26522]" /> {project.location}
+                  </p>
+                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                    <div>
+                      <div className="text-gray-500 text-xs">Configuration</div>
+                      <div className="text-white text-sm font-medium">{project.beds}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-gray-500 text-xs">Price Range</div>
+                      <div className="text-[#F26522] text-sm font-semibold">{project.price}</div>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center gap-1 text-[#F26522] text-sm font-medium">
+                    View Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

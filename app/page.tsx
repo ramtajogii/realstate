@@ -1,107 +1,355 @@
-import Image from 'next/image'
+'use client'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Play, Building2, Users, Award, TrendingUp } from 'lucide-react'
 
-const projectData: Record<string, any> = {
-  '1': {
+const stats = [
+  { value: '15+', label: 'Years of Excellence', icon: Award },
+  { value: '120+', label: 'Projects Delivered', icon: Building2 },
+  { value: '5000+', label: 'Happy Families', icon: Users },
+  { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
+]
+
+const featuredProjects = [
+  {
+    id: 1,
     title: 'NextGrow Heights',
     location: 'Gachibowli, Hyderabad',
     type: 'Residential',
+    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
     status: 'Ready to Move',
-    price: '₹65L - ₹1.2Cr',
-    beds: '2 & 3 BHK',
-    area: '1200 - 2100 sq ft',
-    floors: 'G + 20 Floors',
-    units: '280 Units',
-    img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    description: 'NextGrow Heights is a premium residential complex offering spacious 2 & 3 BHK apartments in the heart of Gachibowli. Designed for modern families, the project features world-class amenities and excellent connectivity.',
-    amenities: ['Swimming Pool', 'Gymnasium', 'Clubhouse', 'Children Play Area', '24/7 Security', 'Power Backup', 'Landscaped Gardens', 'Indoor Games', 'Party Hall', 'Jogging Track'],
   },
-}
+  {
+    id: 2,
+    title: 'NextGrow Business Park',
+    location: 'HITEC City, Hyderabad',
+    type: 'Commercial',
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
+    status: 'Under Construction',
+  },
+  {
+    id: 3,
+    title: 'NextGrow Villas',
+    location: 'Shamshabad, Hyderabad',
+    type: 'Residential',
+    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
+    status: 'New Launch',
+  },
+  {
+    id: 4,
+    title: 'NextGrow Arcade',
+    location: 'Banjara Hills, Hyderabad',
+    type: 'Commercial',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+    status: 'Ready to Move',
+  },
+]
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = projectData[params.id] || projectData['1']
+const testimonials = [
+  {
+    name: 'Rajesh Sharma',
+    role: 'Homeowner, NextGrow Heights',
+    text: 'NextGrow delivered exactly what they promised. The quality of construction and attention to detail is exceptional. We are absolutely delighted with our new home.',
+    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+  },
+  {
+    name: 'Priya Reddy',
+    role: 'Business Owner, NextGrow Arcade',
+    text: 'The commercial space exceeded all our expectations. Prime location, modern design, and excellent facilities. Best investment we have made for our business.',
+    img: 'https://images.unsplash.com/photo-1494790108755-2616b612b3bc?w=100&q=80',
+  },
+  {
+    name: 'Anil Kumar',
+    role: 'Investor',
+    text: 'I have invested in three NextGrow projects. The returns and reliability are unmatched. They are truly the best real estate developers in Hyderabad.',
+    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
+  },
+]
+
+export default function HomePage() {
+  const revealRefs = useRef<HTMLElement[]>([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
-      {/* Back */}
-      <div className="pt-24 pb-6 bg-[#111111]">
-        <div className="max-w-7xl mx-auto px-6">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-gray-400 hover:text-[#F26522] transition-colors text-sm">
-            <ArrowLeft size={16} /> Back to Projects
-          </Link>
+      {/* ===== HERO SECTION ===== */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image (replace with video if available) */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=90"
+            alt="NextGrow Real Estate"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
-      </div>
 
-      {/* Hero Image */}
-      <div className="relative h-96 md:h-[500px]">
-        <Image src={project.img} alt={project.title} fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-        <div className="absolute bottom-8 left-0 right-0 max-w-7xl mx-auto px-6">
-          <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-xs rounded-full mb-3">{project.status}</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white">{project.title}</h1>
-          <p className="text-gray-300 mt-2 flex items-center gap-2"><MapPin size={16} className="text-[#F26522]" />{project.location}</p>
-        </div>
-      </div>
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="max-w-2xl">
+            <span className="inline-block px-4 py-1.5 bg-[#F26522]/20 border border-[#F26522]/40 rounded-full text-[#F26522] text-xs uppercase tracking-widest mb-6 animate-fade-in">
+              Premium Real Estate
+            </span>
 
-      {/* Details */}
-      <section className="bg-[#111111] py-16">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
-          {/* Main */}
-          <div className="lg:col-span-2">
-            {/* Quick Info */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-              {[
-                { label: 'Price', value: project.price },
-                { label: 'Configuration', value: project.beds },
-                { label: 'Area', value: project.area },
-                { label: 'Floors', value: project.floors },
-              ].map((item) => (
-                <div key={item.label} className="bg-[#1A1A1A] rounded-xl p-4 text-center border border-white/10">
-                  <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">{item.label}</div>
-                  <div className="text-white font-semibold text-sm">{item.value}</div>
-                </div>
-              ))}
-            </div>
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up">
+              Build Your{' '}
+              <span className="text-[#F26522]">Dream</span>{' '}
+              Space
+            </h1>
 
-            {/* Description */}
-            <h2 className="font-display text-2xl font-bold text-white mb-4">About This Project</h2>
-            <div className="w-10 h-1 bg-[#F26522] mb-5" />
-            <p className="text-gray-400 leading-relaxed mb-8">{project.description}</p>
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              NextGrow delivers world-class residential and commercial properties
+              built for the way you live and work today.
+            </p>
 
-            {/* Amenities */}
-            <h2 className="font-display text-2xl font-bold text-white mb-5">Amenities</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {project.amenities.map((a: string) => (
-                <div key={a} className="flex items-center gap-2 text-gray-300 text-sm">
-                  <CheckCircle size={16} className="text-[#F26522] shrink-0" /> {a}
-                </div>
-              ))}
+            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              <Link
+                href="/projects"
+                className="flex items-center gap-2 px-8 py-4 bg-[#F26522] text-white font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40 hover:gap-3"
+              >
+                Explore Projects <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all duration-300"
+              >
+                <Play size={16} className="text-[#F26522]" /> Watch Story
+              </Link>
             </div>
           </div>
+        </div>
 
-          {/* Enquiry Sidebar */}
-          <div>
-            <div className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-7 sticky top-24">
-              <h3 className="font-display text-xl font-bold text-white mb-6">Enquire Now</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder="Your Name" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="email" placeholder="Email Address" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <textarea rows={3} placeholder="Your Message" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors resize-none" />
-                <button type="submit" className="w-full py-3 bg-[#F26522] text-white font-medium rounded-xl hover:bg-[#D4521A] transition-all duration-300">
-                  Send Enquiry
-                </button>
-              </form>
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
-                  <Phone size={16} className="text-[#F26522]" /> +91 98765 43210
-                </a>
-                <a href="mailto:info@nextgrow.in" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
-                  <Mail size={16} className="text-[#F26522]" /> info@nextgrow.in
-                </a>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+          <span className="text-gray-400 text-xs uppercase tracking-widest">Scroll</span>
+          <div className="w-px h-8 bg-[#F26522]" />
+        </div>
+      </section>
+
+      {/* ===== STATS SECTION ===== */}
+      <section className="bg-[#F26522] py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center reveal">
+                <stat.icon size={28} className="text-white/70 mx-auto mb-3" />
+                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-white/70 text-sm uppercase tracking-wider">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== ABOUT SECTION ===== */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image Grid */}
+            <div className="relative reveal">
+              <div className="grid grid-cols-2 gap-4">
+                <Image
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80"
+                  alt="About NextGrow"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl object-cover w-full h-64"
+                />
+                <Image
+                  src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80"
+                  alt="About NextGrow"
+                  width={500}
+                  height={400}
+                  className="rounded-2xl object-cover w-full h-64 mt-8"
+                />
+              </div>
+              {/* Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-[#F26522] rounded-2xl p-6 text-white shadow-2xl">
+                <div className="text-3xl font-display font-bold">15+</div>
+                <div className="text-xs uppercase tracking-wide text-white/80">Years of Trust</div>
               </div>
             </div>
+
+            {/* Text */}
+            <div className="reveal">
+              <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">About Us</span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-3 mb-6 leading-tight">
+                Building More Than Structures
+              </h2>
+              <div className="w-14 h-1 bg-[#F26522] mb-6" />
+              <p className="text-gray-400 leading-relaxed mb-4">
+                NextGrow Real Estate was founded with a single vision: to create spaces that enhance the quality of life.
+                For over 15 years, we have delivered residential communities and commercial destinations that stand
+                the test of time.
+              </p>
+              <p className="text-gray-400 leading-relaxed mb-8">
+                Every project we undertake is guided by our commitment to quality construction, innovative design,
+                and on-time delivery. We don't just build properties — we build legacies.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#F26522] text-[#F26522] rounded-full hover:bg-[#F26522] hover:text-white transition-all duration-300"
+              >
+                Know More <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROJECTS SECTION ===== */}
+      <section className="py-24 bg-[#0F0F0F]">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16 reveal">
+            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Our Projects</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+              Landmark Properties
+            </h2>
+            <div className="w-14 h-1 bg-[#F26522] mx-auto" />
+          </div>
+
+          {/* Project Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProjects.map((project, i) => (
+              <Link
+                key={project.id}
+                href={`/projects/${project.id}`}
+                className="project-card group relative overflow-hidden rounded-2xl reveal cursor-pointer"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="relative h-80 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700"
+                  />
+                  {/* Overlay */}
+                  <div className="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 transition-opacity duration-300" />
+
+                  {/* Status Badge */}
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#F26522] text-white text-xs rounded-full font-medium">
+                    {project.status}
+                  </span>
+
+                  {/* Content */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <span className="text-[#F26522] text-xs uppercase tracking-wider">{project.type}</span>
+                    <h3 className="font-display text-xl font-bold text-white mt-1">{project.title}</h3>
+                    <p className="text-gray-300 text-sm mt-1 flex items-center gap-1">
+                      📍 {project.location}
+                    </p>
+                    <div className="mt-3 flex items-center gap-1 text-[#F26522] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      View Details <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12 reveal">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#F26522] text-white font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300"
+            >
+              View All Projects <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS SECTION ===== */}
+      <section className="py-24 bg-[#111111]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 reveal">
+            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Testimonials</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mt-3 mb-4">
+              What Our Clients Say
+            </h2>
+            <div className="w-14 h-1 bg-[#F26522] mx-auto" />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-8 reveal hover:border-[#F26522]/30 transition-all duration-300"
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                {/* Quote Mark */}
+                <div className="text-[#F26522] text-5xl font-display leading-none mb-4">"</div>
+                <p className="text-gray-300 leading-relaxed mb-6 text-sm">{t.text}</p>
+                <div className="flex items-center gap-4 border-t border-white/10 pt-5">
+                  <Image
+                    src={t.img}
+                    alt={t.name}
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover w-12 h-12"
+                  />
+                  <div>
+                    <div className="text-white font-semibold text-sm">{t.name}</div>
+                    <div className="text-[#F26522] text-xs">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CTA SECTION ===== */}
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80"
+          alt="CTA"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/75" />
+        <div className="relative z-10 text-center max-w-3xl mx-auto px-6 reveal">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Find Your{' '}
+            <span className="text-[#F26522]">Dream Property?</span>
+          </h2>
+          <p className="text-gray-300 text-lg mb-10">
+            Talk to our expert team today and take the first step towards owning your perfect space.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-[#F26522] text-white font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40"
+            >
+              Get in Touch
+            </Link>
+            <Link
+              href="/projects"
+              className="px-8 py-4 bg-white/10 backdrop-blur border border-white/30 text-white font-medium rounded-full hover:bg-white/20 transition-all duration-300"
+            >
+              Browse Projects
+            </Link>
           </div>
         </div>
       </section>
