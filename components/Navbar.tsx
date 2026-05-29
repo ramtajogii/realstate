@@ -9,7 +9,7 @@ const navLinks = [
     label: 'About',
     href: '/about',
     dropdown: [
-      { label: 'About NextGrow', href: '/about' },
+      { label: 'About DALAN Builders', href: '/about' },
       { label: 'Our Team', href: '/about#team' },
       { label: 'Careers', href: '/about#careers' },
     ],
@@ -48,7 +48,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <span className="text-2xl font-display font-bold text-white">
-            Next<span className="text-[#F26522]">Grow</span>
+            DALAN <span className="text-[#F26522]">Builders</span>
           </span>
           <span className="text-xs text-gray-400 uppercase tracking-widest hidden sm:block">
             Real Estate

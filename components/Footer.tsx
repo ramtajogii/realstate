@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h2 className="text-2xl font-display font-bold text-white mb-2">
-              Next<span className="text-[#F26522]">Grow</span>
+              DALAN <span className="text-[#F26522]">Builders</span>
             </h2>
             <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">Real Estate</p>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -77,18 +77,24 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400 text-sm">
                 <MapPin size={16} className="text-[#F26522] mt-0.5 shrink-0" />
-                <span>123 Business Hub, Hyderabad, Telangana - 500001</span>
+                <span>DALAN Builders Pvt. ltd. C/O - Brijesh Pandey 203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College) Varanasi UP 221002</span>
               </li>
               <li>
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="tel:+919838096190" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
                   <Phone size={16} className="text-[#F26522]" />
-                  +91 98765 43210
+                  +91 9838096190
                 </a>
               </li>
               <li>
-                <a href="mailto:info@nextgrow.in" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="tel:+916389088088" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                  <Phone size={16} className="text-[#F26522]" />
+                  +91 6389088088
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
                   <Mail size={16} className="text-[#F26522]" />
-                  info@nextgrow.in
+                  info@dalanbuilders.com
                 </a>
               </li>
             </ul>
@@ -99,7 +105,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2025 NextGrow Real Estate. All rights reserved.</p>
+          <p className="text-gray-500 text-sm">© 2025 DALAN Builders Real Estate. All rights reserved.</p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms & Conditions', 'Disclaimer'].map((item) => (
               <Link

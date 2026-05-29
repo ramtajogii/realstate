@@ -27,9 +27,9 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    { icon: Phone, title: 'Call Us', lines: ['+91 98765 43210', '+91 98765 43211'] },
-    { icon: Mail, title: 'Email Us', lines: ['info@nextgrow.in', 'sales@nextgrow.in'] },
-    { icon: MapPin, title: 'Visit Us', lines: ['123 Business Hub,', 'Hyderabad - 500001'] },
+    { icon: Phone, title: 'Call Us', lines: ['+91 9838096190', '+91 6389088088'] },
+    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.com', 'sales@dalanbuilders.com'] },
+    { icon: MapPin, title: 'Visit Us', lines: ['DALAN Builders Pvt. ltd. C/O - Brijesh Pandey', '203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
   ]
 
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="text-gray-400 text-xs uppercase tracking-wider mb-2 block">Phone Number *</label>
-                    <input name="phone" required value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className="w-full bg-[#1A1A1A] border border-white/20 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#F26522] transition-colors" />
+                    <input name="phone" required value={form.phone} onChange={handleChange} placeholder="+91 9838096190" className="w-full bg-[#1A1A1A] border border-white/20 rounded-xl px-4 py-3.5 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#F26522] transition-colors" />
                   </div>
                 </div>
                 <div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
             <h2 className="font-display text-3xl font-bold text-white mt-3 mb-8">Our Location</h2>
             <div className="rounded-2xl overflow-hidden h-96 border border-white/10">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.34207327432!2d78.24323045!3d17.4126274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.313465805562!2d82.9772873!3d25.33413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db715159781%3A0x6b77209930f78505!2sSangam%20River%20Front%20Apartment!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

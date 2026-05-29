@@ -20,11 +20,11 @@ export default function LegalPage() {
             <h2 className="font-display text-3xl font-bold text-white mb-4">Privacy Policy</h2>
             <div className="w-10 h-1 bg-[#F26522] mb-6" />
             <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
-              <p>NextGrow Real Estate ("we", "us", "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
+              <p>DALAN Builders Real Estate ("we", "us", "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
               <p><strong className="text-white">Information We Collect:</strong> We collect personal information that you voluntarily provide, including name, email address, phone number, and property preferences when you fill out enquiry forms or contact us directly.</p>
               <p><strong className="text-white">How We Use Information:</strong> Your information is used to respond to enquiries, send project updates, process transactions, and improve our services. We do not sell or share your personal information with third parties for marketing purposes.</p>
               <p><strong className="text-white">Data Security:</strong> We implement industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.</p>
-              <p><strong className="text-white">Contact:</strong> For privacy-related questions, email us at privacy@nextgrow.in.</p>
+              <p><strong className="text-white">Contact:</strong> For privacy-related questions, email us at privacy@dalanbuilders.com.</p>
             </div>
           </div>
 
@@ -33,11 +33,11 @@ export default function LegalPage() {
             <h2 className="font-display text-3xl font-bold text-white mb-4">Terms & Conditions</h2>
             <div className="w-10 h-1 bg-[#F26522] mb-6" />
             <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
-              <p>By accessing and using the NextGrow Real Estate website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
+              <p>By accessing and using the DALAN Builders Real Estate website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
               <p><strong className="text-white">Use of Website:</strong> This website is intended for informational purposes only. All content, including project details, pricing, and availability, is subject to change without notice.</p>
-              <p><strong className="text-white">Accuracy of Information:</strong> While we strive to ensure all information is accurate, NextGrow Real Estate makes no warranties or representations about the completeness or accuracy of any content on this site.</p>
-              <p><strong className="text-white">Intellectual Property:</strong> All content on this website, including text, images, logos, and graphics, is the property of NextGrow Real Estate and is protected by applicable intellectual property laws.</p>
-              <p><strong className="text-white">Limitation of Liability:</strong> NextGrow shall not be liable for any indirect, incidental, or consequential damages arising from use of this website.</p>
+              <p><strong className="text-white">Accuracy of Information:</strong> While we strive to ensure all information is accurate, DALAN Builders Real Estate makes no warranties or representations about the completeness or accuracy of any content on this site.</p>
+              <p><strong className="text-white">Intellectual Property:</strong> All content on this website, including text, images, logos, and graphics, is the property of DALAN Builders Real Estate and is protected by applicable intellectual property laws.</p>
+              <p><strong className="text-white">Limitation of Liability:</strong> DALAN Builders shall not be liable for any indirect, incidental, or consequential damages arising from use of this website.</p>
             </div>
           </div>
 
@@ -46,11 +46,11 @@ export default function LegalPage() {
             <h2 className="font-display text-3xl font-bold text-white mb-4">Disclaimer</h2>
             <div className="w-10 h-1 bg-[#F26522] mb-6" />
             <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
-              <p>The information provided on the NextGrow Real Estate website is for general informational purposes only. All project information, including prices, floor plans, specifications, and amenities, is indicative and subject to change.</p>
+              <p>The information provided on the DALAN Builders Real Estate website is for general informational purposes only. All project information, including prices, floor plans, specifications, and amenities, is indicative and subject to change.</p>
               <p><strong className="text-white">RERA Compliance:</strong> All our projects are registered under RERA (Real Estate Regulation and Development Act). Please verify RERA registration details on the official RERA website before making any purchase decision.</p>
               <p><strong className="text-white">Investment Advice:</strong> Nothing on this website constitutes financial, legal, or investment advice. Prospective buyers are encouraged to conduct their own due diligence and consult with appropriate professionals before making any property investment decisions.</p>
               <p><strong className="text-white">Rendering Disclaimer:</strong> Images, 3D renders, and visualizations shown on this website are artistic impressions and may not exactly represent the final delivered product.</p>
-              <p>For any queries, please contact us at legal@nextgrow.in or call +91 98765 43210.</p>
+              <p>For any queries, please contact us at legal@dalanbuilders.com or call +91 98765 43210.</p>
             </div>
           </div>
         </div>

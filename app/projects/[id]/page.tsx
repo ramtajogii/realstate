@@ -4,8 +4,8 @@ import { ArrowLeft, MapPin, Phone, Mail, CheckCircle } from 'lucide-react'
 
 const projectData: Record<string, any> = {
   '1': {
-    title: 'NextGrow Heights',
-    location: 'Gachibowli, Hyderabad',
+    title: 'DALAN Builders Heights',
+    location: 'Sigra, Varanasi',
     type: 'Residential',
     status: 'Ready to Move',
     price: '₹65L - ₹1.2Cr',
@@ -14,7 +14,7 @@ const projectData: Record<string, any> = {
     floors: 'G + 20 Floors',
     units: '280 Units',
     img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80',
-    description: 'NextGrow Heights is a premium residential complex offering spacious 2 & 3 BHK apartments in the heart of Gachibowli. Designed for modern families, the project features world-class amenities and excellent connectivity.',
+    description: 'DALAN Builders Heights is a premium residential complex offering spacious 2 & 3 BHK apartments in the heart of Sigra. Designed for modern families, the project features world-class amenities and excellent connectivity.',
     amenities: ['Swimming Pool', 'Gymnasium', 'Clubhouse', 'Children Play Area', '24/7 Security', 'Power Backup', 'Landscaped Gardens', 'Indoor Games', 'Party Hall', 'Jogging Track'],
   },
 }
@@ -97,8 +97,8 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
                   <Phone size={16} className="text-[#F26522]" /> +91 98765 43210
                 </a>
-                <a href="mailto:info@nextgrow.in" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
-                  <Mail size={16} className="text-[#F26522]" /> info@nextgrow.in
+                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                  <Mail size={16} className="text-[#F26522]" /> info@dalanbuilders.com
                 </a>
               </div>
             </div>
