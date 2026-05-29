@@ -13,7 +13,7 @@ const team = [
 const values = [
   { icon: Target, title: 'Our Mission', text: 'To deliver premium real estate solutions that enhance quality of life through innovative design and superior construction.' },
   { icon: Eye, title: 'Our Vision', text: 'To be the most trusted real estate developer in India, known for integrity, quality, and transforming communities.' },
-  { icon: Heart, title: 'Our Values', text: 'Quality, transparency, innovation, and customer satisfaction are the pillars on which every NextGrow project is built.' },
+  { icon: Heart, title: 'Our Values', text: 'Quality, transparency, innovation, and customer satisfaction are the pillars on which every DALAN Builders project is built.' },
 ]
 
 export default function AboutPage() {
@@ -45,9 +45,9 @@ export default function AboutPage() {
             <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Who We Are</span>
             <h2 className="font-display text-4xl font-bold text-white mt-3 mb-5">15 Years of Building Excellence</h2>
             <div className="w-14 h-1 bg-[#F26522] mb-6" />
-            <p className="text-gray-400 leading-relaxed mb-4">Founded in 2009, NextGrow Real Estate has grown from a small development firm into one of Hyderabad's most respected real estate companies. Our journey has been defined by a commitment to quality, innovation, and customer satisfaction.</p>
+            <p className="text-gray-400 leading-relaxed mb-4">Founded in 2009, DALAN Builders Real Estate has grown from a small development firm into one of Varanasi's most respected real estate companies. Our journey has been defined by a commitment to quality, innovation, and customer satisfaction.</p>
             <p className="text-gray-400 leading-relaxed mb-4">We have successfully delivered over 120 projects spanning luxury apartments, commercial complexes, retail spaces, and gated communities. Every property we develop carries our promise of superior construction and timely delivery.</p>
-            <p className="text-gray-400 leading-relaxed">Our team of seasoned architects, engineers, and real estate professionals work tirelessly to ensure that every NextGrow project sets a new benchmark in the industry.</p>
+            <p className="text-gray-400 leading-relaxed">Our team of seasoned architects, engineers, and real estate professionals work tirelessly to ensure that every DALAN Builders project sets a new benchmark in the industry.</p>
           </div>
           <div className="relative reveal">
             <Image src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="About" width={700} height={500} className="rounded-2xl object-cover w-full h-96" />

@@ -14,32 +14,32 @@ const stats = [
 const featuredProjects = [
   {
     id: 1,
-    title: 'NextGrow Heights',
-    location: 'Gachibowli, Hyderabad',
+    title: 'DALAN Builders Heights',
+    location: 'Sigra, Varanasi',
     type: 'Residential',
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
     status: 'Ready to Move',
   },
   {
     id: 2,
-    title: 'NextGrow Business Park',
-    location: 'HITEC City, Hyderabad',
+    title: 'DALAN Builders Business Park',
+    location: 'Sarnath, Varanasi',
     type: 'Commercial',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
     status: 'Under Construction',
   },
   {
     id: 3,
-    title: 'NextGrow Villas',
-    location: 'Shamshabad, Hyderabad',
+    title: 'DALAN Builders Villas',
+    location: 'Lanka, Varanasi',
     type: 'Residential',
     image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
     status: 'New Launch',
   },
   {
     id: 4,
-    title: 'NextGrow Arcade',
-    location: 'Banjara Hills, Hyderabad',
+    title: 'DALAN Builders Arcade',
+    location: 'Cantonment, Varanasi',
     type: 'Commercial',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
     status: 'Ready to Move',
@@ -49,20 +49,20 @@ const featuredProjects = [
 const testimonials = [
   {
     name: 'Rajesh Sharma',
-    role: 'Homeowner, NextGrow Heights',
-    text: 'NextGrow delivered exactly what they promised. The quality of construction and attention to detail is exceptional. We are absolutely delighted with our new home.',
+    role: 'Homeowner, DALAN Builders Heights',
+    text: 'DALAN Builders delivered exactly what they promised. The quality of construction and attention to detail is exceptional. We are absolutely delighted with our new home.',
     img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
   },
   {
     name: 'Priya Reddy',
-    role: 'Business Owner, NextGrow Arcade',
+    role: 'Business Owner, DALAN Builders Arcade',
     text: 'The commercial space exceeded all our expectations. Prime location, modern design, and excellent facilities. Best investment we have made for our business.',
     img: 'https://images.unsplash.com/photo-1494790108755-2616b612b3bc?w=100&q=80',
   },
   {
     name: 'Anil Kumar',
     role: 'Investor',
-    text: 'I have invested in three NextGrow projects. The returns and reliability are unmatched. They are truly the best real estate developers in Hyderabad.',
+    text: 'I have invested in three DALAN Builders projects. The returns and reliability are unmatched. They are truly the best real estate developers in Varanasi.',
     img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
   },
 ]
@@ -94,7 +94,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=90"
-            alt="NextGrow Real Estate"
+            alt="DALAN Builders Real Estate"
             fill
             className="object-cover"
             priority
@@ -116,7 +116,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              NextGrow delivers world-class residential and commercial properties
+              DALAN Builders delivers world-class residential and commercial properties
               built for the way you live and work today.
             </p>
 
@@ -170,14 +170,14 @@ export default function HomePage() {
               <div className="grid grid-cols-2 gap-4">
                 <Image
                   src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80"
-                  alt="About NextGrow"
+                  alt="About DALAN Builders"
                   width={500}
                   height={400}
                   className="rounded-2xl object-cover w-full h-64"
                 />
                 <Image
                   src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80"
-                  alt="About NextGrow"
+                  alt="About DALAN Builders"
                   width={500}
                   height={400}
                   className="rounded-2xl object-cover w-full h-64 mt-8"
@@ -198,7 +198,7 @@ export default function HomePage() {
               </h2>
               <div className="w-14 h-1 bg-[#F26522] mb-6" />
               <p className="text-gray-400 leading-relaxed mb-4">
-                NextGrow Real Estate was founded with a single vision: to create spaces that enhance the quality of life.
+                DALAN Builders Real Estate was founded with a single vision: to create spaces that enhance the quality of life.
                 For over 15 years, we have delivered residential communities and commercial destinations that stand
                 the test of time.
               </p>

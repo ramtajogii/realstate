@@ -1,4 +1,4 @@
-# NextGrow Real Estate Website
+# DALAN Builders Real Estate Website
 
 A premium real estate marketing website built with **Next.js 14** + **Tailwind CSS** + **Framer Motion**.
 
@@ -78,7 +78,7 @@ await emailjs.send(
 3. Click "New Project" → Import your GitHub repo
 4. Click Deploy — done in 2 minutes!
 
-Your site will be live at: `https://nextgrow.vercel.app`
+Your site will be live at: `https://dalanbuilders.vercel.app`
 
 ---
 

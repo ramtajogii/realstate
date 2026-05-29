@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { ArrowRight, MapPin } from 'lucide-react'
 
 const projects = [
-  { id: 1, title: 'NextGrow Heights', location: 'Gachibowli, Hyderabad', type: 'Residential', status: 'Ready to Move', beds: '2 & 3 BHK', price: '₹65L - ₹1.2Cr', img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80' },
-  { id: 2, title: 'NextGrow Business Park', location: 'HITEC City, Hyderabad', type: 'Commercial', status: 'Under Construction', beds: 'Office Spaces', price: '₹1.5Cr - ₹5Cr', img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80' },
-  { id: 3, title: 'NextGrow Villas', location: 'Shamshabad, Hyderabad', type: 'Residential', status: 'New Launch', beds: '4 & 5 BHK', price: '₹2Cr - ₹4Cr', img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80' },
-  { id: 4, title: 'NextGrow Arcade', location: 'Banjara Hills, Hyderabad', type: 'Commercial', status: 'Ready to Move', beds: 'Retail & Office', price: '₹80L - ₹3Cr', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
-  { id: 5, title: 'NextGrow Serene', location: 'Kompally, Hyderabad', type: 'Residential', status: 'Under Construction', beds: '2 & 3 BHK', price: '₹45L - ₹90L', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
-  { id: 6, title: 'NextGrow Plaza', location: 'Secunderabad', type: 'Commercial', status: 'Ready to Move', beds: 'Mixed Use', price: '₹1Cr - ₹6Cr', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80' },
+  { id: 1, title: 'DALAN Builders Heights', location: 'Sigra, Varanasi', type: 'Residential', status: 'Ready to Move', beds: '2 & 3 BHK', price: '₹65L - ₹1.2Cr', img: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=700&q=80' },
+  { id: 2, title: 'DALAN Builders Business Park', location: 'Sarnath, Varanasi', type: 'Commercial', status: 'Under Construction', beds: 'Office Spaces', price: '₹1.5Cr - ₹5Cr', img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80' },
+  { id: 3, title: 'DALAN Builders Villas', location: 'Lanka, Varanasi', type: 'Residential', status: 'New Launch', beds: '4 & 5 BHK', price: '₹2Cr - ₹4Cr', img: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80' },
+  { id: 4, title: 'DALAN Builders Arcade', location: 'Cantonment, Varanasi', type: 'Commercial', status: 'Ready to Move', beds: 'Retail & Office', price: '₹80L - ₹3Cr', img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80' },
+  { id: 5, title: 'DALAN Builders Serene', location: 'Pandeypur, Varanasi', type: 'Residential', status: 'Under Construction', beds: '2 & 3 BHK', price: '₹45L - ₹90L', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
+  { id: 6, title: 'DALAN Builders Plaza', location: 'Luxa', type: 'Commercial', status: 'Ready to Move', beds: 'Mixed Use', price: '₹1Cr - ₹6Cr', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80' },
 ]
 
 const filters = ['All', 'Residential', 'Commercial']
