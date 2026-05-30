@@ -3,17 +3,16 @@ import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, Linkedin } from 'luc
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] border-t border-white/10">
+    <footer className="bg-[#ffffff] border-t border-black/10">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
           {/* Brand */}
           <div>
-            <h2 className="text-2xl font-display font-bold text-white mb-2">
+            <h2 className="text-2xl font-display font-bold text-black mb-2">
               DALAN <span className="text-[#F26522]">Builders</span>
             </h2>
-            <p className="text-xs text-gray-500 uppercase tracking-widest mb-4">Real Estate</p>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Building premium residential and commercial spaces that redefine modern living and working.
             </p>
             <div className="flex gap-4">
@@ -21,7 +20,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-gray-400 hover:border-[#F26522] hover:text-[#F26522] transition-all duration-300"
+                  className="w-9 h-9 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:border-[#F26522] hover:text-[#F26522] transition-all duration-300"
                 >
                   <Icon size={16} />
                 </a>
@@ -31,13 +30,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-3">
               {['Home', 'About Us', 'Projects', 'Blog', 'Contact Us'].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase().replace(' ', '')}`}
-                    className="text-gray-400 text-sm hover:text-[#F26522] transition-colors duration-200 flex items-center gap-2"
+                    className="text-gray-600 text-sm hover:text-[#F26522] transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="w-1 h-1 bg-[#F26522] rounded-full"></span>
                     {item}
@@ -49,7 +48,7 @@ export default function Footer() {
 
           {/* Projects */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Our Projects</h4>
+            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Our Projects</h4>
             <ul className="space-y-3">
               {[
                 'Residential Apartments',
@@ -61,7 +60,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="/projects"
-                    className="text-gray-400 text-sm hover:text-[#F26522] transition-colors duration-200 flex items-center gap-2"
+                    className="text-gray-600 text-sm hover:text-[#F26522] transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="w-1 h-1 bg-[#F26522] rounded-full"></span>
                     {item}
@@ -73,26 +72,26 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
+            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-400 text-sm">
+              <li className="flex items-start gap-3 text-gray-600 text-sm">
                 <MapPin size={16} className="text-[#F26522] mt-0.5 shrink-0" />
                 <span>DALAN Builders Pvt. ltd. C/O - Brijesh Pandey 203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College) Varanasi UP 221002</span>
               </li>
               <li>
-                <a href="tel:+919838096190" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="tel:+919838096190" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Phone size={16} className="text-[#F26522]" />
                   +91 9838096190
                 </a>
               </li>
               <li>
-                <a href="tel:+916389088088" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="tel:+916389088088" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Phone size={16} className="text-[#F26522]" />
                   +91 6389088088
                 </a>
               </li>
               <li>
-                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Mail size={16} className="text-[#F26522]" />
                   info@dalanbuilders.com
                 </a>
@@ -103,15 +102,25 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6">
+      <div className="border-t border-black/10 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">© 2025 DALAN Builders Real Estate. All rights reserved.</p>
+          <p className="text-gray-600 text-sm">
+            &copy; 2026 DALAN Builders. All rights reserved. Design by{' '}
+            <a
+              href="https://www.nextgrow.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#F26522] font-medium hover:underline"
+            >
+              NextGrow
+            </a>
+          </p>
           <div className="flex gap-6">
             {['Privacy Policy', 'Terms & Conditions', 'Disclaimer'].map((item) => (
               <Link
                 key={item}
                 href="/legal"
-                className="text-gray-500 text-sm hover:text-[#F26522] transition-colors"
+                className="text-gray-600 text-sm hover:text-[#F26522] transition-colors"
               >
                 {item}
               </Link>
@@ -122,3 +131,4 @@ export default function Footer() {
     </footer>
   )
 }
+

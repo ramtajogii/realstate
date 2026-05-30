@@ -39,15 +39,15 @@ export default function ProjectsPage() {
       {/* Hero */}
       <section className="relative h-72 md:h-80 flex items-center overflow-hidden">
         <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <span className="text-[#F26522] text-xs uppercase tracking-widest">Our Portfolio</span>
-          <h1 className="font-display text-5xl font-bold text-white mt-3">All Projects</h1>
+          <h1 className="font-display text-5xl font-bold text-black mt-3">All Projects</h1>
         </div>
       </section>
 
       {/* Filter */}
-      <section className="py-16 bg-[#111111]">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center gap-3 mb-14">
             {filters.map((f) => (
@@ -56,8 +56,8 @@ export default function ProjectsPage() {
                 onClick={() => setActive(f)}
                 className={`px-7 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   active === f
-                    ? 'bg-[#F26522] text-white shadow-lg shadow-orange-500/30'
-                    : 'bg-[#1A1A1A] text-gray-400 border border-white/10 hover:border-[#F26522]/40 hover:text-white'
+                    ? 'bg-[#F26522] text-black shadow-lg shadow-orange-500/30'
+                    : 'bg-[#F7F7F7] text-gray-600 border border-black/10 hover:border-[#F26522]/40 hover:text-black'
                 }`}
               >
                 {f}
@@ -71,35 +71,35 @@ export default function ProjectsPage() {
               <Link
                 key={project.id}
                 href={`/projects/${project.id}`}
-                className="project-card group bg-[#1A1A1A] rounded-2xl overflow-hidden border border-white/10 hover:border-[#F26522]/40 transition-all duration-300 reveal"
+                className="project-card group bg-[#F7F7F7] rounded-2xl overflow-hidden border border-black/10 hover:border-[#F26522]/40 transition-all duration-300 reveal"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
                   <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-700" />
-                  <span className={`absolute top-4 left-4 ${statusColors[project.status]} text-white text-xs px-3 py-1 rounded-full font-medium`}>
+                  <span className={`absolute top-4 left-4 ${statusColors[project.status]} text-black text-xs px-3 py-1 rounded-full font-medium`}>
                     {project.status}
                   </span>
-                  <span className="absolute top-4 right-4 bg-black/60 backdrop-blur text-white text-xs px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 bg-white/80 backdrop-blur text-black text-xs px-3 py-1 rounded-full">
                     {project.type}
                   </span>
                 </div>
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="font-display text-xl font-bold text-white group-hover:text-[#F26522] transition-colors duration-300 mb-2">
+                  <h3 className="font-display text-xl font-bold text-black group-hover:text-[#F26522] transition-colors duration-300 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 text-sm flex items-center gap-1 mb-3">
+                  <p className="text-gray-600 text-sm flex items-center gap-1 mb-3">
                     <MapPin size={14} className="text-[#F26522]" /> {project.location}
                   </p>
-                  <div className="flex items-center justify-between border-t border-white/10 pt-4">
+                  <div className="flex items-center justify-between border-t border-black/10 pt-4">
                     <div>
-                      <div className="text-gray-500 text-xs">Configuration</div>
-                      <div className="text-white text-sm font-medium">{project.beds}</div>
+                      <div className="text-gray-600 text-xs">Configuration</div>
+                      <div className="text-black text-sm font-medium">{project.beds}</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-gray-500 text-xs">Price Range</div>
+                      <div className="text-gray-600 text-xs">Price Range</div>
                       <div className="text-[#F26522] text-sm font-semibold">{project.price}</div>
                     </div>
                   </div>

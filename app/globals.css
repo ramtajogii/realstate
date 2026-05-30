@@ -8,8 +8,8 @@
   --orange: #F26522;
   --orange-light: #FF8C42;
   --orange-dark: #D4521A;
-  --dark: #111111;
-  --dark-2: #1A1A1A;
+  --dark: #ffffff;
+  --dark-2: #F7F7F7;
   --gold: #C9922A;
 }
 
@@ -24,15 +24,15 @@ html {
 }
 
 body {
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   font-family: 'DM Sans', sans-serif;
   overflow-x: hidden;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-track { background: #fff; }
 ::-webkit-scrollbar-thumb { background: #F26522; border-radius: 10px; }
 
 /* Animations */
@@ -73,3 +73,4 @@ body {
   .bg-orange { background-color: #F26522; }
   .border-orange { border-color: #F26522; }
 }
+

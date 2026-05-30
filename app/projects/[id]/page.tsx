@@ -25,9 +25,9 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
   return (
     <>
       {/* Back */}
-      <div className="pt-24 pb-6 bg-[#111111]">
+      <div className="pt-24 pb-6 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
-          <Link href="/projects" className="inline-flex items-center gap-2 text-gray-400 hover:text-[#F26522] transition-colors text-sm">
+          <Link href="/projects" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#F26522] transition-colors text-sm">
             <ArrowLeft size={16} /> Back to Projects
           </Link>
         </div>
@@ -38,14 +38,14 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         <Image src={project.img} alt={project.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="absolute bottom-8 left-0 right-0 max-w-7xl mx-auto px-6">
-          <span className="inline-block px-3 py-1 bg-[#F26522] text-white text-xs rounded-full mb-3">{project.status}</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white">{project.title}</h1>
-          <p className="text-gray-300 mt-2 flex items-center gap-2"><MapPin size={16} className="text-[#F26522]" />{project.location}</p>
+          <span className="inline-block px-3 py-1 bg-[#F26522] text-black text-xs rounded-full mb-3">{project.status}</span>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-black">{project.title}</h1>
+          <p className="text-gray-700 mt-2 flex items-center gap-2"><MapPin size={16} className="text-[#F26522]" />{project.location}</p>
         </div>
       </div>
 
       {/* Details */}
-      <section className="bg-[#111111] py-16">
+      <section className="bg-[#ffffff] py-16">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
           {/* Main */}
           <div className="lg:col-span-2">
@@ -57,23 +57,23 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                 { label: 'Area', value: project.area },
                 { label: 'Floors', value: project.floors },
               ].map((item) => (
-                <div key={item.label} className="bg-[#1A1A1A] rounded-xl p-4 text-center border border-white/10">
-                  <div className="text-gray-400 text-xs uppercase tracking-wide mb-1">{item.label}</div>
-                  <div className="text-white font-semibold text-sm">{item.value}</div>
+                <div key={item.label} className="bg-[#F7F7F7] rounded-xl p-4 text-center border border-black/10">
+                  <div className="text-gray-600 text-xs uppercase tracking-wide mb-1">{item.label}</div>
+                  <div className="text-black font-semibold text-sm">{item.value}</div>
                 </div>
               ))}
             </div>
 
             {/* Description */}
-            <h2 className="font-display text-2xl font-bold text-white mb-4">About This Project</h2>
+            <h2 className="font-display text-2xl font-bold text-black mb-4">About This Project</h2>
             <div className="w-10 h-1 bg-[#F26522] mb-5" />
-            <p className="text-gray-400 leading-relaxed mb-8">{project.description}</p>
+            <p className="text-gray-600 leading-relaxed mb-8">{project.description}</p>
 
             {/* Amenities */}
-            <h2 className="font-display text-2xl font-bold text-white mb-5">Amenities</h2>
+            <h2 className="font-display text-2xl font-bold text-black mb-5">Amenities</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {project.amenities.map((a: string) => (
-                <div key={a} className="flex items-center gap-2 text-gray-300 text-sm">
+                <div key={a} className="flex items-center gap-2 text-gray-700 text-sm">
                   <CheckCircle size={16} className="text-[#F26522] shrink-0" /> {a}
                 </div>
               ))}
@@ -82,22 +82,22 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
           {/* Enquiry Sidebar */}
           <div>
-            <div className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-7 sticky top-24">
-              <h3 className="font-display text-xl font-bold text-white mb-6">Enquire Now</h3>
+            <div className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-7 sticky top-24">
+              <h3 className="font-display text-xl font-bold text-black mb-6">Enquire Now</h3>
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder="Your Name" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="tel" placeholder="Phone Number" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <input type="email" placeholder="Email Address" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
-                <textarea rows={3} placeholder="Your Message" className="w-full bg-[#111] border border-white/20 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors resize-none" />
-                <button type="submit" className="w-full py-3 bg-[#F26522] text-white font-medium rounded-xl hover:bg-[#D4521A] transition-all duration-300">
+                <input type="text" placeholder="Your Name" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                <input type="tel" placeholder="Phone Number" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                <input type="email" placeholder="Email Address" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                <textarea rows={3} placeholder="Your Message" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors resize-none" />
+                <button type="submit" className="w-full py-3 bg-[#F26522] text-black font-medium rounded-xl hover:bg-[#D4521A] transition-all duration-300">
                   Send Enquiry
                 </button>
               </form>
-              <div className="mt-6 pt-6 border-t border-white/10 space-y-3">
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+              <div className="mt-6 pt-6 border-t border-black/10 space-y-3">
+                <a href="tel:+919876543210" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Phone size={16} className="text-[#F26522]" /> +91 98765 43210
                 </a>
-                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-400 text-sm hover:text-[#F26522] transition-colors">
+                <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Mail size={16} className="text-[#F26522]" /> info@dalanbuilders.com
                 </a>
               </div>
@@ -108,3 +108,4 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
     </>
   )
 }
+

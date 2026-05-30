@@ -41,17 +41,14 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#111111] shadow-lg shadow-black/50 py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-display font-bold text-white">
+          <span className="text-2xl font-display font-bold text-black">
             DALAN <span className="text-[#F26522]">Builders</span>
-          </span>
-          <span className="text-xs text-gray-400 uppercase tracking-widest hidden sm:block">
-            Real Estate
           </span>
         </Link>
 
@@ -66,7 +63,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 text-sm text-gray-300 hover:text-[#F26522] transition-colors duration-200 font-body tracking-wide"
+                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#F26522] transition-colors duration-200 font-body tracking-wide"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
@@ -74,12 +71,12 @@ export default function Navbar() {
 
               {/* Dropdown */}
               {link.dropdown && openDropdown === link.label && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-[#1A1A1A] border border-white/10 rounded-lg overflow-hidden shadow-2xl">
+                <div className="absolute top-full left-0 mt-2 w-52 bg-[#F7F7F7] border border-black/10 rounded-lg overflow-hidden shadow-2xl">
                   {link.dropdown.map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="block px-4 py-3 text-sm text-gray-300 hover:bg-[#F26522] hover:text-white transition-all duration-200"
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#F26522] hover:text-black transition-all duration-200"
                     >
                       {item.label}
                     </Link>
@@ -94,7 +91,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="px-5 py-2 bg-[#F26522] text-white text-sm font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30"
+            className="px-5 py-2 bg-[#F26522] text-black text-sm font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30"
           >
             Enquire Now
           </Link>
@@ -102,7 +99,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-black"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -111,12 +108,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#1A1A1A] border-t border-white/10 px-6 py-4">
+        <div className="md:hidden bg-[#F7F7F7] border-t border-black/10 px-6 py-4">
           {navLinks.map((link) => (
             <div key={link.label}>
               <Link
                 href={link.href}
-                className="block py-3 text-gray-300 hover:text-[#F26522] border-b border-white/5 transition-colors"
+                className="block py-3 text-gray-700 hover:text-[#F26522] border-b border-black/5 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -127,7 +124,7 @@ export default function Navbar() {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="block py-2 text-sm text-gray-400 hover:text-[#F26522] transition-colors"
+                      className="block py-2 text-sm text-gray-600 hover:text-[#F26522] transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
@@ -139,7 +136,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-4 block text-center px-5 py-2 bg-[#F26522] text-white rounded-full text-sm font-medium"
+            className="mt-4 block text-center px-5 py-2 bg-[#F26522] text-black rounded-full text-sm font-medium"
             onClick={() => setMobileOpen(false)}
           >
             Enquire Now
@@ -149,3 +146,4 @@ export default function Navbar() {
     </nav>
   )
 }
+

@@ -1,6 +1,6 @@
-# DALAN Builders Real Estate Website
+# DALAN Builders
 
-A premium real estate marketing website built with **Next.js 14** + **Tailwind CSS** + **Framer Motion**.
+A premium marketing website built with **Next.js 14** + **Tailwind CSS** + **Framer Motion**.
 
 ---
 
