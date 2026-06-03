@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 
 export default function Footer() {
@@ -9,9 +10,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <h2 className="text-2xl font-display font-bold text-black mb-2">
-              DALAN <span className="text-[#F26522]">Builders</span>
-            </h2>
+            <Image
+              src="/logo/dalan-logo.png"
+              alt="DALAN Builders"
+              width={660}
+              height={678}
+              className="mb-4 h-28 w-auto"
+            />
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Building premium residential and commercial spaces that redefine modern living and working.
             </p>
@@ -93,7 +98,7 @@ export default function Footer() {
               <li>
                 <a href="mailto:info@dalanbuilders.com" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#F26522] transition-colors">
                   <Mail size={16} className="text-[#F26522]" />
-                  info@dalanbuilders.com
+                  Info@dalanbuilders.in
                 </a>
               </li>
             </ul>
@@ -104,18 +109,22 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-black/10 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">
-            &copy; 2026 DALAN Builders. All rights reserved. Design by{' '}
-            <a
-              href="https://www.nextgrow.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#F26522] font-medium hover:underline"
-            >
-              NextGrow
-            </a>
-          </p>
-          <div className="flex gap-6">
+          <div className="w-full md:w-auto text-center md:text-left text-gray-600 text-sm leading-relaxed">
+            <p className="block">&copy; 2026 DALAN Builders. All rights reserved.</p>
+            <p className="block mt-1">
+              <span className="block sm:inline">Developed by{' '}
+              <a
+                href="https://www.nextgrow.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#F26522] font-medium hover:underline"
+              >
+                NextGrow
+              </a>
+              </span>
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {['Privacy Policy', 'Terms & Conditions', 'Disclaimer'].map((item) => (
               <Link
                 key={item}

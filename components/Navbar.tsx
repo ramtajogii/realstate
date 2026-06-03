@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navLinks = [
@@ -41,15 +42,20 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-2' : 'bg-[#ffffff] py-2'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-display font-bold text-black">
-            DALAN <span className="text-[#F26522]">Builders</span>
-          </span>
+        <Link href="/" className="flex h-14 w-14 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm">
+          <Image
+            src="/logo/dalan-logo.png"
+            alt="DALAN Builders"
+            width={50}
+            height={50}
+            priority
+            // className="h-20 w-20 object-contain"
+          />
         </Link>
 
         {/* Desktop Links */}
