@@ -45,14 +45,14 @@ export default function Navbar() {
         scrolled ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-2' : 'bg-[#ffffff] py-2'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex h-14 w-14 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm">
+        <Link href="/" className="flex h-16 w-16 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm">
           <Image
             src="/logo/dalan-logo.png"
             alt="DALAN Builders"
-            width={50}
-            height={50}
+            width={80}
+            height={70}
             priority
             // className="h-20 w-20 object-contain"
           />
