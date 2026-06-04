@@ -145,7 +145,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== STATS SECTION ===== */}
-      <section className="bg-[#F26522] py-16">
+      <section className="bg-[#F26522] py-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -162,7 +162,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
-      <section className="py-24 bg-[#ffffff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image Grid */}
@@ -218,7 +218,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="py-24 bg-[#ffffff]">
+      <section className="py-18 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16 reveal">
@@ -281,7 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className="py-24 bg-[#ffffff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Testimonials</span>
