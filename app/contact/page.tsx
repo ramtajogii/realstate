@@ -7,23 +7,49 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    let value = e.target.value;
+    if (e.target.name === 'phone') {
+      // Only allow numbers and limit to 10 digits
+      value = value.replace(/\D/g, '').slice(0, 10);
+    }
+    setForm({ ...form, [e.target.name]: value })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Front-end phone validation
+    if (!/^\d{10}$/.test(form.phone)) {
+      setError('Phone number must be exactly 10 digits.')
+      return
+    }
+
     setLoading(true)
-    // -------------------------------------------------------
-    // EMAILJS INTEGRATION (replace with your IDs):
-    // import emailjs from '@emailjs/browser'
-    // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form, 'YOUR_PUBLIC_KEY')
-    // -------------------------------------------------------
-    // Simulate API call for now
-    await new Promise((r) => setTimeout(r, 1500))
-    setLoading(false)
-    setSubmitted(true)
+    setError(null)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit contact query.')
+      }
+
+      setSubmitted(true)
+    } catch (err: any) {
+      setError(err.message || 'An unexpected error occurred. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const contactInfo = [
@@ -80,6 +106,11 @@ export default function ContactPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {error && (
+                  <div className="bg-red-50 text-red-600 border border-red-200/50 rounded-xl px-4 py-3 text-sm">
+                    {error}
+                  </div>
+                )}
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Full Name *</label>
@@ -87,7 +118,17 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Phone Number *</label>
-                    <input name="phone" required value={form.phone} onChange={handleChange} placeholder="+91 9838096190" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                    <div className="relative flex items-center">
+                      <span className="absolute left-4 text-gray-500 text-sm select-none pointer-events-none">+91</span>
+                      <input
+                        name="phone"
+                        required
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="xxxxxxxxxx"
+                        className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl pl-12 pr-4 py-3.5 text-black text-sm placeholder-gray-400 focus:outline-none focus:border-[#F26522] transition-colors"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div>
