@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Play, Building2, Users, Award, TrendingUp } from 'lucide-react'
+import { ArrowRight, Building2, Users, Award, TrendingUp } from 'lucide-react'
 
 const stats = [
   { value: '15+', label: 'Years of Excellence', icon: Award },
@@ -89,17 +89,17 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO SECTION ===== */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full overflow-hidden bg-white">
         {/* Background Image (replace with video if available) */}
-        <div className="absolute inset-0">
+        <div className="relative w-full">
           <Image
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=90"
+            src="/images/master-image.jpeg"
             alt="DALAN Builders"
-            fill
-            className="object-cover"
+            width={1600}
+            height={853}
+            className="block h-auto w-full object-contain"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
         </div>
 
         {/* Hero Content */}
@@ -120,20 +120,20 @@ export default function HomePage() {
               built for the way you live and work today.
             </p> */}
 
-            <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            {/* <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <Link
                 href="/projects"
                 className="flex items-center gap-2 px-8 py-4 bg-[#F26522] text-black font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40 hover:gap-3"
               >
                 Explore Projects <ArrowRight size={18} />
               </Link>
+            </div> */}
               {/* <Link
                 href="/contact"
                 className="flex items-center gap-2 px-8 py-4 bg-black/5 backdrop-blur border border-black/30 text-black font-medium rounded-full hover:bg-black/10 transition-all duration-300"
               >
                 <Play size={16} className="text-[#F26522]" /> Watch Story
               </Link> */}
-            </div>
           </div>
         </div>
 

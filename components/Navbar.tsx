@@ -35,6 +35,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
+    handleScroll()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -42,7 +43,9 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-2' : 'bg-[#ffffff] py-2'
+        scrolled || mobileOpen
+          ? 'translate-y-0 opacity-100 bg-[#ffffff] shadow-lg shadow-black/10 py-2'
+          : '-translate-y-full opacity-0 pointer-events-none bg-[#ffffff] py-2'
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">

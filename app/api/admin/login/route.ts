@@ -2,14 +2,12 @@ import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/lib/db';
 import Admin from '@/models/Admin';
 import { ADMIN_COOKIE_NAME, createAdminToken } from '@/lib/adminAuth';
-import { ensureDefaultAdmin } from '@/lib/adminSeed';
 import { verifyPassword } from '@/lib/password';
 
 const COOKIE_MAX_AGE = 60 * 60 * 8;
 
 export async function POST(req: NextRequest) {
   try {
-    await ensureDefaultAdmin();
     await dbConnect();
 
     const { email, password } = await req.json();

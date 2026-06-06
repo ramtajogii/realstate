@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
-import { Inbox } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Inbox } from 'lucide-react';
 import AdminLogoutButton from '@/components/AdminLogoutButton';
 import dbConnect from '@/lib/db';
 import { ADMIN_COOKIE_NAME, verifyAdminToken } from '@/lib/adminAuth';
@@ -16,7 +17,22 @@ type ContactRow = {
   createdAt?: Date;
 };
 
-export default async function AdminDashboardPage() {
+const PAGE_LIMITS = [10, 20, 40, 50];
+
+function getPageUrl(page: number, limit: number) {
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit),
+  });
+
+  return `/admin/dashboard?${params.toString()}`;
+}
+
+export default async function AdminDashboardPage({
+  searchParams,
+}: {
+  searchParams?: { page?: string; limit?: string };
+}) {
   const admin = await verifyAdminToken(cookies().get(ADMIN_COOKIE_NAME)?.value);
 
   if (!admin) {
@@ -25,10 +41,24 @@ export default async function AdminDashboardPage() {
 
   await dbConnect();
 
+  const requestedLimit = Number(searchParams?.limit);
+  const limit = PAGE_LIMITS.includes(requestedLimit) ? requestedLimit : 10;
+  const requestedPage = Number(searchParams?.page);
+  const currentPage = Number.isInteger(requestedPage) && requestedPage > 0 ? requestedPage : 1;
+  const totalContacts = await Contact.countDocuments({});
+  const totalPages = Math.max(1, Math.ceil(totalContacts / limit));
+  const page = Math.min(currentPage, totalPages);
+  const skip = (page - 1) * limit;
+
   const contacts = await Contact.find({})
     .select('name email phone subject message createdAt')
     .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit)
     .lean<ContactRow[]>();
+
+  const firstItem = totalContacts === 0 ? 0 : skip + 1;
+  const lastItem = Math.min(skip + contacts.length, totalContacts);
 
   return (
     <section className="min-h-[70vh] bg-[#ffffff] px-6 py-12">
@@ -49,7 +79,7 @@ export default async function AdminDashboardPage() {
               Total inquiries
             </div>
             <span className="rounded-full bg-[#F26522]/15 px-3 py-1 text-sm font-semibold text-[#D4521A]">
-              {contacts.length}
+              {totalContacts}
             </span>
           </div>
 
@@ -85,6 +115,63 @@ export default async function AdminDashboardPage() {
               </table>
             </div>
           )}
+
+          <div className="flex flex-col gap-4 border-t border-black/10 px-5 py-4 md:flex-row md:items-center md:justify-between">
+            <div className="text-sm text-gray-600">
+              Showing {firstItem}-{lastItem} of {totalContacts}
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <form action="/admin/dashboard" className="flex items-center gap-2">
+                <input type="hidden" name="page" value="1" />
+                <label htmlFor="limit" className="text-sm text-gray-600">
+                  Rows
+                </label>
+                <select
+                  id="limit"
+                  name="limit"
+                  defaultValue={limit}
+                  className="rounded-lg border border-black/20 bg-white px-3 py-2 text-sm text-black outline-none focus:border-[#F26522]"
+                >
+                  {PAGE_LIMITS.map((pageLimit) => (
+                    <option key={pageLimit} value={pageLimit}>
+                      {pageLimit}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  type="submit"
+                  className="rounded-lg bg-[#F26522] px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[#D4521A]"
+                >
+                  Apply
+                </button>
+              </form>
+
+              <div className="flex items-center gap-2">
+                <Link
+                  href={getPageUrl(Math.max(1, page - 1), limit)}
+                  aria-disabled={page === 1}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/20 bg-white text-black transition-colors ${
+                    page === 1 ? 'pointer-events-none opacity-40' : 'hover:border-[#F26522] hover:text-[#F26522]'
+                  }`}
+                >
+                  <ChevronLeft size={18} />
+                </Link>
+                <span className="min-w-24 text-center text-sm font-medium text-black">
+                  Page {page} of {totalPages}
+                </span>
+                <Link
+                  href={getPageUrl(Math.min(totalPages, page + 1), limit)}
+                  aria-disabled={page === totalPages}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/20 bg-white text-black transition-colors ${
+                    page === totalPages ? 'pointer-events-none opacity-40' : 'hover:border-[#F26522] hover:text-[#F26522]'
+                  }`}
+                >
+                  <ChevronRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
