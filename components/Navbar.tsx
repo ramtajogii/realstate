@@ -50,14 +50,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex h-16 w-16 items-center justify-center rounded-full border border-black/10 bg-white shadow-sm">
+        <Link href="/" className="flex h-16 w-22 items-center justify-center">
           <Image
             src="/logo/dalan-logo.png"
             alt="DALAN Builders"
-            width={80}
+            width={90}
             height={70}
             priority
-            // className="h-20 w-20 object-contain"
+            className="h-16 w-auto object-contain"
           />
         </Link>
 

@@ -33,7 +33,8 @@ export default async function AdminDashboardPage({
 }: {
   searchParams?: { page?: string; limit?: string };
 }) {
-  const admin = await verifyAdminToken(cookies().get(ADMIN_COOKIE_NAME)?.value);
+  const cookieStore = await cookies();
+  const admin = await verifyAdminToken(cookieStore.get(ADMIN_COOKIE_NAME)?.value);
 
   if (!admin) {
     redirect('/admin');
