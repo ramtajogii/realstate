@@ -8,7 +8,7 @@ const projectData: Record<string, any> = {
     location: 'Sigra, Varanasi',
     type: 'Residential',
     status: 'Ready to Move',
-    price: '₹65L - ₹1.2Cr',
+    price: 'Rs 65L - Rs 1.2Cr',
     beds: '2 & 3 BHK',
     area: '1200 - 2100 sq ft',
     floors: 'G + 20 Floors',
@@ -24,7 +24,6 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
   return (
     <>
-      {/* Back */}
       <div className="pt-24 pb-6 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <Link href="/projects" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#091e44] transition-colors text-sm">
@@ -33,7 +32,6 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         </div>
       </div>
 
-      {/* Hero Image */}
       <div className="relative h-96 md:h-[500px]">
         <Image src={project.img} alt={project.title} fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -44,12 +42,9 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         </div>
       </div>
 
-      {/* Details */}
       <section className="bg-[#ffffff] py-16">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-12">
-          {/* Main */}
           <div className="lg:col-span-2">
-            {/* Quick Info */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
               {[
                 { label: 'Price', value: project.price },
@@ -64,12 +59,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               ))}
             </div>
 
-            {/* Description */}
             <h2 className="font-display text-2xl font-bold text-black mb-4">About This Project</h2>
             <div className="w-10 h-1 bg-[#091e44] mb-5" />
             <p className="text-gray-600 leading-relaxed mb-8">{project.description}</p>
 
-            {/* Amenities */}
             <h2 className="font-display text-2xl font-bold text-black mb-5">Amenities</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {project.amenities.map((a: string) => (
@@ -80,11 +73,10 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
             </div>
           </div>
 
-          {/* Enquiry Sidebar */}
           <div>
             <div className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-7 sticky top-24">
               <h3 className="font-display text-xl font-bold text-black mb-6">Enquire Now</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4">
                 <input type="text" placeholder="Your Name" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                 <input type="tel" placeholder="Phone Number" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                 <input type="email" placeholder="Email Address" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
@@ -108,4 +100,3 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
     </>
   )
 }
-

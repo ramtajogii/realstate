@@ -1,19 +1,12 @@
 'use client'
 import Image from 'next/image'
 import { useEffect } from 'react'
-import { Target, Eye, Heart, Users, Building2, Award } from 'lucide-react'
 
 const team = [
   { name: 'Ravi Sharma', role: 'Founder & CEO', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80' },
   { name: 'Priya Mehta', role: 'Head of Design', img: 'https://images.unsplash.com/photo-1494790108755-2616b612b3bc?w=300&q=80' },
   { name: 'Arjun Reddy', role: 'Project Director', img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80' },
   { name: 'Neha Singh', role: 'Sales Director', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80' },
-]
-
-const values = [
-  { icon: Target, title: 'Our Mission', text: 'To deliver premium solutions that enhance quality of life through innovative design and superior construction.' },
-  { icon: Eye, title: 'Our Vision', text: 'To be the most trusted developer in India, known for integrity, quality, and transforming communities.' },
-  { icon: Heart, title: 'Our Values', text: 'Quality, transparency, innovation, and customer satisfaction are the pillars on which every DALAN Builders project is built.' },
 ]
 
 export default function AboutPage() {
@@ -43,7 +36,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Who We Are</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">15 Years of Building Excellence</h2>
+            <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Dalan Avenue Micro Society</h2>
             <div className="w-14 h-1 bg-[#091e44] mb-6" />
             <p className="text-gray-600 leading-relaxed mb-4">Welcome to Dalan Avenue Micro Society a close-knit, beautifully planned residential community where every plot tells a story of smart living and thoughtful design. Nestled in Village Lodhan, near Om Villas, Chandmari, Varanasi, this intimate society is built for those who believe that the best neighbourhoods are the ones where everyone knows each other by name.</p>
             <p className="text-gray-600 leading-relaxed mb-4">With wide internal roads, a park, lush greenery, and all essential amenities in place, Dalan Avenue Micro Society gives you the warmth of a community and the freedom of your own land — all in one perfectly connected address. Whether you are building your first home or making your smartest investment, this is where your story begins.</p>
@@ -59,47 +52,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-24 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">What Drives Us</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3">Mission, Vision & Values</h2>
-            <div className="w-14 h-1 bg-[#091e44] mx-auto mt-5" />
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {values.map((v, i) => (
-              <div key={i} className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-8 reveal hover:border-[#091e44]/40 transition-all duration-300">
-                <div className="w-14 h-14 bg-[#091e44]/10 rounded-xl flex items-center justify-center mb-5">
-                  <v.icon size={24} className="text-[#091e44]" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-black mb-3">{v.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{v.text}</p>
-              </div>
-            ))}
-          </div>
+      <section className="bg-[#F7F7F7] py-16">
+        <div className="w-full">
+          <Image
+            src="/about/amentites.png"
+            alt="Dalan Avenue Micro Society amenities"
+            width={1018}
+            height={504}
+            className="h-auto w-full object-cover shadow-xl shadow-black/10"
+          />
         </div>
       </section>
 
-      {/* Team */}
-      <section id="team" className="py-24 bg-[#ffffff]">
+      {/* Values */}
+      <section className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Leadership</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3">Meet Our Team</h2>
+          <div className="mx-auto max-w-4xl text-center reveal">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">What Drives Us</span>
+            <h2 className="font-display text-4xl font-bold text-black mt-3">Mission, Vision & Values</h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto mt-5" />
+            <p className="mt-8 text-gray-600 leading-relaxed">
+              Our mission, vision, and values come together in one promise: to create thoughtfully planned communities with quality construction, transparent policies, innovative design, and lasting trust for every family and investor we serve.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, i) => (
-              <div key={i} className="group text-center reveal">
-                <div className="relative overflow-hidden rounded-2xl mb-5">
-                  <Image src={member.img} alt={member.name} width={300} height={300} className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-                <h3 className="font-display text-lg font-bold text-black">{member.name}</h3>
-                <p className="text-[#091e44] text-sm mt-1">{member.role}</p>
-              </div>
-            ))}
+
+          <div className="mt-14 reveal">
+            <Image
+              src="/about/image.jpg"
+              alt="Dalan Avenue Micro Society"
+              width={814}
+              height={1500}
+              className="mx-auto h-auto w-full max-w-3xl object-contain"
+            />
           </div>
         </div>
       </section>

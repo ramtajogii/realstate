@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Building2, Users, Award, TrendingUp } from 'lucide-react'
@@ -10,6 +10,13 @@ const stats = [
   { value: '5000+', label: 'Happy Families', icon: Users },
   { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
 ]
+
+const heroSlides = [
+  { src: '/images/master-image.jpg', alt: 'DALAN Builders' },
+  { src: '/images/master-image2.jpg', alt: 'DALAN Builders banner' },
+]
+
+const loopingHeroSlides = [...heroSlides, heroSlides[0]]
 
 const featuredProjects = [
   {
@@ -69,6 +76,17 @@ const testimonials = [
 
 export default function HomePage() {
   const revealRefs = useRef<HTMLElement[]>([])
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slideTransition, setSlideTransition] = useState(true)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setSlideTransition(true)
+      setCurrentSlide((slide) => slide + 1)
+    }, 3000)
+
+    return () => window.clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,15 +109,29 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full overflow-hidden bg-white">
         {/* Background Image (replace with video if available) */}
-        <div className="relative w-full">
-          <Image
-            src="/images/master-image.jpeg"
-            alt="DALAN Builders"
-            width={1600}
-            height={853}
-            className="block h-auto w-full object-contain"
-            priority
-          />
+        <div className="relative aspect-[2/1] w-full overflow-hidden bg-white">
+          <div
+            className={`flex h-full ${slideTransition ? 'transition-transform duration-700 ease-in-out' : ''}`}
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            onTransitionEnd={() => {
+              if (currentSlide === heroSlides.length) {
+                setSlideTransition(false)
+                setCurrentSlide(0)
+              }
+            }}
+          >
+            {loopingHeroSlides.map((slide, index) => (
+              <Image
+                key={`${slide.src}-${index}`}
+                src={slide.src}
+                alt={slide.alt}
+                width={5544}
+                height={2772}
+                className="block h-full w-full shrink-0 object-contain"
+                priority={index === 0}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Hero Content */}
@@ -142,23 +174,6 @@ export default function HomePage() {
           <span className="text-gray-600 text-xs uppercase tracking-widest">Scroll</span>
           <div className="w-px h-8 bg-[#091e44]" />
         </div> */}
-      </section>
-
-      {/* ===== STATS SECTION ===== */}
-      <section className="bg-[#091e44] py-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center reveal">
-                <stat.icon size={28} className="text-white/75 mx-auto mb-3" />
-                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-white/75 text-sm uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
@@ -217,8 +232,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== STATS SECTION ===== */}
+      <section className="bg-[#091e44] py-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center reveal">
+                <stat.icon size={28} className="text-white/75 mx-auto mb-3" />
+                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-1">
+                  {stat.value}
+                </div>
+                <div className="text-white/75 text-sm uppercase tracking-wider">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="py-18 bg-[#ffffff]">
+      <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16 reveal">

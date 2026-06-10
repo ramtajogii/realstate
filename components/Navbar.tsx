@@ -2,9 +2,15 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 
-const navLinks = [
+type NavLink = {
+  label: string
+  href: string
+  dropdown?: NavLink[]
+}
+
+const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   {
     label: 'About',
@@ -19,9 +25,45 @@ const navLinks = [
     label: 'Projects',
     href: '/projects',
     dropdown: [
-      { label: 'All Projects', href: '/projects' },
-      { label: 'Residential', href: '/projects?type=residential' },
+      {
+        label: 'Residential',
+        href: '/projects?type=residential',
+        dropdown: [
+          {
+            label: 'Row House',
+            href: '/projects?type=residential&category=row-house',
+            dropdown: [
+              { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
+              { label: 'DALAN Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
+            ],
+          },
+          {
+            label: 'Duplex',
+            href: '/projects?type=residential&category=duplex',
+            dropdown: [
+              { label: 'DALAN Avenue', href: '/projects?type=residential&category=duplex&project=dalan-avenue' },
+              { label: 'DALAN Saubhagyam', href: '/projects?type=residential&category=duplex&project=dalan-saubhagyam' },
+            ],
+          },
+          {
+            label: 'Villa',
+            href: '/projects?type=residential&category=villa',
+            dropdown: [
+              { label: 'DALAN Samriddhi', href: '/projects?type=residential&category=villa&project=dalan-samriddhi' },
+            ],
+          },
+          {
+            label: 'Plots',
+            href: '/projects?type=residential&category=plots',
+            dropdown: [
+              { label: 'DALAN Avenue Micro Society', href: '/projects?type=residential&category=plots&project=dalan-avenue-micro-society' },
+              { label: 'DALAN Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
+            ],
+          },
+        ],
+      },
       { label: 'Commercial', href: '/projects?type=commercial' },
+      { label: 'Farm House', href: '/projects?type=farmhouse' },
     ],
   },
   { label: 'Blog', href: '/blog' },
@@ -32,6 +74,59 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+
+  const renderDesktopDropdown = (items: NavLink[], level = 0) => (
+    <div
+      className={`absolute ${
+        level === 0 ? 'top-full left-1/2 -translate-x-1/2' : 'left-full top-0'
+      } ${
+        level === 0
+          ? 'before:absolute before:-top-2 before:left-1/2 before:h-4 before:w-4 before:-translate-x-1/2 before:rotate-45 before:bg-white'
+          : 'invisible opacity-0 transition-all duration-200'
+      } w-56 bg-white border border-black/10 rounded-none shadow-xl`}
+    >
+      {items.map((item) => (
+        <div
+          key={item.label}
+          className="relative [&:hover>div]:visible [&:hover>div]:opacity-100"
+        >
+          <Link
+            href={item.href}
+            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-base text-gray-700 transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white"
+          >
+            <span>{item.label}</span>
+            {item.dropdown && <ChevronRight size={14} />}
+          </Link>
+          {item.dropdown && renderDesktopDropdown(item.dropdown, level + 1)}
+        </div>
+      ))}
+    </div>
+  )
+
+  const renderMobileLinks = (items: NavLink[], level = 0) => (
+    <div
+      className={`min-w-0 overflow-x-hidden ${
+        level === 0 ? 'pl-3' : 'ml-3 border-l border-black/10 pl-3'
+      }`}
+    >
+      {items.map((item) => (
+        <div key={item.label} className="min-w-0">
+          <Link
+            href={item.href}
+            className={`block min-w-0 break-words py-2 text-sm leading-snug transition-colors ${
+              level === 0
+                ? 'text-gray-600 hover:text-[#091e44]'
+                : 'text-gray-500 hover:text-[#091e44]'
+            }`}
+            onClick={() => setMobileOpen(false)}
+          >
+            {item.label}
+          </Link>
+          {item.dropdown && renderMobileLinks(item.dropdown, level + 1)}
+        </div>
+      ))}
+    </div>
+  )
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -50,14 +145,14 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex h-16 w-22 items-center justify-center">
+        <Link href="/" className="flex h-15 w-22 items-center justify-center">
           <Image
             src="/logo/dalan-logo.png"
             alt="DALAN Builders"
-            width={90}
+            width={128}
             height={70}
             priority
-            className="h-16 w-auto object-contain"
+            className="h-20 w-auto object-contain"
           />
         </Link>
 
@@ -66,13 +161,13 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <li
               key={link.label}
-              className="relative group"
+              className="relative group py-8 -my-8"
               onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#091e44] transition-colors duration-200 font-body tracking-wide"
+                className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-[#091e44] transition-colors duration-200 font-body tracking-wide"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
@@ -80,17 +175,7 @@ export default function Navbar() {
 
               {/* Dropdown */}
               {link.dropdown && openDropdown === link.label && (
-                <div className="absolute top-full left-0 mt-2 w-52 bg-[#F7F7F7] border border-black/10 rounded-lg overflow-hidden shadow-2xl">
-                  {link.dropdown.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#091e44] hover:text-white transition-all duration-200"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+                renderDesktopDropdown(link.dropdown)
               )}
             </li>
           ))}
@@ -117,29 +202,18 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-[#F7F7F7] border-t border-black/10 px-6 py-4">
+        <div className="absolute left-0 right-0 top-full max-h-[calc(100vh-84px)] w-full overflow-y-auto overflow-x-hidden overscroll-contain border-t border-black/10 bg-[#F7F7F7] px-5 py-4 md:hidden">
           {navLinks.map((link) => (
-            <div key={link.label}>
+            <div key={link.label} className="min-w-0">
               <Link
                 href={link.href}
-                className="block py-3 text-gray-700 hover:text-[#091e44] border-b border-black/5 transition-colors"
+                className="block min-w-0 border-b border-black/5 py-3 font-medium text-gray-700 transition-colors hover:text-[#091e44]"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </Link>
               {link.dropdown && (
-                <div className="pl-4">
-                  {link.dropdown.map((item) => (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="block py-2 text-sm text-gray-600 hover:text-[#091e44] transition-colors"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+                renderMobileLinks(link.dropdown)
               )}
             </div>
           ))}
@@ -155,4 +229,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
