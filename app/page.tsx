@@ -105,13 +105,13 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-2xl">
-            {/* <span className="inline-block px-4 py-1.5 bg-[#F26522]/20 border border-[#F26522]/40 rounded-full text-[#F26522] text-xs uppercase tracking-widest mb-6 animate-fade-in">
+            {/* <span className="inline-block px-4 py-1.5 bg-[#091e44]/20 border border-[#091e44]/40 rounded-full text-[#091e44] text-xs uppercase tracking-widest mb-6 animate-fade-in">
               Premium
             </span> */}
 
             {/* <h1 className="font-display text-5xl md:text-7xl font-bold text-black leading-tight mb-6 animate-fade-up">
               Build Your{' '}
-              <span className="text-[#F26522]">Dream</span>{' '}
+              <span className="text-[#091e44]">Dream</span>{' '}
               Space
             </h1> */}
 
@@ -123,7 +123,7 @@ export default function HomePage() {
             {/* <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <Link
                 href="/projects"
-                className="flex items-center gap-2 px-8 py-4 bg-[#F26522] text-black font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40 hover:gap-3"
+                className="flex items-center gap-2 px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-xl hover:shadow-[#091e44]/40 hover:gap-3"
               >
                 Explore Projects <ArrowRight size={18} />
               </Link>
@@ -132,7 +132,7 @@ export default function HomePage() {
                 href="/contact"
                 className="flex items-center gap-2 px-8 py-4 bg-black/5 backdrop-blur border border-black/30 text-black font-medium rounded-full hover:bg-black/10 transition-all duration-300"
               >
-                <Play size={16} className="text-[#F26522]" /> Watch Story
+                <Play size={16} className="text-[#091e44]" /> Watch Story
               </Link> */}
           </div>
         </div>
@@ -140,21 +140,21 @@ export default function HomePage() {
         {/* Scroll Indicator */}
         {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-gray-600 text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-8 bg-[#F26522]" />
+          <div className="w-px h-8 bg-[#091e44]" />
         </div> */}
       </section>
 
       {/* ===== STATS SECTION ===== */}
-      <section className="bg-[#F26522] py-8">
+      <section className="bg-[#091e44] py-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
               <div key={i} className="text-center reveal">
-                <stat.icon size={28} className="text-black/70 mx-auto mb-3" />
-                <div className="text-4xl md:text-5xl font-display font-bold text-black mb-1">
+                <stat.icon size={28} className="text-white/75 mx-auto mb-3" />
+                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-black/70 text-sm uppercase tracking-wider">{stat.label}</div>
+                <div className="text-white/75 text-sm uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -184,19 +184,19 @@ export default function HomePage() {
                 />
               </div>
               {/* Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#F26522] rounded-2xl p-6 text-black shadow-2xl">
+              <div className="absolute -bottom-6 -right-6 bg-[#091e44] rounded-2xl p-6 text-white shadow-2xl">
                 <div className="text-3xl font-display font-bold">15+</div>
-                <div className="text-xs uppercase tracking-wide text-black/80">Years of Trust</div>
+                <div className="text-xs uppercase tracking-wide text-white/80">Years of Trust</div>
               </div>
             </div>
 
             {/* Text */}
             <div className="reveal">
-              <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">About Us</span>
+              <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-6 leading-tight">
                 Building More Than Structures
               </h2>
-              <div className="w-14 h-1 bg-[#F26522] mb-6" />
+              <div className="w-14 h-1 bg-[#091e44] mb-6" />
               <p className="text-gray-600 leading-relaxed mb-4">
                 DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
                 For over 15 years, we have delivered residential communities and commercial destinations that stand
@@ -208,7 +208,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#F26522] text-[#F26522] rounded-full hover:bg-[#F26522] hover:text-black transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#091e44] text-[#091e44] rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300"
               >
                 Know More <ArrowRight size={16} />
               </Link>
@@ -222,11 +222,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16 reveal">
-            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Our Projects</span>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Our Projects</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
               Landmark Properties
             </h2>
-            <div className="w-14 h-1 bg-[#F26522] mx-auto" />
+            <div className="w-14 h-1 bg-[#091e44] mx-auto" />
           </div>
 
           {/* Project Grid */}
@@ -249,18 +249,18 @@ export default function HomePage() {
                   <div className="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 transition-opacity duration-300" />
 
                   {/* Status Badge */}
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#F26522] text-black text-xs rounded-full font-medium">
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#091e44] text-white text-xs rounded-full font-medium">
                     {project.status}
                   </span>
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="text-[#F26522] text-xs uppercase tracking-wider">{project.type}</span>
+                    <span className="text-[#091e44] text-xs uppercase tracking-wider">{project.type}</span>
                     <h3 className="font-display text-xl font-bold text-black mt-1">{project.title}</h3>
                     <p className="text-gray-700 text-sm mt-1 flex items-center gap-1">
                       📍 {project.location}
                     </p>
-                    <div className="mt-3 flex items-center gap-1 text-[#F26522] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="mt-3 flex items-center gap-1 text-[#091e44] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       View Details <ArrowRight size={14} />
                     </div>
                   </div>
@@ -272,7 +272,7 @@ export default function HomePage() {
           <div className="text-center mt-12 reveal">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#F26522] text-black font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300"
             >
               View All Projects <ArrowRight size={18} />
             </Link>
@@ -284,22 +284,22 @@ export default function HomePage() {
       <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
-            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Testimonials</span>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Testimonials</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
               What Our Clients Say
             </h2>
-            <div className="w-14 h-1 bg-[#F26522] mx-auto" />
+            <div className="w-14 h-1 bg-[#091e44] mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-8 reveal hover:border-[#F26522]/30 transition-all duration-300"
+                className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-8 reveal hover:border-[#091e44]/30 transition-all duration-300"
                 style={{ animationDelay: `${i * 0.15}s` }}
               >
                 {/* Quote Mark */}
-                <div className="text-[#F26522] text-5xl font-display leading-none mb-4">"</div>
+                <div className="text-[#091e44] text-5xl font-display leading-none mb-4">"</div>
                 <p className="text-gray-700 leading-relaxed mb-6 text-sm">{t.text}</p>
                 <div className="flex items-center gap-4 border-t border-black/10 pt-5">
                   <Image
@@ -311,7 +311,7 @@ export default function HomePage() {
                   />
                   <div>
                     <div className="text-black font-semibold text-sm">{t.name}</div>
-                    <div className="text-[#F26522] text-xs">{t.role}</div>
+                    <div className="text-[#091e44] text-xs">{t.role}</div>
                   </div>
                 </div>
               </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6 reveal">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black mb-6">
             Ready to Find Your{' '}
-            <span className="text-[#F26522]">Dream Property?</span>
+            <span className="text-[#091e44]">Dream Property?</span>
           </h2>
           <p className="text-gray-700 text-lg mb-10">
             Talk to our expert team today and take the first step towards owning your perfect space.
@@ -340,7 +340,7 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-[#F26522] text-black font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/40"
+              className="px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-xl hover:shadow-[#091e44]/40"
             >
               Get in Touch
             </Link>

@@ -8,7 +8,7 @@ export default function LegalPage() {
         <Image src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80" alt="Legal" fill className="object-cover" />
         <div className="absolute inset-0 bg-white/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#F26522] text-xs uppercase tracking-widest">Legal Information</span>
+          <span className="text-[#091e44] text-xs uppercase tracking-widest">Legal Information</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">Legal Policies</h1>
         </div>
       </section>
@@ -18,7 +18,7 @@ export default function LegalPage() {
           {/* Privacy Policy */}
           <div>
             <h2 className="font-display text-3xl font-bold text-black mb-4">Privacy Policy</h2>
-            <div className="w-10 h-1 bg-[#F26522] mb-6" />
+            <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>DALAN Builders ("we", "us", "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
               <p><strong className="text-black">Information We Collect:</strong> We collect personal information that you voluntarily provide, including name, email address, phone number, and property preferences when you fill out enquiry forms or contact us directly.</p>
@@ -31,7 +31,7 @@ export default function LegalPage() {
           {/* Terms & Conditions */}
           <div>
             <h2 className="font-display text-3xl font-bold text-black mb-4">Terms & Conditions</h2>
-            <div className="w-10 h-1 bg-[#F26522] mb-6" />
+            <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>By accessing and using the DALAN Builders website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
               <p><strong className="text-black">Use of Website:</strong> This website is intended for informational purposes only. All content, including project details, pricing, and availability, is subject to change without notice.</p>
@@ -44,7 +44,7 @@ export default function LegalPage() {
           {/* Disclaimer */}
           <div>
             <h2 className="font-display text-3xl font-bold text-black mb-4">Disclaimer</h2>
-            <div className="w-10 h-1 bg-[#F26522] mb-6" />
+            <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>The information provided on the DALAN Builders website is for general informational purposes only. All project information, including prices, floor plans, specifications, and amenities, is indicative and subject to change.</p>
               <p><strong className="text-black">RERA Compliance:</strong> All our projects are registered under RERA (Regulation and Development Act). Please verify RERA registration details on the official RERA website before making any purchase decision.</p>

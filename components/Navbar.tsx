@@ -42,10 +42,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled || mobileOpen
-          ? 'translate-y-0 opacity-100 bg-[#ffffff] shadow-lg shadow-black/10 py-2'
-          : '-translate-y-full opacity-0 pointer-events-none bg-[#ffffff] py-2'
+          ? 'bg-[#ffffff] shadow-lg shadow-black/10 py-2'
+          : 'bg-[#ffffff] shadow-sm shadow-black/5 py-2'
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
@@ -72,7 +72,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#F26522] transition-colors duration-200 font-body tracking-wide"
+                className="flex items-center gap-1 text-sm text-gray-700 hover:text-[#091e44] transition-colors duration-200 font-body tracking-wide"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
@@ -85,7 +85,7 @@ export default function Navbar() {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#F26522] hover:text-black transition-all duration-200"
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-[#091e44] hover:text-white transition-all duration-200"
                     >
                       {item.label}
                     </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <Link
             href="/contact"
-            className="px-5 py-2 bg-[#F26522] text-black text-sm font-medium rounded-full hover:bg-[#D4521A] transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30"
+            className="px-5 py-2 bg-[#091e44] text-white text-sm font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30"
           >
             Enquire Now
           </Link>
@@ -122,7 +122,7 @@ export default function Navbar() {
             <div key={link.label}>
               <Link
                 href={link.href}
-                className="block py-3 text-gray-700 hover:text-[#F26522] border-b border-black/5 transition-colors"
+                className="block py-3 text-gray-700 hover:text-[#091e44] border-b border-black/5 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -133,7 +133,7 @@ export default function Navbar() {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="block py-2 text-sm text-gray-600 hover:text-[#F26522] transition-colors"
+                      className="block py-2 text-sm text-gray-600 hover:text-[#091e44] transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
@@ -145,7 +145,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="mt-4 block text-center px-5 py-2 bg-[#F26522] text-black rounded-full text-sm font-medium"
+            className="mt-4 block text-center px-5 py-2 bg-[#091e44] text-white rounded-full text-sm font-medium"
             onClick={() => setMobileOpen(false)}
           >
             Enquire Now

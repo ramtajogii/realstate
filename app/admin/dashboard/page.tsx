@@ -66,7 +66,7 @@ export default async function AdminDashboardPage({
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#F26522]">Admin Dashboard</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#091e44]">Admin Dashboard</span>
             <h1 className="mt-3 font-display text-4xl font-bold text-black">Contact Inquiries</h1>
             <p className="mt-2 text-sm text-gray-600">Logged in as {admin.email}</p>
           </div>
@@ -76,10 +76,10 @@ export default async function AdminDashboardPage({
         <div className="rounded-2xl border border-black/10 bg-[#F7F7F7]">
           <div className="flex items-center justify-between border-b border-black/10 px-5 py-4">
             <div className="flex items-center gap-3 text-sm font-semibold text-black">
-              <Inbox size={18} className="text-[#F26522]" />
+              <Inbox size={18} className="text-[#091e44]" />
               Total inquiries
             </div>
-            <span className="rounded-full bg-[#F26522]/15 px-3 py-1 text-sm font-semibold text-[#D4521A]">
+            <span className="rounded-full bg-[#091e44]/15 px-3 py-1 text-sm font-semibold text-[#061632]">
               {totalContacts}
             </span>
           </div>
@@ -132,7 +132,7 @@ export default async function AdminDashboardPage({
                   id="limit"
                   name="limit"
                   defaultValue={limit}
-                  className="rounded-lg border border-black/20 bg-white px-3 py-2 text-sm text-black outline-none focus:border-[#F26522]"
+                  className="rounded-lg border border-black/20 bg-white px-3 py-2 text-sm text-black outline-none focus:border-[#091e44]"
                 >
                   {PAGE_LIMITS.map((pageLimit) => (
                     <option key={pageLimit} value={pageLimit}>
@@ -142,7 +142,7 @@ export default async function AdminDashboardPage({
                 </select>
                 <button
                   type="submit"
-                  className="rounded-lg bg-[#F26522] px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-[#D4521A]"
+                  className="rounded-lg bg-[#091e44] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#061632]"
                 >
                   Apply
                 </button>
@@ -153,7 +153,7 @@ export default async function AdminDashboardPage({
                   href={getPageUrl(Math.max(1, page - 1), limit)}
                   aria-disabled={page === 1}
                   className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/20 bg-white text-black transition-colors ${
-                    page === 1 ? 'pointer-events-none opacity-40' : 'hover:border-[#F26522] hover:text-[#F26522]'
+                    page === 1 ? 'pointer-events-none opacity-40' : 'hover:border-[#091e44] hover:text-[#091e44]'
                   }`}
                 >
                   <ChevronLeft size={18} />
@@ -165,7 +165,7 @@ export default async function AdminDashboardPage({
                   href={getPageUrl(Math.min(totalPages, page + 1), limit)}
                   aria-disabled={page === totalPages}
                   className={`inline-flex h-10 w-10 items-center justify-center rounded-lg border border-black/20 bg-white text-black transition-colors ${
-                    page === totalPages ? 'pointer-events-none opacity-40' : 'hover:border-[#F26522] hover:text-[#F26522]'
+                    page === totalPages ? 'pointer-events-none opacity-40' : 'hover:border-[#091e44] hover:text-[#091e44]'
                   }`}
                 >
                   <ChevronRight size={18} />

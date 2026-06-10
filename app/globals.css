@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --orange: #F26522;
-  --orange-light: #FF8C42;
-  --orange-dark: #D4521A;
+  --orange: #091e44;
+  --orange-light: #14315f;
+  --orange-dark: #061632;
   --dark: #ffffff;
   --dark-2: #F7F7F7;
   --gold: #C9922A;
@@ -33,7 +33,7 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #fff; }
-::-webkit-scrollbar-thumb { background: #F26522; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #091e44; border-radius: 10px; }
 
 /* Animations */
 .reveal {
@@ -52,13 +52,13 @@ body {
   display: block;
   width: 60px;
   height: 3px;
-  background: #F26522;
+  background: #091e44;
   margin-top: 12px;
 }
 
 /* Swiper custom */
-.swiper-pagination-bullet { background: #F26522 !important; }
-.swiper-button-next, .swiper-button-prev { color: #F26522 !important; }
+.swiper-pagination-bullet { background: #091e44 !important; }
+.swiper-button-next, .swiper-button-prev { color: #091e44 !important; }
 
 /* Project card hover */
 .project-card:hover .project-overlay {
@@ -69,8 +69,8 @@ body {
 }
 
 @layer utilities {
-  .text-orange { color: #F26522; }
-  .bg-orange { background-color: #F26522; }
-  .border-orange { border-color: #F26522; }
+  .text-orange { color: #091e44; }
+  .bg-orange { background-color: #091e44; }
+  .border-orange { border-color: #091e44; }
 }
 

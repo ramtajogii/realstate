@@ -54,7 +54,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     { icon: Phone, title: 'Call Us', lines: ['+91 9838096190', '+91 6389088088'] },
-    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.com', 'sales@dalanbuilders.com'] },
+    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.com'] },
     { icon: MapPin, title: 'Visit Us', lines: ['DALAN Builders Pvt. ltd. C/O - Brijesh Pandey', '203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
   ]
@@ -66,7 +66,7 @@ export default function ContactPage() {
         <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Contact" fill className="object-cover" />
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#F26522] text-xs uppercase tracking-widest">Reach Us</span>
+          <span className="text-[#091e44] text-xs uppercase tracking-widest">Reach Us</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">Contact Us</h1>
         </div>
       </section>
@@ -76,9 +76,9 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => (
-              <div key={i} className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-6 text-center hover:border-[#F26522]/30 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#F26522]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon size={20} className="text-[#F26522]" />
+              <div key={i} className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-6 text-center hover:border-[#091e44]/30 transition-all duration-300">
+                <div className="w-12 h-12 bg-[#091e44]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <item.icon size={20} className="text-[#091e44]" />
                 </div>
                 <h4 className="text-black font-semibold mb-2">{item.title}</h4>
                 {item.lines.map((line, j) => (
@@ -95,7 +95,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
           {/* Form */}
           <div>
-            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Send a Message</span>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Send a Message</span>
             <h2 className="font-display text-3xl font-bold text-black mt-3 mb-8">Get In Touch</h2>
 
             {submitted ? (
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Full Name *</label>
-                    <input name="name" required value={form.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                    <input name="name" required value={form.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                   </div>
                   <div>
                     <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Phone Number *</label>
@@ -126,18 +126,18 @@ export default function ContactPage() {
                         value={form.phone}
                         onChange={handleChange}
                         placeholder="xxxxxxxxxx"
-                        className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl pl-12 pr-4 py-3.5 text-black text-sm placeholder-gray-400 focus:outline-none focus:border-[#F26522] transition-colors"
+                        className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl pl-12 pr-4 py-3.5 text-black text-sm placeholder-gray-400 focus:outline-none focus:border-[#091e44] transition-colors"
                       />
                     </div>
                   </div>
                 </div>
                 <div>
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Email Address</label>
-                  <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@email.com" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors" />
+                  <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@email.com" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                 </div>
                 <div>
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Interested In</label>
-                  <select name="subject" value={form.subject} onChange={handleChange} className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm focus:outline-none focus:border-[#F26522] transition-colors">
+                  <select name="subject" value={form.subject} onChange={handleChange} className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm focus:outline-none focus:border-[#091e44] transition-colors">
                     <option value="" className="bg-[#F7F7F7]">Select a project type</option>
                     <option value="residential" className="bg-[#F7F7F7]">Residential Property</option>
                     <option value="commercial" className="bg-[#F7F7F7]">Commercial Property</option>
@@ -147,9 +147,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Message</label>
-                  <textarea name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Tell us more about your requirements..." className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#F26522] transition-colors resize-none" />
+                  <textarea name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Tell us more about your requirements..." className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors resize-none" />
                 </div>
-                <button type="submit" disabled={loading} className="w-full py-4 bg-[#F26522] text-black font-medium rounded-xl hover:bg-[#D4521A] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                <button type="submit" disabled={loading} className="w-full py-4 bg-[#091e44] text-white font-medium rounded-xl hover:bg-[#061632] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
                   {loading ? 'Sending...' : (<><Send size={16} /> Send Message</>)}
                 </button>
               </form>
@@ -158,7 +158,7 @@ export default function ContactPage() {
 
           {/* Map embed */}
           <div>
-            <span className="text-[#F26522] text-xs uppercase tracking-widest font-semibold">Find Us</span>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Find Us</span>
             <h2 className="font-display text-3xl font-bold text-black mt-3 mb-8">Our Location</h2>
             <div className="rounded-2xl overflow-hidden h-96 border border-black/10">
               <iframe

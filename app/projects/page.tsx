@@ -17,7 +17,7 @@ const filters = ['All', 'Residential', 'Commercial']
 const statusColors: Record<string, string> = {
   'Ready to Move': 'bg-green-500',
   'Under Construction': 'bg-yellow-500',
-  'New Launch': 'bg-[#F26522]',
+  'New Launch': 'bg-[#091e44]',
 }
 
 export default function ProjectsPage() {
@@ -41,7 +41,7 @@ export default function ProjectsPage() {
         <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" />
         <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#F26522] text-xs uppercase tracking-widest">Our Portfolio</span>
+          <span className="text-[#091e44] text-xs uppercase tracking-widest">Our Portfolio</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">All Projects</h1>
         </div>
       </section>
@@ -56,8 +56,8 @@ export default function ProjectsPage() {
                 onClick={() => setActive(f)}
                 className={`px-7 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                   active === f
-                    ? 'bg-[#F26522] text-black shadow-lg shadow-orange-500/30'
-                    : 'bg-[#F7F7F7] text-gray-600 border border-black/10 hover:border-[#F26522]/40 hover:text-black'
+                    ? 'bg-[#091e44] text-white shadow-lg shadow-[#091e44]/30'
+                    : 'bg-[#F7F7F7] text-gray-600 border border-black/10 hover:border-[#091e44]/40 hover:text-black'
                 }`}
               >
                 {f}
@@ -71,7 +71,7 @@ export default function ProjectsPage() {
               <Link
                 key={project.id}
                 href={`/projects/${project.id}`}
-                className="project-card group bg-[#F7F7F7] rounded-2xl overflow-hidden border border-black/10 hover:border-[#F26522]/40 transition-all duration-300 reveal"
+                className="project-card group bg-[#F7F7F7] rounded-2xl overflow-hidden border border-black/10 hover:border-[#091e44]/40 transition-all duration-300 reveal"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
                 {/* Image */}
@@ -87,11 +87,11 @@ export default function ProjectsPage() {
 
                 {/* Info */}
                 <div className="p-6">
-                  <h3 className="font-display text-xl font-bold text-black group-hover:text-[#F26522] transition-colors duration-300 mb-2">
+                  <h3 className="font-display text-xl font-bold text-black group-hover:text-[#091e44] transition-colors duration-300 mb-2">
                     {project.title}
                   </h3>
                   <p className="text-gray-600 text-sm flex items-center gap-1 mb-3">
-                    <MapPin size={14} className="text-[#F26522]" /> {project.location}
+                    <MapPin size={14} className="text-[#091e44]" /> {project.location}
                   </p>
                   <div className="flex items-center justify-between border-t border-black/10 pt-4">
                     <div>
@@ -100,10 +100,10 @@ export default function ProjectsPage() {
                     </div>
                     <div className="text-right">
                       <div className="text-gray-600 text-xs">Price Range</div>
-                      <div className="text-[#F26522] text-sm font-semibold">{project.price}</div>
+                      <div className="text-[#091e44] text-sm font-semibold">{project.price}</div>
                     </div>
                   </div>
-                  <div className="mt-4 flex items-center gap-1 text-[#F26522] text-sm font-medium">
+                  <div className="mt-4 flex items-center gap-1 text-[#091e44] text-sm font-medium">
                     View Details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>

@@ -152,7 +152,7 @@ export default function AdminLoginForm() {
               required
               value={resetForm.email}
               onChange={(event) => setResetForm({ ...resetForm, email: event.target.value })}
-              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-4 text-sm text-black outline-none transition-colors focus:border-[#F26522]"
+              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-4 text-sm text-black outline-none transition-colors focus:border-[#091e44]"
               placeholder="admin@example.com"
             />
           </div>
@@ -161,12 +161,12 @@ export default function AdminLoginForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-xl bg-[#F26522] py-4 font-medium text-black transition-colors hover:bg-[#D4521A] disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full rounded-xl bg-[#091e44] py-4 font-medium text-white transition-colors hover:bg-[#061632] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {loading ? 'Checking...' : 'Continue'}
         </button>
 
-        <button type="button" onClick={showLogin} className="w-full text-sm font-medium text-gray-700 hover:text-[#F26522]">
+        <button type="button" onClick={showLogin} className="w-full text-sm font-medium text-gray-700 hover:text-[#091e44]">
           Back to login
         </button>
       </form>
@@ -188,14 +188,14 @@ export default function AdminLoginForm() {
               minLength={8}
               value={resetForm.password}
               onChange={(event) => setResetForm({ ...resetForm, password: event.target.value })}
-              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#F26522]"
+              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#091e44]"
               placeholder="New password"
             />
             <button
               type="button"
               aria-label={showNewPassword ? 'Hide new password' : 'Show new password'}
               onClick={() => setShowNewPassword(!showNewPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#F26522]"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#091e44]"
             >
               {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
@@ -212,14 +212,14 @@ export default function AdminLoginForm() {
               minLength={8}
               value={resetForm.confirmPassword}
               onChange={(event) => setResetForm({ ...resetForm, confirmPassword: event.target.value })}
-              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#F26522]"
+              className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#091e44]"
               placeholder="Confirm password"
             />
             <button
               type="button"
               aria-label={showConfirmPassword ? 'Hide confirm password' : 'Show confirm password'}
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#F26522]"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#091e44]"
             >
               {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
@@ -229,12 +229,12 @@ export default function AdminLoginForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-xl bg-[#F26522] py-4 font-medium text-black transition-colors hover:bg-[#D4521A] disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full rounded-xl bg-[#091e44] py-4 font-medium text-white transition-colors hover:bg-[#061632] disabled:cursor-not-allowed disabled:opacity-70"
         >
           {loading ? 'Changing...' : 'Change Password'}
         </button>
 
-        <button type="button" onClick={showLogin} className="w-full text-sm font-medium text-gray-700 hover:text-[#F26522]">
+        <button type="button" onClick={showLogin} className="w-full text-sm font-medium text-gray-700 hover:text-[#091e44]">
           Back to login
         </button>
       </form>
@@ -254,7 +254,7 @@ export default function AdminLoginForm() {
             required
             value={form.email}
             onChange={(event) => setForm({ ...form, email: event.target.value })}
-            className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-4 text-sm text-black outline-none transition-colors focus:border-[#F26522]"
+            className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-4 text-sm text-black outline-none transition-colors focus:border-[#091e44]"
             placeholder="admin@example.com"
           />
         </div>
@@ -269,14 +269,14 @@ export default function AdminLoginForm() {
             required
             value={form.password}
             onChange={(event) => setForm({ ...form, password: event.target.value })}
-            className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#F26522]"
+            className="w-full rounded-xl border border-black/20 bg-white py-3.5 pl-12 pr-12 text-sm text-black outline-none transition-colors focus:border-[#091e44]"
             placeholder="Password"
           />
           <button
             type="button"
             aria-label={showLoginPassword ? 'Hide password' : 'Show password'}
             onClick={() => setShowLoginPassword(!showLoginPassword)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#F26522]"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 transition-colors hover:text-[#091e44]"
           >
             {showLoginPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
@@ -286,12 +286,12 @@ export default function AdminLoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-xl bg-[#F26522] py-4 font-medium text-black transition-colors hover:bg-[#D4521A] disabled:cursor-not-allowed disabled:opacity-70"
+        className="w-full rounded-xl bg-[#091e44] py-4 font-medium text-white transition-colors hover:bg-[#061632] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {loading ? 'Checking...' : 'Login to Dashboard'}
       </button>
 
-      <button type="button" onClick={showForgotPassword} className="w-full text-sm font-medium text-gray-700 hover:text-[#F26522]">
+      <button type="button" onClick={showForgotPassword} className="w-full text-sm font-medium text-gray-700 hover:text-[#091e44]">
         Forgot password?
       </button>
     </form>

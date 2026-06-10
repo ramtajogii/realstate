@@ -17,7 +17,7 @@ const categoryColors: Record<string, string> = {
   Trends: 'bg-purple-500/20 text-purple-400',
   Legal: 'bg-red-500/20 text-red-400',
   NRI: 'bg-yellow-500/20 text-yellow-400',
-  Lifestyle: 'bg-[#F26522]/20 text-[#F26522]',
+  Lifestyle: 'bg-[#091e44]/20 text-[#091e44]',
 }
 
 export default function BlogPage() {
@@ -28,7 +28,7 @@ export default function BlogPage() {
         <Image src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80" alt="Blog" fill className="object-cover" />
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#F26522] text-xs uppercase tracking-widest">Insights & News</span>
+          <span className="text-[#091e44] text-xs uppercase tracking-widest">Insights & News</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">Our Blog</h1>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
-              <Link key={post.id} href={`/blog/${post.id}`} className="group bg-[#F7F7F7] rounded-2xl overflow-hidden border border-black/10 hover:border-[#F26522]/30 transition-all duration-300">
+              <Link key={post.id} href={`/blog/${post.id}`} className="group bg-[#F7F7F7] rounded-2xl overflow-hidden border border-black/10 hover:border-[#091e44]/30 transition-all duration-300">
                 <div className="relative h-52 overflow-hidden">
                   <Image src={post.img} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <span className={`absolute top-4 left-4 text-xs px-3 py-1 rounded-full font-medium ${categoryColors[post.category]}`}>
@@ -50,11 +50,11 @@ export default function BlogPage() {
                     <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
                     <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-black group-hover:text-[#F26522] transition-colors mb-3 leading-snug">
+                  <h3 className="font-display text-lg font-bold text-black group-hover:text-[#091e44] transition-colors mb-3 leading-snug">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
-                  <span className="flex items-center gap-1 text-[#F26522] text-sm font-medium">
+                  <span className="flex items-center gap-1 text-[#091e44] text-sm font-medium">
                     Read More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
