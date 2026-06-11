@@ -160,7 +160,7 @@ export default function HomePage() {
                 Explore Projects <ArrowRight size={18} />
               </Link>
             </div> */}
-              {/* <Link
+            {/* <Link
                 href="/contact"
                 className="flex items-center gap-2 px-8 py-4 bg-black/5 backdrop-blur border border-black/30 text-black font-medium rounded-full hover:bg-black/10 transition-all duration-300"
               >
@@ -174,6 +174,35 @@ export default function HomePage() {
           <span className="text-gray-600 text-xs uppercase tracking-widest">Scroll</span>
           <div className="w-px h-8 bg-[#091e44]" />
         </div> */}
+      </section>
+
+      {/* ===== STATS SECTION ===== */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#091e44] to-[#061632] py-16">
+        {/* Background decorative patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-80 h-80 bg-white rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C9922A] rounded-full filter blur-3xl translate-x-1/3 translate-y-1/3" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center justify-center text-center reveal transition-all duration-300 hover:scale-105"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 mb-4 shadow-inner text-[#C9922A] transition-colors duration-300 hover:bg-[#C9922A]/20">
+                  <stat.icon size={26} />
+                </div>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold text-white mb-2 tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-white/60 text-xs sm:text-sm font-semibold uppercase tracking-widest leading-snug">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
@@ -198,9 +227,8 @@ export default function HomePage() {
                   className="rounded-2xl object-cover w-full h-64 mt-8"
                 />
               </div>
-              {/* Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#091e44] rounded-2xl p-6 text-white shadow-2xl">
-                <div className="text-3xl font-display font-bold">15+</div>
+              <div className="absolute -bottom-6 right-2 md:-right-6 bg-[#091e44] rounded-2xl p-6 text-white shadow-2xl">
+                <div className="text-3xl font-outfit font-bold">15+</div>
                 <div className="text-xs uppercase tracking-wide text-white/80">Years of Trust</div>
               </div>
             </div>
@@ -228,23 +256,6 @@ export default function HomePage() {
                 Know More <ArrowRight size={16} />
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== STATS SECTION ===== */}
-      <section className="bg-[#091e44] py-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center reveal">
-                <stat.icon size={28} className="text-white/75 mx-auto mb-3" />
-                <div className="text-4xl md:text-5xl font-display font-bold text-white mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-white/75 text-sm uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

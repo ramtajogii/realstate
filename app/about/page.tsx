@@ -44,8 +44,8 @@ export default function AboutPage() {
           </div>
           <div className="relative reveal">
             <Image src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="About" width={700} height={500} className="rounded-2xl object-cover w-full h-96" />
-            <div className="absolute -bottom-6 -left-6 bg-[#091e44] rounded-2xl p-6 text-white">
-              <div className="text-3xl font-display font-bold">120+</div>
+            <div className="absolute -bottom-6 left-2 md:-left-6 bg-[#091e44] rounded-2xl p-6 text-white">
+              <div className="text-3xl font-outfit font-bold">120+</div>
               <div className="text-xs uppercase tracking-wide text-white/80">Projects Delivered</div>
             </div>
           </div>

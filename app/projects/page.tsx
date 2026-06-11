@@ -49,7 +49,7 @@ export default function ProjectsPage() {
       {/* Filter */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-center gap-3 mb-14">
+          <div className="flex flex-wrap justify-center gap-3 mb-14">
             {filters.map((f) => (
               <button
                 key={f}
