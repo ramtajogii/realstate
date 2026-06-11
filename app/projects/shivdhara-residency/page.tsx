@@ -56,33 +56,67 @@ export default function ShivdharaResidencyPage() {
         </div>
       </section>
 
-      <section className="bg-[#F7F7F7] py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid items-stretch gap-6 lg:grid-cols-2">
-            {planImages.map((image) => (
-              <div key={image.src} className="flex aspect-[3/4] items-center justify-center overflow-hidden bg-white p-3 shadow-xl shadow-black/10">
+      <section className="bg-[#F7F7F7] py-16 border-t border-black/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider">Layout & Plans</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Society Map & Layout Overview</h2>
+            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Left Column: Map */}
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
+              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Map & Layout Plan</h3>
+              </div>
+              <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={1275}
-                  height={1800}
-                  className="h-full w-full object-contain"
+                  src="/shivdhara/home.png"
+                  alt="Dalan Samridhi Society Map"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
-            ))}
+            </div>
+
+            {/* Right Column: Unit Plan */}
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
+              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan Layout</h3>
+              </div>
+              <div className="flex-grow bg-white group overflow-hidden">
+                <Image
+                  src="/shivdhara/unit-plan.png"
+                  alt="Dalan Samridhi Unit Plan"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-6">
-          <Image
-            src="/shivdhara/amentites.png"
-            alt="Dalan Samridhi amenities"
-            width={1018}
-            height={504}
-            className="mx-auto h-auto w-full max-w-5xl object-contain shadow-xl shadow-black/10"
-          />
+          <div className="text-center mb-12">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Experience Luxury</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Project Amenities</h2>
+            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+          </div>
+
+          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
+            <Image
+              src="/shivdhara/amentites.png"
+              alt="Dalan Samridhi amenities"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+            />
+          </div>
         </div>
       </section>
     </>

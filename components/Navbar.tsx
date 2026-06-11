@@ -15,11 +15,6 @@ const navLinks: NavLink[] = [
   {
     label: 'About',
     href: '/about',
-    dropdown: [
-      { label: 'About DALAN Builders', href: '/about' },
-      { label: 'Our Team', href: '/about#team' },
-      { label: 'Careers', href: '/about#careers' },
-    ],
   },
   {
     label: 'Projects',
@@ -41,8 +36,8 @@ const navLinks: NavLink[] = [
             label: 'Duplex',
             href: '/projects?type=residential&category=duplex',
             dropdown: [
-              { label: 'DALAN Avenue', href: '/projects?type=residential&category=duplex&project=dalan-avenue' },
-              { label: 'DALAN Saubhagyam', href: '/projects?type=residential&category=duplex&project=dalan-saubhagyam' },
+              { label: 'DALAN Avenue', href: '/projects/dalan-avenue' },
+              { label: 'DALAN Saubhagyam', href: '/projects/dalan-saubhagyam' },
             ],
           },
           {

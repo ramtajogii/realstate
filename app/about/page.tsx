@@ -52,38 +52,55 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#F7F7F7] py-16">
-        <div className="w-full">
-          <Image
-            src="/about/amentites.png"
-            alt="Dalan Avenue Micro Society amenities"
-            width={1018}
-            height={504}
-            className="h-auto w-full object-cover shadow-xl shadow-black/10"
-          />
+      <section className="bg-[#F7F7F7] py-16 border-t border-black/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Experience Smart Living</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Project Amenities</h2>
+            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+          </div>
+
+          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group reveal">
+            <Image
+              src="/about/amentites.png"
+              alt="Dalan Avenue Micro Society amenities"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+            />
+          </div>
         </div>
       </section>
 
       {/* Values */}
       <section className="py-24 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mx-auto max-w-4xl text-center reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">What Drives Us</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3">Mission, Vision & Values</h2>
-            <div className="w-14 h-1 bg-[#091e44] mx-auto mt-5" />
-            <p className="mt-8 text-gray-600 leading-relaxed">
-              Our mission, vision, and values come together in one promise: to create thoughtfully planned communities with quality construction, transparent policies, innovative design, and lasting trust for every family and investor we serve.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column: Text */}
+            <div className="reveal">
+              <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">What Drives Us</span>
+              <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Mission, Vision & Values</h2>
+              <div className="w-14 h-1 bg-[#C9922A] mb-6" />
+              <p className="text-gray-600 leading-relaxed font-body text-lg">
+                Our mission, vision, and values come together in one promise: to create thoughtfully planned communities with quality construction, transparent policies, innovative design, and lasting trust for every family and investor we serve.
+              </p>
+            </div>
 
-          <div className="mt-14 reveal">
-            <Image
-              src="/about/image.jpg"
-              alt="Dalan Avenue Micro Society"
-              width={814}
-              height={1500}
-              className="mx-auto h-auto w-full max-w-3xl object-contain"
-            />
+            {/* Right Column: Image styled similar to Avenue cards */}
+            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300 group reveal">
+              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Overview</h3>
+              </div>
+              <div className="flex-grow bg-white overflow-hidden">
+                <Image
+                  src="/about/image.jpg"
+                  alt="Dalan Avenue Micro Society Values"
+                  width={814}
+                  height={1500}
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
