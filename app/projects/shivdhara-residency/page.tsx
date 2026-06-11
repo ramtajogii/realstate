@@ -9,8 +9,8 @@ const paragraphs = [
 ]
 
 const planImages = [
-  { src: '/shivdhara/home.png', alt: 'Dalan Samridhi home' },
-  { src: '/shivdhara/unit-plan.png', alt: 'Dalan Samridhi unit plan' },
+  { src: '/Shivdhara/home.png', alt: 'Dalan Samridhi home' },
+  { src: '/Shivdhara/unit-plan.png', alt: 'Dalan Samridhi unit plan' },
 ]
 
 export default function ShivdharaResidencyPage() {
@@ -18,7 +18,7 @@ export default function ShivdharaResidencyPage() {
     <>
       <section className="bg-white">
         <Image
-          src="/shivdhara/main.png"
+          src="/Shivdhara/main.png"
           alt="Dalan Samridhi"
           width={881}
           height={881}
@@ -72,7 +72,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/shivdhara/home.png"
+                  src="/Shivdhara/home.png"
                   alt="Dalan Samridhi Society Map"
                   width={1200}
                   height={900}
@@ -88,7 +88,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/shivdhara/unit-plan.png"
+                  src="/Shivdhara/unit-plan.png"
                   alt="Dalan Samridhi Unit Plan"
                   width={1200}
                   height={900}
@@ -110,7 +110,7 @@ export default function ShivdharaResidencyPage() {
 
           <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
             <Image
-              src="/shivdhara/amentites.png"
+              src="/Shivdhara/amentites.png"
               alt="Dalan Samridhi amenities"
               width={1200}
               height={600}
