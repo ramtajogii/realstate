@@ -24,7 +24,7 @@ const featuredProjects = [
     title: 'Shivdhara Residency',
     location: 'Village Kanudih, near Chandmari, Varanasi',
     type: 'Row House',
-    image: '/Shivdhara/main.png',
+    image: '/Shivdhara/shivdhara.png',
     status: 'Ready to Move',
   },
   {
@@ -32,7 +32,7 @@ const featuredProjects = [
     title: 'DALAN Avenue',
     location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi',
     type: 'Duplex',
-    image: '/avenue/home.jpg',
+    image: '/avenue/avenue.png',
     status: 'New Launch',
   },
   {
@@ -40,7 +40,7 @@ const featuredProjects = [
     title: 'DALAN Saubhagyam',
     location: 'Ring Road, Varanasi',
     type: 'Duplex',
-    image: '/shaubhagyam/home.jpg',
+    image: '/shaubhagyam/shubhagyam.png',
     status: 'Under Construction',
   },
 ]
@@ -125,47 +125,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl">
-            {/* <span className="inline-block px-4 py-1.5 bg-[#091e44]/20 border border-[#091e44]/40 rounded-full text-[#091e44] text-xs uppercase tracking-widest mb-6 animate-fade-in">
-              Premium
-            </span> */}
-
-            {/* <h1 className="font-display text-5xl md:text-7xl font-bold text-black leading-tight mb-6 animate-fade-up">
-              Build Your{' '}
-              <span className="text-[#091e44]">Dream</span>{' '}
-              Space
-            </h1> */}
-
-            {/* <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              DALAN Builders delivers world-class residential and commercial properties
-              built for the way you live and work today.
-            </p> */}
-
-            {/* <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <Link
-                href="/projects"
-                className="flex items-center gap-2 px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-xl hover:shadow-[#091e44]/40 hover:gap-3"
-              >
-                Explore Projects <ArrowRight size={18} />
-              </Link>
-            </div> */}
-            {/* <Link
-                href="/contact"
-                className="flex items-center gap-2 px-8 py-4 bg-black/5 backdrop-blur border border-black/30 text-black font-medium rounded-full hover:bg-black/10 transition-all duration-300"
-              >
-                <Play size={16} className="text-[#091e44]" /> Watch Story
-              </Link> */}
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-gray-600 text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-8 bg-[#091e44]" />
-        </div> */}
       </section>
 
       {/* ===== STATS SECTION ===== */}
