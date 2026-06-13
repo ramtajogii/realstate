@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Inbox } from 'lucide-react';
 import AdminLogoutButton from '@/components/AdminLogoutButton';
+import AdminLimitSelect from '@/components/AdminLimitSelect';
 import dbConnect from '@/lib/db';
 import { ADMIN_COOKIE_NAME, verifyAdminToken } from '@/lib/adminAuth';
 import Contact from '@/models/Contact';
@@ -125,21 +126,10 @@ export default async function AdminDashboardPage({
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <form action="/admin/dashboard" className="flex items-center gap-2">
                 <input type="hidden" name="page" value="1" />
-                <label htmlFor="limit" className="text-sm text-gray-600">
+                <span className="text-sm text-gray-600">
                   Rows
-                </label>
-                <select
-                  id="limit"
-                  name="limit"
-                  defaultValue={limit}
-                  className="rounded-lg border border-black/20 bg-white px-3 py-2 text-sm text-black outline-none focus:border-[#091e44]"
-                >
-                  {PAGE_LIMITS.map((pageLimit) => (
-                    <option key={pageLimit} value={pageLimit}>
-                      {pageLimit}
-                    </option>
-                  ))}
-                </select>
+                </span>
+                <AdminLimitSelect defaultValue={limit} options={PAGE_LIMITS} />
                 <button
                   type="submit"
                   className="rounded-lg bg-[#091e44] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#061632]"

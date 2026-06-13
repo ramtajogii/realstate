@@ -1,13 +1,33 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ChevronDown } from 'lucide-react'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const options = [
+    { value: '', label: 'Select a project' },
+    { value: 'residential', label: 'Residential' },
+    { value: 'commercial', label: 'Commercial' },
+    { value: 'farmhouse', label: 'Farm House' },
+    { value: 'Other', label: 'Other' }
+  ]
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     let value = e.target.value;
@@ -135,15 +155,38 @@ export default function ContactPage() {
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Email Address</label>
                   <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@email.com" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                 </div>
-                <div>
+                <div className="relative" ref={dropdownRef}>
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Interested In</label>
-                  <select name="subject" value={form.subject} onChange={handleChange} className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm focus:outline-none focus:border-[#091e44] transition-colors">
-                    <option value="" className="bg-[#F7F7F7]">Select a project type</option>
-                    <option value="residential" className="bg-[#F7F7F7]">Residential Property</option>
-                    <option value="commercial" className="bg-[#F7F7F7]">Commercial Property</option>
-                    <option value="investment" className="bg-[#F7F7F7]">Investment Query</option>
-                    <option value="other" className="bg-[#F7F7F7]">General Enquiry</option>
-                  </select>
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm focus:outline-none focus:border-[#091e44] transition-all flex items-center justify-between text-left"
+                  >
+                    <span>{options.find(o => o.value === form.subject)?.label || 'Select a project'}</span>
+                    <ChevronDown size={16} className={`text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {isOpen && (
+                    <div className="absolute z-50 left-0 right-0 mt-2 bg-white border border-black/10 rounded-xl shadow-xl overflow-hidden">
+                      {options.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          onClick={() => {
+                            setForm({ ...form, subject: opt.value })
+                            setIsOpen(false)
+                          }}
+                          className={`w-full text-left px-4 py-3 text-sm text-black transition-colors ${
+                            form.subject === opt.value
+                              ? 'bg-[#091e44]/10 font-semibold'
+                              : 'hover:bg-[#091e44]/5'
+                          }`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Message</label>

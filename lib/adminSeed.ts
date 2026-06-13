@@ -12,9 +12,9 @@ export async function ensureDefaultAdmin() {
 
   await dbConnect();
 
-  const adminCount = await Admin.countDocuments();
+  const existingAdmin = await Admin.findOne({ email });
 
-  if (adminCount > 0) {
+  if (existingAdmin) {
     return;
   }
 

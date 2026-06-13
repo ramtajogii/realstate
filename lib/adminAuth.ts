@@ -4,14 +4,12 @@ export type AdminTokenPayload = {
   adminId: string;
   email: string;
   role: 'admin';
-  exp: number;
 };
 
 const encoder = new TextEncoder();
-const ADMIN_TOKEN_MAX_AGE_SECONDS = 60 * 60 * 8;
 
 function getAuthSecret() {
-  return process.env.ADMIN_AUTH_SECRET || process.env.NEXTAUTH_SECRET || 'change-this-admin-secret';
+  return process.env.NEXTAUTH_SECRET || 'change-this-admin-secret';
 }
 
 function bytesToBase64Url(bytes: Uint8Array) {
@@ -61,12 +59,8 @@ async function signValue(value: string) {
   return bytesToBase64Url(new Uint8Array(signature));
 }
 
-export async function createAdminToken(payload: Omit<AdminTokenPayload, 'exp'>, maxAgeSeconds = ADMIN_TOKEN_MAX_AGE_SECONDS) {
-  const body: AdminTokenPayload = {
-    ...payload,
-    exp: Math.floor(Date.now() / 1000) + maxAgeSeconds,
-  };
-  const encodedPayload = base64UrlEncode(JSON.stringify(body));
+export async function createAdminToken(payload: AdminTokenPayload) {
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
   const signature = await signValue(encodedPayload);
 
   return `${encodedPayload}.${signature}`;
@@ -92,9 +86,7 @@ export async function verifyAdminToken(token?: string | null) {
   try {
     const payload = JSON.parse(base64UrlDecode(encodedPayload)) as AdminTokenPayload;
 
-    const now = Math.floor(Date.now() / 1000);
-
-    if (payload.role !== 'admin' || payload.exp < now || payload.exp > now + ADMIN_TOKEN_MAX_AGE_SECONDS) {
+    if (payload.role !== 'admin') {
       return null;
     }
 

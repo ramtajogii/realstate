@@ -20,36 +20,28 @@ const loopingHeroSlides = [...heroSlides, heroSlides[0]]
 
 const featuredProjects = [
   {
-    id: 1,
-    title: 'DALAN Builders Heights',
-    location: 'Sigra, Varanasi',
-    type: 'Residential',
-    image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
+    id: 'shivdhara-residency',
+    title: 'Shivdhara Residency',
+    location: 'Village Kanudih, near Chandmari, Varanasi',
+    type: 'Row House',
+    image: '/Shivdhara/main.png',
     status: 'Ready to Move',
   },
   {
-    id: 2,
-    title: 'DALAN Builders Business Park',
-    location: 'Sarnath, Varanasi',
-    type: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
-    status: 'Under Construction',
-  },
-  {
-    id: 3,
-    title: 'DALAN Builders Villas',
-    location: 'Lanka, Varanasi',
-    type: 'Residential',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
+    id: 'dalan-avenue',
+    title: 'DALAN Avenue',
+    location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi',
+    type: 'Duplex',
+    image: '/avenue/home.jpg',
     status: 'New Launch',
   },
   {
-    id: 4,
-    title: 'DALAN Builders Arcade',
-    location: 'Cantonment, Varanasi',
-    type: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
-    status: 'Ready to Move',
+    id: 'dalan-saubhagyam',
+    title: 'DALAN Saubhagyam',
+    location: 'Ring Road, Varanasi',
+    type: 'Duplex',
+    image: '/shaubhagyam/home.jpg',
+    status: 'Under Construction',
   },
 ]
 
@@ -207,55 +199,24 @@ export default function HomePage() {
 
       {/* ===== ABOUT SECTION ===== */}
       <section className="py-20 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image Grid */}
-            <div className="relative reveal">
-              <div className="grid grid-cols-2 gap-4">
-                <Image
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=500&q=80"
-                  alt="About DALAN Builders"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl object-cover w-full h-64"
-                />
-                <Image
-                  src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=500&q=80"
-                  alt="About DALAN Builders"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl object-cover w-full h-64 mt-8"
-                />
-              </div>
-              <div className="absolute -bottom-6 right-2 md:-right-6 bg-[#091e44] rounded-2xl p-6 text-white shadow-2xl">
-                <div className="text-3xl font-outfit font-bold">15+</div>
-                <div className="text-xs uppercase tracking-wide text-white/80">Years of Trust</div>
-              </div>
-            </div>
-
-            {/* Text */}
-            <div className="reveal">
-              <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-6 leading-tight">
-                Building More Than Structures
-              </h2>
-              <div className="w-14 h-1 bg-[#091e44] mb-6" />
-              <p className="text-gray-600 leading-relaxed mb-4">
-                DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
-                For over 15 years, we have delivered residential communities and commercial destinations that stand
-                the test of time.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-8">
-                Every project we undertake is guided by our commitment to quality construction, innovative design,
-                and on-time delivery. We don't just build properties — we build legacies.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-[#091e44] text-[#091e44] rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300"
-              >
-                Know More <ArrowRight size={16} />
-              </Link>
-            </div>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="reveal">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-6 leading-tight">
+              Building More Than Homes
+            </h2>
+            <div className="w-14 h-1 bg-[#091e44] mx-auto mb-6" />
+            <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+              DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
+              For over 15 years, we have delivered residential communities and commercial destinations that stand
+              the test of time.
+            </p>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
+            >
+              Know More <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
@@ -267,13 +228,13 @@ export default function HomePage() {
           <div className="text-center mb-16 reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Our Projects</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
-              Landmark Properties
+              Featured Projects
             </h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
           </div>
 
           {/* Project Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, i) => (
               <Link
                 key={project.id}
@@ -298,12 +259,12 @@ export default function HomePage() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="text-[#091e44] text-xs uppercase tracking-wider">{project.type}</span>
-                    <h3 className="font-display text-xl font-bold text-black mt-1">{project.title}</h3>
-                    <p className="text-gray-700 text-sm mt-1 flex items-center gap-1">
+                    <span className="text-[#C9922A] text-xs font-semibold uppercase tracking-wider">{project.type}</span>
+                    <h3 className="font-display text-xl font-bold text-white mt-1">{project.title}</h3>
+                    <p className="text-white/80 text-sm mt-1 flex items-center gap-1">
                       📍 {project.location}
                     </p>
-                    <div className="mt-3 flex items-center gap-1 text-[#091e44] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="mt-3 flex items-center gap-1 text-[#C9922A] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       View Details <ArrowRight size={14} />
                     </div>
                   </div>
@@ -374,11 +335,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6 reveal">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black mb-6">
-            Ready to Find Your{' '}
-            <span className="text-[#091e44]">Dream Property?</span>
+            Ready to Own a Legacy of{' '}
+            <span className="text-[#091e44]">Comfort and Trust?</span>
           </h2>
           <p className="text-gray-700 text-lg mb-10">
-            Talk to our expert team today and take the first step towards owning your perfect space.
+            Your dream space in Varanasi is just a conversation away. Get in touch with our team today to explore layout plans, arrange site visits, or secure your future address.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

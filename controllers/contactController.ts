@@ -24,29 +24,6 @@ export async function handleContactSubmit(req: Request) {
       );
     }
 
-    // 3. Check if phone or email already exists in database
-    const queryConditions: any[] = [{ phone }];
-    if (email && email.trim() !== '') {
-      queryConditions.push({ email: email.toLowerCase().trim() });
-    }
-
-    const existingContact = await Contact.findOne({
-      $or: queryConditions,
-    });
-
-    if (existingContact) {
-      if (email && existingContact.email?.toLowerCase().trim() === email.toLowerCase().trim()) {
-        return NextResponse.json(
-          { error: 'Email already exists, please enter another email.' },
-          { status: 400 }
-        );
-      }
-      return NextResponse.json(
-        { error: 'Phone number already exists, please enter another phone number.' },
-        { status: 400 }
-      );
-    }
-
     // 4. Create new contact
     const newContact = await Contact.create({
       name,

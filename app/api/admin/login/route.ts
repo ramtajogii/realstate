@@ -4,7 +4,7 @@ import Admin from '@/models/Admin';
 import { ADMIN_COOKIE_NAME, createAdminToken } from '@/lib/adminAuth';
 import { verifyPassword } from '@/lib/password';
 
-const COOKIE_MAX_AGE = 60 * 60 * 8;
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365 * 100; // 100 years
 
 export async function POST(req: NextRequest) {
   try {
@@ -22,14 +22,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid admin credentials.' }, { status: 401 });
     }
 
-    const token = await createAdminToken(
-      {
-        adminId: admin._id.toString(),
-        email: admin.email,
-        role: 'admin',
-      },
-      COOKIE_MAX_AGE
-    );
+    const token = await createAdminToken({
+      adminId: admin._id.toString(),
+      email: admin.email,
+      role: 'admin',
+    });
 
     const response = NextResponse.json({ message: 'Logged in successfully.' });
 
