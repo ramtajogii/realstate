@@ -8,17 +8,17 @@ const paragraphs = [
   'With loan facility available, ISO 9001:2015 certified construction quality, and a commitment to 100% transparent policies, your journey to owning your dream home has never been this smooth, this trustworthy, or this close.',
 ]
 
-const planImages = [
-  { src: '/Shivdhara/home.png', alt: 'Dalan Samridhi home' },
-  { src: '/Shivdhara/unit-plan.png', alt: 'Dalan Samridhi unit plan' },
-]
+// const planImages = [
+//   { src: '/Shivdhara/home.png', alt: 'Dalan Samridhi home' },
+//   { src: '/Shivdhara/unit-plan.png', alt: 'Dalan Samridhi unit plan' },
+// ]
 
 export default function ShivdharaResidencyPage() {
   return (
     <>
       <section className="bg-white">
         <Image
-          src="/Shivdhara/main.png"
+          src="/Shivdhara/shivdhara.png"
           alt="Dalan Samridhi"
           width={881}
           height={881}
@@ -72,7 +72,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/Shivdhara/home.png"
+                  src="/Shivdhara/facility.png"
                   alt="Dalan Samridhi Society Map"
                   width={1200}
                   height={900}
@@ -88,7 +88,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/Shivdhara/unit-plan.png"
+                  src="/Shivdhara/shivdharaplan.png"
                   alt="Dalan Samridhi Unit Plan"
                   width={1200}
                   height={900}
@@ -110,7 +110,7 @@ export default function ShivdharaResidencyPage() {
 
           <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
             <Image
-              src="/Shivdhara/amentites.png"
+              src="/Shivdhara/amenities.png"
               alt="Dalan Samridhi amenities"
               width={1200}
               height={600}

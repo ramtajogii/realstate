@@ -12,8 +12,8 @@ const stats = [
 ]
 
 const heroSlides = [
-  { src: '/images/master-image.jpg', alt: 'DALAN Builders' },
-  { src: '/images/master-image2.jpg', alt: 'DALAN Builders banner' },
+  { src: '/images/samridhi.jpg', alt: 'DALAN Builders' },
+  { src: '/images/residency.jpg', alt: 'DALAN Builders banner' },
 ]
 
 const loopingHeroSlides = [...heroSlides, heroSlides[0]]

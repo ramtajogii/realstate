@@ -8,7 +8,7 @@ export default function DalanSaubhagyamPage() {
       {/* Full Image Section */}
       <section className="bg-white animate-fade-in">
         <Image
-          src="/shaubhagyam/home.jpg"
+          src="/shaubhagyam/shubhagyam.png"
           alt="DALAN Saubhagyam Home"
           width={1920}
           height={1080}
@@ -80,7 +80,7 @@ export default function DalanSaubhagyamPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/shaubhagyam/map.jpg"
+                  src="/shaubhagyam/shubhagyamplan.png"
                   alt="Dalan Saubhagyam Society Map"
                   width={1200}
                   height={900}
@@ -96,7 +96,7 @@ export default function DalanSaubhagyamPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/shaubhagyam/amentites.png"
+                  src="/shaubhagyam/amenities.png"
                   alt="Dalan Saubhagyam Amenities"
                   width={1200}
                   height={900}

@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/logo/dalan-logo.png"
+              src="/logo/dalan.png"
               alt="DALAN Builders"
               width={660}
               height={678}

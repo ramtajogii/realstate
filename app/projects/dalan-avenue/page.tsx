@@ -8,7 +8,7 @@ export default function DalanAvenuePage() {
       {/* Full Image Section */}
       <section className="bg-white animate-fade-in">
         <Image
-          src="/avenue/home.jpg"
+          src="/avenue/avenue.png"
           alt="DALAN Avenue Home"
           width={1920}
           height={1080}
@@ -80,7 +80,7 @@ export default function DalanAvenuePage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/avenue/map.jpg"
+                  src="/avenue/avenueplan.png"
                   alt="DALAN Avenue Society Map"
                   width={1200}
                   height={900}
@@ -96,7 +96,7 @@ export default function DalanAvenuePage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/avenue/maphome.png"
+                  src="/avenue/avenuemap.png"
                   alt="DALAN Avenue Map Home Layout"
                   width={1200}
                   height={900}
@@ -119,7 +119,7 @@ export default function DalanAvenuePage() {
 
           <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
             <Image
-              src="/avenue/amentites.png"
+              src="/avenue/amenities.png"
               alt="DALAN Avenue Amenities"
               width={1200}
               height={600}

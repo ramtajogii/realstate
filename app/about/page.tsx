@@ -62,7 +62,7 @@ export default function AboutPage() {
 
           <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group reveal">
             <Image
-              src="/about/amentites.png"
+              src="/about/amenities.png"
               alt="Dalan Avenue Micro Society amenities"
               width={1200}
               height={600}
@@ -93,7 +93,7 @@ export default function AboutPage() {
               </div>
               <div className="flex-grow bg-white overflow-hidden">
                 <Image
-                  src="/about/image.jpg"
+                  src="/about/microplots.png"
                   alt="Dalan Avenue Micro Society Values"
                   width={814}
                   height={1500}

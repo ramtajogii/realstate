@@ -121,7 +121,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex h-15 w-22 items-center justify-center">
           <Image
-            src="/logo/dalan-logo.png"
+            src="/logo/dalan.png"
             alt="DALAN Builders"
             width={128}
             height={70}
