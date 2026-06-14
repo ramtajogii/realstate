@@ -54,10 +54,18 @@ export default function DalanSaubhagyamPage() {
               Enquire Now
             </Link>
             <a
-              href="tel:+916389088088"
+              href="tel:+919838096190"
               className="inline-flex items-center justify-center rounded-full border-2 border-[#091e44] px-8 py-3.5 text-sm font-medium text-[#091e44] transition-all duration-300 hover:bg-[#091e44] hover:text-white hover:shadow-md"
             >
-              Call & WhatsApp
+              Call Now
+            </a>
+            <a
+              href="https://wa.me/919838096190"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/30"
+            >
+              WhatsApp Us
             </a>
           </div>
         </div>
@@ -94,7 +102,7 @@ export default function DalanSaubhagyamPage() {
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
                 <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Amenities</h3>
               </div>
-              <div className="flex-grow bg-white group overflow-hidden">
+              <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
                 <Image
                   src="/shaubhagyam/amenities.png"
                   alt="Dalan Saubhagyam Amenities"

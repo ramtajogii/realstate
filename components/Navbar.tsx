@@ -29,30 +29,30 @@ const navLinks: NavLink[] = [
             href: '/projects?type=residential&category=row-house',
             dropdown: [
               { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
-              { label: 'DALAN Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
+              { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
             ],
           },
           {
             label: 'Duplex',
             href: '/projects?type=residential&category=duplex',
             dropdown: [
-              { label: 'DALAN Avenue', href: '/projects/dalan-avenue' },
-              { label: 'DALAN Saubhagyam', href: '/projects/dalan-saubhagyam' },
+              { label: 'Dalan Avenue', href: '/projects/dalan-avenue' },
+              { label: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
             ],
           },
           {
             label: 'Villa',
             href: '/projects?type=residential&category=villa',
             dropdown: [
-              { label: 'DALAN Samriddhi', href: '/projects?type=residential&category=villa&project=dalan-samriddhi' },
+              { label: 'Dalan Samriddhi', href: '/projects/dalan-samridhi' },
             ],
           },
           {
             label: 'Plots',
             href: '/projects?type=residential&category=plots',
             dropdown: [
-              { label: 'DALAN Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
-              { label: 'DALAN Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
+              { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
+              { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
             ],
           },
         ],
@@ -61,7 +61,6 @@ const navLinks: NavLink[] = [
       { label: 'Farm House', href: '/projects?type=farmhouse' },
     ],
   },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -157,6 +156,14 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
+          <a
+            href="https://wa.me/919838096190"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/30"
+          >
+            Connect with Us
+          </a>
           <Link
             href="/contact"
             className="px-5 py-2 bg-[#091e44] text-white text-sm font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30"
@@ -281,7 +288,16 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="pt-4">
+            <div className="pt-4 space-y-3">
+              <a
+                href="https://wa.me/919838096190"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center py-3 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+                onClick={() => setMobileOpen(false)}
+              >
+                Connect with Us
+              </a>
               <Link
                 href="/contact"
                 className="block text-center py-3 bg-[#091e44] text-white rounded-full text-sm font-semibold hover:bg-[#061632] transition-colors shadow-lg shadow-[#091e44]/20"

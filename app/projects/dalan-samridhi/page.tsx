@@ -1,15 +1,21 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
-export default function DalanAvenuePage() {
+const paragraphs = [
+  'Welcome to Dalan Samridhi - a thoughtfully crafted residential community where the promise of a better life begins the moment you step through the gate. Built by the trusted name of Dalan Builders Pvt. Ltd., Dalan Samridhi is designed for families who believe that a home should not just shelter you, but inspire you. Set amidst wide open spaces, clean surroundings, and a warmly connected neighbourhood, every home here is a step towards the life you have always envisioned.',
+  'Located in Village Kanudih, near Chandmari Market on Ring Road, Varanasi, Dalan Samridhi offers the rare combination of peaceful residential living and outstanding city connectivity. Ring Road is just 100 metres away, Chandmari Market is a short 700-metre walk, and LBS International Airport is only 15 minutes from your door. Whether you are a working professional, a growing family, or a smart investor - Dalan Samridhi puts you exactly where you need to be.',
+  'With loan facility available, ISO 9001:2015 certified construction quality, and a commitment to 100% transparent policies, your journey to owning your dream home has never been this smooth, this trustworthy, or this close.',
+]
+
+export default function DalanSamridhiPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Full Image Section */}
       <section className="bg-white animate-fade-in">
         <Image
-          src="/avenue/avenue.png"
-          alt="DALAN Avenue Home"
+          src="/samriddhi/samridhi.png"
+          alt="Dalan Samridhi Hero"
           width={1920}
           height={1080}
           priority
@@ -21,29 +27,23 @@ export default function DalanAvenuePage() {
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-5xl mx-auto px-6">
           <span className="mb-5 inline-block rounded-full bg-[#091e44] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
-            Duplex
+            Villa
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-tight">
-            DALAN Avenue
+            Dalan Samridhi
           </h2>
           <h3 className="mt-4 text-xl md:text-2xl font-bold text-[#091e44] font-display">
-            Find Your Perfect Home on the Avenue of Dreams
+            Where Prosperity Finds Its Home
           </h3>
           <p className="mt-3 text-gray-600 text-sm flex items-center gap-1.5 font-medium">
-            <MapPin size={16} className="text-[#091e44]" /> Village Lodhan, near Om Villas, Chandmari, Varanasi
+            <MapPin size={16} className="text-[#091e44]" /> Village Kanudih, near Chandmari Market on Ring Road, Varanasi
           </p>
           <div className="w-14 h-1 bg-[#C9922A] my-6" />
 
           <div className="mt-8 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed font-body">
-            <p>
-              A new landmark of modern living rises in the heart of Varanasi — <strong className="text-black font-semibold">Welcome to DALAN Avenue</strong> — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.
-            </p>
-            <p>
-              Nestled in Village Lodhan, near Om Villas, Chandmari, Varanasi, Dalan Avenue places you at the heart of a city that is rapidly transforming while staying rooted in its timeless soul. Whether it is the ease of reaching Ring Road in just 300 metres, catching a flight from LBS International Airport in 15 minutes, or exploring the spiritual serenity of Sarnath just 10 minutes away — life at Dalan Avenue keeps you beautifully connected to everything that matters.
-            </p>
-            <p>
-              With the assurance of an ISO 9001:2015 certified developer, flexible finance options through all leading banks, and a commitment to 100% transparent policies, owning your dream home here is not just a possibility — it is a promise.
-            </p>
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
 
           <div className="mt-10 flex flex-wrap gap-4 justify-start">
@@ -71,7 +71,7 @@ export default function DalanAvenuePage() {
         </div>
       </section>
 
-      {/* Society Map and Amenities Side-by-Side Section */}
+      {/* Society Map & Layout Plans */}
       <section className="bg-[#F7F7F7] py-16 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -81,15 +81,15 @@ export default function DalanAvenuePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Column: Map */}
+            {/* Left Column: Facility Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Map & Layout Plan</h3>
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Facility & Amenities Plan</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/avenue/avenueplan.png"
-                  alt="DALAN Avenue Society Map"
+                  src="/samriddhi/facility.png"
+                  alt="Dalan Samridhi Facility Plan"
                   width={1200}
                   height={900}
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
@@ -97,15 +97,15 @@ export default function DalanAvenuePage() {
               </div>
             </div>
 
-            {/* Right Column: Map Home */}
+            {/* Right Column: Society Map */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Map Home Layout</h3>
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Map & Layout Plan</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/avenue/avenuemap.png"
-                  alt="DALAN Avenue Map Home Layout"
+                  src="/samriddhi/samridhiplan.png"
+                  alt="Dalan Samridhi Society Map & Layout"
                   width={1200}
                   height={900}
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
@@ -127,8 +127,8 @@ export default function DalanAvenuePage() {
 
           <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
             <Image
-              src="/avenue/amenities.png"
-              alt="DALAN Avenue Amenities"
+              src="/samriddhi/amenities.png"
+              alt="Dalan Samridhi Amenities"
               width={1200}
               height={600}
               className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"

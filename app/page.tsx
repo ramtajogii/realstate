@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Users, Award, TrendingUp } from 'lucide-react'
+import { ArrowRight, Building2, Users, Award, TrendingUp, Phone } from 'lucide-react'
 
 const stats = [
   { value: '15+', label: 'Years of Excellence', icon: Award },
@@ -20,16 +20,16 @@ const loopingHeroSlides = [...heroSlides, heroSlides[0]]
 
 const featuredProjects = [
   {
-    id: 'shivdhara-residency',
+    id: 'dalan-samridhi',
     title: 'Dalan Samridhi',
     location: 'Village Kanudih, near Chandmari, Varanasi',
-    type: 'Row House',
-    image: '/Shivdhara/shivdhara.png',
+    type: 'Villa',
+    image: '/samriddhi/samridhi.png',
     status: 'Ready to Move',
   },
   {
     id: 'dalan-avenue',
-    title: 'DALAN Avenue',
+    title: 'Dalan Avenue',
     location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi',
     type: 'Duplex',
     image: '/avenue/avenue.png',
@@ -37,7 +37,7 @@ const featuredProjects = [
   },
   {
     id: 'dalan-saubhagyam',
-    title: 'DALAN Saubhagyam',
+    title: 'Dalan Saubhagyam',
     location: 'Ring Road, Varanasi',
     type: 'Duplex',
     image: '/shaubhagyam/shubhagyam.png',
@@ -47,23 +47,35 @@ const featuredProjects = [
 
 const testimonials = [
   {
-    name: 'Rajesh Sharma',
-    role: 'Homeowner, DALAN Builders Heights',
-    text: 'DALAN Builders delivered exactly what they promised. The quality of construction and attention to detail is exceptional. We are absolutely delighted with our new home.',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80',
+    name: 'Rajesh Tiwari',
+    role: 'Homeowner, Dalan Saubhagyam',
+    text: 'We were looking for a home near Ring Road for years, but everything was either too expensive or too far from the city. Dalan Saubhagyam gave us both — a beautiful duplex and a location we could only dream of. The EMI process was so smooth, our family moved in within months',
   },
   {
-    name: 'Priya Reddy',
-    role: 'Business Owner, DALAN Builders Arcade',
-    text: 'The commercial space exceeded all our expectations. Prime location, modern design, and excellent facilities. Best investment we have made for our business.',
-    img: 'https://images.unsplash.com/photo-1494790108755-2616b612b3bc?w=100&q=80',
+    name: 'Sunita Gupta',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'What impressed us most was the transparency. No hidden charges, no last-minute surprises — exactly what they promised on paper is what we got. Our sale deed was registered immediately, just as Dalan had assured us.',
   },
   {
-    name: 'Anil Kumar',
-    role: 'Investor',
-    text: 'I have invested in three DALAN Builders projects. The returns and reliability are unmatched. They are truly the best developers in Varanasi.',
-    img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80',
+    name: 'Amit Srivastava',
+    role: 'Investor, Dalan Avenue Micro Society',
+    text: `I bought a plot in Dalan Avenue Micro Society as an investment two years ago, and the value has grown significantly since then. The location near Om Villas and the well-planned roads make it one of the smartest decisions I've made.`,
   },
+  {
+    name: 'Pooja Mishra',
+    role: 'Homeowner, Dalan Samridhi',
+    text: `Being close to LBS Airport and Sarnath was important for our family, and Dalan Samridhi checked every box. The construction quality is excellent, and the ISO certification really shows in the finishing work`,
+  },
+  {
+    name: 'Vikas Singh',
+    role: 'Homeowner, Shivdhara Residency',
+    text: `My children study at St. Joseph's Convent School, so when we found Shivdhara Residency right in front of it, it felt like fate. The 24x7 security and CCTV give us so much peace of mind every single day.`,
+  },
+  {
+    name: 'Neha & Rohit Verma',
+    role: 'Homeowners, Dalan Saubhagyam',
+    text: `From the first visit to the final registration, the entire Dalan Builders team was honest and supportive. We didn't feel like customers — we felt like family. Highly recommend them to anyone looking in Varanasi`,
+  }
 ]
 
 export default function HomePage() {
@@ -181,7 +193,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-18 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16 reveal">
@@ -247,10 +259,10 @@ export default function HomePage() {
       <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Testimonials</span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
               What Our Clients Say
             </h2>
+            <p className="text-[#64748b] text-lg">Real stories from real families across Dalan Builders' projects</p>
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
           </div>
 
@@ -265,13 +277,6 @@ export default function HomePage() {
                 <div className="text-[#091e44] text-5xl font-display leading-none mb-4">"</div>
                 <p className="text-gray-700 leading-relaxed mb-6 text-sm">{t.text}</p>
                 <div className="flex items-center gap-4 border-t border-black/10 pt-5">
-                  <Image
-                    src={t.img}
-                    alt={t.name}
-                    width={48}
-                    height={48}
-                    className="rounded-full object-cover w-12 h-12"
-                  />
                   <div>
                     <div className="text-black font-semibold text-sm">{t.name}</div>
                     <div className="text-[#091e44] text-xs">{t.role}</div>
@@ -284,35 +289,56 @@ export default function HomePage() {
       </section>
 
       {/* ===== CTA SECTION ===== */}
-      <section className="relative py-24 overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80"
-          alt="CTA"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-white/75" />
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-6 reveal">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-black mb-6">
-            Ready to Own a Legacy of{' '}
-            <span className="text-[#091e44]">Comfort and Trust?</span>
-          </h2>
-          <p className="text-gray-700 text-lg mb-10">
-            Your dream space in Varanasi is just a conversation away. Get in touch with our team today to explore layout plans, arrange site visits, or secure your future address.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-xl hover:shadow-[#091e44]/40"
+      <section className="bg-[#FAF9F6] py-20 px-6">
+        <div className="max-w-6xl mx-auto relative bg-[#18181b] rounded-[32px] overflow-hidden shadow-2xl reveal">
+          {/* Subtle house background vectors */}
+          <div className="absolute inset-0 pointer-events-none opacity-20">
+            {/* Left house outline */}
+            <svg
+              className="absolute left-[8%] bottom-0 h-4/5 w-auto text-white/[0.04]"
+              viewBox="0 0 200 300"
+              fill="currentColor"
             >
-              Get in Touch
-            </Link>
-            <Link
-              href="/projects"
-              className="px-8 py-4 bg-black/5 backdrop-blur border border-black/30 text-black font-medium rounded-full hover:bg-black/10 transition-all duration-300"
+              <path d="M10,120 L100,30 L190,120 L190,300 L10,300 Z" />
+              <path d="M80,300 L80,210 L120,210 L120,300 Z" fill="#18181b" />
+              <rect x="35" y="155" width="35" height="45" fill="#18181b" rx="2" />
+              <rect x="130" y="155" width="35" height="45" fill="#18181b" rx="2" />
+            </svg>
+            {/* Right house outline */}
+            <svg
+              className="absolute right-[8%] bottom-0 h-[85%] w-auto text-white/[0.04]"
+              viewBox="0 0 250 350"
+              fill="currentColor"
             >
-              Browse Projects
-            </Link>
+              <path d="M20,100 L125,10 L230,100 L230,350 L20,350 Z" />
+              <rect x="55" y="140" width="40" height="50" fill="#18181b" rx="2" />
+              <rect x="155" y="140" width="40" height="50" fill="#18181b" rx="2" />
+              <rect x="55" y="235" width="40" height="50" fill="#18181b" rx="2" />
+              <rect x="155" y="235" width="40" height="50" fill="#18181b" rx="2" />
+            </svg>
+          </div>
+
+          <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-16 md:py-24">
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
+              Ready to Find Your Dream Home <br /> in Varanasi?
+            </h2>
+            <p className="text-[#e25c5c] font-display text-2xl md:text-3xl font-bold mt-4 mb-6">
+              Let's Build It Together.
+            </p>
+            <p className="text-zinc-400 text-sm md:text-base md:leading-relaxed max-w-2xl mx-auto mb-10">
+              From plots to premium villas, your perfect address in Kashi is just a call away. Explore floor plans, book a free site visit, or get in touch with our team today.
+            </p>
+            <div className="flex justify-center">
+              <a
+                href="https://wa.me/919838096190"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#e25c5c] hover:bg-[#d44d4d] text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-[#e25c5c]/20 hover:-translate-y-0.5"
+              >
+                <Phone size={18} className="shrink-0" />
+                <span>Call / WhatsApp Now</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

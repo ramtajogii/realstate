@@ -48,7 +48,6 @@ const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
@@ -109,19 +108,18 @@ export default function Footer() {
             <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Our Projects</h4>
             <ul className="space-y-3">
               {[
-                'Residential Apartments',
-                'Commercial Spaces',
-                'Luxury Villas',
-                'Office Complexes',
-                'Retail Spaces',
+                { name: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
+                { name: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
+                { name: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
+                { name: 'Dalan Samridhi', href: '/projects/dalan-samridhi' },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    href="/projects"
+                    href={item.href}
                     className="text-gray-600 text-sm hover:text-[#091e44] transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="w-1 h-1 bg-[#091e44] rounded-full"></span>
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -134,7 +132,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-600 text-sm">
                 <MapPin size={16} className="text-[#091e44] mt-0.5 shrink-0" />
-                <span>DALAN Builders Pvt. ltd. C/O - Brijesh Pandey 203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College) Varanasi UP 221002</span>
+                <span>Dalan Builders Pvt. ltd. C/O - Brijesh Pandey 203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College) Varanasi UP 221002</span>
               </li>
               <li>
                 <a href="tel:+919838096190" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#091e44] transition-colors">
