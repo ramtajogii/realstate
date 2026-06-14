@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
 
+
 const socialLinks = [
   {
     label: 'Instagram',
@@ -14,7 +15,9 @@ const socialLinks = [
   },
   {
     label: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/share/194yMhrgLS/?mibextid=wwXIfr',
+    target: '_blank',
+    rel: 'noopener noreferrer',
     icon: (
       <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
         <path d="M14 8.5V6.7c0-.8.5-1 1-1h2V2.2C16.6 2.1 15.4 2 14.1 2 11.4 2 9.6 3.6 9.6 6.5v2H6.5V12h3.1v10H14V12h3.1l.5-3.5H14Z" />
@@ -72,6 +75,8 @@ export default function Footer() {
                 <a
                   key={item.label}
                   href={item.href}
+                  target={item.target}
+                  rel={item.rel}
                   aria-label={item.label}
                   className="w-9 h-9 rounded-full border border-black/20 flex items-center justify-center text-gray-600 hover:border-[#091e44] hover:text-[#091e44] transition-all duration-300"
                 >

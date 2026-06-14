@@ -51,7 +51,7 @@ const navLinks: NavLink[] = [
             label: 'Plots',
             href: '/projects?type=residential&category=plots',
             dropdown: [
-              { label: 'DALAN Avenue Micro Society', href: '/projects?type=residential&category=plots&project=dalan-avenue-micro-society' },
+              { label: 'DALAN Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
               { label: 'DALAN Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
             ],
           },

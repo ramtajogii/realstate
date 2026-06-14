@@ -21,7 +21,7 @@ const loopingHeroSlides = [...heroSlides, heroSlides[0]]
 const featuredProjects = [
   {
     id: 'shivdhara-residency',
-    title: 'Shivdhara Residency',
+    title: 'Dalan Samridhi',
     location: 'Village Kanudih, near Chandmari, Varanasi',
     type: 'Row House',
     image: '/Shivdhara/shivdhara.png',

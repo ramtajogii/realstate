@@ -21,85 +21,61 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-72 md:h-96 flex items-center overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" alt="About" fill className="object-cover" />
-        <div className="absolute inset-0 bg-white/70" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#091e44] text-xs uppercase tracking-widest">About Us</span>
-          <h1 className="font-display text-5xl font-bold text-black mt-3">Our Story</h1>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className="py-24 bg-[#ffffff]">
+      {/* Company Story */}
+      <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Who We Are</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Dalan Avenue Micro Society</h2>
-            <div className="w-14 h-1 bg-[#091e44] mb-6" />
-            <p className="text-gray-600 leading-relaxed mb-4">Welcome to Dalan Avenue Micro Society a close-knit, beautifully planned residential community where every plot tells a story of smart living and thoughtful design. Nestled in Village Lodhan, near Om Villas, Chandmari, Varanasi, this intimate society is built for those who believe that the best neighbourhoods are the ones where everyone knows each other by name.</p>
-            <p className="text-gray-600 leading-relaxed mb-4">With wide internal roads, a park, lush greenery, and all essential amenities in place, Dalan Avenue Micro Society gives you the warmth of a community and the freedom of your own land — all in one perfectly connected address. Whether you are building your first home or making your smartest investment, this is where your story begins.</p>
-            <p className="text-gray-600 leading-relaxed">Our team of seasoned architects, engineers, and professionals work tirelessly to ensure that every DALAN Builders project sets a new benchmark in the industry.</p>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold font-display">ABOUT US</span>
+            <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Build Your Trust, Build Your Future</h2>
+            <div className="w-14 h-1 bg-[#C9922A] mb-6" />
+            <p className="text-gray-600 leading-relaxed mb-4">
+              <strong className="text-black font-semibold">Dalan Builders</strong>Pvt. Ltd. was founded with a simple yet powerful belief — that every family deserves a home they can be proud of. What started as a vision to bring quality housing to the people of Varanasi has today grown into a trusted name across the city, known for honest dealings, timely delivery, and construction that truly lasts.
+            </p>
+            <p className="text-gray-600 leading-relaxed mb-4">
+              From affordable plots and simplex homes to elegant duplexes, spacious row houses, premium villas, apartments, farm houses, and commercial spaces — our portfolio is built to serve every kind of dream, every kind of family, and every kind of budget. Each project we undertake — whether it's Dalan Saubhagyam, Dalan Avenue, Dalan Samridhi, or Shivdhara Residency — carries forward our promise of quality, transparency, and care.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              As an ISO 9001:2015 certified company, we don't just follow construction standards — we set them. Every home we build goes through careful planning, quality material selection, and skilled craftsmanship, ensuring that what you invest in today becomes a legacy for generations to come.
+            </p>
           </div>
           <div className="relative reveal">
-            <Image src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="About" width={700} height={500} className="rounded-2xl object-cover w-full h-96" />
-            <div className="absolute -bottom-6 left-2 md:-left-6 bg-[#091e44] rounded-2xl p-6 text-white">
-              <div className="text-3xl font-outfit font-bold">120+</div>
-              <div className="text-xs uppercase tracking-wide text-white/80">Projects Delivered</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F7F7F7] py-16 border-t border-black/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Experience Smart Living</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Project Amenities</h2>
-            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
-          </div>
-
-          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group reveal">
-            <Image
-              src="/about/amenities.png"
-              alt="Dalan Avenue Micro Society amenities"
-              width={1200}
-              height={600}
-              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
-            />
+            <Image src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&q=80" alt="About DALAN Builders" width={700} height={500} className="rounded-2xl object-cover w-full h-96" />
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-[#ffffff]">
+      <section className="py-24 bg-[#F7F7F7] border-t border-b border-black/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Column: Text */}
-            <div className="reveal">
-              <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">What Drives Us</span>
-              <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Mission, Vision & Values</h2>
-              <div className="w-14 h-1 bg-[#C9922A] mb-6" />
-              <p className="text-gray-600 leading-relaxed font-body text-lg">
-                Our mission, vision, and values come together in one promise: to create thoughtfully planned communities with quality construction, transparent policies, innovative design, and lasting trust for every family and investor we serve.
+          <div className="text-center mb-16 reveal">
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">WHY CHOOSE US</span>
+            <h2 className="font-display text-4xl font-bold text-black mt-2">Why Families Choose Dalan Builders</h2>
+            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Mission */}
+            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal">
+              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">Our Mission</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                To build thoughtfully planned communities and spaces that enhance the quality of life, offering superior craftsmanship, transparent practices, and lasting value for every family and investor we serve.
               </p>
             </div>
 
-            {/* Right Column: Image styled similar to Avenue cards */}
-            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300 group reveal">
-              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Overview</h3>
-              </div>
-              <div className="flex-grow bg-white overflow-hidden">
-                <Image
-                  src="/about/microplots.png"
-                  alt="Dalan Avenue Micro Society Values"
-                  width={814}
-                  height={1500}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-              </div>
+            {/* Vision */}
+            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.1s' }}>
+              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">Our Vision</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                To be the most trusted and preferred real estate developer in the region, recognized for innovation, integrity, and building customer-centric landmarks that stand the test of time.
+              </p>
+            </div>
+
+            {/* Core Values */}
+            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.2s' }}>
+              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">Core Values</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Uncompromising quality in construction, absolute transparency in all business dealings, customer trust above all, and innovative architecture that harmonizes with modern lifestyle needs.
+              </p>
             </div>
           </div>
         </div>
@@ -107,4 +83,6 @@ export default function AboutPage() {
     </>
   )
 }
+
+
 
