@@ -13,7 +13,7 @@ export default function ShivdharaResidencyPage() {
       {/* Full Image Section */}
       <section className="bg-white animate-fade-in">
         <Image
-          src="/shivdhara/shivdhara.png"
+          src="/Shivdhara/shivdhara.png"
           alt="Shivdhara Residency Hero"
           width={1920}
           height={1080}
@@ -87,7 +87,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
-                  src="/shivdhara/firstfloor.png"
+                  src="/Shivdhara/firstfloor.png"
                   alt="Shivdhara Residency Society Map"
                   width={1200}
                   height={900}
@@ -103,7 +103,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
                 <Image
-                  src="/shivdhara/amenities.png"
+                  src="/Shivdhara/amenities.png"
                   alt="Shivdhara Residency Amenities"
                   width={1200}
                   height={900}
