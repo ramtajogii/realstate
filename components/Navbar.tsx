@@ -157,7 +157,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://wa.me/919838096190"
+            href="https://wa.me/916389088088"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/30"
@@ -290,7 +290,7 @@ export default function Navbar() {
             ))}
             <div className="pt-4 space-y-3">
               <a
-                href="https://wa.me/919838096190"
+                href="https://wa.me/916389088088"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center py-3 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"

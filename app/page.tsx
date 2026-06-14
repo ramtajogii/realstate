@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Users, Award, TrendingUp, Phone } from 'lucide-react'
+import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const stats = [
   { value: '15+', label: 'Years of Excellence', icon: Award },
@@ -16,7 +16,14 @@ const heroSlides = [
   { src: '/images/residency.jpg', alt: 'DALAN Builders banner' },
 ]
 
-const loopingHeroSlides = [...heroSlides, heroSlides[0]]
+const extendedHeroSlides = [
+  heroSlides[heroSlides.length - 1],
+  ...heroSlides,
+  heroSlides[0],
+]
+
+
+
 
 const featuredProjects = [
   {
@@ -78,19 +85,80 @@ const testimonials = [
   }
 ]
 
+const extendedTestimonials = [
+  testimonials[testimonials.length - 1],
+  ...testimonials,
+  testimonials[0],
+]
+
 export default function HomePage() {
   const revealRefs = useRef<HTMLElement[]>([])
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [slideTransition, setSlideTransition] = useState(true)
+  const [currentSlide, setCurrentSlide] = useState(1)
+  const [isHeroTransitioning, setIsHeroTransitioning] = useState(true)
+  const [currentTestimonial, setCurrentTestimonial] = useState(1)
+  const [isTestimonialTransitioning, setIsTestimonialTransitioning] = useState(true)
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setSlideTransition(true)
-      setCurrentSlide((slide) => slide + 1)
-    }, 3000)
+      setIsHeroTransitioning(true)
+      setCurrentSlide((prev) => prev + 1)
+    }, 4000)
 
     return () => window.clearInterval(interval)
-  }, [])
+  }, [currentSlide])
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setIsTestimonialTransitioning(true)
+      setCurrentTestimonial((prev) => prev + 1)
+    }, 6000)
+
+    return () => window.clearInterval(interval)
+  }, [currentTestimonial])
+
+  const handleHeroTransitionEnd = () => {
+    if (currentSlide === extendedHeroSlides.length - 1) {
+      setIsHeroTransitioning(false)
+      setCurrentSlide(1)
+    } else if (currentSlide === 0) {
+      setIsHeroTransitioning(false)
+      setCurrentSlide(extendedHeroSlides.length - 2)
+    }
+  }
+
+  const handleTestimonialTransitionEnd = () => {
+    if (currentTestimonial === extendedTestimonials.length - 1) {
+      setIsTestimonialTransitioning(false)
+      setCurrentTestimonial(1)
+    } else if (currentTestimonial === 0) {
+      setIsTestimonialTransitioning(false)
+      setCurrentTestimonial(extendedTestimonials.length - 2)
+    }
+  }
+
+  const handlePrevSlide = () => {
+    if (currentSlide === 0 || currentSlide === extendedHeroSlides.length - 1) return
+    setIsHeroTransitioning(true)
+    setCurrentSlide((prev) => prev - 1)
+  }
+
+  const handleNextSlide = () => {
+    if (currentSlide === 0 || currentSlide === extendedHeroSlides.length - 1) return
+    setIsHeroTransitioning(true)
+    setCurrentSlide((prev) => prev + 1)
+  }
+
+  const handlePrevTestimonial = () => {
+    if (currentTestimonial === 0 || currentTestimonial === extendedTestimonials.length - 1) return
+    setIsTestimonialTransitioning(true)
+    setCurrentTestimonial((prev) => prev - 1)
+  }
+
+  const handleNextTestimonial = () => {
+    if (currentTestimonial === 0 || currentTestimonial === extendedTestimonials.length - 1) return
+    setIsTestimonialTransitioning(true)
+    setCurrentTestimonial((prev) => prev + 1)
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -111,57 +179,90 @@ export default function HomePage() {
   return (
     <>
       {/* ===== HERO SECTION ===== */}
-      <section className="relative w-full overflow-hidden bg-white">
+      <section className="relative w-full overflow-hidden bg-white group">
         {/* Background Image (replace with video if available) */}
         <div className="relative aspect-[2/1] w-full overflow-hidden bg-white">
           <div
-            className={`flex h-full ${slideTransition ? 'transition-transform duration-700 ease-in-out' : ''}`}
+            className={`flex h-full ${isHeroTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            onTransitionEnd={() => {
-              if (currentSlide === heroSlides.length) {
-                setSlideTransition(false)
-                setCurrentSlide(0)
-              }
-            }}
+            onTransitionEnd={handleHeroTransitionEnd}
           >
-            {loopingHeroSlides.map((slide, index) => (
-              <Image
-                key={`${slide.src}-${index}`}
-                src={slide.src}
-                alt={slide.alt}
-                width={5544}
-                height={2772}
-                className="block h-full w-full shrink-0 object-contain"
-                priority={index === 0}
-              />
+            {extendedHeroSlides.map((slide, index) => (
+              <div key={`${slide.src}-${index}`} className="relative w-full h-full shrink-0">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={5544}
+                  height={2772}
+                  className="block h-full w-full object-contain"
+                  priority={index === 1}
+                />
+              </div>
             ))}
           </div>
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={handlePrevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all duration-300 backdrop-blur-sm focus:outline-none hover:scale-105"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button
+          onClick={handleNextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all duration-300 backdrop-blur-sm focus:outline-none hover:scale-105"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+
+        {/* Dots indicator */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroSlides.map((_, index) => {
+            const isActive = currentSlide === index + 1 ||
+              (currentSlide === 0 && index === heroSlides.length - 1) ||
+              (currentSlide === extendedHeroSlides.length - 1 && index === 0);
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setIsHeroTransitioning(true)
+                  setCurrentSlide(index + 1)
+                }}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#091e44] w-6' : 'bg-black/30 hover:bg-black/50'
+                  }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            )
+          })}
         </div>
       </section>
 
       {/* ===== STATS SECTION ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#091e44] to-[#061632] py-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#091e44] to-[#061632] py-10 md:py-16">
         {/* Background decorative patterns */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-80 h-80 bg-white rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#C9922A] rounded-full filter blur-3xl translate-x-1/3 translate-y-1/3" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center justify-center text-center reveal transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 mb-4 shadow-inner text-[#C9922A] transition-colors duration-300 hover:bg-[#C9922A]/20">
-                  <stat.icon size={26} />
+                <div className="flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 mb-3 md:mb-4 shadow-inner text-[#C9922A] transition-colors duration-300 hover:bg-[#C9922A]/20">
+                  <stat.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-outfit font-bold text-white mb-2 tracking-tight">
+                <div className="text-2xl sm:text-3xl md:text-5xl font-outfit font-bold text-white mb-1 md:mb-2 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-white/60 text-xs sm:text-sm font-semibold uppercase tracking-widest leading-snug">{stat.label}</div>
+                <div className="text-white/60 text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-widest leading-snug">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -256,9 +357,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className="py-20 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
+      <section className="py-20 bg-[#ffffff] overflow-hidden">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12 reveal">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
               What Our Clients Say
             </h2>
@@ -266,24 +367,69 @@ export default function HomePage() {
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
+          {/* Testimonial Slider Container */}
+          <div className="relative reveal px-2 md:px-12">
+            {/* Slider window */}
+            <div className="overflow-hidden rounded-2xl border border-black/10 bg-[#F7F7F7] hover:border-[#091e44]/30 transition-all duration-300 shadow-sm">
               <div
-                key={i}
-                className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-8 reveal hover:border-[#091e44]/30 transition-all duration-300"
-                style={{ animationDelay: `${i * 0.15}s` }}
+                className={`flex ${isTestimonialTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+                onTransitionEnd={handleTestimonialTransitionEnd}
               >
-                {/* Quote Mark */}
-                <div className="text-[#091e44] text-5xl font-display leading-none mb-4">"</div>
-                <p className="text-gray-700 leading-relaxed mb-6 text-sm">{t.text}</p>
-                <div className="flex items-center gap-4 border-t border-black/10 pt-5">
-                  <div>
-                    <div className="text-black font-semibold text-sm">{t.name}</div>
-                    <div className="text-[#091e44] text-xs">{t.role}</div>
+                {extendedTestimonials.map((t, i) => (
+                  <div key={i} className="w-full shrink-0 p-8 md:p-12">
+                    {/* Quote Mark */}
+                    <div className="text-[#091e44] text-5xl md:text-6xl font-display leading-none mb-4 md:mb-6">"</div>
+                    <p className="text-gray-700 leading-relaxed mb-6 md:mb-8 text-sm md:text-base italic">
+                      {t.text}
+                    </p>
+                    <div className="flex items-center gap-4 border-t border-black/10 pt-5">
+                      <div>
+                        <div className="text-black font-semibold text-sm md:text-base">{t.name}</div>
+                        <div className="text-[#091e44] text-xs md:text-sm">{t.role}</div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Left and Right Arrows */}
+            <button
+              onClick={handlePrevTestimonial}
+              className="absolute left-[-8px] md:left-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+            <button
+              onClick={handleNextTestimonial}
+              className="absolute right-[-8px] md:right-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+            </button>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => {
+              const isActive = currentTestimonial === index + 1 ||
+                (currentTestimonial === 0 && index === testimonials.length - 1) ||
+                (currentTestimonial === extendedTestimonials.length - 1 && index === 0);
+              return (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setIsTestimonialTransitioning(true)
+                    setCurrentTestimonial(index + 1)
+                  }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#091e44] w-6' : 'bg-black/20 hover:bg-black/40'
+                    }`}
+                  aria-label={`Go to testimonial slide ${index + 1}`}
+                />
+              )
+            })}
           </div>
         </div>
       </section>
@@ -330,7 +476,7 @@ export default function HomePage() {
             </p>
             <div className="flex justify-center">
               <a
-                href="https://wa.me/919838096190"
+                href="https://wa.me/916389088088"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-[#e25c5c] hover:bg-[#d44d4d] text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-[#e25c5c]/20 hover:-translate-y-0.5"

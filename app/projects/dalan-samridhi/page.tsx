@@ -60,7 +60,7 @@ export default function DalanSamridhiPage() {
               Call Now
             </a>
             <a
-              href="https://wa.me/919838096190"
+              href="https://wa.me/916389088088"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/30"

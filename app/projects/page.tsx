@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, Phone } from 'lucide-react'
 
 const projects = [
-  { id: 'shivdhara-residency', title: 'Shivdhara Residency', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Ready to Move', beds: '3 BHK Row House', price: 'Contact for Price', img: '/shivdhara/shivdhara.png' },
+  { id: 'shivdhara-residency', title: 'Shivdhara Residency', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Ready to Move', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
   { id: 'dalan-avenue', title: 'Dalan Avenue', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'New Launch', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
   { id: 'dalan-saubhagyam', title: 'Dalan Saubhagyam', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Under Construction', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
   { id: 'dalan-samridhi', title: 'Dalan Samridhi', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Ready to Move', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
@@ -120,7 +120,7 @@ export default function ProjectsPage() {
                       Call
                     </a>
                     <a
-                      href="https://wa.me/919838096190"
+                      href="https://wa.me/916389088088"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold transition-all duration-300"
