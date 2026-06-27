@@ -27,12 +27,12 @@ const extendedHeroSlides = [
 
 const featuredProjects = [
   {
-    id: 'dalan-samridhi',
-    title: 'Dalan Samridhi',
-    location: 'Village Kanudih, near Chandmari, Varanasi',
-    type: 'Villa',
-    image: '/samriddhi/samridhi.png',
-    status: 'Ready to Move',
+    id: 'shivdhara-residency',
+    title: 'Shivdhara Residency',
+    location: 'Bharlai, Shivpur, Varanasi',
+    type: 'Row House',
+    image: '/Shivdhara/shivdhara.png',
+    status: 'Delivered',
   },
   {
     id: 'dalan-avenue',
@@ -51,6 +51,14 @@ const featuredProjects = [
     status: 'Under Construction',
   },
 ]
+
+const statusColors: Record<string, string> = {
+  'Under Construction': 'bg-yellow-500 text-black',
+  'New Launch': 'bg-[#091e44] text-white',
+  'Phase - 1 (Delivered)': 'bg-green-500 text-black',
+  'Delivered': 'bg-green-500 text-black',
+}
+
 
 const testimonials = [
   {
@@ -325,7 +333,7 @@ export default function HomePage() {
                   <div className="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 transition-opacity duration-300" />
 
                   {/* Status Badge */}
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-[#091e44] text-white text-xs rounded-full font-medium">
+                  <span className={`absolute top-4 left-4 px-3 py-1 ${statusColors[project.status] || 'bg-[#091e44] text-white'} text-xs rounded-full font-medium`}>
                     {project.status}
                   </span>
 
