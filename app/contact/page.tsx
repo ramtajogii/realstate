@@ -73,9 +73,9 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    { icon: Phone, title: 'Call Us', lines: ['+91 9838096190', '+91 6389088088'] },
+    { icon: Phone, title: 'Call Us', lines: ['+91 6389088088'] },
     { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.com'] },
-    { icon: MapPin, title: 'Visit Us', lines: ['DALAN Builders Pvt. ltd. C/O - Brijesh Pandey', '203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
+    { icon: MapPin, title: 'Visit Us', lines: ['203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
   ]
 

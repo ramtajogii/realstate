@@ -53,7 +53,7 @@ export default function ShivdharaResidencyPage() {
               Enquire Now
             </Link>
             <a
-              href="tel:+919838096190"
+              href="tel:+916389088088"
               className="inline-flex items-center justify-center rounded-full border-2 border-[#091e44] px-8 py-3.5 text-sm font-medium text-[#091e44] transition-all duration-300 hover:bg-[#091e44] hover:text-white hover:shadow-md"
             >
               Call Now

@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const stats = [
-  { value: '15+', label: 'Years of Excellence', icon: Award },
-  { value: '120+', label: 'Projects Delivered', icon: Building2 },
-  { value: '5000+', label: 'Happy Families', icon: Users },
+  { value: '19+', label: 'Years of Excellence', icon: Award },
+  { value: '10+', label: 'Projects Delivered', icon: Building2 },
+  { value: '2000+', label: 'Happy Families', icon: Users },
   { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
 ]
 
