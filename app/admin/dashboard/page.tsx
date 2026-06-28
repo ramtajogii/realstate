@@ -12,6 +12,7 @@ type ContactRow = {
   _id: string;
   name: string;
   email?: string;
+  city?: string;
   phone: string;
   subject?: string;
   message?: string;
@@ -53,7 +54,7 @@ export default async function AdminDashboardPage({
   const skip = (page - 1) * limit;
 
   const contacts = await Contact.find({})
-    .select('name email phone subject message createdAt')
+    .select('name email city phone subject message createdAt')
     .sort({ createdAt: -1 })
     .skip(skip)
     .limit(limit)
@@ -94,7 +95,8 @@ export default async function AdminDashboardPage({
                   <tr>
                     <th className="px-5 py-3 font-semibold">Created</th>
                     <th className="px-5 py-3 font-semibold">Name</th>
-                    <th className="px-5 py-3 font-semibold">Email</th>
+                    {/* <th className="px-5 py-3 font-semibold">Email</th> */}
+                    <th className="px-5 py-3 font-semibold">City</th>
                     <th className="px-5 py-3 font-semibold">Phone</th>
                     <th className="px-5 py-3 font-semibold">Subject</th>
                     <th className="px-5 py-3 font-semibold">Message</th>
@@ -107,7 +109,8 @@ export default async function AdminDashboardPage({
                         {contact.createdAt ? new Date(contact.createdAt).toLocaleString('en-IN') : '-'}
                       </td>
                       <td className="px-5 py-4 font-medium text-black">{contact.name}</td>
-                      <td className="px-5 py-4 text-gray-700">{contact.email || '-'}</td>
+                      <td className="px-5 py-4 text-gray-700">{contact.city || '-'}</td>
+                      {/* <td className="px-5 py-4 text-gray-700">{contact.email || '-'}</td> */}
                       <td className="whitespace-nowrap px-5 py-4 text-gray-700">{contact.phone}</td>
                       <td className="px-5 py-4 text-gray-700">{contact.subject || '-'}</td>
                       <td className="max-w-sm px-5 py-4 text-gray-700">{contact.message || '-'}</td>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ChevronDown } from 'lucide-react'
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '', city: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -114,55 +114,96 @@ export default function ContactPage() {
       <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
           {/* Form */}
-          <div>
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Send a Message</span>
-            <h2 className="font-display text-3xl font-bold text-black mt-3 mb-8">Get In Touch</h2>
+          <div className={submitted ? "flex flex-col justify-center h-full" : ""}>
 
             {submitted ? (
-              <div className="bg-[#F7F7F7] border border-green-500/30 rounded-2xl p-10 text-center">
+              <div className="bg-[#F7F7F7] border border-green-500/30 rounded-2xl p-10 text-center shadow-lg">
                 <CheckCircle size={48} className="text-green-500 mx-auto mb-4" />
                 <h3 className="font-display text-2xl font-bold text-black mb-2">Thank You!</h3>
                 <p className="text-gray-600">We have received your message. Our team will contact you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4 bg-[#091e44] rounded-2xl p-6 md:p-8 shadow-xl">
+                <div className="text-center mb-6">
+                  <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-1.5">
+                    Book an Exclusive Experience
+                  </h3>
+                  <p className="text-white/90 text-xs md:text-sm uppercase tracking-wider font-medium leading-relaxed">
+                    DON'T MISS OUT! Register Today to Get the Best Offers
+                  </p>
+                </div>
+
                 {error && (
                   <div className="bg-red-50 text-red-600 border border-red-200/50 rounded-xl px-4 py-3 text-sm">
                     {error}
                   </div>
                 )}
-                <div className="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Full Name *</label>
-                    <input name="name" required value={form.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
-                  </div>
-                  <div>
-                    <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Phone Number *</label>
-                    <div className="relative flex items-center">
-                      <span className="absolute left-4 text-gray-500 text-sm select-none pointer-events-none">+91</span>
-                      <input
-                        name="phone"
-                        required
-                        value={form.phone}
-                        onChange={handleChange}
-                        placeholder="xxxxxxxxxx"
-                        className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl pl-12 pr-4 py-3.5 text-black text-sm placeholder-gray-400 focus:outline-none focus:border-[#091e44] transition-colors"
-                      />
-                    </div>
-                  </div>
-                </div>
+
+                {/* Name Input */}
                 <div>
-                  <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Email Address</label>
-                  <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@email.com" className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
+                  <input
+                    name="name"
+                    required
+                    aria-label="Full Name"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Your Name*"
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-4 text-black text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-colors shadow-sm"
+                  />
                 </div>
+
+                {/* Phone Input */}
+                <div>
+                  <div className="relative flex items-center">
+                    <span className="absolute left-4 text-gray-500 text-sm select-none pointer-events-none">+91</span>
+                    <input
+                      name="phone"
+                      required
+                      aria-label="Phone Number"
+                      value={form.phone}
+                      onChange={handleChange}
+                      placeholder="Mobile No*"
+                      className="w-full bg-white border border-gray-300 rounded-xl pl-12 pr-4 py-4 text-black text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-colors shadow-sm"
+                    />
+                  </div>
+                </div>
+
+                {/* Email Input is commented out
+                <div>
+                  <input
+                    name="email"
+                    type="email"
+                    aria-label="Email Address"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="Email ID"
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-4 text-black text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-colors shadow-sm"
+                  />
+                </div>
+                */}
+
+                {/* City Input */}
+                <div>
+                  <input
+                    name="city"
+                    aria-label="City"
+                    value={form.city}
+                    onChange={handleChange}
+                    placeholder="Enter City"
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-4 text-black text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-colors shadow-sm"
+                  />
+                </div>
+
+                {/* Dropdown (Interested In) */}
                 <div className="relative" ref={dropdownRef}>
-                  <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Interested In</label>
                   <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm focus:outline-none focus:border-[#091e44] transition-all flex items-center justify-between text-left"
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-4 text-black text-sm focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-all flex items-center justify-between text-left shadow-sm"
                   >
-                    <span>{options.find(o => o.value === form.subject)?.label || 'Select a project'}</span>
+                    <span className={form.subject ? 'text-black' : 'text-gray-400'}>
+                      {options.find(o => o.value === form.subject)?.label || 'Select a project'}
+                    </span>
                     <ChevronDown size={16} className={`text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
                   </button>
                   
@@ -188,22 +229,37 @@ export default function ContactPage() {
                     </div>
                   )}
                 </div>
+
+                {/* Message Input */}
                 <div>
-                  <label className="text-gray-600 text-xs uppercase tracking-wider mb-2 block">Message</label>
-                  <textarea name="message" rows={4} value={form.message} onChange={handleChange} placeholder="Tell us more about your requirements..." className="w-full bg-[#F7F7F7] border border-black/20 rounded-xl px-4 py-3.5 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors resize-none" />
+                  <textarea
+                    name="message"
+                    rows={4}
+                    aria-label="Message"
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell us more about your requirements..."
+                    className="w-full bg-white border border-gray-300 rounded-xl px-4 py-4 text-black text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#091e44]/20 transition-colors resize-none shadow-sm"
+                  />
                 </div>
-                <button type="submit" disabled={loading} className="w-full py-4 bg-[#091e44] text-white font-medium rounded-xl hover:bg-[#061632] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
-                  {loading ? 'Sending...' : (<><Send size={16} /> Send Message</>)}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 bg-black text-white font-bold tracking-wider text-sm uppercase rounded-xl hover:bg-zinc-900 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-md"
+                >
+                  {loading ? 'Sending...' : 'SUBMIT'}
                 </button>
               </form>
             )}
           </div>
 
           {/* Map embed */}
-          <div>
+          <div className="flex flex-col h-full">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Find Us</span>
             <h2 className="font-display text-3xl font-bold text-black mt-3 mb-8">Our Location</h2>
-            <div className="rounded-2xl overflow-hidden h-96 border border-black/10">
+            <div className="rounded-2xl overflow-hidden flex-grow border border-black/10 shadow-xl min-h-[400px] lg:min-h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.313465805562!2d82.9772873!3d25.33413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db715159781%3A0x6b77209930f78505!2sSangam%20River%20Front%20Apartment!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"
                 width="100%"

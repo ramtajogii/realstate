@@ -6,7 +6,7 @@ export async function handleContactSubmit(req: Request) {
   try {
     await dbConnect();
     const body = await req.json();
-    const { name, phone, email, subject, message } = body;
+    const { name, phone, email, city, subject, message } = body;
 
     // 1. Check required fields
     if (!name || !phone) {
@@ -29,6 +29,7 @@ export async function handleContactSubmit(req: Request) {
       name,
       phone,
       email: email ? email.toLowerCase().trim() : undefined,
+      city,
       subject,
       message,
       role: 'user',

@@ -4,6 +4,7 @@ export interface IContact extends Document {
   name: string;
   phone: string;
   email?: string;
+  city?: string;
   subject?: string;
   message?: string;
   role: string;
@@ -23,6 +24,7 @@ const ContactSchema: Schema = new Schema({
     },
   },
   email: { type: String },
+  city: { type: String },
   subject: { type: String },
   message: { type: String },
   role: { type: String, default: 'user' },
