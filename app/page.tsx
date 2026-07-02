@@ -249,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== STATS SECTION ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#091e44] to-[#061632] py-10 md:py-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#091e44] to-[#061632] py-8 md:py-10">
         {/* Background decorative patterns */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-80 h-80 bg-white rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2" />
