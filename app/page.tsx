@@ -288,7 +288,7 @@ export default function HomePage() {
             <div className="w-14 h-1 bg-[#091e44] mx-auto mb-6" />
             <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
               DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
-              For over 15 years, we have delivered residential communities and commercial destinations that stand
+              For over 19+ years, we have delivered residential communities and commercial destinations that stand
               the test of time.
             </p>
             <Link

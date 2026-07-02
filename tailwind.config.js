@@ -23,6 +23,8 @@ module.exports = {
       fontFamily: {
         display: ['Playfair Display', 'Georgia', 'serif'],
         body: ['DM Sans', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        nav: ['Roboto', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',

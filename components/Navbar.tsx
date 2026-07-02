@@ -17,50 +17,44 @@ const navLinks: NavLink[] = [
     href: '/about',
   },
   {
-    label: 'Projects',
-    href: '/projects',
+    label: 'Residential',
+    href: '/projects?type=residential',
     dropdown: [
       {
-        label: 'Residential',
-        href: '/projects?type=residential',
+        label: 'Row House',
+        href: '/projects?type=residential&category=row-house',
         dropdown: [
-          {
-            label: 'Row House',
-            href: '/projects?type=residential&category=row-house',
-            dropdown: [
-              { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
-              { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
-            ],
-          },
-          {
-            label: 'Duplex',
-            href: '/projects?type=residential&category=duplex',
-            dropdown: [
-              { label: 'Dalan Avenue', href: '/projects/dalan-avenue' },
-              { label: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
-            ],
-          },
-          {
-            label: 'Villa',
-            href: '/projects?type=residential&category=villa',
-            dropdown: [
-              { label: 'Dalan Samriddhi', href: '/projects/dalan-samridhi' },
-            ],
-          },
-          {
-            label: 'Plots',
-            href: '/projects?type=residential&category=plots',
-            dropdown: [
-              { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
-              { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
-            ],
-          },
+          { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
+          { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
         ],
       },
-      { label: 'Commercial', href: '/projects?type=commercial' },
-      { label: 'Farm House', href: '/projects?type=farmhouse' },
+      {
+        label: 'Duplex',
+        href: '/projects?type=residential&category=duplex',
+        dropdown: [
+          { label: 'Dalan Avenue', href: '/projects/dalan-avenue' },
+          { label: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
+        ],
+      },
+      {
+        label: 'Villa',
+        href: '/projects?type=residential&category=villa',
+        dropdown: [
+          { label: 'Dalan Samriddhi', href: '/projects/dalan-samridhi' },
+        ],
+      },
+      {
+        label: 'Plots',
+        href: '/projects?type=residential&category=plots',
+        dropdown: [
+          { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
+          { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
+        ],
+      },
     ],
   },
+  { label: 'Commercial', href: '/projects?type=commercial' },
+  { label: 'Farm House', href: '/projects?type=farmhouse' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -91,7 +85,7 @@ export default function Navbar() {
         >
           <Link
             href={item.href}
-            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-base text-gray-700 transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white"
+            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-[13px] font-normal text-[#333333] transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white font-nav uppercase tracking-[0.08em]"
           >
             <span>{item.label}</span>
             {item.dropdown && <ChevronRight size={14} />}
@@ -116,21 +110,21 @@ export default function Navbar() {
           : 'bg-[#ffffff] shadow-sm shadow-black/5 py-2'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-5 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center justify-center shrink-0">
+        <Link href="/" className="flex items-center justify-center shrink-0 mr-4 lg:mr-8">
           <Image
-            src="/logo/dalan.png"
+            src="/logo/dalan2.png"
             alt="DALAN Builders"
-            width={180}
-            height={185}
+            width={150}
+            height={114}
             priority
-            className="h-24 md:h-28 w-auto object-contain transition-all duration-300"
+            className="h-10 md:h-12 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
         {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <li
               key={link.label}
@@ -140,7 +134,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-[#091e44] transition-colors duration-200 font-body tracking-wide"
+                className="flex items-center gap-1 text-[15px] font-normal text-[#333333] hover:text-[#091e44] uppercase transition-colors duration-200 font-nav tracking-[0.08em] whitespace-nowrap"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
@@ -155,18 +149,18 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-2 lg:gap-3 ml-4 lg:ml-8 shrink-0">
           <a
             href="https://wa.me/916389088088"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/30"
+            className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[13px] font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/30 whitespace-nowrap"
           >
             Connect with Us
           </a>
           <Link
             href="/contact"
-            className="px-5 py-2 bg-[#091e44] text-white text-sm font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30"
+            className="px-4 py-1.5 bg-[#091e44] text-white text-[13px] font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30 whitespace-nowrap"
           >
             Enquire Now
           </Link>
@@ -190,7 +184,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between py-2.5 px-1.5 hover:bg-[#091e44]/5 rounded-xl transition-all duration-200">
                   <Link
                     href={link.href}
-                    className="text-base font-bold text-gray-800 hover:text-[#091e44] transition-colors"
+                    className="text-[15px] font-semibold text-gray-800 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
@@ -217,7 +211,7 @@ export default function Navbar() {
                         <div className="flex items-center justify-between py-1.5 px-2 hover:bg-[#091e44]/5 rounded-xl transition-all">
                           <Link
                             href={subLink.href}
-                            className="text-sm font-semibold text-gray-700 hover:text-[#091e44] transition-colors"
+                            className="text-[13px] font-semibold text-gray-700 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
                             {subLink.label}
@@ -244,7 +238,7 @@ export default function Navbar() {
                                 <div className="flex items-center justify-between py-1 px-2 hover:bg-[#091e44]/5 rounded-lg transition-all">
                                   <Link
                                     href={nestedLink.href}
-                                    className="text-xs font-semibold text-gray-600 hover:text-[#091e44] transition-colors"
+                                    className="text-[12px] font-semibold text-gray-600 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
                                     onClick={() => setMobileOpen(false)}
                                   >
                                     {nestedLink.label}
@@ -270,7 +264,7 @@ export default function Navbar() {
                                       <Link
                                         key={deepLink.label}
                                         href={deepLink.href}
-                                        className="block py-1.5 px-2 text-xs font-medium text-gray-500 hover:text-[#091e44] hover:bg-[#091e44]/5 rounded-md transition-colors"
+                                        className="block py-1.5 px-2 text-[11px] font-medium text-gray-500 hover:text-[#091e44] hover:bg-[#091e44]/5 uppercase font-nav tracking-[0.05em] rounded-md transition-colors"
                                         onClick={() => setMobileOpen(false)}
                                       >
                                         • {deepLink.label}
