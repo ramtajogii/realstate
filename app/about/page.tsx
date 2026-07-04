@@ -28,12 +28,12 @@ export default function AboutPage() {
         
         {/* Overlaid Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white reveal">
-          <span className="text-[#C9922A] text-xs md:text-sm uppercase tracking-widest font-bold font-display">Our Heritage</span>
+          {/* <span className="text-[#C9922A] text-xs md:text-sm uppercase tracking-widest font-bold font-display">Our Heritage</span>
           <h1 className="font-display text-3xl md:text-5xl font-bold mt-2 mb-3 tracking-tight uppercase">Varanasi & Dalan</h1>
           <div className="w-12 h-1 bg-[#C9922A] mx-auto mb-3" />
           <p className="text-white/90 text-xs md:text-sm max-w-xl mx-auto font-light uppercase tracking-wider font-nav leading-relaxed">
             Rooted in the spiritual capital of India, building homes that blend quality, tradition, and trust.
-          </p>
+          </p> */}
         </div>
       </section>
 
