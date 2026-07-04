@@ -14,6 +14,29 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* Hero Banner Section (Minimal Full-Width Banner style) */}
+      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden bg-white flex items-center justify-center">
+        <Image
+          src="/about/varansi.jpeg"
+          alt="About Varanasi"
+          fill
+          priority
+          className="block h-full w-full object-fill"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+        
+        {/* Overlaid Content */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white reveal">
+          <span className="text-[#C9922A] text-xs md:text-sm uppercase tracking-widest font-bold font-display">Our Heritage</span>
+          <h1 className="font-display text-3xl md:text-5xl font-bold mt-2 mb-3 tracking-tight uppercase">Varanasi & Dalan</h1>
+          <div className="w-12 h-1 bg-[#C9922A] mx-auto mb-3" />
+          <p className="text-white/90 text-xs md:text-sm max-w-xl mx-auto font-light uppercase tracking-wider font-nav leading-relaxed">
+            Rooted in the spiritual capital of India, building homes that blend quality, tradition, and trust.
+          </p>
+        </div>
+      </section>
+
       {/* Company Story */}
       <section className="py-20 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -89,9 +112,9 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.4s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">📜 Immediate Sale Deed Registration</h3>
+              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">📜 Ready-to-Register Plots</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                We believe in giving you ownership without delays. Our immediate sale deed registration process ensures your legal paperwork is completed quickly and smoothly.
+                Own your plot without unnecessary delays. Our reday-to-register plots come with clear legal documentation, ensuring a smooth, secure, and hassel-free registration process.
               </p>
             </div>
 

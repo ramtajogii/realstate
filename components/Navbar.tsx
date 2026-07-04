@@ -11,7 +11,7 @@ type NavLink = {
 }
 
 const navLinks: NavLink[] = [
-  { label: 'Home', href: '/' },
+  // { label: 'Home', href: '/' },
   {
     label: 'About',
     href: '/about',

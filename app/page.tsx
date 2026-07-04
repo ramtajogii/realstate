@@ -99,12 +99,38 @@ const extendedTestimonials = [
   testimonials[0],
 ]
 
+const welcomeImages = [
+  '/welcome/image1.jpeg',
+  '/welcome/image2.jpeg',
+  '/welcome/image3.jpeg',
+  '/welcome/image4.jpeg',
+  '/welcome/image5.jpeg',
+  '/welcome/image6.jpeg',
+  '/welcome/image7.jpeg',
+  '/welcome/image8.jpeg',
+  '/welcome/image9.jpeg',
+  '/welcome/image10.jpeg',
+  '/welcome/image11.jpeg',
+  '/welcome/image12.jpeg',
+  '/welcome/image13.jpeg',
+  '/welcome/image14.jpeg',
+]
+
 export default function HomePage() {
   const revealRefs = useRef<HTMLElement[]>([])
   const [currentSlide, setCurrentSlide] = useState(1)
   const [isHeroTransitioning, setIsHeroTransitioning] = useState(true)
   const [currentTestimonial, setCurrentTestimonial] = useState(1)
   const [isTestimonialTransitioning, setIsTestimonialTransitioning] = useState(true)
+  const [activeWelcome, setActiveWelcome] = useState(6)
+
+  const handlePrevWelcome = () => {
+    setActiveWelcome((prev) => (prev === 0 ? welcomeImages.length - 1 : prev - 1))
+  }
+
+  const handleNextWelcome = () => {
+    setActiveWelcome((prev) => (prev === welcomeImages.length - 1 ? 0 : prev + 1))
+  }
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -438,6 +464,80 @@ export default function HomePage() {
                 />
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WELCOME COVERFLOW SLIDER SECTION ===== */}
+      <section className="bg-[#ffffff] py-20 px-6 overflow-hidden border-t border-black/5">
+        <div className="max-w-7xl mx-auto text-center">
+          <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2>
+          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
+
+          {/* 3D Cover Flow Slider */}
+          <div className="relative w-full flex flex-col items-center justify-center">
+            <div className="relative flex items-center justify-center h-[350px] md:h-[480px] w-full overflow-visible [perspective:1200px] [transform-style:preserve-3d]">
+              {welcomeImages.map((src, index) => {
+                let diff = index - activeWelcome;
+                const len = welcomeImages.length;
+                if (diff > len / 2) diff -= len;
+                if (diff < -len / 2) diff += len;
+
+                const absDiff = Math.abs(diff);
+                const isVisible = absDiff <= 2;
+
+                // 3D Coverflow styling calculations
+                const rotateY = diff * -35;
+                const translateZ = absDiff * -150;
+                const translateX = diff * 150; // default offset
+                const opacity = diff === 0 ? 1 : 0.55;
+                const zIndex = 10 - absDiff;
+
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveWelcome(index)}
+                    className="absolute w-[220px] h-[290px] md:w-[320px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-in-out cursor-pointer select-none bg-zinc-900 border border-white/10"
+                    style={{
+                      transform: isVisible
+                        ? `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`
+                        : 'scale(0.5) translateZ(-400px)',
+                      opacity: isVisible ? opacity : 0,
+                      zIndex: zIndex,
+                      pointerEvents: isVisible ? 'auto' : 'none',
+                    }}
+                  >
+                    <Image
+                      src={src}
+                      alt={`Dalan Welcome ${index + 1}`}
+                      fill
+                      sizes="(max-w-768px) 220px, 320px"
+                      className="object-cover"
+                      draggable={false}
+                    />
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* Slider Navigation Arrows */}
+            <div className="flex gap-4 mt-8">
+              <button
+                onClick={handlePrevWelcome}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-black/10 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+                aria-label="Previous Welcome Slide"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={handleNextWelcome}
+                className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-black/10 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+                aria-label="Next Welcome Slide"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
