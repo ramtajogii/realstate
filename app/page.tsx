@@ -469,14 +469,10 @@ export default function HomePage() {
       </section>
 
       {/* ===== WELCOME COVERFLOW SLIDER SECTION ===== */}
-      <section className="bg-[#ffffff] py-20 px-6 overflow-hidden border-t border-black/5">
+      <section className="bg-[#ffffff] py-18 px-6 overflow-hidden border-t border-black/5">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2>
-          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
-
           {/* 3D Cover Flow Slider */}
-          <div className="relative w-full flex flex-col items-center justify-center">
+          <div className="relative w-full flex flex-col items-center justify-center mb-12">
             <div className="relative flex items-center justify-center h-[250px] md:h-[380px] w-full overflow-visible [perspective:1200px] [transform-style:preserve-3d] [--welcome-offset:110px] md:[--welcome-offset:220px]">
               {welcomeImages.map((src, index) => {
                 let diff = index - activeWelcome;
@@ -538,6 +534,10 @@ export default function HomePage() {
               </button>
             </div>
           </div>
+
+          {/* <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span> */}
+          {/* <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2> */}
+          {/* <div className="w-14 h-1 bg-[#C9922A] mx-auto" /> */}
         </div>
       </section>
 
