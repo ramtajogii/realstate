@@ -477,7 +477,7 @@ export default function HomePage() {
 
           {/* 3D Cover Flow Slider */}
           <div className="relative w-full flex flex-col items-center justify-center">
-            <div className="relative flex items-center justify-center h-[350px] md:h-[480px] w-full overflow-visible [perspective:1200px] [transform-style:preserve-3d]">
+            <div className="relative flex items-center justify-center h-[250px] md:h-[380px] w-full overflow-visible [perspective:1200px] [transform-style:preserve-3d] [--welcome-offset:110px] md:[--welcome-offset:220px]">
               {welcomeImages.map((src, index) => {
                 let diff = index - activeWelcome;
                 const len = welcomeImages.length;
@@ -490,7 +490,6 @@ export default function HomePage() {
                 // 3D Coverflow styling calculations
                 const rotateY = diff * -35;
                 const translateZ = absDiff * -150;
-                const translateX = diff * 150; // default offset
                 const opacity = diff === 0 ? 1 : 0.55;
                 const zIndex = 10 - absDiff;
 
@@ -498,10 +497,10 @@ export default function HomePage() {
                   <div
                     key={index}
                     onClick={() => setActiveWelcome(index)}
-                    className="absolute w-[220px] h-[290px] md:w-[320px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-in-out cursor-pointer select-none bg-zinc-900 border border-white/10"
+                    className="absolute w-[280px] h-[190px] md:w-[480px] md:h-[320px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-in-out cursor-pointer select-none bg-zinc-900 border border-white/10"
                     style={{
                       transform: isVisible
-                        ? `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`
+                        ? `translateX(calc(${diff} * var(--welcome-offset))) translateZ(${translateZ}px) rotateY(${rotateY}deg)`
                         : 'scale(0.5) translateZ(-400px)',
                       opacity: isVisible ? opacity : 0,
                       zIndex: zIndex,
@@ -512,7 +511,7 @@ export default function HomePage() {
                       src={src}
                       alt={`Dalan Welcome ${index + 1}`}
                       fill
-                      sizes="(max-w-768px) 220px, 320px"
+                      sizes="(max-w-768px) 280px, 480px"
                       className="object-cover"
                       draggable={false}
                     />
