@@ -217,7 +217,7 @@ export default function HomePage() {
         {/* Background Image (replace with video if available) */}
         <div className="relative aspect-[2/1] w-full overflow-hidden bg-white">
           <div
-            className={`flex h-full ${isHeroTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
+            className={`flex h-full w-full ${isHeroTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             onTransitionEnd={handleHeroTransitionEnd}
           >
@@ -406,7 +406,7 @@ export default function HomePage() {
             {/* Slider window */}
             <div className="overflow-hidden rounded-2xl border border-black/10 bg-[#F7F7F7] hover:border-[#091e44]/30 transition-all duration-300 shadow-sm">
               <div
-                className={`flex ${isTestimonialTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
+                className={`flex w-full ${isTestimonialTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
                 style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
                 onTransitionEnd={handleTestimonialTransitionEnd}
               >
@@ -431,14 +431,14 @@ export default function HomePage() {
             {/* Left and Right Arrows */}
             <button
               onClick={handlePrevTestimonial}
-              className="absolute left-[-8px] md:left-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              className="absolute left-1 md:left-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={handleNextTestimonial}
-              className="absolute right-[-8px] md:right-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              className="absolute right-1 md:right-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -468,76 +468,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== WELCOME COVERFLOW SLIDER SECTION ===== */}
-      <section className="bg-[#ffffff] py-18 px-6 overflow-hidden border-t border-black/5">
+      {/* ===== WELCOME IMAGE SLIDER SECTION (Large Image with Thumbnails) ===== */}
+      <section className="bg-[#ffffff] py-6 md:py-8 px-6 overflow-hidden border-t border-black/5">
         <div className="max-w-7xl mx-auto text-center">
-          {/* 3D Cover Flow Slider */}
-          <div className="relative w-full flex flex-col items-center justify-center mb-12">
-            <div className="relative flex items-center justify-center h-[250px] md:h-[380px] w-full overflow-visible [perspective:1200px] [transform-style:preserve-3d] [--welcome-offset:110px] md:[--welcome-offset:220px]">
+          {/* <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2> */}
+          {/* <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-10" /> */}
+
+          {/* Large Image Showcase */}
+          <div className="relative w-full max-w-4xl mx-auto h-[260px] md:h-[420px] rounded-3xl overflow-hidden bg-white group mb-6">
+            <Image
+              src={welcomeImages[activeWelcome]}
+              alt={`Dalan Site Image ${activeWelcome + 1}`}
+              fill
+              priority
+              sizes="(max-w-1024px) 100vw, 1024px"
+              className="object-contain transition-all duration-500 ease-in-out"
+            />
+
+            {/* Arrow Overlay Controls (visible on hover) */}
+            <button
+              onClick={handlePrevWelcome}
+              className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={handleNextWelcome}
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+          </div>
+
+          {/* Thumbnails Scrollable Strip */}
+          <div className="relative w-full max-w-5xl mx-auto">
+            <div className="flex gap-3 overflow-x-auto py-2 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] justify-start md:justify-center w-full">
               {welcomeImages.map((src, index) => {
-                let diff = index - activeWelcome;
-                const len = welcomeImages.length;
-                if (diff > len / 2) diff -= len;
-                if (diff < -len / 2) diff += len;
-
-                const absDiff = Math.abs(diff);
-                const isVisible = absDiff <= 2;
-
-                // 3D Coverflow styling calculations
-                const rotateY = diff * -35;
-                const translateZ = absDiff * -150;
-                const opacity = diff === 0 ? 1 : 0.55;
-                const zIndex = 10 - absDiff;
-
+                const isActive = activeWelcome === index;
                 return (
-                  <div
+                  <button
                     key={index}
                     onClick={() => setActiveWelcome(index)}
-                    className="absolute w-[280px] h-[190px] md:w-[480px] md:h-[320px] rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ease-in-out cursor-pointer select-none bg-zinc-900 border border-white/10"
-                    style={{
-                      transform: isVisible
-                        ? `translateX(calc(${diff} * var(--welcome-offset))) translateZ(${translateZ}px) rotateY(${rotateY}deg)`
-                        : 'scale(0.5) translateZ(-400px)',
-                      opacity: isVisible ? opacity : 0,
-                      zIndex: zIndex,
-                      pointerEvents: isVisible ? 'auto' : 'none',
-                    }}
+                    className={`relative w-20 h-14 md:w-28 md:h-18 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 transition-all duration-300 border-2 ${isActive
+                        ? 'border-[#C9922A] scale-[1.03] shadow-lg ring-2 ring-[#C9922A]/20'
+                        : 'border-transparent opacity-50 hover:opacity-100'
+                      }`}
+                    aria-label={`Go to image ${index + 1}`}
                   >
                     <Image
                       src={src}
-                      alt={`Dalan Welcome ${index + 1}`}
+                      alt={`Thumbnail ${index + 1}`}
                       fill
-                      sizes="(max-w-768px) 280px, 480px"
+                      sizes="(max-w-768px) 80px, 112px"
                       className="object-cover"
-                      draggable={false}
                     />
-                  </div>
+                  </button>
                 )
               })}
             </div>
-
-            {/* Slider Navigation Arrows */}
-            <div className="flex gap-4 mt-8">
-              <button
-                onClick={handlePrevWelcome}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-black/10 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
-                aria-label="Previous Welcome Slide"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={handleNextWelcome}
-                className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-black/10 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
-                aria-label="Next Welcome Slide"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
           </div>
-
-          {/* <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span> */}
-          {/* <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2> */}
-          {/* <div className="w-14 h-1 bg-[#C9922A] mx-auto" /> */}
         </div>
       </section>
 

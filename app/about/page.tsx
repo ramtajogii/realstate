@@ -15,66 +15,45 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Banner Section (Minimal Full-Width Banner style) */}
-      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden bg-white flex items-center justify-center">
-        <Image
+      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden bg-white">
+        <img
           src="/about/varansi.jpeg"
           alt="About Varanasi"
-          fill
-          priority
-          className="block h-full w-full object-fill"
+          className="block"
+          style={{
+            position: 'absolute',
+            top: '30px',
+            left: '30px',
+            width: 'calc(100% - 60px)',
+            height: 'calc(100% - 60px)',
+            color: 'transparent',
+            objectFit: 'fill',
+          }}
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
-        
-        {/* Overlaid Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white reveal">
-          {/* <span className="text-[#C9922A] text-xs md:text-sm uppercase tracking-widest font-bold font-display">Our Heritage</span>
-          <h1 className="font-display text-3xl md:text-5xl font-bold mt-2 mb-3 tracking-tight uppercase">Varanasi & Dalan</h1>
-          <div className="w-12 h-1 bg-[#C9922A] mx-auto mb-3" />
-          <p className="text-white/90 text-xs md:text-sm max-w-xl mx-auto font-light uppercase tracking-wider font-nav leading-relaxed">
-            Rooted in the spiritual capital of India, building homes that blend quality, tradition, and trust.
-          </p> */}
-        </div>
       </section>
 
       {/* Company Story */}
-      <section className="py-20 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-18 bg-[#ffffff]">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold font-display">ABOUT US</span>
             <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Build Your Trust, Build Your Future</h2>
-            <div className="w-14 h-1 bg-[#C9922A] mb-6" />
+            <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-6" />
             <p className="text-gray-600 leading-relaxed mb-4">
-              <strong className="text-black font-semibold">Dalan Builders </strong>Pvt. Ltd. was founded with a simple yet powerful belief — that every family deserves a home they can be proud of. What started as a vision to bring quality housing to the people of Varanasi has today grown into a trusted name across the city, known for honest dealings, timely delivery, and construction that truly lasts.
+              <strong className="text-black font-semibold">Dalan Builders </strong>Pvt. Ltd. was founded with a simple yet powerful belief that every family deserves a home they can be proud of. What started as a vision to bring quality housing to the people of Varanasi has today grown into a trusted name across the city, known for honest dealings, timely delivery, and construction that truly lasts.
             </p>
             <p className="text-gray-600 leading-relaxed mb-4">
-              From affordable plots and simplex homes to elegant duplexes, spacious row houses, premium villas, apartments, farm houses, and commercial spaces — our portfolio is built to serve every kind of dream, every kind of family, and every kind of budget. Each project we undertake — whether it's Dalan Saubhagyam, Dalan Avenue, Dalan Samridhi, or Shivdhara Residency — carries forward our promise of quality, transparency, and care.
+              From affordable plots and simplex homes to elegant duplexes, spacious row houses, premium villas, apartments, farm houses, and commercial spaces our portfolio is built to serve every kind of dream, every kind of family, and every kind of budget. Each project we undertake whether it's Dalan Saubhagyam, Dalan Avenue, Dalan Samridhi, or Shivdhara Residency carries forward our promise of quality, transparency, and care.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              As an ISO 9001:2015 certified company, we don't just follow construction standards — we set them. Every home we build goes through careful planning, quality material selection, and skilled craftsmanship, ensuring that what you invest in today becomes a legacy for generations to come.
+              As an ISO 9001:2015 certified company, we don't just follow construction standards we set them. Every home we build goes through careful planning, quality material selection, and skilled craftsmanship, ensuring that what you invest in today becomes a legacy for generations to come.
             </p>
-          </div>
-          
-          {/* Side Image Card */}
-          <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300 reveal">
-            <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-              <h3 className="text-white font-semibold text-lg font-display tracking-wide">Corporate Vision</h3>
-            </div>
-            <div className="flex-grow bg-white group overflow-hidden">
-              <Image 
-                src="/about/sideimage.png" 
-                alt="About DALAN Builders" 
-                width={700} 
-                height={500} 
-                className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
-              />
-            </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-[#F7F7F7] border-t border-b border-black/5">
+      <section className="py-20 bg-[#F7F7F7] border-t border-b border-black/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">WHY CHOOSE US</span>

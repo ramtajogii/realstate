@@ -21,13 +21,16 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
   background-color: #ffffff;
   color: #000000;
   font-family: 'DM Sans', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 /* Scrollbar */

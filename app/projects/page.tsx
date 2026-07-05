@@ -38,7 +38,7 @@ export default function ProjectsPage() {
     <>
       {/* Hero */}
       <section className="relative h-72 md:h-80 flex items-center overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" />
+        {/* <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Our Portfolio</span>
