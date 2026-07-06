@@ -19,7 +19,7 @@ export default function DalanSamridhiPage() {
           width={1920}
           height={1080}
           priority
-          className="mx-auto h-auto max-h-[720px] w-full object-contain"
+          className="mx-auto h-auto max-h-[calc(100vh-84px)] w-full object-contain"
         />
       </section>
 

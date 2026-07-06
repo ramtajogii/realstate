@@ -228,7 +228,7 @@ export default function HomePage() {
                   alt={slide.alt}
                   width={5544}
                   height={2772}
-                  className="block h-full w-full object-contain"
+                  className="block h-full w-full object-cover"
                   priority={index === 1}
                 />
               </div>

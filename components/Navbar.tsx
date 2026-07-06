@@ -21,12 +21,20 @@ const navLinks: NavLink[] = [
     href: '/projects?type=residential',
     dropdown: [
       {
-        label: 'Row House',
-        href: '/projects?type=residential&category=row-house',
+        label: 'Plots',
+        href: '/projects?type=residential&category=plots',
         dropdown: [
-          { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
-          { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
+          { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
+          { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
         ],
+      },
+      {
+        label: 'Simplex',
+        href: '/projects?type=residential&category=simplex',
+        // dropdown: [
+        //   { label: 'Dalan Avenue', href: '/projects/dalan-avenue' },
+        //   { label: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
+        // ],
       },
       {
         label: 'Duplex',
@@ -37,6 +45,14 @@ const navLinks: NavLink[] = [
         ],
       },
       {
+        label: 'Row House',
+        href: '/projects?type=residential&category=row-house',
+        dropdown: [
+          { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
+          { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
+        ],
+      },
+      {
         label: 'Villa',
         href: '/projects?type=residential&category=villa',
         dropdown: [
@@ -44,12 +60,8 @@ const navLinks: NavLink[] = [
         ],
       },
       {
-        label: 'Plots',
-        href: '/projects?type=residential&category=plots',
-        dropdown: [
-          { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
-          { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
-        ],
+        label: 'Apartments',
+        href: '/projects?type=residential&category=apartments',
       },
     ],
   },
@@ -72,9 +84,9 @@ export default function Navbar() {
 
   const renderDesktopDropdown = (items: NavLink[], level = 0) => (
     <div
-      className={`absolute ${level === 0 ? 'top-full left-1/2 -translate-x-1/2' : 'left-full top-0'
+      className={`absolute ${level === 0 ? 'top-[calc(100%-11px)] left-[calc(50%-112px)]' : 'left-full top-0'
         } ${level === 0
-          ? 'before:absolute before:-top-2 before:left-1/2 before:h-4 before:w-4 before:-translate-x-1/2 before:rotate-45 before:bg-white'
+          ? 'before:absolute before:-top-2 before:left-[calc(50%-8px)] before:h-4 before:w-4 before:rotate-45 before:bg-white before:border-t before:border-l before:border-black/10'
           : 'invisible opacity-0 transition-all duration-200'
         } w-56 bg-white border border-black/10 rounded-none shadow-xl`}
     >
