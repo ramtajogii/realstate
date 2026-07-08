@@ -12,8 +12,16 @@ const stats = [
 ]
 
 const heroSlides = [
-  { src: '/images/samridhi.jpg', alt: 'DALAN Builders' },
-  { src: '/images/residency.jpg', alt: 'DALAN Builders banner' },
+  { 
+    desktop: '/images/residencymobile.jpg', 
+    mobile: '/images/residency.jpg', 
+    alt: 'DALAN Builders' 
+  },
+  { 
+    desktop: '/images/samridhimobile.jpg', 
+    mobile: '/images/samridhi.jpg', 
+    alt: 'DALAN Builders banner' 
+  },
 ]
 
 const extendedHeroSlides = [
@@ -215,27 +223,38 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full overflow-hidden bg-white group">
         {/* Background Image (replace with video if available) */}
-        <div className="relative aspect-[2/1] w-full overflow-hidden bg-white">
+        <div className="relative aspect-[16/10] md:aspect-[5/2] w-full overflow-hidden bg-white">
           <div
             className={`flex h-full w-full ${isHeroTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             onTransitionEnd={handleHeroTransitionEnd}
           >
             {extendedHeroSlides.map((slide, index) => (
-              <div key={`${slide.src}-${index}`} className="relative w-full h-full shrink-0">
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  width={5544}
-                  height={2772}
-                  className="block h-full w-full object-cover"
-                  priority={index === 1}
-                />
+              <div key={`${slide.desktop}-${index}`} className="relative w-full h-full shrink-0">
+                {/* Mobile Image (2:1 ratio) */}
+                <div className="block md:hidden relative w-full h-full">
+                  <Image
+                    src={slide.mobile}
+                    alt={slide.alt}
+                    fill
+                    className="object-fill"
+                    priority={index === 1}
+                  />
+                </div>
+                {/* Desktop Image (5:2 ratio) */}
+                <div className="hidden md:block relative w-full h-full">
+                  <Image
+                    src={slide.desktop}
+                    alt={slide.alt}
+                    fill
+                    className="object-cover"
+                    priority={index === 1}
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
-
         {/* Navigation Arrows */}
         <button
           onClick={handlePrevSlide}
@@ -251,27 +270,6 @@ export default function HomePage() {
         >
           <ChevronRight className="w-6 h-6" />
         </button>
-
-        {/* Dots indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-          {heroSlides.map((_, index) => {
-            const isActive = currentSlide === index + 1 ||
-              (currentSlide === 0 && index === heroSlides.length - 1) ||
-              (currentSlide === extendedHeroSlides.length - 1 && index === 0);
-            return (
-              <button
-                key={index}
-                onClick={() => {
-                  setIsHeroTransitioning(true)
-                  setCurrentSlide(index + 1)
-                }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#091e44] w-6' : 'bg-black/30 hover:bg-black/50'
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            )
-          })}
-        </div>
       </section>
 
       {/* ===== STATS SECTION ===== */}
@@ -283,20 +281,20 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-4 gap-1 sm:gap-4 md:gap-8">
             {stats.map((stat, i) => (
               <div
                 key={i}
                 className="flex flex-col items-center justify-center text-center reveal transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${i * 0.1}s` }}
               >
-                <div className="flex items-center justify-center w-11 h-11 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 mb-3 md:mb-4 shadow-inner text-[#C9922A] transition-colors duration-300 hover:bg-[#C9922A]/20">
-                  <stat.icon className="w-5 h-5 md:w-6 md:h-6" />
+                <div className="flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 mb-2 md:mb-4 shadow-inner text-[#C9922A] transition-colors duration-300 hover:bg-[#C9922A]/20">
+                  <stat.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                 </div>
-                <div className="text-2xl sm:text-3xl md:text-5xl font-outfit font-bold text-white mb-1 md:mb-2 tracking-tight">
+                <div className="text-base sm:text-3xl md:text-5xl font-outfit font-bold text-white mb-0.5 md:mb-2 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-white/60 text-[10px] sm:text-xs md:text-sm font-semibold uppercase tracking-widest leading-snug">{stat.label}</div>
+                <div className="text-white/60 text-[7px] sm:text-xs md:text-sm font-semibold uppercase tracking-normal sm:tracking-widest leading-snug">{stat.label}</div>
               </div>
             ))}
           </div>
