@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect } from 'react'
+import { ShieldCheck, Handshake, Users, ArrowRight } from 'lucide-react'
 
 export default function AboutPage() {
   useEffect(() => {
@@ -13,133 +15,165 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <>
-      {/* Hero Banner Section (Minimal Full-Width Banner style) */}
-      <section className="relative w-full h-[300px] md:h-[450px] overflow-hidden bg-white">
-        <img
-          src="/about/varansi.jpeg"
-          alt="About Varanasi"
-          className="block"
-          style={{
-            position: 'absolute',
-            top: '30px',
-            left: '30px',
-            width: 'calc(100% - 60px)',
-            height: 'calc(100% - 60px)',
-            color: 'transparent',
-            objectFit: 'fill',
-          }}
-        />
-      </section>
+    <div className="bg-[#ffffff] min-h-screen text-[#333333] font-body pb-20">
+      {/* 1. Hero Intro Section with Breadcrumbs */}
+      <section className="max-w-[1280px] mx-auto px-6 pt-10 md:pt-16 reveal">
+        {/* Breadcrumbs */}
+        <div className="flex items-center gap-2 text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-gray-500 mb-8 font-nav">
+          {/* <Link href="/" className="hover:text-[#091e44] transition-colors">HOME</Link> */}
+          {/* <span className="text-gray-400 font-normal">&gt;</span> */}
+          <span className="text-gold">OUR STORY</span>
+        </div>
 
-      {/* Company Story */}
-      <section className="py-18 bg-[#ffffff]">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <div className="reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold font-display">ABOUT US</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-3 mb-5">Build Your Trust, Build Your Future</h2>
-            <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-6" />
-            <p className="text-gray-600 leading-relaxed mb-4">
-              <strong className="text-black font-semibold">Dalan Builders </strong>Pvt. Ltd. was founded with a simple yet powerful belief that every family deserves a home they can be proud of. What started as a vision to bring quality housing to the people of Varanasi has today grown into a trusted name across the city, known for honest dealings, timely delivery, and construction that truly lasts.
+        {/* Hero Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Left Content (Text) */}
+          <div className="lg:col-span-5 space-y-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.1] text-[#091e44]">
+              Built on Trust.<br />
+              Driven by <span className="text-gold">Purpose.</span>
+            </h1>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-lg pt-2">
+              Dalan Builders was founded with a simple vision — to create thoughtfully planned communities that families can trust. From residential plots to premium villas and commercial developments, every project reflects our commitment to quality, transparency, and long-term value.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              From affordable plots and simplex homes to elegant duplexes, spacious row houses, premium villas, apartments, farm houses, and commercial spaces our portfolio is built to serve every kind of dream, every kind of family, and every kind of budget. Each project we undertake whether it's Dalan Saubhagyam, Dalan Avenue, Dalan Samridhi, or Shivdhara Residency carries forward our promise of quality, transparency, and care.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              As an ISO 9001:2015 certified company, we don't just follow construction standards we set them. Every home we build goes through careful planning, quality material selection, and skilled craftsmanship, ensuring that what you invest in today becomes a legacy for generations to come.
-            </p>
+            <div className="pt-4">
+              <Link 
+                href="/projects" 
+                className="inline-flex items-center gap-3 bg-[#091e44] hover:bg-[#14315f] text-white px-7 py-4 rounded-md text-xs uppercase tracking-[0.12em] font-bold transition-all duration-300 shadow-md hover:shadow-lg hover:translate-y-[-1px]"
+              >
+                Explore Our Projects
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Image */}
+          <div className="lg:col-span-7 relative w-full h-[320px] md:h-[450px] lg:h-[520px] overflow-hidden rounded-lg shadow-xl border border-black/5 bg-gray-50">
+            <Image
+              src="/about/imageabout2.png"
+              alt="Dalan Builders Hardhat and Blueprints"
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+              sizes="(max-w-1024px) 100vw, 60vw"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-[#F7F7F7] border-t border-b border-black/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">WHY CHOOSE US</span>
-            <h2 className="font-display text-4xl font-bold text-black mt-2">Why Families Choose Dalan Builders</h2>
-            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+      {/* 2. Varanasi Heritage Section */}
+      <section className="max-w-[1280px] mx-auto px-6 py-20 md:py-28 reveal">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Left Image */}
+          <div className="lg:col-span-6 relative w-full h-[320px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-lg order-2 lg:order-1 shadow-xl border border-black/5 bg-gray-50">
+            <Image
+              src="/about/imageabout.png"
+              alt="Inspired by Varanasi Ghats"
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-105"
+              sizes="(max-w-1024px) 100vw, 50vw"
+            />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal">
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">🏆 ISO 9001:2015 Certified Quality</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Every project we build follows internationally recognized quality standards — so you get a home that's not just beautiful, but structurally sound and built to last.
+          {/* Right Content (Text) */}
+          <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
+            <div className="space-y-2">
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-gold font-nav">INSPIRED BY VARANASI</span>
+              <div className="w-12 h-[2px] bg-gold" />
+            </div>
+            
+            <h2 className="font-display text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#091e44]">
+              Rooted in the City<br />
+              We Call Home<span className="text-gold">.</span>
+            </h2>
+            
+            <div className="space-y-5 text-gray-600 text-sm md:text-base leading-relaxed max-w-xl">
+              <p>
+                Varanasi is a city where history, spirituality, and community have coexisted for centuries.
               </p>
-            </div>
-
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.1s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">💰 Transparent & Affordable Pricing</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                No hidden charges, no last-minute surprises. With 100% transparent policies, lowest down payments, and easy EMI schemes, owning your dream home has never been this stress-free.
+              <p>
+                Every neighbourhood tells a story, every street carries tradition, and every home becomes part of that legacy.
               </p>
-            </div>
-
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.2s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">🏦 Finance Facility with All Leading Banks</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                We've partnered with major banks to make home loans simple and quick, so your dream home is just a few steps away from becoming reality.
+              <p>
+                Inspired by this timeless city, Dalan Builders develops spaces that respect heritage while embracing the future.
               </p>
-            </div>
-
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.3s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">📍 Prime & Strategic Locations</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                All our projects are located in fast-developing areas of Varanasi with excellent connectivity to Ring Road, markets, schools, railway stations, and the airport — ensuring your investment grows in value over time.
-              </p>
-            </div>
-
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.4s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">📜 Ready-to-Register Plots</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Own your plot without unnecessary delays. Our reday-to-register plots come with clear legal documentation, ensuring a smooth, secure, and hassel-free registration process.
-              </p>
-            </div>
-
-            <div className="bg-white border border-black/10 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 reveal" style={{ animationDelay: '0.5s' }}>
-              <h3 className="font-display text-xl font-bold text-[#091e44] mb-4">🌿 Thoughtfully Planned Communities</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                From wide pitch roads and greenery to 24x7 security and CCTV surveillance, every Dalan project is designed as a complete living ecosystem — not just a house.
-              </p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-14">
-            {/* Project View Card */}
-            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300 reveal">
-              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Construction Quality</h3>
-              </div>
-              <div className="flex-grow bg-white group overflow-hidden">
-                <Image 
-                  src="/about/image.png" 
-                  alt="Dalan Builders project view" 
-                  width={650} 
-                  height={420} 
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
-                />
-              </div>
-            </div>
-
-            {/* Community View Card */}
-            <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300 reveal" style={{ animationDelay: '0.1s' }}>
-              <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Residential Community View</h3>
-              </div>
-              <div className="flex-grow bg-white group overflow-hidden">
-                <Image 
-                  src="/about/image2.png" 
-                  alt="Dalan Builders community view" 
-                  width={650} 
-                  height={420} 
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]" 
-                />
-              </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+      {/* 3. Core Values Cards Section */}
+      <section className="bg-[#FCFBFA] py-20 border-t border-b border-black/5 reveal">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Value Card 1 */}
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
+                <ShieldCheck size={28} className="text-gold" />
+              </div>
+              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+                QUALITY FIRST
+              </h3>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
+                Every project is built with trusted materials, skilled workmanship and strict quality standards.
+              </p>
+            </div>
+
+            {/* Value Card 2 */}
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
+                <Handshake size={28} className="text-gold" />
+              </div>
+              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+                TRANSPARENT RELATIONSHIPS
+              </h3>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
+                Clear pricing, legal compliance and honest communication from booking to possession.
+              </p>
+            </div>
+
+            {/* Value Card 3 */}
+            <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
+                <Users size={28} className="text-gold" />
+              </div>
+              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+                BUILDING COMMUNITIES
+              </h3>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
+                We don't just construct buildings—we create neighbourhoods where families thrive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Bottom Call To Action Section */}
+      <section className="max-w-[1280px] mx-auto px-6 pt-20 reveal">
+        <div className="max-w-4xl mx-auto border border-gold/30 bg-white rounded-lg p-10 md:p-14 text-center space-y-6 shadow-sm">
+          <h2 className="font-display text-3xl md:text-[38px] font-bold text-[#091e44] leading-tight">
+            Ready to Begin Your Journey Home?
+          </h2>
+          <div className="w-12 h-[2px] bg-gold mx-auto" />
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-3 bg-[#091e44] hover:bg-[#14315f] text-white px-8 py-4 rounded-md text-xs uppercase tracking-[0.12em] font-bold transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto hover:translate-y-[-1px]"
+            >
+              Book A Site Visit
+              <ArrowRight size={14} />
+            </Link>
+            <Link 
+              href="/projects" 
+              className="inline-flex items-center justify-center gap-3 bg-white border border-[#091e44] hover:bg-gray-50 text-[#091e44] px-8 py-4 rounded-md text-xs uppercase tracking-[0.12em] font-bold transition-all duration-300 w-full sm:w-auto hover:translate-y-[-1px]"
+            >
+              Explore Projects
+              <ArrowRight size={14} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

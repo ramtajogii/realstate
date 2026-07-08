@@ -24,8 +24,14 @@ const navLinks: NavLink[] = [
         label: 'Plots',
         href: '/projects?type=residential&category=plots',
         dropdown: [
+          { label: 'Anand Van Kashi Pratappatti', href: '/projects?type=residential&category=plots&project=anand-van-kashi-pratappatti' },
+          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-murdaha' },
+          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-domari' },
+          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-chandauli' },
           { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
           { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
+          { label: 'Dalan Nature Valley', href: '/projects?type=residential&category=plots&project=dalan-nature-valley' },
+          { label: 'Dalan Narayan Puram', href: '/projects?type=residential&category=plots&project=dalan-narayan-puram' },
         ],
       },
       {
@@ -62,6 +68,9 @@ const navLinks: NavLink[] = [
       {
         label: 'Apartments',
         href: '/projects?type=residential&category=apartments',
+        dropdown: [
+          { label: 'Dalan Paradise', href: '/projects/dalan-paradise' },
+        ],
       },
     ],
   },
@@ -122,7 +131,7 @@ export default function Navbar() {
           : 'bg-[#ffffff] shadow-sm shadow-black/5 py-2'
         }`}
     >
-      <div className="max-w-[1440px] mx-auto px-6 md:px-5 flex items-center justify-between gap-4">
+      <div className="w-full px-6 md:px-12 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center shrink-0 mr-4 lg:mr-8">
           <Image
