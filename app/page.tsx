@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight, Shield, MapPin, Handshake, Calendar, BarChart3 } from 'lucide-react'
 
 const stats = [
   { value: '19+', label: 'Years of Excellence', icon: Award },
@@ -130,15 +130,33 @@ export default function HomePage() {
   const [isHeroTransitioning, setIsHeroTransitioning] = useState(true)
   const [currentTestimonial, setCurrentTestimonial] = useState(1)
   const [isTestimonialTransitioning, setIsTestimonialTransitioning] = useState(true)
-  const [activeWelcome, setActiveWelcome] = useState(6)
+  const [communityIndex, setCommunityIndex] = useState(0)
+  const [visibleItems, setVisibleItems] = useState(6)
 
-  const handlePrevWelcome = () => {
-    setActiveWelcome((prev) => (prev === 0 ? welcomeImages.length - 1 : prev - 1))
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setVisibleItems(2)
+      } else if (window.innerWidth < 1024) {
+        setVisibleItems(3)
+      } else {
+        setVisibleItems(6)
+      }
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
-  const handleNextWelcome = () => {
-    setActiveWelcome((prev) => (prev === welcomeImages.length - 1 ? 0 : prev + 1))
-  }
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setCommunityIndex((prev) => {
+        const maxIndex = welcomeImages.length - visibleItems
+        return prev >= maxIndex ? 0 : prev + 1
+      })
+    }, 3000)
+    return () => window.clearInterval(interval)
+  }, [visibleItems])
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -326,7 +344,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="py-18 bg-[#ffffff]">
+      <section className="pt-18 pb-28 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-16 reveal">
@@ -387,40 +405,127 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* ===== WHY CHOOSE DALAN SECTION ===== */}
+      <section className="bg-[#091e44] text-white py-20 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16 reveal">
+            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Why Choose Dalan</span>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mt-3 leading-tight">
+              Built on Trust. Focused on You.
+            </h2>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-6 text-center divide-y divide-white/10 md:divide-y-0 lg:divide-x lg:divide-white/10">
+            {/* Feature 1 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <Shield size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Trusted Legacy</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                15+ years of building trust and delivering value.
+              </p>
+            </div>
+            {/* Feature 2 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <MapPin size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Prime Locations</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                Carefully selected locations with excellent connectivity.
+              </p>
+            </div>
+            {/* Feature 3 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <Award size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Superior Quality</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                High quality materials and modern construction practices.
+              </p>
+            </div>
+            {/* Feature 4 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <Handshake size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Transparent Process</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                Clear communication and transparency at every step.
+              </p>
+            </div>
+            {/* Feature 5 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <Calendar size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Timely Delivery</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                On-time possession because we value your time.
+              </p>
+            </div>
+            {/* Feature 6 */}
+            <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
+                <BarChart3 size={24} />
+              </div>
+              <h3 className="font-bold text-base text-white mb-2">Investment Growth</h3>
+              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
+                Projects designed to offer high returns in the future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className="py-20 bg-[#ffffff] overflow-hidden">
+      <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12 reveal">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
+          <div className="text-center mb-16 reveal">
+            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Testimonials</span>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3">
               What Our Clients Say
             </h2>
-            <p className="text-[#64748b] text-lg">Real stories from real families across Dalan Builders' projects</p>
-            <div className="w-14 h-1 bg-[#091e44] mx-auto" />
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <div className="w-16 h-0.5 bg-[#C9922A]/30" />
+              <div className="w-2.5 h-2.5 bg-[#C9922A] rotate-45" />
+              <div className="w-16 h-0.5 bg-[#C9922A]/30" />
+            </div>
           </div>
 
           {/* Testimonial Slider Container */}
           <div className="relative reveal px-2 md:px-12">
             {/* Slider window */}
-            <div className="overflow-hidden rounded-2xl border border-black/10 bg-[#F7F7F7] hover:border-[#091e44]/30 transition-all duration-300 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-gray-100 bg-[#F7F7F7] shadow-sm">
               <div
                 className={`flex w-full ${isTestimonialTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
                 style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
                 onTransitionEnd={handleTestimonialTransitionEnd}
               >
                 {extendedTestimonials.map((t, i) => (
-                  <div key={i} className="w-full shrink-0 p-8 md:p-12">
-                    {/* Quote Mark */}
-                    <div className="text-[#091e44] text-5xl md:text-6xl font-display leading-none mb-4 md:mb-6">"</div>
-                    <p className="text-gray-700 leading-relaxed mb-6 md:mb-8 text-sm md:text-base italic">
+                  <div key={i} className="w-full shrink-0 p-8 md:p-12 text-center flex flex-col items-center">
+                    {/* Gold Double Quote mark */}
+                    <span className="text-[#C9922A] text-6xl font-serif leading-none h-6 select-none opacity-80 mb-4">“</span>
+                    
+                    <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-6 italic max-w-2xl">
                       {t.text}
                     </p>
-                    <div className="flex items-center gap-4 border-t border-black/10 pt-5">
-                      <div>
-                        <div className="text-black font-semibold text-sm md:text-base">{t.name}</div>
-                        <div className="text-[#091e44] text-xs md:text-sm">{t.role}</div>
-                      </div>
+
+                    {/* 5 Stars gold indicator */}
+                    <div className="flex items-center justify-center gap-1 mb-6">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <svg key={starIndex} className="w-5 h-5 text-[#C9922A] fill-current" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.785.57-1.84-.2-1.54-1.118l1.288-3.97a1 1 0 00-.364-1.118L2.24 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
+                        </svg>
+                      ))}
                     </div>
+
+                    <div className="text-[#091e44] font-bold text-base md:text-lg">{t.name}</div>
+                    <div className="text-[#C9922A] text-xs md:text-sm font-semibold mt-1">{t.role}</div>
                   </div>
                 ))}
               </div>
@@ -429,14 +534,14 @@ export default function HomePage() {
             {/* Left and Right Arrows */}
             <button
               onClick={handlePrevTestimonial}
-              className="absolute left-1 md:left-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              className="absolute left-[-10px] md:left-[-20px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-gray-100 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               onClick={handleNextTestimonial}
-              className="absolute right-1 md:right-[-24px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-black/10 hover:border-[#091e44]/30 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
+              className="absolute right-[-10px] md:right-[-20px] top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border border-gray-100 text-[#091e44] hover:bg-[#091e44] hover:text-white transition-all duration-300 shadow-md focus:outline-none hover:scale-105"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -466,121 +571,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== WELCOME IMAGE SLIDER SECTION (Large Image with Thumbnails) ===== */}
-      <section className="bg-[#ffffff] py-6 md:py-8 px-6 overflow-hidden border-t border-black/5">
+      {/* ===== COMMUNITY & EVENTS SECTION ===== */}
+      <section className="bg-white py-16 md:py-20 px-6 border-t border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
-          {/* <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Welcome to Dalan</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-black mt-2 mb-4">Our Sites & Corporate Office</h2> */}
-          {/* <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-10" /> */}
+          <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Community & Events</span>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3 mb-4">
+            Building Relationships, Not Just Buildings
+          </h2>
+          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
 
-          {/* Large Image Showcase */}
-          <div className="relative w-full max-w-4xl mx-auto h-[260px] md:h-[420px] rounded-3xl overflow-hidden bg-white group mb-6">
-            <Image
-              src={welcomeImages[activeWelcome]}
-              alt={`Dalan Site Image ${activeWelcome + 1}`}
-              fill
-              priority
-              sizes="(max-w-1024px) 100vw, 1024px"
-              className="object-contain transition-all duration-500 ease-in-out"
-            />
-
-            {/* Arrow Overlay Controls (visible on hover) */}
-            <button
-              onClick={handlePrevWelcome}
-              className="absolute left-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105"
-              aria-label="Previous image"
+          {/* Automatic Sliding Carousel of 12 images (showing 6 at a time on desktop, 3 on tablet, 2 on mobile) */}
+          <div className="overflow-hidden w-full relative mb-10">
+            <div 
+              className="flex gap-4 transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(calc(-${communityIndex} * (100% / ${visibleItems} + 16px / ${visibleItems})))`
+              }}
             >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button
-              onClick={handleNextWelcome}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-black/30 hover:bg-black/60 text-white backdrop-blur-sm transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 hover:scale-105"
-              aria-label="Next image"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-          </div>
-
-          {/* Thumbnails Scrollable Strip */}
-          <div className="relative w-full max-w-5xl mx-auto">
-            <div className="flex gap-3 overflow-x-auto py-2 px-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] justify-start md:justify-center w-full">
-              {welcomeImages.map((src, index) => {
-                const isActive = activeWelcome === index;
-                return (
-                  <button
-                    key={index}
-                    onClick={() => setActiveWelcome(index)}
-                    className={`relative w-20 h-14 md:w-28 md:h-18 rounded-xl overflow-hidden cursor-pointer flex-shrink-0 transition-all duration-300 border-2 ${isActive
-                        ? 'border-[#C9922A] scale-[1.03] shadow-lg ring-2 ring-[#C9922A]/20'
-                        : 'border-transparent opacity-50 hover:opacity-100'
-                      }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  >
+              {welcomeImages.map((src, index) => (
+                <div 
+                  key={index}
+                  className="relative shrink-0 rounded-2xl overflow-hidden shadow-md border border-gray-100 group"
+                  style={{
+                    width: `calc((100% - ${(visibleItems - 1) * 16}px) / ${visibleItems})`
+                  }}
+                >
+                  <div className="aspect-[4/3] relative w-full">
                     <Image
                       src={src}
-                      alt={`Thumbnail ${index + 1}`}
+                      alt={`Dalan Community Event ${index + 1}`}
                       fill
-                      sizes="(max-w-768px) 80px, 112px"
-                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16.6vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                     />
-                  </button>
-                )
-              })}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== CTA SECTION ===== */}
-      <section className="bg-[#FAF9F6] py-20 px-6">
-        <div className="max-w-6xl mx-auto relative bg-[#18181b] rounded-[32px] overflow-hidden shadow-2xl reveal">
+      {/* ===== READY TO FIND YOUR DREAM HOME SECTION ===== */}
+      <section className="bg-white py-12 px-6">
+        <div className="max-w-7xl mx-auto bg-[#091e44] rounded-3xl overflow-hidden shadow-xl relative">
+          
           {/* Subtle house background vectors */}
-          <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div className="absolute inset-0 pointer-events-none opacity-10">
             {/* Left house outline */}
-            <svg
-              className="absolute left-[8%] bottom-0 h-4/5 w-auto text-white/[0.04]"
-              viewBox="0 0 200 300"
-              fill="currentColor"
-            >
+            <svg className="absolute left-[8%] bottom-0 h-4/5 w-auto text-white/[0.08]" viewBox="0 0 200 300" fill="currentColor">
               <path d="M10,120 L100,30 L190,120 L190,300 L10,300 Z" />
-              <path d="M80,300 L80,210 L120,210 L120,300 Z" fill="#18181b" />
-              <rect x="35" y="155" width="35" height="45" fill="#18181b" rx="2" />
-              <rect x="130" y="155" width="35" height="45" fill="#18181b" rx="2" />
             </svg>
             {/* Right house outline */}
-            <svg
-              className="absolute right-[8%] bottom-0 h-[85%] w-auto text-white/[0.04]"
-              viewBox="0 0 250 350"
-              fill="currentColor"
-            >
+            <svg className="absolute right-[8%] bottom-0 h-[85%] w-auto text-white/[0.08]" viewBox="0 0 250 350" fill="currentColor">
               <path d="M20,100 L125,10 L230,100 L230,350 L20,350 Z" />
-              <rect x="55" y="140" width="40" height="50" fill="#18181b" rx="2" />
-              <rect x="155" y="140" width="40" height="50" fill="#18181b" rx="2" />
-              <rect x="55" y="235" width="40" height="50" fill="#18181b" rx="2" />
-              <rect x="155" y="235" width="40" height="50" fill="#18181b" rx="2" />
             </svg>
           </div>
 
-          <div className="relative z-10 text-center max-w-3xl mx-auto px-6 py-16 md:py-24">
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
-              Ready to Find Your Dream Home <br /> in Varanasi?
-            </h2>
-            <p className="text-[#e25c5c] font-display text-2xl md:text-3xl font-bold mt-4 mb-6">
-              Let's Build It Together.
-            </p>
-            <p className="text-zinc-400 text-sm md:text-base md:leading-relaxed max-w-2xl mx-auto mb-10">
-              From plots to premium villas, your perfect address in Kashi is just a call away. Explore floor plans, book a free site visit, or get in touch with our team today.
-            </p>
-            <div className="flex justify-center">
+          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-16 px-8 md:px-16">
+            <div className="max-w-2xl text-left border-l-4 border-[#C9922A] pl-6">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
+                Ready to Find Your <br className="hidden md:block" />
+                <span className="text-[#C9922A]">Dream Home?</span>
+              </h2>
+              <p className="text-zinc-300 text-sm md:text-base leading-relaxed mt-4">
+                from plots to premium villas, your perfect address in Varanasi is just a call away. Explore floor plans, book a site visit, or get in touch with our team today.
+              </p>
+            </div>
+            
+            {/* Action Buttons on the right */}
+            <div className="flex flex-wrap md:flex-nowrap gap-4 shrink-0 w-full lg:w-auto">
+              <a
+                href="tel:+916389088088"
+                className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 bg-[#C9922A] hover:bg-[#b07d1f] text-black font-bold px-6 py-4 rounded-xl text-sm transition-all duration-300 shadow-lg shadow-[#C9922A]/10 hover:-translate-y-0.5"
+              >
+                <Calendar size={16} />
+                <span>Book Site Visit</span>
+              </a>
+              <a
+                href="tel:+916389088088"
+                className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-bold px-6 py-4 rounded-xl text-sm transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Phone size={16} />
+                <span>Call Now</span>
+              </a>
               <a
                 href="https://wa.me/916389088088"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-[#e25c5c] hover:bg-[#d44d4d] text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-xl hover:shadow-[#e25c5c]/20 hover:-translate-y-0.5"
+                className="flex-1 lg:flex-initial inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-bold px-6 py-4 rounded-xl text-sm transition-all duration-300 hover:-translate-y-0.5"
               >
-                <Phone size={18} className="shrink-0" />
-                <span>Call / WhatsApp Now</span>
+                <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.967C16.588 1.973 14.113.95 11.49.95c-5.437 0-9.862 4.371-9.866 9.8.001 1.838.5 3.633 1.449 5.2l-.997 3.64 3.738-.971c1.52.83 3.203 1.267 4.833 1.269zM17.84 15.01c-.328-.164-1.942-.958-2.241-1.067-.3-.11-.518-.165-.736.164-.219.329-.848 1.067-1.039 1.286-.192.219-.383.246-.711.082-.328-.164-1.386-.51-2.64-1.627-.975-.87-1.633-1.946-1.824-2.274-.192-.329-.02-.507.144-.67.147-.146.328-.384.492-.575.164-.192.219-.328.328-.548.11-.219.055-.411-.027-.575-.082-.164-.736-1.777-1.008-2.434-.265-.636-.53-.55-.736-.56-.189-.01-.41-.01-.628-.01-.218 0-.573.082-.873.411-.3.329-1.147 1.122-1.147 2.734 0 1.612 1.174 3.172 1.338 3.391.164.22 2.313 3.53 5.6 4.947.781.337 1.39.539 1.86.688.784.248 1.497.213 2.06.129.628-.094 1.942-.794 2.215-1.56.273-.767.273-1.423.191-1.56-.081-.137-.299-.219-.627-.383z" />
+                </svg>
+                <span>WhatsApp Us</span>
               </a>
             </div>
           </div>

@@ -6,6 +6,9 @@ import { ArrowRight, MapPin, Phone } from 'lucide-react'
 
 const projects = [
   { id: 'shivdhara-residency', title: 'Shivdhara Residency', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
+  { id: 'dalan-residency', title: 'Dalan Residency', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Row House', price: 'Contact for Price', img: '/images/residency1.jpg' },
+  { id: 'dalan-paradise', title: 'Dalan Paradise', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Flats', price: 'Contact for Price', img: '/apartments/dalanparadise.png' },
+  { id: 'dalan-greens', title: 'Dalan Greens', location: 'Mau, Lucknow - UP', type: 'Plots', status: 'Ready to Register', beds: '1000 - 1500 Sq.ft. Plots', price: 'Contact for Price', img: '/images/greens_hero.png' },
   { id: 'dalan-avenue', title: 'Dalan Avenue', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'New Launch', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
   { id: 'dalan-saubhagyam', title: 'Dalan Saubhagyam', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Under Construction', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
   { id: 'dalan-samridhi', title: 'Dalan Samridhi', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Phase - 1 (Delivered)', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
@@ -18,6 +21,8 @@ const statusColors: Record<string, string> = {
   'New Launch': 'bg-[#091e44] text-white',
   'Phase - 1 (Delivered)': 'bg-green-500 text-black',
   'Delivered': 'bg-green-500 text-black',
+  'Upcoming Project': 'bg-blue-600 text-white',
+  'Ready to Register': 'bg-emerald-600 text-white',
 }
 
 export default function ProjectsPage() {

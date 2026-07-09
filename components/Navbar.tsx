@@ -29,7 +29,7 @@ const navLinks: NavLink[] = [
           { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-domari' },
           { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-chandauli' },
           { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
-          { label: 'Dalan Greens', href: '/projects?type=residential&category=plots&project=dalan-greens' },
+          { label: 'Dalan Greens', href: '/projects/dalan-greens' },
           { label: 'Dalan Nature Valley', href: '/projects?type=residential&category=plots&project=dalan-nature-valley' },
           { label: 'Dalan Narayan Puram', href: '/projects?type=residential&category=plots&project=dalan-narayan-puram' },
         ],
@@ -55,7 +55,7 @@ const navLinks: NavLink[] = [
         href: '/projects?type=residential&category=row-house',
         dropdown: [
           { label: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
-          { label: 'Dalan Residency', href: '/projects?type=residential&category=row-house&project=dalan-residency' },
+          { label: 'Dalan Residency', href: '/projects/dalan-residency' },
         ],
       },
       {
@@ -101,7 +101,7 @@ export default function Navbar() {
     >
       {items.map((item) => (
         <div
-          key={item.label}
+          key={`${item.label}-${item.href}`}
           className="relative [&:hover>div]:visible [&:hover>div]:opacity-100"
         >
           <Link
@@ -148,7 +148,7 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <li
-              key={link.label}
+              key={`${link.label}-${link.href}`}
               className="relative group py-8 -my-8"
               onMouseEnter={() => link.dropdown && setOpenDropdown(link.label)}
               onMouseLeave={() => setOpenDropdown(null)}
@@ -201,7 +201,7 @@ export default function Navbar() {
         <div className="absolute left-0 right-0 top-full max-h-[calc(100vh-84px)] w-full overflow-y-auto overflow-x-hidden overscroll-contain border-t border-gray-100 bg-white/95 backdrop-blur-md px-6 py-6 md:hidden shadow-2xl transition-all duration-300 ease-in-out">
           <div className="space-y-4">
             {navLinks.map((link) => (
-              <div key={link.label} className="min-w-0">
+              <div key={`${link.label}-${link.href}`} className="min-w-0">
                 <div className="flex items-center justify-between py-2.5 px-1.5 hover:bg-[#091e44]/5 rounded-xl transition-all duration-200">
                   <Link
                     href={link.href}
@@ -228,7 +228,7 @@ export default function Navbar() {
                 {link.dropdown && expandedItems[link.label] && (
                   <div className="mt-2 ml-2 p-3 bg-slate-50/70 border border-slate-100 rounded-2xl space-y-2 animate-fade-in">
                     {link.dropdown.map((subLink) => (
-                      <div key={subLink.label} className="min-w-0">
+                      <div key={`${subLink.label}-${subLink.href}`} className="min-w-0">
                         <div className="flex items-center justify-between py-1.5 px-2 hover:bg-[#091e44]/5 rounded-xl transition-all">
                           <Link
                             href={subLink.href}
@@ -255,7 +255,7 @@ export default function Navbar() {
                         {subLink.dropdown && expandedItems[subLink.label] && (
                           <div className="mt-1 ml-3 p-2.5 bg-white border border-gray-100 rounded-xl space-y-1">
                             {subLink.dropdown.map((nestedLink) => (
-                              <div key={nestedLink.label} className="min-w-0">
+                              <div key={`${nestedLink.label}-${nestedLink.href}`} className="min-w-0">
                                 <div className="flex items-center justify-between py-1 px-2 hover:bg-[#091e44]/5 rounded-lg transition-all">
                                   <Link
                                     href={nestedLink.href}
@@ -283,7 +283,7 @@ export default function Navbar() {
                                   <div className="mt-1 ml-4 pl-2 space-y-1 border-l border-slate-200">
                                     {nestedLink.dropdown.map((deepLink) => (
                                       <Link
-                                        key={deepLink.label}
+                                        key={`${deepLink.label}-${deepLink.href}`}
                                         href={deepLink.href}
                                         className="block py-1.5 px-2 text-[11px] font-medium text-gray-500 hover:text-[#091e44] hover:bg-[#091e44]/5 uppercase font-nav tracking-[0.05em] rounded-md transition-colors"
                                         onClick={() => setMobileOpen(false)}
