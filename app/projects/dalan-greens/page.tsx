@@ -47,7 +47,7 @@ export default function DalanGreensPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0d1a15]/50 via-transparent to-transparent" />
         </div>
 
-        <div className="max-w-7xl mx-auto w-full px-6 py-16 md:py-24 relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-6 pt-20 md:pt-4 pb-20 relative z-10">
           {/* Left Content wrapper to keep it clean */}
           <div className="max-w-2xl flex flex-col justify-center">
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">

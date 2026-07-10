@@ -13,6 +13,7 @@ const projects = [
   { id: 'dalan-saubhagyam', title: 'Dalan Saubhagyam', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Under Construction', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
   { id: 'dalan-samridhi', title: 'Dalan Samridhi', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Phase - 1 (Delivered)', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
   { id: 'dalan-avenue-micro-society', title: 'Dalan Avenue Micro Society', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Plots', status: 'Delivered', beds: 'Residential Plots', price: 'Contact for Price', img: '/microsociety/microplots.png' },
+  { id: 'dalan-narayan-puram', title: 'Dalan Narayan Puram', location: 'Harhuan Market, Airport Road, Varanasi UP', type: 'Plots', status: 'New Launch', beds: 'Residential Plots', price: 'Contact for Price', img: '/images/narayan_puram_gate_v3.png' },
 ]
 
 const filters = ['All', 'Residential', 'Plots']
@@ -81,7 +82,13 @@ export default function ProjectsPage() {
                 <div>
                   {/* Image */}
                   <Link href={`/projects/${project.id}`} className="relative block h-56 overflow-hidden">
-                    <Image src={project.img} alt={project.title} fill className="object-cover transition-transform duration-700" />
+                    <Image
+                      src={project.img}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
                     <span className={`absolute top-4 left-4 ${statusColors[project.status] || 'bg-gray-500 text-white'} text-xs px-3 py-1 rounded-full font-medium`}>
                       {project.status}
                     </span>

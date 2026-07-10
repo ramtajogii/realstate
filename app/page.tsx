@@ -2,11 +2,11 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight, Shield, MapPin, Handshake, Calendar, BarChart3 } from 'lucide-react'
+import { ArrowRight, Building2, Users, Award, TrendingUp, Phone, ChevronLeft, ChevronRight, Shield, MapPin, Handshake, Calendar, BarChart3, X } from 'lucide-react'
 
 const stats = [
   { value: '19+', label: 'Years of Excellence', icon: Award },
-  { value: '10+', label: 'Projects Delivered', icon: Building2 },
+  { value: '14+', label: 'Projects Delivered', icon: Building2 },
   { value: '2000+', label: 'Happy Families', icon: Users },
   { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
 ]
@@ -130,17 +130,17 @@ export default function HomePage() {
   const [isHeroTransitioning, setIsHeroTransitioning] = useState(true)
   const [currentTestimonial, setCurrentTestimonial] = useState(1)
   const [isTestimonialTransitioning, setIsTestimonialTransitioning] = useState(true)
+  const [isHovered, setIsHovered] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [communityIndex, setCommunityIndex] = useState(0)
-  const [visibleItems, setVisibleItems] = useState(6)
+  const [visibleItems, setVisibleItems] = useState(3)
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
         setVisibleItems(2)
-      } else if (window.innerWidth < 1024) {
-        setVisibleItems(3)
       } else {
-        setVisibleItems(6)
+        setVisibleItems(3)
       }
     }
     handleResize()
@@ -149,6 +149,8 @@ export default function HomePage() {
   }, [])
 
   useEffect(() => {
+    if (isHovered) return
+
     const interval = window.setInterval(() => {
       setCommunityIndex((prev) => {
         const maxIndex = welcomeImages.length - visibleItems
@@ -156,7 +158,7 @@ export default function HomePage() {
       })
     }, 3000)
     return () => window.clearInterval(interval)
-  }, [visibleItems])
+  }, [visibleItems, isHovered])
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -273,21 +275,28 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        {/* Navigation Arrows */}
-        <button
-          onClick={handlePrevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all duration-300 backdrop-blur-sm focus:outline-none hover:scale-105"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={handleNextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/30 hover:bg-black/60 text-white transition-all duration-300 backdrop-blur-sm focus:outline-none hover:scale-105"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        {/* Pagination Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroSlides.map((_, index) => {
+            const isActive =
+              currentSlide === index + 1 ||
+              (currentSlide === 0 && index === heroSlides.length - 1) ||
+              (currentSlide === extendedHeroSlides.length - 1 && index === 0);
+            return (
+              <button
+                key={index}
+                onClick={() => {
+                  setIsHeroTransitioning(true)
+                  setCurrentSlide(index + 1)
+                }}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  isActive ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            )
+          })}
+        </div>
       </section>
 
       {/* ===== STATS SECTION ===== */}
@@ -349,7 +358,7 @@ export default function HomePage() {
           {/* Header */}
           <div className="text-center mb-16 reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Our Projects</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-3 mb-4">
               Featured Projects
             </h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
@@ -369,7 +378,8 @@ export default function HomePage() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Overlay */}
                   <div className="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 transition-opacity duration-300" />
@@ -411,7 +421,7 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center mb-16 reveal">
             <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Why Choose Dalan</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white mt-3 leading-tight">
+            <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mt-3 leading-tight">
               Built on Trust. Focused on You.
             </h2>
           </div>
@@ -580,8 +590,12 @@ export default function HomePage() {
           </h2>
           <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
 
-          {/* Automatic Sliding Carousel of 12 images (showing 6 at a time on desktop, 3 on tablet, 2 on mobile) */}
-          <div className="overflow-hidden w-full relative mb-10">
+          {/* Automatic Sliding Carousel of 12 images (showing 3 at a time on desktop, 2 on mobile) */}
+          <div 
+            className="overflow-hidden w-full relative mb-10 cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <div 
               className="flex gap-4 transition-transform duration-700 ease-in-out"
               style={{
@@ -595,13 +609,14 @@ export default function HomePage() {
                   style={{
                     width: `calc((100% - ${(visibleItems - 1) * 16}px) / ${visibleItems})`
                   }}
+                  onClick={() => setSelectedImage(src)}
                 >
                   <div className="aspect-[4/3] relative w-full">
                     <Image
                       src={src}
                       alt={`Dalan Community Event ${index + 1}`}
                       fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16.6vw"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 33vw"
                       className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                     />
                   </div>
@@ -670,6 +685,29 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300 animate-fade-in"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-gray-300 bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all duration-200"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X size={24} />
+          </button>
+          <div className="relative max-w-4xl max-h-[85vh] w-full h-full flex items-center justify-center">
+            <Image
+              src={selectedImage}
+              alt="Community Moment Large View"
+              fill
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              className="object-contain rounded-2xl"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }

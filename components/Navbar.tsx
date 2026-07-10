@@ -31,7 +31,7 @@ const navLinks: NavLink[] = [
           { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
           { label: 'Dalan Greens', href: '/projects/dalan-greens' },
           { label: 'Dalan Nature Valley', href: '/projects?type=residential&category=plots&project=dalan-nature-valley' },
-          { label: 'Dalan Narayan Puram', href: '/projects?type=residential&category=plots&project=dalan-narayan-puram' },
+          { label: 'Dalan Narayan Puram', href: '/projects/dalan-narayan-puram' },
         ],
       },
       {
@@ -106,7 +106,7 @@ export default function Navbar() {
         >
           <Link
             href={item.href}
-            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-[13px] font-normal text-[#333333] transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white font-nav uppercase tracking-[0.08em]"
+            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-[13px] font-semibold text-[#333333] transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white font-nav uppercase tracking-[0.08em]"
           >
             <span>{item.label}</span>
             {item.dropdown && <ChevronRight size={14} />}
@@ -155,7 +155,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className="flex items-center gap-1 text-[15px] font-normal text-[#333333] hover:text-[#091e44] uppercase transition-colors duration-200 font-nav tracking-[0.08em] whitespace-nowrap"
+                className="flex items-center gap-1 text-[15px] font-semibold text-[#333333] hover:text-[#091e44] uppercase transition-colors duration-200 font-nav tracking-[0.08em] whitespace-nowrap"
               >
                 {link.label}
                 {link.dropdown && <ChevronDown size={14} />}
