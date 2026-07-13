@@ -12,15 +12,15 @@ const stats = [
 ]
 
 const heroSlides = [
-  { 
-    desktop: '/images/residencymobile.jpg', 
-    mobile: '/images/residency.jpg', 
-    alt: 'DALAN Builders' 
+  {
+    desktop: '/images/residencymobile.jpg',
+    mobile: '/images/residency.jpg',
+    alt: 'DALAN Builders'
   },
-  { 
-    desktop: '/images/samridhimobile.jpg', 
-    mobile: '/images/samridhi.jpg', 
-    alt: 'DALAN Builders banner' 
+  {
+    desktop: '/images/samridhimobile.jpg',
+    mobile: '/images/samridhi.jpg',
+    alt: 'DALAN Builders banner'
   },
 ]
 
@@ -243,7 +243,7 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <section className="relative w-full overflow-hidden bg-white group">
         {/* Background Image (replace with video if available) */}
-        <div className="relative aspect-[16/10] md:aspect-[5/2] w-full overflow-hidden bg-white">
+        <div className="relative aspect-[2/1] md:aspect-[5/2] w-full overflow-hidden bg-white">
           <div
             className={`flex h-full w-full ${isHeroTransitioning ? 'transition-transform duration-700 ease-in-out' : ''}`}
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}

@@ -35,7 +35,7 @@ export default function DalanGreensPage() {
         {/* Full-width Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/greens_hero.png"
+            src="/images/greens_hero.jpeg"
             alt="Dalan Greens Entrance Gate Background"
             fill
             priority
@@ -264,7 +264,7 @@ export default function DalanGreensPage() {
               </div>
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 flex items-center justify-center">
                 <Image
-                  src="/images/greens_layout.png"
+                  src="/images/greens_layout.jpeg"
                   alt="Dalan Greens Layout Map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -314,7 +314,7 @@ export default function DalanGreensPage() {
 
               <div className="pt-2">
                 <a
-                  href="/images/greens_layout.png"
+                  href="/images/greens_layout.jpeg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#091e44] text-white hover:bg-[#061632] text-sm font-semibold rounded-full shadow-md transition-all duration-300"

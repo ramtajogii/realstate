@@ -1,89 +1,217 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, MapPin } from 'lucide-react'
+import {
+  MapPin,
+  Plane,
+  Landmark,
+  Building2,
+  ShieldCheck,
+  Award,
+  Fence,
+  Trees,
+  TreePine,
+  Zap,
+  Route,
+  Droplets,
+  Waves,
+  Store,
+  Cctv,
+  Home,
+  Sparkles,
+  ArrowRight,
+} from 'lucide-react'
+
+const paragraphs = [
+  'A new landmark of modern living rises in the heart of Varanasi — Welcome to DALAN Avenue — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.',
+]
+
+const lifeAtAvenue = [
+  'Nestled in Village Lodhan, near Om Villas, Chandmari, Varanasi, Dalan Avenue places you at the heart of a city that is rapidly transforming while staying rooted in its timeless soul. Whether it is the ease of reaching Ring Road in just 300 metres, catching a flight from LBS International Airport in 15 minutes, or exploring the spiritual serenity of Sarnath just 10 minutes away — life at Dalan Avenue keeps you beautifully connected to everything that matters.',
+  'With the assurance of an ISO 9001:2015 certified developer, flexible finance options through all leading banks, and a commitment to 100% transparent policies, owning your dream home here is not just a possibility — it is a promise.',
+]
+
+const highlights = [
+  { icon: MapPin, title: 'Prime Location', lines: ['Near Ring Road', '300 Mtr.'] },
+  { icon: Plane, title: 'LBS Airport', lines: ['15 Minutes', 'Drive'] },
+  { icon: Landmark, title: 'Sarnath', lines: ['10 Minutes', 'Drive'] },
+  { icon: Building2, title: 'Finance Facility', lines: ['Available with', 'All Leading Banks'] },
+  { icon: ShieldCheck, title: '100% Transparent', lines: ['Policies'] },
+  { icon: Award, title: 'ISO 9001:2015', lines: ['Certified Developer'] },
+]
+
+const amenities = [
+  { icon: Fence, label: 'Well Entrance & Society Gate' },
+  { icon: Trees, label: 'Park' },
+  { icon: TreePine, label: 'Greenery' },
+  { icon: Zap, label: 'Electricity' },
+  { icon: Route, label: 'Wide Pitch Road' },
+  { icon: Droplets, label: 'Water Supply' },
+  { icon: Waves, label: 'Sewage System' },
+  { icon: Store, label: 'Commercial Space' },
+  { icon: Cctv, label: 'CCTV at Main Gate' },
+]
+
+const trustPoints = [
+  { icon: Home, label: 'Spacious Homes' },
+  { icon: TreePine, label: 'Surrounded by Greenery' },
+  { icon: Sparkles, label: 'Built for a Better Tomorrow' },
+]
+
+const whatsappIcon = (
+  <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 16 16">
+    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+  </svg>
+)
 
 export default function DalanAvenuePage() {
   return (
     <div className="bg-white min-h-screen">
-      {/* Full Image Section */}
-      <section className="bg-white animate-fade-in">
-        <Image
-          src="/avenue/avenue.png"
-          alt="DALAN Avenue Home"
-          width={1920}
-          height={1080}
-          priority
-          className="mx-auto h-auto max-h-[calc(100vh-84px)] w-full object-contain"
-        />
-      </section>
-
-      {/* Main Copy Details Section */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-5xl mx-auto px-6">
-          <span className="mb-5 inline-block rounded-full bg-[#091e44] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
-            Duplex
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-tight">
-            DALAN Avenue
-          </h2>
-          <h3 className="mt-4 text-xl md:text-2xl font-bold text-[#091e44] font-display">
-            Find Your Perfect Home on the Avenue of Dreams
-          </h3>
-          <p className="mt-3 text-gray-600 text-sm flex items-center gap-1.5 font-medium">
-            <MapPin size={16} className="text-[#091e44]" /> Village Lodhan, near Om Villas, Chandmari, Varanasi
-          </p>
-          <div className="w-14 h-1 bg-[#C9922A] my-6" />
-
-          <div className="mt-8 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed font-body">
-            <p>
-              A new landmark of modern living rises in the heart of Varanasi — <strong className="text-black font-semibold">Welcome to DALAN Avenue</strong> — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.
+      {/* Split Hero Section */}
+      <section className="relative bg-[#091e44] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-stretch">
+          {/* Left: Brand & Copy */}
+          <div className="relative z-10 px-6 py-14 md:py-20 lg:px-14 flex flex-col justify-center">
+            <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
+              Premium Row Houses
+            </span>
+            <h1 className="font-display text-5xl md:text-6xl font-bold leading-none">
+              <span className="text-white">DALAN</span>
+              <br />
+              <span className="text-[#C9922A]">AVENUE</span>
+            </h1>
+            <p className="mt-5 text-white/80 text-lg md:text-xl font-display italic">
+              Find Your Perfect Home on the Avenue of Dreams
             </p>
-            <p>
-              Nestled in Village Lodhan, near Om Villas, Chandmari, Varanasi, Dalan Avenue places you at the heart of a city that is rapidly transforming while staying rooted in its timeless soul. Whether it is the ease of reaching Ring Road in just 300 metres, catching a flight from LBS International Airport in 15 minutes, or exploring the spiritual serenity of Sarnath just 10 minutes away — life at Dalan Avenue keeps you beautifully connected to everything that matters.
+            <div className="w-14 h-1 bg-[#C9922A] my-6" />
+            <p className="text-white/70 flex items-start gap-2 text-sm md:text-base font-medium">
+              <MapPin size={18} className="text-[#C9922A] shrink-0 mt-0.5" />
+              Village Lodhan, Near Om Villas, Chandmari, Varanasi UP
             </p>
-            <p>
-              With the assurance of an ISO 9001:2015 certified developer, flexible finance options through all leading banks, and a commitment to 100% transparent policies, owning your dream home here is not just a possibility — it is a promise.
-            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#C9922A] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-[#C9922A]/20 transition-all duration-300 hover:bg-[#a6741b] hover:shadow-[#C9922A]/30 hover:-translate-y-0.5"
+              >
+                Enquire Now
+                <ArrowRight size={16} />
+              </Link>
+              <a
+                href="https://wa.me/916389088088"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5"
+              >
+                {whatsappIcon}
+                WhatsApp Us
+              </a>
+            </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4 justify-start">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#091e44] px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#061632] hover:shadow-lg hover:shadow-[#091e44]/30"
+          {/* Right: Building Image + ISO Badge */}
+          <div className="relative min-h-[320px] md:min-h-[560px]">
+            <Image
+              src="/avenue/avenue.png"
+              alt="DALAN Avenue"
+              fill
+              priority
+              className="object-cover object-center"
+            />
+            <div
+              className="absolute top-0 right-6 md:right-10 bg-[#091e44] text-center px-5 pt-4 pb-6 shadow-xl"
+              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%)' }}
             >
-              Enquire Now
-            </Link>
-            <a
-              href="https://wa.me/916389088088"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/30"
-            >
-              WhatsApp Us
-            </a>
+              <p className="text-[#C9922A] font-bold text-xs tracking-widest">ISO</p>
+              <p className="text-white font-bold text-sm mt-1 whitespace-nowrap">9001:2015</p>
+              <p className="text-white/70 text-[9px] mt-1 leading-tight">CERTIFIED<br />DEVELOPER</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Society Map and Amenities Side-by-Side Section */}
+      {/* About + Project Highlights */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14">
+          {/* About */}
+          <div>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Dalan Avenue</span>
+            <div className="w-14 h-1 bg-[#C9922A] my-5" />
+            <div className="space-y-6 text-gray-700 text-base leading-relaxed font-body">
+              {paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Project Highlights */}
+          <div>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Project Highlights</span>
+            <div className="w-14 h-1 bg-[#C9922A] my-5" />
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+              {highlights.map(({ icon: Icon, title, lines }) => (
+                <div
+                  key={title}
+                  className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-[#F7F7F7] px-4 py-6 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#091e44] text-[#C9922A]">
+                    <Icon size={22} />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black text-sm">{title}</p>
+                    {lines.map((line) => (
+                      <p key={line} className="text-gray-500 text-xs mt-0.5">{line}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Amenities Strip */}
       <section className="bg-[#F7F7F7] py-16 border-t border-black/5">
         <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <span className="hidden sm:block h-px w-16 md:w-24 bg-[#C9922A]/40" />
+            <span className="rounded-full bg-[#091e44] px-6 py-2 text-white text-sm font-semibold tracking-widest font-display">
+              AMENITIES
+            </span>
+            <span className="hidden sm:block h-px w-16 md:w-24 bg-[#C9922A]/40" />
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+            {amenities.map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20"
+              >
+                <Icon size={28} className="text-[#091e44]" />
+                <p className="font-medium text-black text-sm">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Layout & Plans */}
+      <section className="bg-white py-16 border-t border-black/5">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider">Layout & Plans</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Society Map & Layout Overview</h2>
+            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Layout & Plans</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Unit Plans & Life at Dalan Avenue</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Left Column: Map */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Column 1: Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Map & Layout Plan</h3>
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
                   src="/avenue/avenueplan.png"
-                  alt="DALAN Avenue Society Map"
+                  alt="DALAN Avenue Unit Plan - Ground & First Floor"
                   width={1200}
                   height={900}
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
@@ -91,43 +219,65 @@ export default function DalanAvenuePage() {
               </div>
             </div>
 
-            {/* Right Column: Map Home */}
+            {/* Column 2: Alternate Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Map Home Layout</h3>
+                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Alternate Layout</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
                   src="/avenue/avenuemap.png"
-                  alt="DALAN Avenue Map Home Layout"
+                  alt="DALAN Avenue Unit Plan - Alternate Layout"
                   width={1200}
                   height={900}
                   className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
+              </div>
+            </div>
+
+            {/* Column 3: Life at Dalan Avenue */}
+            <div className="flex flex-col bg-[#091e44] rounded-2xl overflow-hidden shadow-md p-8">
+              <h3 className="text-[#C9922A] font-semibold text-lg font-display tracking-wide mb-4">Life at Dalan Avenue</h3>
+              <div className="space-y-5 text-white/75 text-sm leading-relaxed font-body">
+                {lifeAtAvenue.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Horizontal Amenities Section */}
-      <section className="bg-white py-16 border-t border-black/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider font-display">Experience Luxury</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Project Amenities</h2>
-            <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
+      {/* Trust Footer Bar */}
+      <section className="bg-[#091e44] py-10 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3 text-center lg:text-left">
+            <Home size={22} className="text-[#C9922A] shrink-0" />
+            <p className="font-display text-base md:text-lg text-white">
+              A Perfect Home. <span className="text-[#C9922A] font-semibold">A Better Tomorrow.</span>
+            </p>
           </div>
 
-          <div className="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-black/10 shadow-xl shadow-black/5 bg-white group">
-            <Image
-              src="/avenue/amenities.png"
-              alt="DALAN Avenue Amenities"
-              width={1200}
-              height={600}
-              className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
-            />
+          <div className="flex flex-wrap items-center justify-center gap-8">
+            {trustPoints.map(({ icon: Icon, label }) => (
+              <div key={label} className="flex flex-col items-center gap-2">
+                <div className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 text-[#C9922A]">
+                  <Icon size={18} />
+                </div>
+                <p className="text-white/80 text-xs font-medium text-center leading-snug max-w-[8rem]">{label}</p>
+              </div>
+            ))}
           </div>
+
+          <a
+            href="https://wa.me/916389088088"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 shrink-0"
+          >
+            {whatsappIcon}
+            WhatsApp Us
+          </a>
         </div>
       </section>
     </div>
