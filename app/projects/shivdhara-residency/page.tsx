@@ -14,7 +14,7 @@ export default function ShivdharaResidencyPage() {
           <div className="lg:col-span-5 flex flex-col text-left">
             {/* Title block */}
             <div className="flex flex-col items-start mb-6">
-              <h1 className="font-serif text-5xl md:text-6xl font-extrabold tracking-tight text-[#1e3b32] leading-none">
+              <h1 className="font-serif text-5xl md:text-6xl font-extrabold tracking-tight text-[#091e44] leading-none">
                 SHIVDHARA
               </h1>
               <div className="flex items-center gap-3 my-3 w-full">
@@ -24,14 +24,14 @@ export default function ShivdharaResidencyPage() {
                 </span>
                 <div className="h-0.5 flex-grow max-w-[60px] bg-[#C9922A]" />
               </div>
-              <p className="text-lg md:text-xl font-bold text-[#1e3b32] tracking-wide mt-1">
+              <p className="text-lg md:text-xl font-bold text-[#091e44] tracking-wide mt-1">
                 Peaceful Living. Perfectly Planned.
               </p>
             </div>
 
             {/* About Story Capsule & Content */}
             <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-[#1e3b32] text-white text-xs font-bold uppercase tracking-widest rounded-md mb-4">
+              <span className="inline-block px-3 py-1 bg-[#091e44] text-white text-xs font-bold uppercase tracking-widest rounded-md mb-4">
                 About / Story
               </span>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
@@ -41,13 +41,13 @@ export default function ShivdharaResidencyPage() {
 
             {/* School location card */}
             <div className="bg-[#FAF9F6] border border-[#C9922A]/30 rounded-2xl p-4 flex items-center gap-4 max-w-md">
-              <div className="w-12 h-12 rounded-full bg-[#1e3b32]/10 flex items-center justify-center shrink-0">
-                <svg className="w-6 h-6 text-[#1e3b32]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-full bg-[#091e44]/10 flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6 text-[#091e44]" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V7m0 14h-4m4 0h4m-4-14h4m-4 0H8m4 0l-4-4m4 4l4-4M8 7v14M4 21v-4a2 2 0 012-2h2M20 21v-4a2 2 0 00-2-2h-2" />
                 </svg>
               </div>
               <div>
-                <strong className="text-[#1e3b32] text-sm md:text-base block font-bold leading-tight">
+                <strong className="text-[#091e44] text-sm md:text-base block font-bold leading-tight">
                   Right in front of St. Joseph&apos;s Convent School
                 </strong>
                 <span className="text-gray-500 text-xs md:text-sm mt-0.5 block">
@@ -70,8 +70,8 @@ export default function ShivdharaResidencyPage() {
               />
             </div>
             
-            {/* Dark green overlay footer banner */}
-            <div className="absolute bottom-0 inset-x-0 bg-[#1e3b32]/95 backdrop-blur-sm text-white py-4 px-6 grid grid-cols-3 gap-2 text-center divide-x divide-white/10 z-10">
+            {/* Dark blue overlay footer banner */}
+            <div className="absolute bottom-0 inset-x-0 bg-[#091e44]/95 backdrop-blur-sm text-white py-4 px-6 grid grid-cols-3 gap-2 text-center divide-x divide-white/10 z-10">
               <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold">
                 <Shield size={16} className="text-[#C9922A] shrink-0" />
                 <span>Secure Living</span>
@@ -95,7 +95,7 @@ export default function ShivdharaResidencyPage() {
         <div className="relative border border-[#C9922A]/30 rounded-2xl p-6 md:p-8 bg-[#FAF9F6]/40">
           
           {/* Centered Tab Label */}
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white border border-[#C9922A]/30 px-6 py-1 rounded-full text-xs font-black uppercase tracking-widest text-[#1e3b32]">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white border border-[#C9922A]/30 px-6 py-1 rounded-full text-xs font-black uppercase tracking-widest text-[#091e44]">
             Amenities
           </div>
 
@@ -103,7 +103,7 @@ export default function ShivdharaResidencyPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-4 text-center items-start pt-4 divide-y sm:divide-y-0 sm:divide-x divide-[#C9922A]/10">
             {/* Item 1 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M4 22L10 2M20 22L14 2" strokeLinecap="round" />
                   <path d="M12 22v-3M12 16v-4M12 9V6" strokeDasharray="3 3" strokeLinecap="round" />
@@ -113,7 +113,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 2 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 2v8m-4 4h8M6 14v6a2 2 0 002 2h8a2 2 0 002-2v-6" />
                   <circle cx="12" cy="18" r="1.5" />
@@ -123,7 +123,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 3 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M7 22V6a4 4 0 014-4h2a4 4 0 014 4v16M11 6h2M12 2v2" strokeLinecap="round" />
                   <circle cx="12" cy="8" r="1" fill="currentColor" />
@@ -133,7 +133,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 4 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M9 11l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
@@ -143,7 +143,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 5 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 19a7 7 0 007-7c0-4.5-7-10-7-10S5 7.5 5 12a7 7 0 007 7z" />
                   <path d="M12 2v17M12 12c2 1 4-1 4-1M12 15c-2 .5-3-1.5-3-1.5" />
@@ -153,7 +153,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 6 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M19 10L14 7V4a2 2 0 00-2-2H4a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V9l5 3v-2z" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="6" cy="7" r="1" fill="currentColor" />
@@ -163,7 +163,7 @@ export default function ShivdharaResidencyPage() {
             </div>
             {/* Item 7 */}
             <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#1e3b32] mb-3">
+              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="9" />
                   <path d="M16.2 7.8L12 12l-4.2 4.2" strokeLinecap="round" />
@@ -184,7 +184,7 @@ export default function ShivdharaResidencyPage() {
           {/* Floor Plan */}
           <div className="lg:col-span-8 flex flex-col">
             <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-6 flex flex-col items-center h-full group">
-              <span className="absolute -top-3 bg-[#1e3b32] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
+              <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Floor Plan
               </span>
               <div className="relative w-full aspect-[4/3] mt-4 overflow-hidden rounded-xl bg-white border border-gray-100 p-4 flex items-center justify-center">
@@ -202,7 +202,7 @@ export default function ShivdharaResidencyPage() {
           {/* Project Highlights Card */}
           <div className="lg:col-span-4 flex flex-col">
             <div className="relative border border-[#C9922A]/30 bg-[#FAF9F6] rounded-2xl p-6 flex flex-col items-center justify-between h-full">
-              <span className="absolute -top-3 bg-[#1e3b32] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
+              <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Project Highlights
               </span>
               
@@ -246,7 +246,7 @@ export default function ShivdharaResidencyPage() {
               </div>
 
               {/* Quotation text badge */}
-              <div className="w-full bg-[#1e3b32] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
+              <div className="w-full bg-[#091e44] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
                 A home built with belief.
                 <br />
                 <span className="text-white">A life filled with happiness.</span>
@@ -260,35 +260,38 @@ export default function ShivdharaResidencyPage() {
 
       {/* Call to action booking section */}
       <section className="max-w-7xl mx-auto px-6 py-6">
-        <div className="bg-[#FAF9F6] border border-[#C9922A]/30 rounded-2xl p-6 flex flex-wrap md:flex-nowrap items-center justify-between gap-6">
+        <div className="bg-[#091e44] border border-white/10 rounded-2xl p-6 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 shadow-xl">
           <div className="flex items-start gap-3 max-w-xl text-left">
-            <MapPin size={22} className="text-[#1e3b32] shrink-0 mt-1" />
+            <MapPin size={22} className="text-[#C9922A] shrink-0 mt-1" />
             <div>
-              <strong className="text-gray-800 text-sm md:text-base block">Contact for site visits & enquiry</strong>
-              <span className="text-gray-500 text-xs md:text-sm mt-0.5 block">Our team will guide you on Vaastu compliancy and leading bank finance facilitation.</span>
+              <strong className="text-white text-sm md:text-base block">Contact for site visits & enquiry</strong>
+              <span className="text-gray-300 text-xs md:text-sm mt-0.5 block">Our team will guide you on Vaastu compliancy and leading bank finance facilitation.</span>
             </div>
           </div>
-          <div className="flex items-center gap-3 shrink-0 w-full md:w-auto">
-            <a
-              href="tel:+916389088088"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 bg-[#1e3b32] hover:bg-[#142922] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300"
+          <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto">
+            <Link
+              href="/contact"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 bg-[#C9922A] hover:bg-[#a6741b] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300"
             >
-              Call Now
-            </a>
+              Enquire Now
+            </Link>
             <a
               href="https://wa.me/916389088088"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300"
+              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300"
             >
-              WhatsApp
+              <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+              </svg>
+              <span>WhatsApp Us</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* Full-width Bottom Dark Green Bar */}
-      <footer className="w-full bg-[#1e3b32] text-white py-4 mt-8">
+      {/* Full-width Bottom Dark Blue Bar */}
+      <footer className="w-full bg-[#091e44] text-white py-4 mt-8">
         <div className="max-w-7xl mx-auto px-6 text-center text-[10px] md:text-xs font-black uppercase tracking-[0.25em] flex flex-wrap items-center justify-center gap-y-2 gap-x-4 md:gap-x-8 text-[#FAF9F6]/80">
           <span>Spacious Homes</span>
           <span className="text-[#C9922A] hidden md:inline">|</span>

@@ -127,12 +127,6 @@ export default function ProjectsPage() {
                   </Link>
                   <div className="flex items-center gap-2">
                     <a
-                      href="tel:+916389088088"
-                      className="px-3 py-1.5 border border-[#091e44] text-[#091e44] hover:bg-[#091e44] hover:text-white rounded-xl text-xs font-semibold transition-all duration-300"
-                    >
-                      Call
-                    </a>
-                    <a
                       href="https://wa.me/916389088088"
                       target="_blank"
                       rel="noopener noreferrer"

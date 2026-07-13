@@ -1,10 +1,8 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 
 
 const socialLinks = [
@@ -40,20 +38,6 @@ const quickLinks = [
 ]
 
 export default function Footer() {
-  const [showContactOptions, setShowContactOptions] = useState(false)
-  const dropdownRef = useRef<HTMLLIElement>(null)
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setShowContactOptions(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
 
   return (
     <footer className="bg-[#ffffff] border-t border-black/10">
@@ -137,48 +121,16 @@ export default function Footer() {
                 <MapPin size={16} className="text-[#091e44] mt-0.5 shrink-0" />
                 <span>203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College) Varanasi UP 221002</span>
               </li>
-              <li className="relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setShowContactOptions(!showContactOptions)}
-                  className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#091e44] transition-colors focus:outline-none"
-                  aria-expanded={showContactOptions}
-                  aria-haspopup="true"
+              <li>
+                <a
+                  href="https://wa.me/916389088088"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#25D366] transition-colors"
                 >
                   <Phone size={16} className="text-[#091e44]" />
                   <span>+91 6389088088</span>
-                </button>
-                <AnimatePresence>
-                  {showContactOptions && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95, y: -4 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, y: -4 }}
-                      transition={{ duration: 0.15, ease: 'easeOut' }}
-                      className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-black/10 py-1.5 z-50 origin-top-left"
-                    >
-                      <a
-                        href="tel:+916389088088"
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#091e44] transition-colors"
-                        onClick={() => setShowContactOptions(false)}
-                      >
-                        <Phone size={14} className="text-[#091e44]" />
-                        <span>Call Us</span>
-                      </a>
-                      <a
-                        href="https://wa.me/916389088088"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#25D366] transition-colors"
-                        onClick={() => setShowContactOptions(false)}
-                      >
-                        <svg className="w-3.5 h-3.5 fill-current text-[#25D366]" viewBox="0 0 24 24">
-                          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436.002 9.858-4.419 9.86-9.86.001-2.636-1.026-5.114-2.893-6.983-1.867-1.868-4.35-2.899-6.983-2.9-5.443 0-9.863 4.42-9.865 9.861a9.79 9.79 0 001.503 5.176l-1.018 3.715 3.805-.998zM17.18 14.8c-.284-.143-1.68-.829-1.94-.924-.26-.096-.45-.143-.64.143-.19.285-.736.924-.9 1.114-.165.19-.328.214-.61.072-1.393-.697-2.28-1.253-3.205-2.836-.242-.415.242-.385.693-1.282.076-.153.038-.287-.019-.401-.057-.114-.45-1.082-.616-1.481-.162-.389-.326-.336-.45-.342l-.384-.007c-.13 0-.342.049-.52.247-.18.197-.686.671-.686 1.637 0 .966.7 1.9 1.002 2.302.302.4 2.85 4.35 6.903 6.1 1.258.543 2.115.753 2.84.982 1.272.404 2.43.348 3.344.211 1.02-.153 2.13-.87 2.43-1.717.3-.847.3-1.572.21-1.717-.09-.145-.33-.23-.61-.373z" />
-                        </svg>
-                        <span>WhatsApp Us</span>
-                      </a>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                </a>
               </li>
               <li>
                 <a href="mailto:info@dalanbuilders.in" className="flex items-center gap-3 text-gray-600 text-sm hover:text-[#091e44] transition-colors">

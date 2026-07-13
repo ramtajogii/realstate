@@ -21,7 +21,8 @@ module.exports = {
         gold: '#C9922A',
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        display: ['Montserrat', 'sans-serif'],
+        serif: ['Montserrat', 'sans-serif'],
         body: ['DM Sans', 'sans-serif'],
         sans: ['Inter', 'sans-serif'],
         nav: ['Roboto', 'sans-serif'],

@@ -109,13 +109,7 @@ export default function DalanGreensPage() {
                 <ArrowRight size={16} />
               </Link>
               
-              <a
-                href="tel:+916389088088"
-                className="inline-flex items-center gap-2 border border-[#C9922A] text-[#C9922A] px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9922A]/10 hover:-translate-y-0.5"
-              >
-                <Phone size={16} />
-                Call Now
-              </a>
+
 
               <a
                 href="https://wa.me/916389088088"
@@ -123,8 +117,8 @@ export default function DalanGreensPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 1.981 14.116.957 11.999.957c-5.442 0-9.866 4.372-9.87 9.802 0 1.71.463 3.382 1.34 4.867l-.98 3.577 3.668-.949zM15.86 17.51c-.267-.134-1.579-.78-1.823-.866-.244-.09-.422-.134-.599.134-.178.267-.689.866-.844 1.046-.156.178-.311.2-.578.067-.267-.134-1.127-.415-2.147-1.326-.79-.705-1.324-1.577-1.48-1.844-.155-.267-.016-.41.118-.543.12-.12.267-.311.4-.467.133-.156.178-.267.267-.444.089-.178.045-.333-.022-.467-.067-.134-.599-1.446-.823-1.98-.217-.52-.455-.45-.63-.459-.166-.008-.356-.01-.545-.01-.19 0-.499.07-.76.356-.262.287-1 0-1 2.44 0 2.442 1.777 4.793 2.022 5.122.245.33 3.5 5.34 8.48 7.48 1.18.5 2.1.8 2.82 1.03 1.19.38 2.27.32 3.13.2 1 .15 2.07-.61 2.3-1.21.23-.6 2.3-3.44 2.2-3.52-.09-.08-.36-.13-.62-.26z" />
+                <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
                 </svg>
                 WhatsApp Us
               </a>
@@ -225,7 +219,7 @@ export default function DalanGreensPage() {
               />
             </div>
             {/* Features Bar - positioned overlapping the bottom boundary (half-in, half-out) */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-[#122b1f]/95 backdrop-blur-md grid grid-cols-4 gap-2 py-4 px-3 text-center text-[10px] md:text-xs text-white rounded-2xl shadow-xl border border-white/10 z-20">
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-[#091e44]/95 backdrop-blur-md grid grid-cols-4 gap-2 py-4 px-3 text-center text-[10px] md:text-xs text-white rounded-2xl shadow-xl border border-white/10 z-20">
               <div className="flex flex-col items-center gap-1.5 border-r border-white/10 last:border-r-0 px-1">
                 <LayoutGrid size={18} className="text-[#C9922A] mb-0.5" />
                 <span className="font-semibold text-gray-200 tracking-wide leading-tight">Well Planned<br />Layout</span>
@@ -323,7 +317,7 @@ export default function DalanGreensPage() {
                   href="/images/greens_layout.png"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#0d1a15] text-white hover:bg-[#122b1f] text-sm font-semibold rounded-full shadow-md shadow-emerald-950/20 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#091e44] text-white hover:bg-[#061632] text-sm font-semibold rounded-full shadow-md transition-all duration-300"
                 >
                   <Eye size={16} className="text-[#C9922A]" />
                   View Full Layout Plan
@@ -450,7 +444,7 @@ export default function DalanGreensPage() {
           </div>
 
           {/* Column 2: Location Card */}
-          <div className="bg-gradient-to-br from-[#0d1a15] to-[#040806] rounded-3xl p-8 text-white flex flex-col justify-between border border-white/5 shadow-xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-[#091e44] to-[#061632] rounded-3xl p-8 text-white flex flex-col justify-between border border-white/5 shadow-xl relative overflow-hidden">
             <div className="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:14px_14px]" />
             <div className="relative z-10 text-center flex-grow flex flex-col justify-center py-6">
               <div className="flex justify-center mb-6">
@@ -479,11 +473,18 @@ export default function DalanGreensPage() {
           {/* Column 3: Booking Info */}
           <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm flex flex-col justify-between">
             <div>
-              <div className="mb-6 border-b border-gray-100 pb-3">
-                <span className="text-xs uppercase tracking-wider font-bold text-gray-400 block mb-1">For Booking Call</span>
-                <a href="tel:+916389088088" className="font-serif text-2xl md:text-3xl font-extrabold text-[#C9922A] flex items-center gap-2 hover:opacity-90 transition-opacity">
-                  <Phone size={22} />
-                  6389 088 088
+              <div className="mb-6 border-b border-gray-100 pb-3 flex flex-col items-start">
+                <span className="text-xs uppercase tracking-wider font-bold text-gray-400 block mb-2">For Booking Whatsapp</span>
+                <a
+                  href="https://wa.me/916389088088"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/30 gap-2 w-full mt-1"
+                >
+                  <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+                  </svg>
+                  <span>WhatsApp Us</span>
                 </a>
               </div>
               <ul className="space-y-3.5">
@@ -514,7 +515,7 @@ export default function DalanGreensPage() {
       {/* Pre-Footer Banner Section */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-gradient-to-r from-[#0b1a13] to-[#122b1f] rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/5">
+          <div className="bg-[#091e44] rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-white/5">
             <div className="text-center md:text-left">
               <h3 className="font-serif text-2xl md:text-3xl font-semibold text-white mb-2">
                 Ready to Own a Plot in Mau?
@@ -533,20 +534,13 @@ export default function DalanGreensPage() {
                 Book Site Visit
               </Link>
               <a
-                href="tel:+916389088088"
-                className="border border-[#C9922A] text-[#C9922A] px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#C9922A]/10 hover:-translate-y-0.5 inline-flex items-center gap-2"
-              >
-                <Phone size={16} />
-                Call Now
-              </a>
-              <a
                 href="https://wa.me/916389088088"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#25D366] text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/10 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/20 hover:-translate-y-0.5 inline-flex items-center gap-2"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 1.981 14.116.957 11.999.957c-5.442 0-9.866 4.372-9.87 9.802 0 1.71.463 3.382 1.34 4.867l-.98 3.577 3.668-.949zM15.86 17.51c-.267-.134-1.579-.78-1.823-.866-.244-.09-.422-.134-.599.134-.178.267-.689.866-.844 1.046-.156.178-.311.2-.578.067-.267-.134-1.127-.415-2.147-1.326-.79-.705-1.324-1.577-1.48-1.844-.155-.267-.016-.41.118-.543.12-.12.267-.311.4-.467.133-.156.178-.267.267-.444.089-.178.045-.333-.022-.467-.067-.134-.599-1.446-.823-1.98-.217-.52-.455-.45-.63-.459-.166-.008-.356-.01-.545-.01-.19 0-.499.07-.76.356-.262.287-1 0-1 2.44 0 2.442 1.777 4.793 2.022 5.122.245.33 3.5 5.34 8.48 7.48 1.18.5 2.1.8 2.82 1.03 1.19.38 2.27.32 3.13.2 1 .15 2.07-.61 2.3-1.21.23-.6 2.3-3.44 2.2-3.52-.09-.08-.36-.13-.62-.26z" />
+                <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 16 16">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
                 </svg>
                 WhatsApp Us
               </a>

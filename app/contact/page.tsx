@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ChevronDown } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ChevronDown, MessageSquare } from 'lucide-react'
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '', city: '' })
@@ -73,7 +73,7 @@ export default function ContactPage() {
   }
 
   const contactInfo = [
-    { icon: Phone, title: 'Call Us', lines: ['+91 6389088088'] },
+    { icon: MessageSquare, title: 'WhatsApp Us', lines: ['+91 6389088088'], link: 'https://wa.me/916389088088' },
     { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.com'] },
     { icon: MapPin, title: 'Visit Us', lines: ['203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
@@ -95,17 +95,39 @@ export default function ContactPage() {
       <section className="py-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((item, i) => (
-              <div key={i} className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-6 text-center hover:border-[#091e44]/30 transition-all duration-300">
-                <div className="w-12 h-12 bg-[#091e44]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon size={20} className="text-[#091e44]" />
+            {contactInfo.map((item, i) => {
+              const CardContent = (
+                <>
+                  <div className="w-12 h-12 bg-[#091e44]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon size={20} className="text-[#091e44]" />
+                  </div>
+                  <h4 className="text-black font-semibold mb-2">{item.title}</h4>
+                  {item.lines.map((line, j) => (
+                    <p key={j} className="text-gray-600 text-sm">{line}</p>
+                  ))}
+                </>
+              )
+
+              if (item.link) {
+                return (
+                  <a
+                    key={i}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-[#F7F7F7] border border-black/10 rounded-2xl p-6 text-center hover:border-emerald-500/30 hover:shadow-md transition-all duration-300 cursor-pointer"
+                  >
+                    {CardContent}
+                  </a>
+                )
+              }
+
+              return (
+                <div key={i} className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-6 text-center hover:border-[#091e44]/30 transition-all duration-300">
+                  {CardContent}
                 </div>
-                <h4 className="text-black font-semibold mb-2">{item.title}</h4>
-                {item.lines.map((line, j) => (
-                  <p key={j} className="text-gray-600 text-sm">{line}</p>
-                ))}
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
