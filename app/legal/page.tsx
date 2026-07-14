@@ -50,7 +50,7 @@ export default function LegalPage() {
               <p><strong className="text-black">RERA Compliance:</strong> All our projects are registered under RERA (Regulation and Development Act). Please verify RERA registration details on the official RERA website before making any purchase decision.</p>
               <p><strong className="text-black">Investment Advice:</strong> Nothing on this website constitutes financial, legal, or investment advice. Prospective buyers are encouraged to conduct their own due diligence and consult with appropriate professionals before making any property investment decisions.</p>
               <p><strong className="text-black">Rendering Disclaimer:</strong> Images, 3D renders, and visualizations shown on this website are artistic impressions and may not exactly represent the final delivered product.</p>
-              <p>For any queries, please contact us at legal@dalanbuilders.com or call +91 98765 43210.</p>
+              <p>For any queries, please contact us at Info@dalanbuilders.in or call +91 6389088088</p>
             </div>
           </div>
         </div>
