@@ -106,7 +106,7 @@ export default function Navbar() {
         >
           <Link
             href={item.href}
-            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-[13px] font-semibold text-[#333333] transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white font-nav uppercase tracking-[0.08em]"
+            className="flex items-center justify-between gap-3 border-b border-black/10 px-5 py-4 text-[13px] font-medium text-[#333333] transition-all duration-200 last:border-b-0 hover:bg-[#091e44] hover:text-white font-nav uppercase tracking-[0.08em]"
           >
             <span>{item.label}</span>
             {item.dropdown && <ChevronRight size={14} />}
@@ -169,19 +169,18 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 ml-4 lg:ml-8 shrink-0">
           <a
             href="https://wa.me/916389088088"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[13px] font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/30 whitespace-nowrap"
+            className="px-5 py-2 bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30 whitespace-nowrap"
           >
             Connect with Us
           </a>
           <Link
             href="/contact"
-            className="px-4 py-1.5 bg-[#091e44] text-white text-[13px] font-medium rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30 whitespace-nowrap"
+            className="px-5 py-2 bg-[#091e44] text-white text-sm font-semibold rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30 whitespace-nowrap"
           >
             Enquire Now
           </Link>
@@ -232,7 +231,7 @@ export default function Navbar() {
                         <div className="flex items-center justify-between py-1.5 px-2 hover:bg-[#091e44]/5 rounded-xl transition-all">
                           <Link
                             href={subLink.href}
-                            className="text-[13px] font-semibold text-gray-700 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
+                            className="text-[13px] font-medium text-gray-700 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
                             onClick={() => setMobileOpen(false)}
                           >
                             {subLink.label}
@@ -259,7 +258,7 @@ export default function Navbar() {
                                 <div className="flex items-center justify-between py-1 px-2 hover:bg-[#091e44]/5 rounded-lg transition-all">
                                   <Link
                                     href={nestedLink.href}
-                                    className="text-[12px] font-semibold text-gray-600 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
+                                    className="text-[12px] font-normal text-gray-600 hover:text-[#091e44] uppercase font-nav tracking-[0.05em] transition-colors"
                                     onClick={() => setMobileOpen(false)}
                                   >
                                     {nestedLink.label}
@@ -308,7 +307,7 @@ export default function Navbar() {
                 href="https://wa.me/916389088088"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-center py-3 bg-emerald-600 text-white rounded-full text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/20"
+                className="block text-center py-3 bg-[#25D366] text-white rounded-full text-sm font-semibold hover:bg-[#20ba5a] transition-colors shadow-lg shadow-green-500/20"
                 onClick={() => setMobileOpen(false)}
               >
                 Connect with Us

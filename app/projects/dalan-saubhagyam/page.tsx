@@ -114,7 +114,7 @@ export default function DalanSaubhagyamPage() {
               className="object-cover object-center"
             />
             <div
-              className="absolute top-0 right-6 md:right-10 bg-[#091e44] text-center px-5 pt-4 pb-6 shadow-xl"
+              className="hidden md:block absolute top-0 right-6 md:right-10 bg-[#091e44] text-center px-5 pt-4 pb-6 shadow-xl"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%)' }}
             >
               <p className="text-[#C9922A] font-bold text-xs tracking-widest">ISO</p>

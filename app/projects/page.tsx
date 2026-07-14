@@ -47,7 +47,6 @@ export default function ProjectsPage() {
         {/* <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Our Portfolio</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">All Projects</h1>
         </div>
       </section>
@@ -130,7 +129,7 @@ export default function ProjectsPage() {
                       href="https://wa.me/916389088088"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold transition-all duration-300"
+                      className="px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-xl text-xs font-semibold transition-all duration-300 hover:shadow-md hover:shadow-green-500/20"
                     >
                       WhatsApp
                     </a>

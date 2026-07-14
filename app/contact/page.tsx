@@ -86,7 +86,6 @@ export default function ContactPage() {
         {/* <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Contact" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span className="text-[#091e44] text-xs uppercase tracking-widest">Reach Us</span>
           <h1 className="font-display text-5xl font-bold text-black mt-3">Contact Us</h1>
         </div>
       </section>

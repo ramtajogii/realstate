@@ -114,7 +114,7 @@ export default function DalanSamridhiPage() {
               priority
               className="object-cover object-center"
             />
-            <div className="absolute top-5 right-5 md:top-8 md:right-8 flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#091e44] border-4 border-[#C9922A] text-center shadow-xl">
+            <div className="hidden md:flex absolute top-5 right-5 md:top-8 md:right-8 flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#091e44] border-4 border-[#C9922A] text-center shadow-xl">
               <span className="text-[#C9922A] text-[11px] font-bold tracking-wide leading-tight">ISO</span>
               <span className="text-white text-xs font-bold leading-tight mt-0.5">9001:2015</span>
               <span className="text-white/70 text-[8px] leading-tight mt-1 px-1">

@@ -47,11 +47,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Image
-              src="/logo/dalan.png"
+              src="/logo/dalan2.png"
               alt="DALAN Builders"
-              width={660}
-              height={678}
-              className="mb-4 h-28 w-auto"
+              width={150}
+              height={114}
+              className="mb-4 h-16 w-auto object-contain"
             />
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
               Building premium residential and commercial spaces that redefine modern living and working.
