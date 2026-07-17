@@ -88,7 +88,21 @@ export default function Navbar() {
   const toggleExpand = (label: string, e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    setExpandedItems((prev) => ({ ...prev, [label]: !prev[label] }))
+    setExpandedItems((prev) => {
+      const isExpanding = !prev[label]
+      const nextState = { ...prev, [label]: isExpanding }
+      
+      const residentialSubmenus = ['Plots', 'Simplex', 'Duplex', 'Row House', 'Villa', 'Apartments']
+      if (isExpanding && residentialSubmenus.includes(label)) {
+        residentialSubmenus.forEach((submenu) => {
+          if (submenu !== label) {
+            nextState[submenu] = false
+          }
+        })
+      }
+      
+      return nextState
+    })
   }
 
   const renderDesktopDropdown = (items: NavLink[], level = 0) => (
