@@ -95,10 +95,10 @@ export default function Footer() {
             <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Our Projects</h4>
             <ul className="space-y-3">
               {[
-                { name: 'Shivdhara Residency', href: '/projects/shivdhara-residency' },
-                { name: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
-                { name: 'Dalan Saubhagyam', href: '/projects/dalan-saubhagyam' },
-                { name: 'Dalan Samridhi', href: '/projects/dalan-samridhi' },
+                { name: 'SHIVDHARA RESIDENCY', href: '/projects/shivdhara-residency' },
+                { name: 'DALAN AVENUE MICRO SOCIETY', href: '/projects/dalan-avenue-micro-society' },
+                { name: 'DALAN AVENUE', href: '/projects/dalan-saubhagyam' },
+                { name: 'DALAN SAMRIDHI', href: '/projects/dalan-samridhi' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link

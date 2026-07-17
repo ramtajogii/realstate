@@ -25,9 +25,9 @@ const navLinks: NavLink[] = [
         href: '/projects?type=residential&category=plots',
         dropdown: [
           { label: 'Anand Van Kashi Pratappatti', href: '/projects?type=residential&category=plots&project=anand-van-kashi-pratappatti' },
-          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-murdaha' },
-          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-domari' },
-          { label: 'Anand Van Kashi', href: '/projects?type=residential&category=plots&project=anand-van-kashi-chandauli' },
+          { label: 'Anand Van Kashi 1', href: '/projects?type=residential&category=plots&project=anand-van-kashi-murdaha' },
+          { label: 'Anand Van Kashi 2', href: '/projects?type=residential&category=plots&project=anand-van-kashi-domari' },
+          { label: 'Anand Van Kashi 3', href: '/projects?type=residential&category=plots&project=anand-van-kashi-chandauli' },
           { label: 'Dalan Avenue Micro Society', href: '/projects/dalan-avenue-micro-society' },
           { label: 'Dalan Greens', href: '/projects/dalan-greens' },
           { label: 'Dalan Nature Valley', href: '/projects?type=residential&category=plots&project=dalan-nature-valley' },

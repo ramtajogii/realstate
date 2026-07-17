@@ -5,15 +5,15 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, Phone } from 'lucide-react'
 
 const projects = [
-  { id: 'shivdhara-residency', title: 'Shivdhara Residency', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
-  { id: 'dalan-residency', title: 'Dalan Residency', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Row House', price: 'Contact for Price', img: '/images/residency1.jpg' },
-  { id: 'dalan-paradise', title: 'Dalan Paradise', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Flats', price: 'Contact for Price', img: '/apartments/dalanparadise.png' },
-  { id: 'dalan-greens', title: 'Dalan Greens', location: 'Mau, Lucknow - UP', type: 'Plots', status: 'Ready to Register', beds: '1000 - 1500 Sq.ft. Plots', price: 'Contact for Price', img: '/images/greens_hero.png' },
-  { id: 'dalan-avenue', title: 'Dalan Avenue', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'New Launch', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
-  { id: 'dalan-saubhagyam', title: 'Dalan Saubhagyam', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Under Construction', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
-  { id: 'dalan-samridhi', title: 'Dalan Samridhi', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Phase - 1 (Delivered)', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
-  { id: 'dalan-avenue-micro-society', title: 'Dalan Avenue Micro Society', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Plots', status: 'Delivered', beds: 'Residential Plots', price: 'Contact for Price', img: '/microsociety/microplots.png' },
-  { id: 'dalan-narayan-puram', title: 'Dalan Narayan Puram', location: 'Harhuan Market, Airport Road, Varanasi UP', type: 'Plots', status: 'New Launch', beds: 'Residential Plots', price: 'Contact for Price', img: '/images/narayan_puram_gate_v3.png' },
+  { id: 'shivdhara-residency', title: 'DALAN SHIVDHARA RESIDENCY', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
+  { id: 'dalan-residency', title: 'DALAN RESIDENCY', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Row House', price: 'Contact for Price', img: '/images/residency1.jpg' },
+  { id: 'dalan-paradise', title: 'DALAN PARADISE', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'Upcoming Project', beds: '2 BHK Flats', price: 'Contact for Price', img: '/apartments/dalanparadise.png' },
+  { id: 'dalan-greens', title: 'DALAN GREENS', location: 'Mau, Lucknow - UP', type: 'Plots', status: 'Ready to Register', beds: '1000 - 1500 Sq.ft. Plots', price: 'Contact for Price', img: '/images/greens_hero.png' },
+  { id: 'dalan-avenue', title: 'DALAN AVENUE', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'New Launch', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
+  { id: 'dalan-saubhagyam', title: 'DALAN SAUBHAGYAM', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Under Construction', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
+  { id: 'dalan-samridhi', title: 'DALAN SAMRIDHI', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Phase - 1 (Delivered)', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
+  { id: 'dalan-avenue-micro-society', title: 'DALAN AVENUE MICRO SOCIETY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Plots', status: 'Delivered', beds: 'Residential Plots', price: 'Contact for Price', img: '/microsociety/microplots.png' },
+  { id: 'dalan-narayan-puram', title: 'DALAN NARAYAN PURAM', location: 'Harahua Market, Airport Road, Varanasi UP', type: 'Plots', status: 'New Launch', beds: 'Residential Plots', price: 'Contact for Price', img: '/images/narayan_puram_gate_v3.png' },
 ]
 
 const filters = ['All', 'Residential', 'Plots']

@@ -35,7 +35,7 @@ export default function DalanNarayanPuramPage() {
               </h2>
               <div className="flex items-center gap-2 mt-4 text-gray-600 text-sm md:text-base font-semibold">
                 <MapPin size={18} className="text-[#091e44] shrink-0" />
-                <span>Harhuan Market, Airport Road, Varanasi UP</span>
+                <span>Harahua Market, Airport Road, Varanasi UP</span>
               </div>
             </div>
 

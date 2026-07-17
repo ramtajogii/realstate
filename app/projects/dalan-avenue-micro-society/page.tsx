@@ -12,7 +12,7 @@ export default function DalanAvenueMicroSocietyPage() {
             Residential Plots
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-tight">
-            Dalan Avenue Micro Society
+            DALAN Avenue Micro Society
           </h2>
           <p className="mt-3 text-gray-600 text-sm flex items-center gap-1.5 font-medium">
             <MapPin size={16} className="text-[#091e44]" /> Village Lodhan, near Om Villas, Chandmari, Varanasi

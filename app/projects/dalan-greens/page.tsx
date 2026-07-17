@@ -55,7 +55,7 @@ export default function DalanGreensPage() {
             </span>
 
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
-              Dalan <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
+              DALAN <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
             </h1>
 
             <p className="text-lg md:text-xl font-semibold text-gray-200 mb-4">

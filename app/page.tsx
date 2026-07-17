@@ -36,7 +36,7 @@ const extendedHeroSlides = [
 const featuredProjects = [
   {
     id: 'dalan-avenue',
-    title: 'Dalan Avenue',
+    title: 'DALAN AVENUE',
     location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi',
     type: 'Duplex',
     image: '/avenue/avenue.png',
@@ -44,7 +44,7 @@ const featuredProjects = [
   },
   {
     id: 'dalan-saubhagyam',
-    title: 'Dalan Saubhagyam',
+    title: 'DALAN SAUBHAGYAM',
     location: 'Ring Road, Varanasi',
     type: 'Duplex',
     image: '/shaubhagyam/shubhagyam.png',
@@ -52,7 +52,7 @@ const featuredProjects = [
   },
   {
     id: 'shivdhara-residency',
-    title: 'Shivdhara Residency',
+    title: 'SHIVDHARA RESIDENCY',
     location: 'Bharlai, Shivpur, Varanasi',
     type: 'Row House',
     image: '/Shivdhara/shivdhara.png',
