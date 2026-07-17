@@ -70,7 +70,7 @@ export default function DalanAvenuePage() {
       <section className="relative bg-[#091e44] overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-stretch">
           {/* Left: Brand & Copy */}
-          <div className="relative z-10 px-6 py-14 md:py-20 lg:px-14 flex flex-col justify-center">
+          <div className="relative z-10 order-2 md:order-1 px-6 py-14 md:py-20 lg:px-14 flex flex-col justify-center">
             <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
               Premium Row Houses
             </span>
@@ -108,7 +108,7 @@ export default function DalanAvenuePage() {
           </div>
 
           {/* Right: Building Image + ISO Badge */}
-          <div className="relative min-h-[320px] md:min-h-[560px]">
+          <div className="relative order-1 md:order-2 min-h-[320px] md:min-h-[560px]">
             <Image
               src="/avenue/avenue.png"
               alt="DALAN Avenue"
@@ -116,6 +116,7 @@ export default function DalanAvenuePage() {
               priority
               className="object-cover object-center"
             />
+            <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#091e44] to-transparent pointer-events-none" />
             <div
               className="hidden md:block absolute top-0 right-6 md:right-10 bg-[#091e44] text-center px-5 pt-4 pb-6 shadow-xl"
               style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%)' }}

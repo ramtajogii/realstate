@@ -90,90 +90,74 @@ export default function ShivdharaResidencyPage() {
         </div>
       </section>
 
-      {/* Amenities Tab Card Section */}
+      {/* Amenities Section */}
       <section className="max-w-7xl mx-auto px-6 py-8">
-        <div className="relative border border-[#C9922A]/30 rounded-2xl p-6 md:p-8 bg-[#FAF9F6]/40">
-          
-          {/* Centered Tab Label */}
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white border border-[#C9922A]/30 px-6 py-1 rounded-full text-xs font-black uppercase tracking-widest text-[#091e44]">
-            Amenities
-          </div>
+        <div className="flex items-center justify-center gap-4 mb-10">
+          <span className="hidden sm:block h-px w-16 md:w-24 bg-[#C9922A]/40" />
+          <span className="rounded-full bg-[#091e44] px-6 py-2 text-white text-sm font-semibold tracking-widest">
+            AMENITIES
+          </span>
+          <span className="hidden sm:block h-px w-16 md:w-24 bg-[#C9922A]/40" />
+        </div>
 
-          {/* 7 Columns Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-y-8 gap-x-4 text-center items-start pt-4 divide-y sm:divide-y-0 sm:divide-x divide-[#C9922A]/10">
-            {/* Item 1 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M4 22L10 2M20 22L14 2" strokeLinecap="round" />
-                  <path d="M12 22v-3M12 16v-4M12 9V6" strokeDasharray="3 3" strokeLinecap="round" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">Pitch road</span>
-            </div>
-            {/* Item 2 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 2v8m-4 4h8M6 14v6a2 2 0 002 2h8a2 2 0 002-2v-6" />
-                  <circle cx="12" cy="18" r="1.5" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">Drainage facility</span>
-            </div>
-            {/* Item 3 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M7 22V6a4 4 0 014-4h2a4 4 0 014 4v16M11 6h2M12 2v2" strokeLinecap="round" />
-                  <circle cx="12" cy="8" r="1" fill="currentColor" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">Street lights</span>
-            </div>
-            {/* Item 4 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M9 11l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">24x7 security system</span>
-            </div>
-            {/* Item 5 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M12 19a7 7 0 007-7c0-4.5-7-10-7-10S5 7.5 5 12a7 7 0 007 7z" />
-                  <path d="M12 2v17M12 12c2 1 4-1 4-1M12 15c-2 .5-3-1.5-3-1.5" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">Greenery all around</span>
-            </div>
-            {/* Item 6 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M19 10L14 7V4a2 2 0 00-2-2H4a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V9l5 3v-2z" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="6" cy="7" r="1" fill="currentColor" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">CCTV at main gate</span>
-            </div>
-            {/* Item 7 */}
-            <div className="flex flex-col items-center pt-2 sm:pt-0 sm:pl-2">
-              <div className="w-10 h-10 flex items-center justify-center text-[#091e44] mb-3">
-                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M16.2 7.8L12 12l-4.2 4.2" strokeLinecap="round" />
-                  <path d="M12 3v2M12 19v2M3 12h2M19 12h2" strokeLinecap="round" />
-                </svg>
-              </div>
-              <span className="text-xs md:text-sm font-bold text-gray-800 leading-tight">Vaastu compliant</span>
-            </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-5">
+          {/* Item 1 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M4 22L10 2M20 22L14 2" strokeLinecap="round" />
+              <path d="M12 22v-3M12 16v-4M12 9V6" strokeDasharray="3 3" strokeLinecap="round" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">Pitch road</span>
           </div>
-
+          {/* Item 2 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2v8m-4 4h8M6 14v6a2 2 0 002 2h8a2 2 0 002-2v-6" />
+              <circle cx="12" cy="18" r="1.5" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">Drainage facility</span>
+          </div>
+          {/* Item 3 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M7 22V6a4 4 0 014-4h2a4 4 0 014 4v16M11 6h2M12 2v2" strokeLinecap="round" />
+              <circle cx="12" cy="8" r="1" fill="currentColor" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">Street lights</span>
+          </div>
+          {/* Item 4 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M9 11l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">24x7 security system</span>
+          </div>
+          {/* Item 5 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 19a7 7 0 007-7c0-4.5-7-10-7-10S5 7.5 5 12a7 7 0 007 7z" />
+              <path d="M12 2v17M12 12c2 1 4-1 4-1M12 15c-2 .5-3-1.5-3-1.5" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">Greenery all around</span>
+          </div>
+          {/* Item 6 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M19 10L14 7V4a2 2 0 00-2-2H4a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V9l5 3v-2z" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="6" cy="7" r="1" fill="currentColor" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">CCTV at main gate</span>
+          </div>
+          {/* Item 7 */}
+          <div className="flex flex-col items-center text-center gap-3 rounded-xl border border-black/10 bg-white px-4 py-8 transition-all duration-300 hover:shadow-lg hover:border-[#091e44]/20">
+            <svg className="w-8 h-8 text-[#091e44]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M16.2 7.8L12 12l-4.2 4.2" strokeLinecap="round" />
+              <path d="M12 3v2M12 19v2M3 12h2M19 12h2" strokeLinecap="round" />
+            </svg>
+            <span className="font-medium text-black text-xs md:text-sm leading-tight">Vaastu compliant</span>
+          </div>
         </div>
       </section>
 

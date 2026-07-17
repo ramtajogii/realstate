@@ -31,10 +31,10 @@ const socialLinks = [
 ]
 
 const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT US', href: '/about' },
+  { label: 'PROJECTS', href: '/projects' },
+  { label: 'CONTACT US', href: '/contact' },
 ]
 
 export default function Footer() {
