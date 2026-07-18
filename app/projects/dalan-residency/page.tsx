@@ -19,17 +19,17 @@ import {
 } from 'lucide-react'
 
 const paragraphs = [
-  'Dalan Residency brings you premium 2 BHK row houses designed for modern families who value comfort, style, and connectivity. Located in Ganeshpur, near BHEL on Airport Road, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
+  'Dalan Residency brings you premium 3 BHK duplex row houses designed for modern families who value comfort, style, and connectivity. Located in Village Lodhan, near Om Villas, Chandmari, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
   'Every home is thoughtfully planned with elegant design, quality construction, and well-ventilated spaces. Wide roads, greenery, and essential amenities make Dalan Residency not just a house, but a lifestyle.',
 ]
 
 const highlights = [
-  { icon: MapPin, title: 'Prime Location', lines: ['Near Ring Road', '300 Mtr.'] },
+  { icon: MapPin, title: 'Prime Location', lines: ['Near Ring Road', '(300 Mtr.)'] },
   { icon: Plane, title: 'LBS Airport', lines: ['15 Minutes', 'Drive'] },
   { icon: Landmark, title: 'Sarnath', lines: ['10 Minutes', 'Drive'] },
   { icon: Landmark, title: 'Loan Facility', lines: ['Available with', 'All Leading Banks'] },
   { icon: ShieldCheck, title: '100% Transparent', lines: ['Policies'] },
-  { icon: Award, title: 'ISO 9001:2015', lines: ['Certified Developer'] },
+  { icon: Award, title: 'ISO 9001:2015', lines: ['Certified', 'Developer'] },
 ]
 
 const amenities = [
@@ -38,18 +38,18 @@ const amenities = [
   { icon: TreePine, label: 'Greenery' },
   { icon: Zap, label: 'Electricity' },
   { icon: Route, label: 'Wide Pitch Road' },
-  { icon: Waves, label: 'Sewer System' },
+  { icon: Waves, label: 'Sewar System' },
   { icon: Droplets, label: 'Water Supply' },
   { icon: Store, label: 'Commercial Space' },
   { icon: ShieldCheck, label: '24x7 Security' },
 ]
 
 const accessibility = [
-  { text: 'Ring Road', val: '(300 mtr.)' },
-  { text: 'Om Villas', val: '(100 mtr.)' },
-  { text: 'Chandmari Market', val: '(700 mtr.)' },
-  { text: 'Varanasi Kachahari', val: '(4.5 km)' },
-  { text: 'Cantt Railway Station', val: '(7 km)' },
+  { text: 'Ring Road', val: '(300mtr)' },
+  { text: 'Om Villas', val: '(100mtr)' },
+  { text: 'Chandmari Market', val: '(700mtr)' },
+  { text: 'Varanasi Kachahari', val: '(4.5km)' },
+  { text: 'Cantt Railway Station', val: '(7km)' },
   { text: 'LBS International Airport', val: '(15 Minutes)' },
 ]
 
@@ -78,13 +78,10 @@ export default function DalanResidencyPage() {
             <p className="mt-5 text-white/80 text-lg md:text-xl font-display italic">
               Premium Living. Perfectly Connected.
             </p>
-            <span className="mt-4 inline-block w-fit rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-white/80">
-              2 BHK Row Houses &middot; Stilt + 4
-            </span>
             <div className="w-14 h-1 bg-[#C9922A] my-6" />
             <p className="text-white/70 flex items-start gap-2 text-sm md:text-base font-medium">
               <MapPin size={18} className="text-[#C9922A] shrink-0 mt-0.5" />
-              Ganeshpur (Near BHEL), Airport Road, Varanasi, Uttar Pradesh
+              Village Lodhan (Near Om Villas), Chandmari, Varanasi, UP 221002
             </p>
             <div className="mt-8 flex flex-row gap-2.5 items-center w-full sm:w-auto">
               <Link
@@ -128,7 +125,7 @@ export default function DalanResidencyPage() {
                 Finance Facility
               </span>
               <span className="text-[9px] font-light text-gray-300 leading-tight">
-                available with all leading bank&apos;s
+                available with all leading banks*
               </span>
             </div>
           </div>
@@ -147,7 +144,10 @@ export default function DalanResidencyPage() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
               <p className="font-semibold text-black">
-                A home that reflects your success. A location that keeps you connected.
+                A home that reflects your success.
+              </p>
+              <p className="font-semibold text-black">
+                A location that keeps you connected.
               </p>
             </div>
           </div>
@@ -218,14 +218,27 @@ export default function DalanResidencyPage() {
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
                 <h3 className="text-white font-semibold text-lg font-display tracking-wide">Ground Floor Plan</h3>
               </div>
-              <div className="flex-grow bg-white group overflow-hidden">
-                <Image
-                  src="/images/residency-ground-floor-plan.png"
-                  alt="Dalan Residency Ground Floor Plan"
-                  width={800}
-                  height={950}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+              <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
+                <div className="p-4 flex items-center justify-center flex-grow">
+                  <Image
+                    src="/images/residency-ground-floor-plan.png"
+                    alt="Dalan Residency Ground Floor Plan"
+                    width={800}
+                    height={950}
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                {/* Details Footer */}
+                <div className="border-t border-black/10 grid grid-cols-2 text-center bg-gray-50/80 py-3">
+                  <div className="border-r border-black/10 last:border-r-0 px-2">
+                    <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">Plot Size</div>
+                    <div className="text-xs sm:text-sm font-bold text-black mt-0.5">20&apos; X 36&apos;-6&quot;</div>
+                  </div>
+                  <div className="px-2">
+                    <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">Plot Area</div>
+                    <div className="text-xs sm:text-sm font-bold text-black mt-0.5">730 SQ.FT.</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -234,34 +247,60 @@ export default function DalanResidencyPage() {
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
                 <h3 className="text-white font-semibold text-lg font-display tracking-wide">First Floor Plan</h3>
               </div>
-              <div className="flex-grow bg-white group overflow-hidden">
-                <Image
-                  src="/images/residency-first-floor-plan.png"
-                  alt="Dalan Residency First Floor Plan"
-                  width={800}
-                  height={950}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+              <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
+                <div className="p-4 flex items-center justify-center flex-grow">
+                  <Image
+                    src="/images/residency-first-floor-plan.png"
+                    alt="Dalan Residency First Floor Plan"
+                    width={800}
+                    height={950}
+                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </div>
+                {/* Details Footer */}
+                <div className="border-t border-black/10 grid grid-cols-2 text-center bg-gray-50/80 py-3">
+                  <div className="border-r border-black/10 last:border-r-0 px-2">
+                    <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">Road</div>
+                    <div className="text-xs sm:text-sm font-bold text-black mt-0.5">20 FEET WIDE</div>
+                  </div>
+                  <div className="px-2">
+                    <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase">Built-up Area</div>
+                    <div className="text-xs sm:text-sm font-bold text-black mt-0.5">Approx. 1650 SQ.FT.</div>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Column 3: Accessibility */}
-            <div className="flex flex-col bg-[#091e44] rounded-2xl overflow-hidden shadow-md p-8">
-              <div className="flex items-center gap-2 mb-6">
-                <Locate className="text-[#C9922A]" size={20} />
-                <h3 className="text-[#C9922A] font-semibold text-lg font-display tracking-wide">Accessibility</h3>
+            <div className="flex flex-col bg-[#091e44] rounded-2xl overflow-hidden shadow-md p-8 justify-between relative">
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <Locate className="text-[#C9922A]" size={20} />
+                  <h3 className="text-[#C9922A] font-semibold text-lg font-display tracking-wide">Accessibility</h3>
+                </div>
+                <ul className="space-y-4">
+                  {accessibility.map((item) => (
+                    <li key={item.text} className="flex items-center gap-2.5 border-b border-white/10 pb-2.5 last:border-b-0 text-sm">
+                      <MapPin className="text-[#C9922A] shrink-0" size={16} />
+                      <span className="text-white/80 font-medium">
+                        {item.text} <span className="text-[#C9922A] font-semibold">{item.val}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {accessibility.map((item) => (
-                  <li key={item.text} className="flex justify-between items-start gap-2 border-b border-white/10 pb-2.5 last:border-b-0 text-sm">
-                    <span className="text-white/70 font-medium">{item.text}</span>
-                    <span className="text-[#C9922A] font-semibold shrink-0">{item.val}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-white/50 text-xs font-medium">
-                <MapPin size={14} className="text-[#C9922A] shrink-0" />
-                <span>Ganeshpur, Airport Road, Varanasi</span>
+              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2 text-white/50 text-xs font-medium">
+                  <MapPin size={14} className="text-[#C9922A] shrink-0" />
+                  <span>Village Lodhan, Chandmari, Varanasi</span>
+                </div>
+                {/* ISO Certification Badge */}
+                <div className="flex-shrink-0 w-20 h-20 rounded-full border-2 border-dashed border-[#C9922A] flex flex-col items-center justify-center text-center p-1 bg-white/5 select-none">
+                  <span className="text-[7px] text-[#C9922A] font-bold tracking-widest leading-none">QUALITY</span>
+                  <span className="text-xs text-white font-extrabold tracking-wide leading-none my-1">ISO</span>
+                  <span className="text-[8px] text-[#C9922A] font-black leading-none">9001:2015</span>
+                  <span className="text-[6px] text-white/70 tracking-tighter mt-1">CERTIFICATION</span>
+                </div>
               </div>
             </div>
           </div>
