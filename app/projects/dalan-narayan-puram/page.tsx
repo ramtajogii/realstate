@@ -179,7 +179,7 @@ export default function DalanNarayanPuramPage() {
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white p-4 group">
               <div className="relative aspect-[3/4] w-full">
                 <Image
-                  src="/images/narayan_puram_map_v3.png"
+                  src="/images/narayan_puram_map.png"
                   alt="Dalan Narayan Puram Layout Map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

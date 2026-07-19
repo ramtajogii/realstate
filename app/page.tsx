@@ -35,19 +35,19 @@ const extendedHeroSlides = [
 
 const featuredProjects = [
   {
-    id: 'dalan-avenue',
-    title: 'DALAN AVENUE',
-    location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi',
-    type: 'Duplex',
-    image: '/avenue/avenue.png',
+    id: 'dalan-paradise',
+    title: 'DALAN PARADISE',
+    location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi',
+    type: 'Flats',
+    image: '/apartments/dalanparadise.png',
     status: 'New Launch',
   },
   {
-    id: 'dalan-saubhagyam',
-    title: 'DALAN SAUBHAGYAM',
-    location: 'Ring Road, Varanasi',
-    type: 'Duplex',
-    image: '/shaubhagyam/shubhagyam.png',
+    id: 'dalan-samridhi',
+    title: 'DALAN SAMRIDDHI',
+    location: 'Village Kanudih, near Chandmari, Varanasi',
+    type: 'Villa',
+    image: '/samriddhi/samridhi.png',
     status: 'Under Construction',
   },
   {
