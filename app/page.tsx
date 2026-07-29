@@ -13,12 +13,12 @@ const stats = [
 
 const heroSlides = [
   {
-    desktop: '/images/residencymobile.jpg',
+    desktop: '/images/residency-desktop.png',
     mobile: '/images/residency.jpg',
     alt: 'DALAN Builders'
   },
   {
-    desktop: '/images/samridhimobile.jpg',
+    desktop: '/images/samridhi-desktop.png',
     mobile: '/images/samridhi.jpg',
     alt: 'DALAN Builders banner'
   },
