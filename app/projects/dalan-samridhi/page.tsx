@@ -106,7 +106,7 @@ export default function DalanSamridhiPage() {
             </div>
           </div>
 
-          {/* Right: Building Image + ISO Badge */}
+          {/* Right: Building Image + Stage Tag */}
           <div className="relative order-1 md:order-2 min-h-[320px] md:min-h-[560px]">
             <Image
               src="/samriddhi/samridhi.png"
@@ -116,16 +116,9 @@ export default function DalanSamridhiPage() {
               className="object-cover object-center"
             />
             <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#091e44] to-transparent pointer-events-none" />
-            <div className="hidden md:flex absolute top-5 right-5 md:top-8 md:right-8 flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#091e44] border-4 border-[#C9922A] text-center shadow-xl">
-              <span className="text-[#C9922A] text-[11px] font-bold tracking-wide leading-tight">ISO</span>
-              <span className="text-white text-xs font-bold leading-tight mt-0.5">9001:2015</span>
-              <span className="text-white/70 text-[8px] leading-tight mt-1 px-1">
-                CERTIFIED<br />DEVELOPER
-              </span>
-            </div>
             <ProjectStatusTag
               stage="Under Construction"
-              className="absolute top-5 left-5 md:top-8 md:left-8"
+              className="absolute top-5 right-5 md:top-8 md:right-8"
             />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, MapPin } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 export default function DalanAvenueMicroSocietyPage() {
   return (
@@ -8,9 +9,12 @@ export default function DalanAvenueMicroSocietyPage() {
       {/* Main Copy Details Section */}
       <section className="bg-white pb-16 py-20">
         <div className="max-w-5xl mx-auto px-6">
-          <span className="mb-5 inline-block rounded-full bg-[#091e44] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
-            Residential Plots
-          </span>
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <span className="inline-block rounded-full bg-[#091e44] px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
+              Residential Plots
+            </span>
+            <ProjectStatusTag stage="Delivered" />
+          </div>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-tight">
             DALAN Avenue Micro Society
           </h2>

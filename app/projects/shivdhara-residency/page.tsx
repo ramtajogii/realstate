@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Shield, Leaf, Users, CheckCircle2, ChevronLeft } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 export default function ShivdharaResidencyPage() {
   return (
@@ -69,7 +70,9 @@ export default function ShivdharaResidencyPage() {
                 className="object-cover transition-transform duration-750 ease-out group-hover:scale-105"
               />
             </div>
-            
+
+            <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-6 md:right-6 z-10" />
+
             {/* Dark blue overlay footer banner */}
             <div className="absolute bottom-0 inset-x-0 bg-[#091e44]/95 backdrop-blur-sm text-white py-4 px-6 grid grid-cols-3 gap-2 text-center divide-x divide-white/10 z-10">
               <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold">
