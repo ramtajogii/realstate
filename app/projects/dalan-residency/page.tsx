@@ -16,7 +16,22 @@ import {
   Store,
   ArrowRight,
   Locate,
+  BadgeCheck,
+  HardHat,
+  Sparkles,
 } from 'lucide-react'
+
+// Stage tag shown over the hero image. Keep in sync with this project's
+// `status` in app/projects/page.tsx.
+const projectStatus = 'Delivered'
+
+const statusBadges = {
+  'New Launch': { icon: Sparkles, accent: '#C9922A', caption: 'now open for booking' },
+  'Under Construction': { icon: HardHat, accent: '#E0A63C', caption: 'construction in progress' },
+  Delivered: { icon: BadgeCheck, accent: '#3FA96A', caption: 'possession handed over' },
+} as const
+
+const { icon: StatusIcon, accent: statusAccent, caption: statusCaption } = statusBadges[projectStatus]
 
 const paragraphs = [
   'Dalan Residency brings you premium 3 BHK duplex row houses designed for modern families who value comfort, style, and connectivity. Located in Village Lodhan, near Om Villas, Chandmari, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
@@ -42,6 +57,7 @@ const amenities = [
   { icon: Droplets, label: 'Water Supply' },
   { icon: Store, label: 'Commercial Space' },
   { icon: ShieldCheck, label: '24x7 Security' },
+  { icon: Landmark, label: 'Temple' },
 ]
 
 const accessibility = [
@@ -103,7 +119,7 @@ export default function DalanResidencyPage() {
             </div>
           </div>
 
-          {/* Right: Building Image + Finance Facility Badge */}
+          {/* Right: Building Image + Project Stage Badge */}
           <div className="relative order-1 md:order-2 min-h-[320px] md:min-h-[560px]">
             <Image
               src="/images/residency1.jpg"
@@ -114,19 +130,19 @@ export default function DalanResidencyPage() {
             />
             <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#091e44] to-transparent pointer-events-none" />
             <div className="hidden md:flex absolute top-5 right-5 md:top-8 md:right-8 bg-[#091e44] rounded-2xl p-5 border border-white/10 shadow-2xl flex-col items-center justify-center text-center max-w-[155px] transition-all duration-300 hover:scale-[1.02]">
-              <div className="w-14 h-14 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-3">
-                <svg className="w-9 h-9 text-[#C9922A] fill-none stroke-current" strokeWidth="1.5" viewBox="0 0 24 24">
-                  <circle cx="12" cy="7.5" r="4.5" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h3m-3 1.5h3m-3-1.5c1 0 1.5.5 1.5 1s-.5 1-1.5 1m0 0l2.25 2.25" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 16c1.5-1.5 3.5-2 6-2s4.5.5 6 2M7.5 15.5V20a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5v-4.5" />
-                </svg>
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center mb-3"
+                style={{ backgroundColor: `${statusAccent}1a` }}
+              >
+                <StatusIcon className="w-8 h-8" strokeWidth={1.5} style={{ color: statusAccent }} />
               </div>
-              <span className="text-[10px] uppercase font-black text-[#C9922A] tracking-wider mb-1 leading-snug">
-                Finance Facility
+              <span
+                className="text-[10px] uppercase font-black tracking-wider mb-1 leading-snug"
+                style={{ color: statusAccent }}
+              >
+                {projectStatus}
               </span>
-              <span className="text-[9px] font-light text-gray-300 leading-tight">
-                available with all leading banks*
-              </span>
+              <span className="text-[9px] font-light text-gray-300 leading-tight">{statusCaption}</span>
             </div>
           </div>
         </div>
