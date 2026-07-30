@@ -26,10 +26,22 @@ const statusColors: Record<string, string> = {
   'Ready to Register': 'bg-emerald-600 text-white',
 }
 
+// Display order: New Launch first, then Under Construction, then Delivered.
+// Matched with includes() so phased labels like 'Phase - 1 (Under Construction)'
+// group with their stage; anything unrecognised sorts to the end.
+const statusOrder = ['New Launch', 'Under Construction', 'Delivered']
+
+const statusRank = (status: string) => {
+  const rank = statusOrder.findIndex((s) => status.includes(s))
+  return rank === -1 ? statusOrder.length : rank
+}
+
 export default function ProjectsPage() {
   const [active, setActive] = useState('All')
 
-  const filtered = active === 'All' ? projects : projects.filter((p) => p.type === active)
+  const filtered = (active === 'All' ? projects : projects.filter((p) => p.type === active))
+    .slice()
+    .sort((a, b) => statusRank(a.status) - statusRank(b.status))
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,18 +55,18 @@ export default function ProjectsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-72 md:h-80 flex items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden pt-10 md:pt-14">
         {/* <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h1 className="font-display text-5xl font-bold text-black mt-3">All Projects</h1>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-black">All Projects</h1>
         </div>
       </section>
 
       {/* Filter */}
-      <section className="py-16 bg-white">
+      <section className="pt-8 pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-3 mb-14">
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
             {filters.map((f) => (
               <button
                 key={f}
