@@ -25,13 +25,15 @@ import {
 // `status` in app/projects/page.tsx.
 const projectStatus = 'Delivered'
 
+// Colours match the capsule tags on the projects listing (app/projects/page.tsx)
+// so a project reads the same in both places.
 const statusBadges = {
-  'New Launch': { icon: Sparkles, accent: '#C9922A', caption: 'now open for booking' },
-  'Under Construction': { icon: HardHat, accent: '#E0A63C', caption: 'construction in progress' },
-  Delivered: { icon: BadgeCheck, accent: '#3FA96A', caption: 'possession handed over' },
+  'New Launch': { icon: Sparkles, bg: '#091e44', fg: '#ffffff' },
+  'Under Construction': { icon: HardHat, bg: '#eab308', fg: '#000000' },
+  Delivered: { icon: BadgeCheck, bg: '#22c55e', fg: '#000000' },
 } as const
 
-const { icon: StatusIcon, accent: statusAccent, caption: statusCaption } = statusBadges[projectStatus]
+const { icon: StatusIcon, bg: statusBg, fg: statusFg } = statusBadges[projectStatus]
 
 const paragraphs = [
   'Dalan Residency brings you premium 3 BHK duplex row houses designed for modern families who value comfort, style, and connectivity. Located in Village Lodhan, near Om Villas, Chandmari, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
@@ -129,20 +131,12 @@ export default function DalanResidencyPage() {
               className="object-cover object-bottom"
             />
             <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#091e44] to-transparent pointer-events-none" />
-            <div className="hidden md:flex absolute top-5 right-5 md:top-8 md:right-8 bg-[#091e44] rounded-2xl p-5 border border-white/10 shadow-2xl flex-col items-center justify-center text-center max-w-[155px] transition-all duration-300 hover:scale-[1.02]">
-              <div
-                className="w-14 h-14 rounded-full flex items-center justify-center mb-3"
-                style={{ backgroundColor: `${statusAccent}1a` }}
-              >
-                <StatusIcon className="w-8 h-8" strokeWidth={1.5} style={{ color: statusAccent }} />
-              </div>
-              <span
-                className="text-[10px] uppercase font-black tracking-wider mb-1 leading-snug"
-                style={{ color: statusAccent }}
-              >
-                {projectStatus}
-              </span>
-              <span className="text-[9px] font-light text-gray-300 leading-tight">{statusCaption}</span>
+            <div
+              className="absolute top-5 right-5 md:top-8 md:right-8 inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wider shadow-md ring-1 ring-black/5"
+              style={{ backgroundColor: statusBg, color: statusFg }}
+            >
+              <StatusIcon className="w-3.5 h-3.5" strokeWidth={2.5} />
+              {projectStatus}
             </div>
           </div>
         </div>
