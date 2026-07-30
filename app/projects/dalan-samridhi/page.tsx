@@ -18,6 +18,7 @@ import {
   Home,
   ArrowRight,
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 const paragraphs = [
   'Welcome to Dalan Samridhi - a thoughtfully crafted residential community where the promise of a better life begins the moment you step through the gate. Built by the trusted name of Dalan Builders Pvt. Ltd., Dalan Samridhi is designed for families who believe that a home should not just shelter you, but inspire you. Set amidst wide open spaces, clean surroundings, and a warmly connected neighbourhood, every home here is a step towards the life you have always envisioned.',
@@ -122,6 +123,10 @@ export default function DalanSamridhiPage() {
                 CERTIFIED<br />DEVELOPER
               </span>
             </div>
+            <ProjectStatusTag
+              stage="Under Construction"
+              className="absolute top-5 left-5 md:top-8 md:left-8"
+            />
           </div>
         </div>
       </section>

@@ -18,6 +18,7 @@ import {
   ArrowRight,
   Home,
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 const paragraphs = [
   'A life of comfort, pride, and belonging awaits you at Dalan Saubhagyam — nestled in the heart of the ever-evolving city of Varanasi. Our vision is to bring together the warmth of a close-knit community and the strength of quality construction, delivering homes that are not just built with bricks, but with trust.',
@@ -122,6 +123,7 @@ export default function DalanSaubhagyamPage() {
               <p className="text-white font-bold text-sm mt-1 whitespace-nowrap">9001:2015</p>
               <p className="text-white/70 text-[9px] mt-1 leading-tight">CERTIFIED<br />DEVELOPER</p>
             </div>
+            <ProjectStatusTag stage="Delivered" className="absolute top-5 left-5 md:top-8 md:left-8" />
           </div>
         </div>
       </section>

@@ -20,6 +20,7 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 const paragraphs = [
   'A new landmark of modern living rises in the heart of Varanasi — Welcome to DALAN Avenue — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.',
@@ -125,6 +126,7 @@ export default function DalanAvenuePage() {
               <p className="text-white font-bold text-sm mt-1 whitespace-nowrap">9001:2015</p>
               <p className="text-white/70 text-[9px] mt-1 leading-tight">CERTIFIED<br />DEVELOPER</p>
             </div>
+            <ProjectStatusTag stage="Delivered" className="absolute top-5 left-5 md:top-8 md:left-8" />
           </div>
         </div>
       </section>
