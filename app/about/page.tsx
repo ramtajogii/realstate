@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react'
-import { ShieldCheck, Handshake, Users, ArrowRight } from 'lucide-react'
+import { ShieldCheck, Handshake, Users, ArrowRight, Eye, Target } from 'lucide-react'
 
 export default function AboutPage() {
   useEffect(() => {
@@ -96,7 +96,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Core Values Cards Section */}
+      {/* 3. Vision & Mission Section */}
+      <section className="max-w-[1280px] mx-auto px-6 pb-20 md:pb-24 reveal">
+        <div className="text-center space-y-2 mb-12">
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-gold font-nav">WHAT DRIVES US</span>
+          <div className="w-12 h-[2px] bg-gold mx-auto" />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Vision */}
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
+              <Eye size={28} className="text-gold" />
+            </div>
+            <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+              OUR VISION
+            </h3>
+            <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[360px]">
+              To be the most trusted name in Varanasi real estate — creating thoughtfully planned communities where a family finds not just a property, but a place to belong for generations.
+            </p>
+          </div>
+
+          {/* Mission */}
+          <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
+              <Target size={28} className="text-gold" />
+            </div>
+            <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+              OUR MISSION
+            </h3>
+            <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[360px]">
+              To deliver every project with uncompromising quality, clear legal titles and on-time possession — so that choosing a home with Dalan Builders is the easiest decision a family ever makes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Core Values Cards Section */}
       <section className="bg-[#FCFBFA] py-20 border-t border-b border-black/5 reveal">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -142,7 +178,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Bottom Call To Action Section */}
+      {/* 5. Bottom Call To Action Section */}
       <section className="max-w-[1280px] mx-auto px-6 pt-20 reveal">
         <div className="max-w-4xl mx-auto border border-gold/30 bg-white rounded-lg p-10 md:p-14 text-center space-y-6 shadow-sm">
           <h2 className="font-display text-3xl md:text-[38px] font-bold text-[#091e44] leading-tight">
