@@ -15,6 +15,7 @@ import {
   Waves,
   Store,
   TrainFront,
+  FerrisWheel,
   Home,
   ArrowRight,
 } from 'lucide-react'
@@ -46,6 +47,7 @@ const amenities = [
 const keyDistances = [
   { icon: Route, label: 'Ring Road', value: '100 Metres' },
   { icon: Store, label: 'Chandmari Market', value: '700 Metres' },
+  { icon: FerrisWheel, label: 'Funtasia Waterpark and Resort', value: '1 KM' },
   { icon: Plane, label: 'LBS International Airport', value: '15 Minutes Drive' },
   { icon: TrainFront, label: 'Varanasi Cantt Railway Station', value: '7 KM' },
   { icon: Landmark, label: 'Sarnath', value: '10 Minutes Drive' },
