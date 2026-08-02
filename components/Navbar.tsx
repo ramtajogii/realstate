@@ -13,7 +13,7 @@ type NavLink = {
 const navLinks: NavLink[] = [
   // { label: 'Home', href: '/' },
   {
-    label: 'About',
+    label: 'About Us',
     href: '/about',
   },
   {
@@ -76,7 +76,7 @@ const navLinks: NavLink[] = [
   },
   { label: 'Commercial', href: '/projects?type=commercial' },
   { label: 'Farm House', href: '/projects?type=farmhouse' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Blogs', href: '/blogs' },
 ]
 
 export default function Navbar() {
@@ -184,14 +184,6 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center gap-2 lg:gap-3 ml-4 lg:ml-8 shrink-0">
-          <a
-            href="https://wa.me/916389088088"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2 bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30 whitespace-nowrap"
-          >
-            Connect with Us
-          </a>
           <Link
             href="/contact"
             className="px-5 py-2 bg-[#091e44] text-white text-sm font-semibold rounded-full hover:bg-[#061632] transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/30 whitespace-nowrap"
@@ -317,15 +309,6 @@ export default function Navbar() {
               </div>
             ))}
             <div className="pt-4 space-y-3">
-              <a
-                href="https://wa.me/916389088088"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center py-3 bg-[#25D366] text-white rounded-full text-sm font-semibold hover:bg-[#20ba5a] transition-colors shadow-lg shadow-green-500/20"
-                onClick={() => setMobileOpen(false)}
-              >
-                Connect with Us
-              </a>
               <Link
                 href="/contact"
                 className="block text-center py-3 bg-[#091e44] text-white rounded-full text-sm font-semibold hover:bg-[#061632] transition-colors shadow-lg shadow-[#091e44]/20"
