@@ -57,7 +57,7 @@ export default function ShivdharaResidencyPage() {
             </div>
           </div>
 
-          {/* Right Column: Hero Image with Floating Banner */}
+          {/*  Right Column: Hero Image with Floating Banner */}
           <div className="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
             <div className="relative aspect-[3/4] w-full">
               <Image
