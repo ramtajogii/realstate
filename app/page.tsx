@@ -134,6 +134,14 @@ export default function HomePage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [communityIndex, setCommunityIndex] = useState(0)
   const [visibleItems, setVisibleItems] = useState(3)
+  const [isPageVisible, setIsPageVisible] = useState(true)
+
+  useEffect(() => {
+    const handleVisibility = () => setIsPageVisible(!document.hidden)
+    handleVisibility()
+    document.addEventListener('visibilitychange', handleVisibility)
+    return () => document.removeEventListener('visibilitychange', handleVisibility)
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -160,64 +168,90 @@ export default function HomePage() {
     return () => window.clearInterval(interval)
   }, [visibleItems, isHovered])
 
+  // Autoplay pauses while the tab is hidden: transitions don't complete in a
+  // background tab, so advancing the index there would leave it stranded past
+  // the last clone with no transitionend to snap it back.
   useEffect(() => {
+    if (!isPageVisible) return
+
     const interval = window.setInterval(() => {
       setIsHeroTransitioning(true)
       setCurrentSlide((prev) => prev + 1)
     }, 4000)
 
     return () => window.clearInterval(interval)
-  }, [currentSlide])
+  }, [currentSlide, isPageVisible])
 
   useEffect(() => {
+    if (!isPageVisible) return
+
     const interval = window.setInterval(() => {
       setIsTestimonialTransitioning(true)
       setCurrentTestimonial((prev) => prev + 1)
     }, 6000)
 
     return () => window.clearInterval(interval)
-  }, [currentTestimonial])
+  }, [currentTestimonial, isPageVisible])
 
+  // Both snaps compare with >= / <= rather than ===, so an index that already
+  // overshot the clone still gets pulled back instead of latching forever.
   const handleHeroTransitionEnd = () => {
-    if (currentSlide === extendedHeroSlides.length - 1) {
+    if (currentSlide >= extendedHeroSlides.length - 1) {
       setIsHeroTransitioning(false)
       setCurrentSlide(1)
-    } else if (currentSlide === 0) {
+    } else if (currentSlide <= 0) {
       setIsHeroTransitioning(false)
       setCurrentSlide(extendedHeroSlides.length - 2)
     }
   }
 
   const handleTestimonialTransitionEnd = () => {
-    if (currentTestimonial === extendedTestimonials.length - 1) {
+    if (currentTestimonial >= extendedTestimonials.length - 1) {
       setIsTestimonialTransitioning(false)
       setCurrentTestimonial(1)
-    } else if (currentTestimonial === 0) {
+    } else if (currentTestimonial <= 0) {
       setIsTestimonialTransitioning(false)
       setCurrentTestimonial(extendedTestimonials.length - 2)
     }
   }
 
+  // transitionend is the primary trigger for the snaps above, but it never
+  // arrives if a frame stalls. Without this fallback a single missed event
+  // leaves the track translated past the last slide permanently.
+  useEffect(() => {
+    if (currentSlide > 0 && currentSlide < extendedHeroSlides.length - 1) return
+
+    const timer = window.setTimeout(handleHeroTransitionEnd, 750)
+    return () => window.clearTimeout(timer)
+  }, [currentSlide])
+
+  useEffect(() => {
+    if (currentTestimonial > 0 && currentTestimonial < extendedTestimonials.length - 1) return
+
+    const timer = window.setTimeout(handleTestimonialTransitionEnd, 550)
+    return () => window.clearTimeout(timer)
+  }, [currentTestimonial])
+
   const handlePrevSlide = () => {
-    if (currentSlide === 0 || currentSlide === extendedHeroSlides.length - 1) return
+    if (currentSlide <= 0 || currentSlide >= extendedHeroSlides.length - 1) return
     setIsHeroTransitioning(true)
     setCurrentSlide((prev) => prev - 1)
   }
 
   const handleNextSlide = () => {
-    if (currentSlide === 0 || currentSlide === extendedHeroSlides.length - 1) return
+    if (currentSlide <= 0 || currentSlide >= extendedHeroSlides.length - 1) return
     setIsHeroTransitioning(true)
     setCurrentSlide((prev) => prev + 1)
   }
 
   const handlePrevTestimonial = () => {
-    if (currentTestimonial === 0 || currentTestimonial === extendedTestimonials.length - 1) return
+    if (currentTestimonial <= 0 || currentTestimonial >= extendedTestimonials.length - 1) return
     setIsTestimonialTransitioning(true)
     setCurrentTestimonial((prev) => prev - 1)
   }
 
   const handleNextTestimonial = () => {
-    if (currentTestimonial === 0 || currentTestimonial === extendedTestimonials.length - 1) return
+    if (currentTestimonial <= 0 || currentTestimonial >= extendedTestimonials.length - 1) return
     setIsTestimonialTransitioning(true)
     setCurrentTestimonial((prev) => prev + 1)
   }
