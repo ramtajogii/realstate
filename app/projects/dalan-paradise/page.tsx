@@ -19,6 +19,7 @@ import {
   ChefHat,
   Lock
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 export default function DalanParadisePage() {
   return (
@@ -96,6 +97,7 @@ export default function DalanParadisePage() {
             />
             {/* Soft dark vignettes to integrate with background */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#091e44]/30 to-transparent pointer-events-none" />
+            <ProjectStatusTag stage="New Launch" className="absolute top-5 right-5 md:top-6 md:right-6" />
           </div>
 
         </div>

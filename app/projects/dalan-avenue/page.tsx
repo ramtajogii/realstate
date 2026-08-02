@@ -20,6 +20,7 @@ import {
   Sparkles,
   ArrowRight,
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 const paragraphs = [
   'A new landmark of modern living rises in the heart of Varanasi — Welcome to DALAN Avenue — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.',
@@ -107,7 +108,7 @@ export default function DalanAvenuePage() {
             </div>
           </div>
 
-          {/* Right: Building Image + ISO Badge */}
+          {/* Right: Building Image + Stage Tag */}
           <div className="relative order-1 md:order-2 min-h-[320px] md:min-h-[560px]">
             <Image
               src="/avenue/avenue.png"
@@ -117,14 +118,7 @@ export default function DalanAvenuePage() {
               className="object-cover object-center"
             />
             <div className="hidden md:block absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#091e44] to-transparent pointer-events-none" />
-            <div
-              className="hidden md:block absolute top-0 right-6 md:right-10 bg-[#091e44] text-center px-5 pt-4 pb-6 shadow-xl"
-              style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%)' }}
-            >
-              <p className="text-[#C9922A] font-bold text-xs tracking-widest">ISO</p>
-              <p className="text-white font-bold text-sm mt-1 whitespace-nowrap">9001:2015</p>
-              <p className="text-white/70 text-[9px] mt-1 leading-tight">CERTIFIED<br />DEVELOPER</p>
-            </div>
+            <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8" />
           </div>
         </div>
       </section>

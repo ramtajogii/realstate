@@ -26,6 +26,7 @@ import {
   DoorOpen,
   TrendingUp
 } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 export default function DalanGreensPage() {
   return (
@@ -46,6 +47,8 @@ export default function DalanGreensPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#091e44]/50 via-transparent to-transparent" />
         </div>
+
+        <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
 
         <div className="max-w-7xl mx-auto w-full px-6 pt-20 md:pt-4 pb-20 relative z-10">
           {/* Left Content wrapper to keep it clean */}

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Phone, CheckCircle2, ChevronLeft, Gift } from 'lucide-react'
+import ProjectStatusTag from '@/components/ProjectStatusTag'
 
 export default function DalanNarayanPuramPage() {
   const highlights = [
@@ -173,6 +174,7 @@ export default function DalanNarayanPuramPage() {
                   className="object-cover transition-transform duration-750 ease-out group-hover:scale-105"
                 />
               </div>
+              <ProjectStatusTag stage="New Launch" className="absolute top-5 right-5 md:top-6 md:right-6" />
             </div>
 
             {/* Layout Plot Plan Image */}
