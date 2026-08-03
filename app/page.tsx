@@ -30,6 +30,14 @@ const extendedHeroSlides = [
   heroSlides[0],
 ]
 
+function GoldStar({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={`${className} text-[#C9922A] fill-current`} viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.785.57-1.84-.2-1.54-1.118l1.288-3.97a1 1 0 00-.364-1.118L2.24 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
+    </svg>
+  )
+}
+
 
 
 
@@ -561,9 +569,7 @@ export default function HomePage() {
                     {/* 5 Stars gold indicator */}
                     <div className="flex items-center justify-center gap-1 mb-6">
                       {[...Array(5)].map((_, starIndex) => (
-                        <svg key={starIndex} className="w-5 h-5 text-[#C9922A] fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.785.57-1.84-.2-1.54-1.118l1.288-3.97a1 1 0 00-.364-1.118L2.24 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
-                        </svg>
+                        <GoldStar key={starIndex} />
                       ))}
                     </div>
 
@@ -610,6 +616,31 @@ export default function HomePage() {
                 />
               )
             })}
+          </div>
+
+          {/* Customer rating badge */}
+          <div className="mt-12 md:mt-14 flex justify-center reveal">
+            <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm">
+              <div className="flex items-center justify-center gap-1.5">
+                {[...Array(5)].map((_, starIndex) => (
+                  <GoldStar key={starIndex} className="w-6 h-6 md:w-7 md:h-7" />
+                ))}
+              </div>
+
+              <div className="mt-4 text-[#091e44] text-[11px] md:text-xs uppercase tracking-[0.2em] font-bold">
+                Rated by our customers
+              </div>
+
+              <div className="mx-auto mt-5 flex items-center justify-center gap-3">
+                <div className="w-10 h-0.5 bg-[#C9922A]/30" />
+                <div className="w-1.5 h-1.5 bg-[#C9922A] rotate-45" />
+                <div className="w-10 h-0.5 bg-[#C9922A]/30" />
+              </div>
+
+              <p className="mt-5 font-serif text-lg md:text-xl font-bold leading-snug text-[#C9922A]">
+                One of the best Rated Real Estate Companies in India
+              </p>
+            </div>
           </div>
         </div>
       </section>
