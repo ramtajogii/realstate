@@ -18,9 +18,9 @@ const heroSlides = [
     alt: 'DALAN Builders'
   },
   {
-    desktop: '/images/samridhi-desktop.png',
+    desktop: '/images/samridhi-desktop.jpg',
     mobile: '/images/samridhi.jpg',
-    alt: 'DALAN Builders banner'
+    alt: 'Dalan Samridhi duplex villas, Varanasi'
   },
 ]
 
