@@ -371,25 +371,52 @@ export default function HomePage() {
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
-      <section className="py-14 bg-[#ffffff]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="reveal">
-            <span className="eyebrow text-[#091e44]">About Us</span>
-            <h2 className="mt-3 mb-6">
-              Building More Than Homes
-            </h2>
-            <div className="w-14 h-1 bg-[#091e44] mx-auto mb-6" />
-            <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
-              For over 19+ years, we have delivered residential communities and commercial destinations that stand
-              the test of time.
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
-            >
-              Know More <ArrowRight size={16} />
-            </Link>
+      <section className="py-14 md:py-16 bg-[#ffffff]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
+            {/* Image stack. The offset second frame and the gold outline are
+                what give this block depth; both are desktop-only so the
+                mobile layout stays a single clean image. */}
+            <div className="md:col-span-5 relative">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/about/sideimage.png"
+                  alt="A completed DALAN Builders home in Varanasi"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                />
+              </div>
+              <div className="hidden md:block absolute -bottom-8 -right-8 w-44 aspect-square rounded-2xl overflow-hidden ring-8 ring-white shadow-xl">
+                <Image
+                  src="/about/image2.png"
+                  alt="A DALAN Builders duplex at dusk"
+                  fill
+                  className="object-cover"
+                  sizes="176px"
+                />
+              </div>
+              <div className="hidden md:block absolute -top-5 -left-5 w-24 h-24 border-2 border-[#C9922A] rounded-2xl" />
+            </div>
+
+            <div className="md:col-span-7 md:pl-4">
+              <span className="eyebrow text-[#C9922A]">About Us</span>
+              <h2 className="mt-4 mb-5">
+                Building More Than Homes
+              </h2>
+              <div className="w-12 h-[3px] bg-[#C9922A] mb-6" />
+              <p className="text-gray-600 text-lg max-w-xl">
+                DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
+                For over 19+ years, we have delivered residential communities and commercial destinations that stand
+                the test of time.
+              </p>
+              <Link
+                href="/about"
+                className="mt-8 inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
+              >
+                Know More <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
