@@ -23,8 +23,8 @@ module.exports = {
       fontFamily: {
         display: ['Montserrat', 'sans-serif'],
         serif: ['Montserrat', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
+        body: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         nav: ['Roboto', 'sans-serif'],
       },
       animation: {
