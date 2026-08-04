@@ -82,16 +82,16 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-72 flex items-center overflow-hidden">
+      <section className="relative overflow-hidden pt-10 md:pt-14">
         {/* <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Contact" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h1 className="text-black mt-3">Contact Us</h1>
+          <h1 className="text-black">Contact Us</h1>
         </div>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-[#ffffff]">
+      <section className="pt-8 pb-14 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {

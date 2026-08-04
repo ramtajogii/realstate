@@ -396,7 +396,18 @@ export default function HomePage() {
                   sizes="176px"
                 />
               </div>
-              <div className="hidden md:block absolute -top-5 -left-5 w-24 h-24 border-2 border-[#C9922A] rounded-2xl" />
+              {/* Logo chip breaking the corner. Filled rather than a bare
+                  outline so the mark reads cleanly where the frame crosses
+                  from the page background onto the photograph. */}
+              <div className="hidden md:grid place-items-center absolute -top-5 -left-5 w-24 h-24 rounded-2xl bg-white border-2 border-[#C9922A] shadow-sm">
+                <Image
+                  src="/logo/dalan-mark.png"
+                  alt="DALAN Builders"
+                  width={206}
+                  height={178}
+                  className="w-11 h-auto"
+                />
+              </div>
             </div>
 
             <div className="md:col-span-7 md:pl-4">
