@@ -371,7 +371,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== ABOUT SECTION ===== */}
-      <section className="py-20 bg-[#ffffff]">
+      <section className="py-14 bg-[#ffffff]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="reveal">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
@@ -395,10 +395,10 @@ export default function HomePage() {
       </section>
 
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="pt-18 pb-28 bg-[#ffffff]">
+      <section className="pt-4 pb-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 reveal">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-3 mb-4">
               Featured Projects
             </h2>
@@ -446,7 +446,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-12 reveal">
+          <div className="text-center mt-8 reveal">
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300"
@@ -457,10 +457,10 @@ export default function HomePage() {
         </div>
       </section>
       {/* ===== WHY CHOOSE DALAN SECTION ===== */}
-      <section className="bg-[#091e44] text-white py-20 px-6 overflow-hidden">
+      <section className="bg-[#091e44] text-white py-14 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 reveal">
             <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Why Choose Dalan</span>
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mt-3 leading-tight">
               Built on Trust. Focused on You.
@@ -534,9 +534,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
+          <div className="text-center mb-10 reveal">
             <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Testimonials</span>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3">
               What Our Clients Say
@@ -619,7 +619,7 @@ export default function HomePage() {
           </div>
 
           {/* Customer rating badge */}
-          <div className="mt-12 md:mt-14 flex justify-center reveal">
+          <div className="mt-8 md:mt-10 flex justify-center reveal">
             <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm">
               <Image
                 src="/images/google-customer-reviews.png"
@@ -645,17 +645,17 @@ export default function HomePage() {
       </section>
 
       {/* ===== COMMUNITY & EVENTS SECTION ===== */}
-      <section className="bg-white py-16 md:py-20 px-6 border-t border-gray-100">
+      <section className="bg-white py-12 md:py-14 px-6 border-t border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
           <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Community & Events</span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3 mb-4">
             Building Relationships, Not Just Buildings
           </h2>
-          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
+          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-8" />
 
           {/* Automatic Sliding Carousel of 12 images (showing 3 at a time on desktop, 2 on mobile) */}
           <div 
-            className="overflow-hidden w-full relative mb-10 cursor-pointer"
+            className="overflow-hidden w-full relative mb-6 cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -691,7 +691,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== READY TO FIND YOUR DREAM HOME SECTION ===== */}
-      <section className="bg-white py-12 px-6">
+      <section className="bg-white py-10 px-6">
         <div className="max-w-7xl mx-auto bg-[#091e44] rounded-3xl overflow-hidden shadow-xl relative">
           
           {/* Subtle house background vectors */}
@@ -706,7 +706,7 @@ export default function HomePage() {
             </svg>
           </div>
 
-          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-16 px-8 md:px-16">
+          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-12 px-8 md:px-16">
             <div className="max-w-2xl text-left border-l-4 border-[#C9922A] pl-6">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
                 Ready to Find Your <br className="hidden md:block" />
