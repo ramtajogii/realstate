@@ -672,7 +672,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== COMMUNITY & EVENTS SECTION ===== */}
-      <section className="bg-white py-12 md:py-14 px-6 border-t border-gray-100">
+      <section className="bg-[#F7F7F7] py-12 md:py-14 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <span className="eyebrow text-[#C9922A]">Community &amp; Events</span>
           <h2 className="mt-3 mb-4">
