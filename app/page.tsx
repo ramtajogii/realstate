@@ -621,15 +621,14 @@ export default function HomePage() {
           {/* Customer rating badge */}
           <div className="mt-12 md:mt-14 flex justify-center reveal">
             <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm">
-              <div className="flex items-center justify-center gap-1.5">
-                {[...Array(5)].map((_, starIndex) => (
-                  <GoldStar key={starIndex} className="w-6 h-6 md:w-7 md:h-7" />
-                ))}
-              </div>
-
-              <div className="mt-4 text-[#091e44] text-[11px] md:text-xs uppercase tracking-[0.2em] font-bold">
-                Rated by our customers
-              </div>
+              <Image
+                src="/images/google-customer-reviews.png"
+                alt="Google Customer Reviews — five star rating"
+                width={756}
+                height={241}
+                sizes="(min-width: 768px) 288px, 240px"
+                className="mx-auto w-60 md:w-72 h-auto"
+              />
 
               <div className="mx-auto mt-5 flex items-center justify-center gap-3">
                 <div className="w-10 h-0.5 bg-[#C9922A]/30" />
@@ -638,7 +637,7 @@ export default function HomePage() {
               </div>
 
               <p className="mt-5 font-serif text-lg md:text-xl font-bold leading-snug text-[#C9922A]">
-                One of the best Rated Real Estate Companies in India
+                One of the best Rated Real Estate Companies in Varanasi
               </p>
             </div>
           </div>
