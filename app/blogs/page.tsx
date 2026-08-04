@@ -19,7 +19,7 @@ export default function BlogsPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#091e44] via-[#0d2a5c] to-[#061632]" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <span className="text-[#C9922A] text-xs uppercase tracking-widest">Insights &amp; Advice</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mt-3">Blogs</h1>
+          <h1 className="text-white mt-3">Blogs</h1>
           <p className="text-gray-300 text-sm mt-3 max-w-lg">
             Practical guidance on buying, building, and owning property in Varanasi.
           </p>
@@ -29,7 +29,7 @@ export default function BlogsPage() {
       {/* Featured post */}
       <section className="py-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-black mb-2">Featured</h2>
+          <h2 className="text-black mb-2">Featured</h2>
           <div className="w-10 h-1 bg-[#091e44] mb-8" />
 
           <Link href={`/blogs/${featured.slug}`} className="group grid md:grid-cols-2 gap-8 items-center">
@@ -53,7 +53,7 @@ export default function BlogsPage() {
                   <Clock size={13} /> {featured.readTime}
                 </span>
               </div>
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-black leading-snug group-hover:text-[#091e44] transition-colors">
+              <h3 className="text-black group-hover:text-[#091e44] transition-colors">
                 {featured.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mt-4">{featured.excerpt}</p>
@@ -68,7 +68,7 @@ export default function BlogsPage() {
       {/* All posts */}
       <section className="py-16 bg-[#F7F7F7]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-black mb-2">Latest Articles</h2>
+          <h2 className="text-black mb-2">Latest Articles</h2>
           <div className="w-10 h-1 bg-[#091e44] mb-10" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -98,7 +98,7 @@ export default function BlogsPage() {
                       <Clock size={12} /> {post.readTime}
                     </span>
                   </div>
-                  <h3 className="font-display text-lg font-bold text-black leading-snug group-hover:text-[#091e44] transition-colors">
+                  <h3 className="text-black group-hover:text-[#091e44] transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed mt-3 flex-1">{post.excerpt}</p>
@@ -116,7 +116,7 @@ export default function BlogsPage() {
       <section className="py-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-[#091e44] rounded-lg px-8 py-12 md:px-14 md:py-14 border-l-4 border-[#C9922A]">
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-snug">
+            <h2 className="text-white">
               Have a question we haven&apos;t covered?
             </h2>
             <p className="text-gray-300 text-sm mt-3 max-w-xl">

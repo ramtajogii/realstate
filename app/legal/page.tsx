@@ -9,7 +9,7 @@ export default function LegalPage() {
         <div className="absolute inset-0 bg-white/80" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <span className="text-[#091e44] text-xs uppercase tracking-widest">Legal Information</span>
-          <h1 className="font-display text-5xl font-bold text-black mt-3">Legal Policies</h1>
+          <h1 className="text-black mt-3">Legal Policies</h1>
         </div>
       </section>
 
@@ -17,7 +17,7 @@ export default function LegalPage() {
         <div className="max-w-4xl mx-auto px-6 space-y-16">
           {/* Privacy Policy */}
           <div>
-            <h2 className="font-display text-3xl font-bold text-black mb-4">Privacy Policy</h2>
+            <h2 className="text-black mb-4">Privacy Policy</h2>
             <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>DALAN Builders ("we", "us", "our") is committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website.</p>
@@ -30,7 +30,7 @@ export default function LegalPage() {
 
           {/* Terms & Conditions */}
           <div>
-            <h2 className="font-display text-3xl font-bold text-black mb-4">Terms & Conditions</h2>
+            <h2 className="text-black mb-4">Terms & Conditions</h2>
             <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>By accessing and using the DALAN Builders website, you accept and agree to be bound by the terms and provisions of this agreement.</p>
@@ -43,7 +43,7 @@ export default function LegalPage() {
 
           {/* Disclaimer */}
           <div>
-            <h2 className="font-display text-3xl font-bold text-black mb-4">Disclaimer</h2>
+            <h2 className="text-black mb-4">Disclaimer</h2>
             <div className="w-10 h-1 bg-[#091e44] mb-6" />
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
               <p>The information provided on the DALAN Builders website is for general informational purposes only. All project information, including prices, floor plans, specifications, and amenities, is indicative and subject to change.</p>

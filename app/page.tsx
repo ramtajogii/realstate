@@ -374,8 +374,8 @@ export default function HomePage() {
       <section className="py-14 bg-[#ffffff]">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-6 leading-tight">
+            <span className="eyebrow text-[#091e44]">About Us</span>
+            <h2 className="mt-3 mb-6">
               Building More Than Homes
             </h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto mb-6" />
@@ -399,7 +399,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-10 reveal">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-3 mb-4">
+            <h2 className="mt-3 mb-4">
               Featured Projects
             </h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
@@ -433,7 +433,7 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <span className="text-[#C9922A] text-xs font-semibold uppercase tracking-wider">{project.type}</span>
-                    <h3 className="font-display text-xl font-bold text-white mt-1">{project.title}</h3>
+                    <h3 className="text-white mt-1">{project.title}</h3>
                     <p className="text-white/80 text-sm mt-1 flex items-center gap-1">
                       📍 {project.location}
                     </p>
@@ -461,8 +461,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-10 reveal">
-            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Why Choose Dalan</span>
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mt-3 leading-tight">
+            <span className="eyebrow text-[#C9922A]">Why Choose Dalan</span>
+            <h2 className="text-white mt-3">
               Built on Trust. Focused on You.
             </h2>
           </div>
@@ -474,7 +474,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Shield size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Trusted Legacy</h3>
+              <h3 className="text-white mb-2">Trusted Legacy</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 15+ years of building trust and delivering value.
               </p>
@@ -484,7 +484,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <MapPin size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Prime Locations</h3>
+              <h3 className="text-white mb-2">Prime Locations</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Carefully selected locations with excellent connectivity.
               </p>
@@ -494,7 +494,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Award size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Superior Quality</h3>
+              <h3 className="text-white mb-2">Superior Quality</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 High quality materials and modern construction practices.
               </p>
@@ -504,7 +504,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Handshake size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Transparent Process</h3>
+              <h3 className="text-white mb-2">Transparent Process</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Clear communication and transparency at every step.
               </p>
@@ -514,7 +514,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Calendar size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Timely Delivery</h3>
+              <h3 className="text-white mb-2">Timely Delivery</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 On-time possession because we value your time.
               </p>
@@ -524,7 +524,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <BarChart3 size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Investment Growth</h3>
+              <h3 className="text-white mb-2">Investment Growth</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Projects designed to offer high returns in the future.
               </p>
@@ -537,8 +537,8 @@ export default function HomePage() {
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10 reveal">
-            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Testimonials</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3">
+            <span className="eyebrow text-[#C9922A]">Testimonials</span>
+            <h2 className="mt-3">
               What Our Clients Say
             </h2>
             <div className="flex items-center justify-center gap-4 mt-4">
@@ -647,8 +647,8 @@ export default function HomePage() {
       {/* ===== COMMUNITY & EVENTS SECTION ===== */}
       <section className="bg-white py-12 md:py-14 px-6 border-t border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Community & Events</span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3 mb-4">
+          <span className="eyebrow text-[#C9922A]">Community &amp; Events</span>
+          <h2 className="mt-3 mb-4">
             Building Relationships, Not Just Buildings
           </h2>
           <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-8" />
@@ -708,7 +708,7 @@ export default function HomePage() {
 
           <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-12 px-8 md:px-16">
             <div className="max-w-2xl text-left border-l-4 border-[#C9922A] pl-6">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-white">
                 Ready to Find Your <br className="hidden md:block" />
                 <span className="text-[#C9922A]">Dream Home?</span>
               </h2>

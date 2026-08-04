@@ -15,7 +15,7 @@ export default function ShivdharaResidencyPage() {
           <div className="lg:col-span-5 flex flex-col text-left">
             {/* Title block */}
             <div className="flex flex-col items-start mb-6">
-              <h1 className="font-serif text-5xl md:text-6xl font-extrabold tracking-tight text-[#091e44] leading-none">
+              <h1 className="text-[#091e44]">
                 SHIVDHARA
               </h1>
               <div className="flex items-center gap-3 my-3 w-full">

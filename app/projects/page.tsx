@@ -59,7 +59,7 @@ export default function ProjectsPage() {
         {/* <Image src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1920&q=80" alt="Projects" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/70" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-black">All Projects</h1>
+          <h1 className="text-black">All Projects</h1>
         </div>
       </section>
 
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                   {/* Info */}
                   <div className="p-6 pb-4">
                     <Link href={`/projects/${project.id}`}>
-                      <h3 className="font-display text-xl font-bold text-black group-hover:text-[#091e44] transition-colors duration-300 mb-2">
+                      <h3 className="text-black group-hover:text-[#091e44] transition-colors duration-300 mb-2">
                         {project.title}
                       </h3>
                     </Link>

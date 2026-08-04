@@ -57,7 +57,7 @@ export default function DalanGreensPage() {
               Residential Plots
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+            <h1 className="text-white mb-4">
               DALAN <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
             </h1>
 
@@ -191,7 +191,7 @@ export default function DalanGreensPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               About the Project
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="text-gray-900 mb-6">
               A Community Designed<br />For a Better Tomorrow
             </h2>
             <div className="w-14 h-1 bg-[#C9922A] mb-8" />
@@ -252,7 +252,7 @@ export default function DalanGreensPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               Master Layout
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+            <h2 className="text-gray-900 mt-2">
               Project Layout & Plot Plan
             </h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-6" />
@@ -262,7 +262,7 @@ export default function DalanGreensPage() {
             {/* Left Column: Layout Map */}
             <div className="lg:col-span-7 flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-xl group">
               <div className="bg-[#091e44] py-4 px-6 border-b border-gray-100 flex items-center justify-between">
-                <h3 className="text-white font-semibold text-base md:text-lg font-serif">Dalan Greens Site Plan</h3>
+                <h3 className="text-white">Dalan Greens Site Plan</h3>
                 <span className="text-xs bg-[#C9922A] text-white px-3 py-1 rounded-full font-medium">Layout Map</span>
               </div>
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 flex items-center justify-center">
@@ -279,7 +279,7 @@ export default function DalanGreensPage() {
             {/* Right Column: Key details & Table */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4 font-serif">Plot Features & Infrastructure</h3>
+                <h3 className="text-gray-900 mb-4">Plot Features & Infrastructure</h3>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     'Wide Internal Roads',
@@ -298,7 +298,7 @@ export default function DalanGreensPage() {
               </div>
 
               <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm space-y-4">
-                <h4 className="text-sm uppercase tracking-wider font-bold text-gray-800 border-b border-gray-100 pb-2">Layout Data</h4>
+                <h4 className="eyebrow uppercase text-gray-800 border-b border-gray-100 pb-2">Layout Data</h4>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500 font-medium">Total Plots Area:</span>
@@ -339,7 +339,7 @@ export default function DalanGreensPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               Amenities
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+            <h2 className="text-gray-900 mt-2">
               World Class Amenities
             </h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-6" />
@@ -424,7 +424,7 @@ export default function DalanGreensPage() {
             <div>
               <div className="flex items-center gap-2 mb-6 border-b border-gray-100 pb-3">
                 <Locate className="text-[#C9922A]" size={22} />
-                <h3 className="font-serif text-xl font-bold text-gray-900">Accessibility</h3>
+                <h3 className="text-gray-900">Accessibility</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -455,7 +455,7 @@ export default function DalanGreensPage() {
                   <Trees size={32} className="text-[#C9922A]" />
                 </div>
               </div>
-              <h3 className="font-serif text-2xl font-bold tracking-wide mb-1 text-white">DALAN GREENS</h3>
+              <h3 className="mb-1 text-white">DALAN GREENS</h3>
               <p className="text-xs uppercase tracking-widest text-[#C9922A] mb-8 font-medium">Premium Plotted Development</p>
               
               <div className="w-12 h-[1px] bg-white/20 mx-auto mb-8" />
@@ -520,7 +520,7 @@ export default function DalanGreensPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-[#091e44] rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-white/5">
             <div className="text-center md:text-left w-full md:w-auto text-white">
-              <h3 className="font-serif text-2xl md:text-3xl font-semibold text-white mb-2">
+              <h3 className="text-white mb-2">
                 Ready to Own a Plot in Mau?
               </h3>
               <p className="text-gray-300 text-sm md:text-base font-light">

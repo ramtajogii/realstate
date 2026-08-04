@@ -37,7 +37,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="absolute bottom-8 left-0 right-0 max-w-7xl mx-auto px-6">
           <span className="inline-block px-3 py-1 bg-[#091e44] text-white text-xs rounded-full mb-3">{project.status}</span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-black">{project.title}</h1>
+          <h1 className="text-black">{project.title}</h1>
           <p className="text-gray-700 mt-2 flex items-center gap-2"><MapPin size={16} className="text-[#091e44]" />{project.location}</p>
         </div>
       </div>
@@ -59,11 +59,11 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
               ))}
             </div>
 
-            <h2 className="font-display text-2xl font-bold text-black mb-4">About This Project</h2>
+            <h2 className="text-black mb-4">About This Project</h2>
             <div className="w-10 h-1 bg-[#091e44] mb-5" />
             <p className="text-gray-600 leading-relaxed mb-8">{project.description}</p>
 
-            <h2 className="font-display text-2xl font-bold text-black mb-5">Amenities</h2>
+            <h2 className="text-black mb-5">Amenities</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {project.amenities.map((a: string) => (
                 <div key={a} className="flex items-center gap-2 text-gray-700 text-sm">
@@ -75,7 +75,7 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
           <div>
             <div className="bg-[#F7F7F7] border border-black/10 rounded-2xl p-7 sticky top-24">
-              <h3 className="font-display text-xl font-bold text-black mb-6">Enquire Now</h3>
+              <h3 className="text-black mb-6">Enquire Now</h3>
               <form className="space-y-4">
                 <input type="text" placeholder="Your Name" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
                 <input type="tel" placeholder="Phone Number" className="w-full bg-white border border-black/20 rounded-xl px-4 py-3 text-black text-sm placeholder-gray-500 focus:outline-none focus:border-[#091e44] transition-colors" />
