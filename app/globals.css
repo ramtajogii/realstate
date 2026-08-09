@@ -106,6 +106,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 500 !important; /* Elegant medium weight, not bold */
   letter-spacing: -0.02em;
+
+  /* A heading centred in a flex column is sized to fit its content, so a
+     long unbreakable word (RELATIONSHIPS, COMMUNITIES) can end up wider
+     than the card holding it and spill over the edge — visible once the
+     browser is zoomed past ~150% and the columns get narrow. Clamp the
+     box to its container and let such a word break rather than escape. */
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 /* Consistent Heading Sizes for Better UI */
