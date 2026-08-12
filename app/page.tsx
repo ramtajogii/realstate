@@ -70,33 +70,33 @@ const statusColors: Record<string, string> = {
 
 const testimonials = [
   {
-    name: 'Rajesh Tiwari',
-    role: 'Homeowner, Dalan Saubhagyam',
-    text: 'We were looking for a home near Ring Road for years, but everything was either too expensive or too far from the city. Dalan Saubhagyam gave us both — a beautiful duplex and a location we could only dream of. The EMI process was so smooth, our family moved in within months',
+    name: 'Maya Mishra',
+    role: 'Homeowner, Dalan Residency',
+    text: 'We were looking for a home near Ring Road for years, but everything was either too expensive or too far from the city. Dalan Residency gave us both — a beautiful duplex and a location we could only dream of. The EMI process was so smooth, our family moved in within months',
   },
   {
-    name: 'Sunita Gupta',
+    name: 'Jitendra Singh',
     role: 'Homeowner, Dalan Avenue',
     text: 'What impressed us most was the transparency. No hidden charges, no last-minute surprises — exactly what they promised on paper is what we got. Our sale deed was registered immediately, just as Dalan had assured us.',
   },
   {
-    name: 'Amit Srivastava',
-    role: 'Investor, Dalan Avenue Micro Society',
-    text: `I bought a plot in Dalan Avenue Micro Society as an investment two years ago, and the value has grown significantly since then. The location near Om Villas and the well-planned roads make it one of the smartest decisions I've made.`,
+    name: 'Anoop Rai',
+    role: 'Investor, Dalan Avenue',
+    text: `I bought a plot in Dalan Avenue as an investment two years ago, and the value has grown significantly since then. The location near Om Villas and the well-planned roads make it one of the smartest decisions I've made.`,
   },
   {
-    name: 'Pooja Mishra',
+    name: 'Vikas Shukla',
     role: 'Homeowner, Dalan Samridhi',
     text: `Being close to LBS Airport and Sarnath was important for our family, and Dalan Samridhi checked every box. The construction quality is excellent, and the ISO certification really shows in the finishing work`,
   },
   {
-    name: 'Vikas Singh',
+    name: 'Ajay Yadav',
     role: 'Homeowner, Shivdhara Residency',
     text: `My children study at St. Joseph's Convent School, so when we found Shivdhara Residency right in front of it, it felt like fate. The 24x7 security and CCTV give us so much peace of mind every single day.`,
   },
   {
-    name: 'Neha & Rohit Verma',
-    role: 'Homeowners, Dalan Saubhagyam',
+    name: 'Abhishek',
+    role: 'Homeowners, Dalan Residency',
     text: `From the first visit to the final registration, the entire Dalan Builders team was honest and supportive. We didn't feel like customers — we felt like family. Highly recommend them to anyone looking in Varanasi`,
   }
 ]
