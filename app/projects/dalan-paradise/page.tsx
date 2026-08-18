@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import {
   MapPin,
   Phone,
@@ -72,7 +73,7 @@ export default function DalanParadisePage() {
 
 
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN PARADISE')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#25D366] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 whitespace-nowrap"
@@ -313,7 +314,7 @@ export default function DalanParadisePage() {
                 Enquire Now
               </Link>
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN PARADISE')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-lg hover:shadow-green-500/30 gap-2 w-full sm:w-auto whitespace-nowrap"
