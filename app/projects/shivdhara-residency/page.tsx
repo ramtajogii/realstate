@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Shield, Leaf, Users, CheckCircle2, ChevronLeft } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function ShivdharaResidencyPage() {
   return (
@@ -170,17 +171,19 @@ export default function ShivdharaResidencyPage() {
           
           {/* Floor Plan */}
           <div className="lg:col-span-8 flex flex-col">
-            <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-6 flex flex-col items-center h-full group">
+            <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-4 flex flex-col items-center h-full group">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Floor Plan
               </span>
-              <div className="relative w-full aspect-[4/3] mt-4 overflow-hidden rounded-xl bg-white border border-gray-100 p-4 flex items-center justify-center">
-                <Image
+              {/* Frame matches the artwork's own 1378x992 ratio so the plan fills
+                  it edge to edge instead of sitting in a letterbox. */}
+              <div className="relative w-full aspect-[1378/992] mt-4 overflow-hidden rounded-xl bg-white border border-gray-100">
+                <ZoomableImage
                   src="/Shivdhara/firstfloor.png"
                   alt="Shivdhara Residency Floor Plan"
-                  fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-contain p-2 group-hover:scale-102 transition-transform duration-300"
+                  imageClassName="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
