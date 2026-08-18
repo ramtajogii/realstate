@@ -169,8 +169,11 @@ export default function ShivdharaResidencyPage() {
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Floor Plan */}
-          <div className="lg:col-span-8 flex flex-col">
+          {/* Floor Plan.
+              Given the full row rather than 8 of 12 columns: the plan is
+              dimensioned artwork and was unreadable squeezed beside the
+              highlights card. */}
+          <div className="lg:col-span-12 flex flex-col">
             <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-4 flex flex-col items-center h-full group">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Floor Plan
@@ -181,7 +184,7 @@ export default function ShivdharaResidencyPage() {
                 <ZoomableImage
                   src="/Shivdhara/firstfloor.png"
                   alt="Shivdhara Residency Floor Plan"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  sizes="(max-width: 1024px) 100vw, 90vw"
                   imageClassName="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
                   hint="Click to enlarge"
                 />
@@ -190,14 +193,19 @@ export default function ShivdharaResidencyPage() {
           </div>
 
           {/* Project Highlights Card */}
-          <div className="lg:col-span-4 flex flex-col">
-            <div className="relative border border-[#C9922A]/30 bg-[#FAF9F6] rounded-2xl p-6 flex flex-col items-center justify-between h-full">
+          <div className="lg:col-span-12 flex flex-col">
+            <div className="relative border border-[#C9922A]/30 bg-[#FAF9F6] rounded-2xl p-6 flex flex-col h-full">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Project Highlights
               </span>
               
+              {/* Now that the card runs the full width, the list and the
+                  illustration sit side by side rather than stacked, and the
+                  list itself splits into two columns so the lines stay short. */}
+              <div className="mt-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+
               {/* Highlight list */}
-              <ul className="w-full text-left space-y-3.5 mt-4 mb-6">
+              <ul className="lg:col-span-7 w-full text-left grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
                 <li className="flex items-start gap-2.5 text-xs md:text-sm font-semibold text-gray-800">
                   <CheckCircle2 size={16} className="text-[#C9922A] shrink-0 mt-0.5" />
                   <span>Right in front of St. Joseph&apos;s Convent School</span>
@@ -225,18 +233,20 @@ export default function ShivdharaResidencyPage() {
               </ul>
 
               {/* Family Image illustration */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl border border-gray-200/50 shadow-sm mb-4">
+              <div className="lg:col-span-5 relative w-full aspect-[16/10] overflow-hidden rounded-xl border border-gray-200/50 shadow-sm">
                 <Image
                   src="/images/shivdhara_family.png"
                   alt="Family Walking in Green Park illustration"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 30vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
               </div>
 
+              </div>
+
               {/* Quotation text badge */}
-              <div className="w-full bg-[#091e44] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
+              <div className="mt-6 w-full bg-[#091e44] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
                 A home built with belief.
                 <br />
                 <span className="text-white">A life filled with happiness.</span>
