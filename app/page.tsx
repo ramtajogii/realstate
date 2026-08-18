@@ -44,7 +44,7 @@ const featuredProjects = [
   },
   {
     id: 'dalan-samridhi',
-    title: 'DALAN SAMRIDDHI',
+    title: 'DALAN SAMRIDHI',
     location: 'Village Kanudih, near Chandmari, Varanasi',
     type: 'Villa',
     image: '/samriddhi/samridhi.png',
