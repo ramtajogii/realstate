@@ -4,7 +4,20 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Phone } from 'lucide-react'
 
-const projects = [
+type Project = {
+  id: string
+  title: string
+  location: string
+  type: string
+  status: string
+  beds: string
+  price: string
+  img: string
+  // How the card image sits in the square frame. Defaults to 'cover'.
+  fit?: 'cover' | 'contain'
+}
+
+const projects: Project[] = [
   { id: 'shivdhara-residency', title: 'DALAN SHIVDHARA RESIDENCY', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
   { id: 'dalan-residency', title: 'DALAN RESIDENCY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex Row House', price: 'Contact for Price', img: '/images/residency1.jpg' },
   { id: 'dalan-paradise', title: 'DALAN PARADISE', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'New Launch', beds: '2 BHK Flats', price: 'Contact for Price', img: '/apartments/dalanparadise.png' },
@@ -12,7 +25,10 @@ const projects = [
   { id: 'dalan-avenue', title: 'DALAN AVENUE', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
   { id: 'dalan-saubhagyam', title: 'DALAN SAUBHAGYAM', location: 'Ring Road, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/shaubhagyam/shubhagyam.png' },
   { id: 'dalan-samridhi', title: 'DALAN SAMRIDDHI', location: 'Village Kanudih, near Chandmari, Varanasi', type: 'Residential', status: 'Phase - 1 (Under Construction)', beds: '3 BHK Villa', price: 'Contact for Price', img: '/samriddhi/samridhi.png' },
-  { id: 'dalan-avenue-micro-society', title: 'DALAN AVENUE MICRO SOCIETY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Plots', status: 'Delivered', beds: 'Residential Plots', price: 'Contact for Price', img: '/microsociety/microplots.png' },
+  // fit: 'contain' — this card's image is a site-plan brochure, not a building render.
+  // Cropping it to the square frame cut the title off the top and the contact band off
+  // the bottom, so it is fitted whole instead.
+  { id: 'dalan-avenue-micro-society', title: 'DALAN AVENUE MICRO SOCIETY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Plots', status: 'Delivered', beds: 'Residential Plots', price: 'Contact for Price', img: '/microsociety/microplots.png', fit: 'contain' },
   { id: 'dalan-narayan-puram', title: 'DALAN NARAYAN PURAM', location: 'Harahua Market, Airport Road, Varanasi UP', type: 'Plots', status: 'New Launch', beds: 'Residential Plots', price: 'Contact for Price', img: '/images/narayan_puram_gate_v3.png' },
 ]
 
@@ -94,13 +110,20 @@ export default function ProjectsPage() {
                   {/* Image */}
                   {/* Square frame: the project renders are portrait or square elevations, so a
                       wide frame cut the roof and ground off every building. */}
-                  <Link href={`/projects/${project.id}`} className="relative block aspect-square overflow-hidden">
+                  <Link
+                    href={`/projects/${project.id}`}
+                    className={`relative block aspect-square overflow-hidden ${project.fit === 'contain' ? 'bg-white' : ''}`}
+                  >
                     <Image
                       src={project.img}
                       alt={project.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      className={
+                        project.fit === 'contain'
+                          ? 'object-contain'
+                          : 'object-cover transition-transform duration-700 group-hover:scale-110'
+                      }
                     />
                     <span className={`absolute top-4 left-4 ${statusColors[project.status] || 'bg-gray-500 text-white'} text-xs px-3 py-1 rounded-full font-medium`}>
                       {project.status}
