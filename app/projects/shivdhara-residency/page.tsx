@@ -36,7 +36,7 @@ export default function ShivdharaResidencyPage() {
                 About / Story
               </span>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Step into <strong className="text-gray-800">Shivdhara Residency</strong> – a peaceful, secure, and thoughtfully planned residential community located right in front of St. Joseph&apos;s Convent School in Bharlai, Shivpur, Varanasi. Designed for families who value both convenience and tranquility, Shivdhara Residency offers spacious homes wrapped in greenery, with wide pitch roads and round-the-clock security ensuring complete peace of mind. Every home here is Vaastu compliant built not just with bricks and beams, but with the belief that a true home brings prosperity, harmony, and happiness to those who live in it.
+                Step into <strong className="text-gray-800">Shivdhara Residency</strong> – a peaceful, secure, and thoughtfully planned residential community located in front of St. Joseph&apos;s Convent School in Bharlai, Shivpur, Varanasi. Designed for families who value both convenience and tranquility, Shivdhara Residency offers spacious homes wrapped in greenery, with wide pitch roads and round-the-clock security ensuring complete peace of mind. Every home here is Vaastu compliant built not just with bricks and beams, but with the belief that a true home brings prosperity, harmony, and happiness to those who live in it.
               </p>
             </div>
 
@@ -49,7 +49,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div>
                 <strong className="text-[#091e44] text-sm md:text-base block font-bold leading-tight">
-                  Right in front of St. Joseph&apos;s Convent School
+                  In front of St. Joseph&apos;s Convent School
                 </strong>
                 <span className="text-gray-500 text-xs md:text-sm mt-0.5 block">
                   Bharlai, Shivpur, Varanasi
@@ -197,7 +197,7 @@ export default function ShivdharaResidencyPage() {
               <ul className="w-full text-left space-y-3.5 mt-4 mb-6">
                 <li className="flex items-start gap-2.5 text-xs md:text-sm font-semibold text-gray-800">
                   <CheckCircle2 size={16} className="text-[#C9922A] shrink-0 mt-0.5" />
-                  <span>Right in front of St. Joseph&apos;s Convent School</span>
+                  <span>In front of St. Joseph&apos;s Convent School</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-xs md:text-sm font-semibold text-gray-800">
                   <CheckCircle2 size={16} className="text-[#C9922A] shrink-0 mt-0.5" />
