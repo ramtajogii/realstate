@@ -13,9 +13,9 @@ const stats = [
 
 const heroSlides = [
   {
-    desktop: '/images/residency-desktop.png',
+    desktop: '/images/residency-desktop.jpg',
     mobile: '/images/residency.jpg',
-    alt: 'DALAN Builders'
+    alt: 'Dalan Residency independent houses, Chandmari, Varanasi'
   },
   {
     desktop: '/images/samridhi-desktop.png',
