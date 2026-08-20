@@ -12,7 +12,7 @@ const stats = [
 ]
 
 // Dalan Builders' Google Business Profile. The customer rating badge below links here.
-const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=Dalan+Builders+Varanasi'
+const GOOGLE_REVIEWS_URL = 'https://share.google/BrX0Qn6YwCqNrkW9C'
 
 const heroSlides = [
   {
