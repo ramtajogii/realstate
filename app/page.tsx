@@ -11,6 +11,9 @@ const stats = [
   { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
 ]
 
+// Dalan Builders' Google Business Profile. The customer rating badge below links here.
+const GOOGLE_REVIEWS_URL = 'https://www.google.com/maps/search/?api=1&query=Dalan+Builders+Varanasi'
+
 const heroSlides = [
   {
     desktop: '/images/residency-desktop.png',
@@ -656,9 +659,14 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* Customer rating badge */}
+          {/* Customer rating badge, linking to the Google Business Profile */}
           <div className="mt-8 md:mt-10 flex justify-center reveal">
-            <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read our reviews on Google (opens in a new tab)"
+              className="block w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm transition-all duration-300 hover:border-[#C9922A]/40 hover:shadow-lg hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9922A] focus-visible:ring-offset-2">
               <Image
                 src="/images/google-customer-reviews.png"
                 alt="Google Customer Reviews — five star rating"
@@ -677,7 +685,7 @@ export default function HomePage() {
               <p className="mt-5 font-serif text-lg md:text-xl font-bold leading-snug text-[#C9922A]">
                 One of the best Rated Real Estate Companies in Varanasi
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
