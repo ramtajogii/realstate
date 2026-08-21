@@ -26,6 +26,10 @@ module.exports = {
         body: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         sans: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
         nav: ['Roboto', 'sans-serif'],
+        // Scoped to the founder's section only. `serif` above is
+        // Montserrat and is used elsewhere, so these get their own keys.
+        quote: ['Playfair Display', 'Georgia', 'serif'],
+        'quote-body': ['Lato', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',
