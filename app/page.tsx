@@ -373,30 +373,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
+      {/* ===== FOUNDER SECTION ===== */}
       <section className="py-14 md:py-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
-            {/* Image stack. The offset second frame and the gold outline are
-                what give this block depth; both are desktop-only so the
-                mobile layout stays a single clean image. */}
-            <div className="md:col-span-5 relative">
-              <div className="relative aspect-[4/3] md:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            {/* Portrait. The source is square and the frame is 4:5, so about
+                10% comes off each side; the subject is centred, so that only
+                tightens the composition. Width is capped on mobile — a full
+                bleed portrait crop would otherwise eat the whole viewport. */}
+            <div className="md:col-span-5 relative w-full max-w-sm mx-auto md:max-w-none">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                 <Image
-                  src="/about/sideimage.png"
-                  alt="A completed DALAN Builders home in Varanasi"
+                  src="/about/founder.jpg"
+                  alt="Brijesh Pandey, Founder of DALAN Builders"
                   fill
                   className="object-cover"
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                />
-              </div>
-              <div className="hidden md:block absolute -bottom-8 -right-8 w-44 aspect-square rounded-2xl overflow-hidden ring-8 ring-white shadow-xl">
-                <Image
-                  src="/about/image2.png"
-                  alt="A DALAN Builders duplex at dusk"
-                  fill
-                  className="object-cover"
-                  sizes="176px"
+                  sizes="(min-width: 768px) 40vw, (min-width: 400px) 384px, 100vw"
                 />
               </div>
               {/* Logo chip breaking the corner. Filled rather than a bare
@@ -414,16 +406,23 @@ export default function HomePage() {
             </div>
 
             <div className="md:col-span-7 md:pl-4">
-              <span className="eyebrow text-[#C9922A]">About Us</span>
-              <h2 className="mt-4 mb-5">
-                Building More Than Homes
-              </h2>
+              <span className="eyebrow text-[#C9922A]">From the Founder</span>
+              {/* The pull quote carries the section, so it takes the h2 slot
+                  the old "Building More Than Homes" heading used to hold. */}
+              <blockquote>
+                <h2 className="mt-4 mb-5">
+                  &ldquo;We don&rsquo;t just build structures &mdash; we build the places families grow into.&rdquo;
+                </h2>
+              </blockquote>
               <div className="w-12 h-[3px] bg-[#C9922A] mb-6" />
               <p className="text-gray-600 text-lg max-w-xl">
-                DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
-                For over 19+ years, we have delivered residential communities and commercial destinations that stand
-                the test of time.
+                For over 19 years, DALAN Builders has delivered residential communities and commercial
+                destinations across Varanasi that stand the test of time.
               </p>
+              <div className="mt-7">
+                <div className="font-outfit text-xl font-bold text-[#091e44]">Brijesh Pandey</div>
+                <div className="eyebrow text-gray-500 mt-1.5">Founder</div>
+              </div>
               <Link
                 href="/about"
                 className="mt-8 inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
