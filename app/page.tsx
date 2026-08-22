@@ -440,10 +440,11 @@ export default function HomePage() {
       <section className="py-14 md:py-16 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
-            {/* Portrait. The source is square and the frame is 4:5, so about
-                10% comes off each side; the subject is centred, so that only
-                tightens the composition. Width is capped on mobile — a full
-                bleed portrait crop would otherwise eat the whole viewport. */}
+            {/* Portrait. The source is 1092x1280 against a 4:5 frame, so only
+                about 3% comes off each side; the subject is centred, so the
+                composition is essentially the full photograph. Width is capped
+                on mobile — a full bleed portrait crop would otherwise eat the
+                whole viewport. */}
             <div className="md:col-span-4 relative w-full max-w-sm mx-auto md:max-w-none">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
                 <Image
