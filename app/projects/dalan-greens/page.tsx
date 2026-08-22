@@ -43,9 +43,6 @@ export default function DalanGreensPage() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          {/* Dark gradient overlay that blends into the gate image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#091e44]/50 via-transparent to-transparent" />
         </div>
 
         <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
