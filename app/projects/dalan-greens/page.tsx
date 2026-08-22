@@ -45,14 +45,17 @@ export default function DalanGreensPage() {
           />
         </div>
 
-        {/* Bottom scrim. The white capsule labels and the buttons sit over the
-            sunlit tree line, where white on light green barely reads. A soft
-            gradient darkens only the lower part of the frame, so the sky the
-            navy headline sits on stays untouched and the gate render is not
-            dimmed. */}
+        {/* Scrim behind the copy. Every line of hero text is white, and the
+            render is a bright daylight scene, so the text needs a darker
+            ground than the artwork gives it. On desktop the copy sits in the
+            right half, so the gradient fades in from the right edge and
+            leaves the gate and its medallion untouched; below md the copy
+            spans the full width, so it runs bottom-to-top instead. Kept low
+            intensity - enough to carry white text, not enough to flatten the
+            render. */}
         <div
           aria-hidden
-          className="absolute inset-x-0 bottom-0 h-3/5 z-[1] pointer-events-none bg-gradient-to-t from-black/45 via-black/20 to-transparent"
+          className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-black/45 via-black/25 to-black/10 md:bg-gradient-to-l md:from-black/45 md:via-black/25 md:to-transparent"
         />
 
         <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
@@ -68,18 +71,18 @@ export default function DalanGreensPage() {
               Residential Plots
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#091e44] mb-4 leading-tight">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
               DALAN <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
             </h1>
 
-            <p className="text-lg md:text-xl font-semibold text-[#091e44] mb-4">
+            <p className="text-lg md:text-xl font-semibold text-white mb-4">
               Premium Plotted Living in Mau
             </p>
 
-            <div className="flex items-start gap-2.5 text-[#091e44] mb-8 max-w-xl md:flex-row-reverse">
+            <div className="flex items-start gap-2.5 text-white mb-8 max-w-xl md:flex-row-reverse">
               <MapPin size={20} className="text-[#C9922A] shrink-0 mt-0.5" />
               <p className="text-sm md:text-base leading-relaxed">
-                <span className="font-semibold text-[#091e44]">Village Mau, Near Mohanlalganj Tehsil</span>
+                <span className="font-semibold text-white">Village Mau, Near Mohanlalganj Tehsil</span>
                 <br />
                 Lucknow - UP
               </p>
