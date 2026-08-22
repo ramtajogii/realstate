@@ -81,25 +81,25 @@ export default function DalanGreensPage() {
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Shield size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Gated Community</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Gated Community</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Compass size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Wide Roads</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Wide Roads</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Heart size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Secure & Peaceful</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Secure & Peaceful</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Leaf size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Green Env</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Green Env</span>
               </div>
             </div>
 
