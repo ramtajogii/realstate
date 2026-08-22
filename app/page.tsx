@@ -373,69 +373,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== FOUNDER SECTION ===== */}
-      <section className="py-14 md:py-16 bg-[#ffffff]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
-            {/* Portrait. The source is square and the frame is 4:5, so about
-                10% comes off each side; the subject is centred, so that only
-                tightens the composition. Width is capped on mobile — a full
-                bleed portrait crop would otherwise eat the whole viewport. */}
-            <div className="md:col-span-4 relative w-full max-w-sm mx-auto md:max-w-none">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/about/founder.jpg"
-                  alt="Brijesh Pandey, Founder of DALAN Builders"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 768px) 32vw, (min-width: 400px) 384px, 100vw"
-                />
-              </div>
-              {/* Logo chip breaking the corner. Filled rather than a bare
-                  outline so the mark reads cleanly where the frame crosses
-                  from the page background onto the photograph. */}
-              <div className="hidden md:grid place-items-center absolute -top-5 -left-5 w-24 h-24 rounded-2xl bg-white border-2 border-[#C9922A] shadow-sm">
-                <Image
-                  src="/logo/dalan-mark.png"
-                  alt="DALAN Builders"
-                  width={206}
-                  height={178}
-                  className="w-11 h-auto"
-                />
-              </div>
-            </div>
-
-            <div className="md:col-span-8 md:pl-4">
-              <span className="eyebrow text-[#C9922A]">From the Founder</span>
-              {/* The pull quote carries the section, so it takes the h2 slot
-                  the old "Building More Than Homes" heading used to hold. */}
-              <blockquote>
-                <h2 className="mt-4 mb-5 font-quote font-medium tracking-[-0.01em]">
-                  &ldquo;We don&rsquo;t just build structures. We build the places families grow into.&rdquo;
-                </h2>
-              </blockquote>
-              <div className="w-12 h-[3px] bg-[#C9922A] mb-6" />
-              <p className="font-quote-body text-gray-600 text-lg max-w-xl">
-                For over 19 years, DALAN Builders has delivered residential communities and commercial
-                destinations across Varanasi that stand the test of time.
-              </p>
-              <div className="mt-7">
-                <div className="font-quote-body text-xl font-bold text-[#091e44]">Brijesh Pandey</div>
-                <div className="eyebrow text-gray-500 mt-1.5">Founder</div>
-              </div>
-              <Link
-                href="/about"
-                className="mt-8 inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
-              >
-                Know More <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="pt-4 pb-16 bg-[#ffffff]">
+      <section className="pt-14 md:pt-16 pb-4 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div className="text-center mb-10 reveal">
@@ -493,6 +432,67 @@ export default function HomePage() {
             >
               View All Projects <ArrowRight size={18} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FOUNDER SECTION ===== */}
+      <section className="py-14 md:py-16 bg-[#ffffff]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
+            {/* Portrait. The source is square and the frame is 4:5, so about
+                10% comes off each side; the subject is centred, so that only
+                tightens the composition. Width is capped on mobile — a full
+                bleed portrait crop would otherwise eat the whole viewport. */}
+            <div className="md:col-span-4 relative w-full max-w-sm mx-auto md:max-w-none">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/about/founder.jpg"
+                  alt="Brijesh Pandey, Founder of DALAN Builders"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 32vw, (min-width: 400px) 384px, 100vw"
+                />
+              </div>
+              {/* Logo chip breaking the corner. Filled rather than a bare
+                  outline so the mark reads cleanly where the frame crosses
+                  from the page background onto the photograph. */}
+              <div className="hidden md:grid place-items-center absolute -top-5 -left-5 w-24 h-24 rounded-2xl bg-white border-2 border-[#C9922A] shadow-sm">
+                <Image
+                  src="/logo/dalan-mark.png"
+                  alt="DALAN Builders"
+                  width={206}
+                  height={178}
+                  className="w-11 h-auto"
+                />
+              </div>
+            </div>
+
+            <div className="md:col-span-8 md:pl-4">
+              <span className="eyebrow text-[#C9922A]">From the Founder</span>
+              {/* The pull quote carries the section, so it takes the h2 slot
+                  the old "Building More Than Homes" heading used to hold. */}
+              <blockquote>
+                <h2 className="mt-4 mb-5 font-quote font-medium tracking-[-0.01em]">
+                  &ldquo;We don&rsquo;t just build structures. We build the places families grow into.&rdquo;
+                </h2>
+              </blockquote>
+              <div className="w-12 h-[3px] bg-[#C9922A] mb-6" />
+              <p className="font-quote-body text-gray-600 text-lg max-w-xl">
+                For over 19 years, DALAN Builders has delivered residential communities and commercial
+                destinations across Varanasi that stand the test of time.
+              </p>
+              <div className="mt-7">
+                <div className="font-quote-body text-xl font-bold text-[#091e44]">Brijesh Pandey</div>
+                <div className="eyebrow text-gray-500 mt-1.5">Founder</div>
+              </div>
+              <Link
+                href="/about"
+                className="mt-8 inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
+              >
+                Know More <ArrowRight size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
