@@ -48,8 +48,12 @@ export default function DalanGreensPage() {
         <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
 
         <div className="max-w-7xl mx-auto w-full px-6 pt-20 md:pt-4 pb-20 relative z-10">
-          {/* Left Content wrapper to keep it clean */}
-          <div className="max-w-2xl flex flex-col justify-center">
+          {/* Content sits on the right: the gate and its logo medallion occupy
+              the left of the render, and with no overlay left to dim them the
+              copy was landing straight on top of the artwork. Below md the
+              block is full width anyway, so ml-auto only takes effect once
+              there is room beside the gate. */}
+          <div className="max-w-2xl flex flex-col justify-center md:ml-auto md:items-end md:text-right">
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               Residential Plots
             </span>
@@ -62,7 +66,7 @@ export default function DalanGreensPage() {
               Premium Plotted Living in Mau
             </p>
 
-            <div className="flex items-start gap-2.5 text-gray-300 mb-8 max-w-xl">
+            <div className="flex items-start gap-2.5 text-gray-300 mb-8 max-w-xl md:flex-row-reverse">
               <MapPin size={20} className="text-[#C9922A] shrink-0 mt-0.5" />
               <p className="text-sm md:text-base leading-relaxed">
                 <span className="font-semibold text-white">Village Mau, Near Mohanlalganj Tehsil</span>
@@ -72,7 +76,7 @@ export default function DalanGreensPage() {
             </div>
 
             {/* Quick Features List in Hero - Horizontal with icon on top */}
-            <div className="flex flex-wrap gap-6 md:gap-8 mb-8 justify-start">
+            <div className="flex flex-wrap gap-6 md:gap-8 mb-8 justify-start md:justify-end">
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Shield size={18} className="text-[#C9922A]" />
@@ -100,7 +104,7 @@ export default function DalanGreensPage() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-row gap-2.5 items-center w-full sm:w-auto">
+            <div className="flex flex-row gap-2.5 items-center w-full sm:w-auto md:justify-end">
               <Link
                 href="/contact"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#C9922A] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-[#C9922A]/20 transition-all duration-300 hover:bg-[#a6741b] hover:shadow-[#C9922A]/30 hover:-translate-y-0.5 whitespace-nowrap"
