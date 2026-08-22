@@ -18,6 +18,7 @@ import {
   Locate,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'Dalan Residency brings you premium 3 BHK duplex row houses designed for modern families who value comfort, style, and connectivity. Located in Village Lodhan, near Om Villas, Chandmari, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
@@ -208,12 +209,13 @@ export default function DalanResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
                 <div className="p-4 flex items-center justify-center flex-grow">
-                  <Image
+                  <ZoomableImage
                     src="/images/residency-ground-floor-plan.png"
                     alt="Dalan Residency Ground Floor Plan"
                     width={800}
                     height={950}
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    hint="Click to enlarge"
                   />
                 </div>
                 {/* Details Footer */}
@@ -237,12 +239,13 @@ export default function DalanResidencyPage() {
               </div>
               <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
                 <div className="p-4 flex items-center justify-center flex-grow">
-                  <Image
+                  <ZoomableImage
                     src="/images/residency-first-floor-plan.png"
                     alt="Dalan Residency First Floor Plan"
                     width={800}
                     height={950}
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    hint="Click to enlarge"
                   />
                 </div>
                 {/* Details Footer */}

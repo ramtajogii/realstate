@@ -170,11 +170,12 @@ export default function ShivdharaResidencyPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Floor Plan.
-              Given the full row rather than 8 of 12 columns: the plan is
-              dimensioned artwork and was unreadable squeezed beside the
-              highlights card. */}
+              Held to the same rendered width as the plans and maps on the other
+              project pages (roughly 600px) rather than running the full row.
+              Centred, because the card no longer shares the row with anything.
+              Legibility now comes from click to enlarge, not from raw size. */}
           <div className="lg:col-span-12 flex flex-col">
-            <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-4 flex flex-col items-center h-full group">
+            <div className="relative mx-auto w-full max-w-2xl border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-4 flex flex-col items-center h-full group">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Floor Plan
               </span>
@@ -184,7 +185,7 @@ export default function ShivdharaResidencyPage() {
                 <ZoomableImage
                   src="/Shivdhara/firstfloor.png"
                   alt="Shivdhara Residency Floor Plan"
-                  sizes="(max-width: 1024px) 100vw, 90vw"
+                  sizes="(max-width: 1024px) 100vw, 640px"
                   imageClassName="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
                   hint="Click to enlarge"
                 />

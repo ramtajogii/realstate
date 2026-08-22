@@ -13,6 +13,14 @@ type Props = {
   imageClassName?: string
   /** Label under the expand icon on hover, and the button's accessible name. */
   hint?: string
+  /**
+   * Intrinsic mode. Given both, the thumbnail renders at its natural ratio
+   * instead of filling the parent. Cards that size themselves from the artwork
+   * have no fixed aspect for `fill` to fill, so those pass width and height and
+   * keep their existing layout untouched.
+   */
+  width?: number
+  height?: number
 }
 
 const MIN_SCALE = 1
@@ -38,7 +46,10 @@ export default function ZoomableImage({
   sizes = '100vw',
   imageClassName = 'object-contain',
   hint = 'Click to enlarge',
+  width,
+  height,
 }: Props) {
+  const intrinsic = width != null && height != null
   const [open, setOpen] = useState(false)
   const [scale, setScale] = useState(1)
   const [offset, setOffset] = useState({ x: 0, y: 0 })
@@ -166,9 +177,15 @@ export default function ZoomableImage({
         type="button"
         onClick={() => setOpen(true)}
         aria-label={`${alt} — ${hint}`}
-        className="group/zoom absolute inset-0 h-full w-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9922A] focus-visible:ring-offset-2 rounded-xl"
+        className={`group/zoom cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9922A] focus-visible:ring-offset-2 rounded-xl ${
+          intrinsic ? 'relative block w-full' : 'absolute inset-0 h-full w-full'
+        }`}
       >
-        <Image src={src} alt={alt} fill sizes={sizes} className={imageClassName} />
+        {intrinsic ? (
+          <Image src={src} alt={alt} width={width} height={height} sizes={sizes} className={imageClassName} />
+        ) : (
+          <Image src={src} alt={alt} fill sizes={sizes} className={imageClassName} />
+        )}
 
         {/* Affordance: without it nothing suggests the image is interactive. */}
         <span className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-[#091e44]/85 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover/zoom:opacity-100 group-focus-visible/zoom:opacity-100">

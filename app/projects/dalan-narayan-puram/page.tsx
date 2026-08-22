@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Phone, CheckCircle2, ChevronLeft, Gift } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function DalanNarayanPuramPage() {
   const highlights = [
@@ -180,12 +181,13 @@ export default function DalanNarayanPuramPage() {
             {/* Layout Plot Plan Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white p-4 group">
               <div className="relative aspect-[3/4] w-full">
-                <Image
+                <ZoomableImage
                   src="/images/narayan_puram_map.png"
                   alt="Dalan Narayan Puram Layout Map"
-                  fill
+
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>

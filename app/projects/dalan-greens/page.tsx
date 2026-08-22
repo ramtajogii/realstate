@@ -27,6 +27,7 @@ import {
   TrendingUp
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function DalanGreensPage() {
   return (
@@ -266,12 +267,13 @@ export default function DalanGreensPage() {
                 <span className="text-xs bg-[#C9922A] text-white px-3 py-1 rounded-full font-medium">Layout Map</span>
               </div>
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-50 flex items-center justify-center">
-                <Image
+                <ZoomableImage
                   src="/images/greens_layout.jpeg"
                   alt="Dalan Greens Layout Map"
-                  fill
+
                   sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-contain transition-transform duration-500 group-hover:scale-105"
+                  imageClassName="object-contain transition-transform duration-500 group-hover:scale-105"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
