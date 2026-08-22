@@ -58,18 +58,18 @@ export default function DalanGreensPage() {
               Residential Plots
             </span>
 
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#091e44] mb-4 leading-tight">
               DALAN <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
             </h1>
 
-            <p className="text-lg md:text-xl font-semibold text-gray-200 mb-4">
+            <p className="text-lg md:text-xl font-semibold text-[#091e44] mb-4">
               Premium Plotted Living in Mau
             </p>
 
-            <div className="flex items-start gap-2.5 text-gray-300 mb-8 max-w-xl md:flex-row-reverse">
+            <div className="flex items-start gap-2.5 text-[#091e44] mb-8 max-w-xl md:flex-row-reverse">
               <MapPin size={20} className="text-[#C9922A] shrink-0 mt-0.5" />
               <p className="text-sm md:text-base leading-relaxed">
-                <span className="font-semibold text-white">Village Mau, Near Mohanlalganj Tehsil</span>
+                <span className="font-semibold text-[#091e44]">Village Mau, Near Mohanlalganj Tehsil</span>
                 <br />
                 Lucknow - UP
               </p>
@@ -81,25 +81,25 @@ export default function DalanGreensPage() {
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Shield size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Gated Community</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#091e44] uppercase">Gated Community</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Compass size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Wide Roads</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#091e44] uppercase">Wide Roads</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Heart size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Secure & Peaceful</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#091e44] uppercase">Secure & Peaceful</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Leaf size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Green Env</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-[#091e44] uppercase">Green Env</span>
               </div>
             </div>
 
