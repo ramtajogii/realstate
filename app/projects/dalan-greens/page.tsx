@@ -45,12 +45,22 @@ export default function DalanGreensPage() {
           />
         </div>
 
+        {/* Bottom scrim. The white capsule labels and the buttons sit over the
+            sunlit tree line, where white on light green barely reads. A soft
+            gradient darkens only the lower part of the frame, so the sky the
+            navy headline sits on stays untouched and the gate render is not
+            dimmed. */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-3/5 z-[1] pointer-events-none bg-gradient-to-t from-black/45 via-black/20 to-transparent"
+        />
+
         <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
 
         <div className="max-w-7xl mx-auto w-full px-6 pt-20 md:pt-4 pb-20 relative z-10">
           {/* Content sits on the right: the gate and its logo medallion occupy
-              the left of the render, and with no overlay left to dim them the
-              copy was landing straight on top of the artwork. Below md the
+              the left of the render, and with only the bottom scrim dimming the
+              frame the copy was landing straight on top of the artwork. Below md the
               block is full width anyway, so ml-auto only takes effect once
               there is room beside the gate. */}
           <div className="max-w-2xl flex flex-col justify-center md:ml-auto md:items-end md:text-right">
