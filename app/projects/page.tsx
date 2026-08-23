@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, MapPin, Phone } from 'lucide-react'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 
 const projects = [
   { id: 'shivdhara-residency', title: 'DALAN SHIVDHARA RESIDENCY', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
@@ -140,7 +141,7 @@ export default function ProjectsPage() {
                   </Link>
                   <div className="flex items-center gap-2">
                     <a
-                      href="https://wa.me/916389088088"
+                      href={whatsappEnquiryUrl(project.title)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-3 py-1.5 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-xl text-xs font-semibold transition-all duration-300 hover:shadow-md hover:shadow-green-500/20"

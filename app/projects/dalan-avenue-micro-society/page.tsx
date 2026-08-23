@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import { ArrowLeft, MapPin } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
 import ZoomableImage from '@/components/ZoomableImage'
@@ -43,7 +44,7 @@ export default function DalanAvenueMicroSocietyPage() {
               Enquire Now
             </Link>
             <a
-              href="https://wa.me/916389088088"
+              href={whatsappEnquiryUrl('DALAN AVENUE MICRO SOCIETY')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-lg hover:shadow-green-500/30 gap-2 w-full sm:w-auto whitespace-nowrap"

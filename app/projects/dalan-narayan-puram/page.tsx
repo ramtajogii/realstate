@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import { MapPin, Phone, CheckCircle2, ChevronLeft, Gift } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
 import ZoomableImage from '@/components/ZoomableImage'
@@ -145,7 +146,7 @@ export default function DalanNarayanPuramPage() {
                   Enquire Now
                 </Link>
                 <a
-                  href="https://wa.me/916389088088"
+                  href={whatsappEnquiryUrl('DALAN NARAYAN PURAM')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-lg hover:shadow-green-500/30 gap-2 w-full sm:w-auto whitespace-nowrap"

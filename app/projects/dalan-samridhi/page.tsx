@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import {
   MapPin,
   Plane,
@@ -96,7 +97,7 @@ export default function DalanSamridhiPage() {
                 <ArrowRight size={14} className="shrink-0" />
               </Link>
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN SAMRIDHI')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#25D366] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 whitespace-nowrap"
