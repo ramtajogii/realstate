@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, MapPin } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function DalanAvenueMicroSocietyPage() {
   return (
@@ -73,12 +73,13 @@ export default function DalanAvenueMicroSocietyPage() {
                 <h3 className="text-white">Society Overview & Plots Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
-                <Image
+                <ZoomableImage
                   src="/microsociety/microplots.png"
                   alt="Dalan Avenue Micro Society Layout Plan"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -89,12 +90,13 @@ export default function DalanAvenueMicroSocietyPage() {
                 <h3 className="text-white">Project Amenities Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
-                <Image
+                <ZoomableImage
                   src="/microsociety/amenities.png"
                   alt="Dalan Avenue Micro Society Amenities Map"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>

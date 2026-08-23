@@ -20,6 +20,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'Welcome to Dalan Samridhi - a thoughtfully crafted residential community where the promise of a better life begins the moment you step through the gate. Built by the trusted name of Dalan Builders Pvt. Ltd., Dalan Samridhi is designed for families who believe that a home should not just shelter you, but inspire you. Set amidst wide open spaces, clean surroundings, and a warmly connected neighbourhood, every home here is a step towards the life you have always envisioned.',
@@ -205,12 +206,13 @@ export default function DalanSamridhiPage() {
                 <h3 className="text-white">Project Overview & Location Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/samriddhi/facility.png"
                   alt="Dalan Samridhi Project Overview & Location Map"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -221,12 +223,13 @@ export default function DalanSamridhiPage() {
                 <h3 className="text-white">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/samriddhi/samridhiplan.png"
                   alt="Dalan Samridhi Unit Plan - Ground & First Floor"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>

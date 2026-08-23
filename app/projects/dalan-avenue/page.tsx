@@ -21,6 +21,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'A new landmark of modern living rises in the heart of Varanasi — Welcome to DALAN Avenue — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.',
@@ -204,12 +205,13 @@ export default function DalanAvenuePage() {
                 <h3 className="text-white">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/avenue/avenueplan.png"
                   alt="DALAN Avenue Unit Plan - Ground & First Floor"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -220,12 +222,13 @@ export default function DalanAvenuePage() {
                 <h3 className="text-white">Unit Plan - Alternate Layout</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/avenue/avenuemap.png"
                   alt="DALAN Avenue Unit Plan - Alternate Layout"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
