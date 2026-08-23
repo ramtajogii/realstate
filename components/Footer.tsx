@@ -95,10 +95,9 @@ export default function Footer() {
             <h4 className="eyebrow text-black mb-5 uppercase">Our Projects</h4>
             <ul className="space-y-3">
               {[
-                { name: 'SHIVDHARA RESIDENCY', href: '/projects/shivdhara-residency' },
-                { name: 'DALAN AVENUE MICRO SOCIETY', href: '/projects/dalan-avenue-micro-society' },
-                { name: 'DALAN AVENUE', href: '/projects/dalan-saubhagyam' },
-                { name: 'DALAN SAMRIDHI', href: '/projects/dalan-samridhi' },
+                { name: 'RESIDENTIAL', href: '/projects?type=residential' },
+                { name: 'COMMERCIAL', href: '/projects?type=commercial' },
+                { name: 'FARM HOUSE', href: '/projects?type=farmhouse' },
               ].map((item) => (
                 <li key={item.name}>
                   <Link
