@@ -43,16 +43,30 @@ export default function DalanGreensPage() {
             sizes="100vw"
             className="object-cover object-center"
           />
-          {/* Dark gradient overlay that blends into the gate image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#091e44]/50 via-transparent to-transparent" />
         </div>
+
+        {/* Scrim behind the copy. Every line of hero text is white, and the
+            render is a bright daylight scene, so the text needs a darker
+            ground than the artwork gives it. On desktop the copy sits in the
+            right half, so the gradient fades in from the right edge and
+            leaves the gate and its medallion untouched; below md the copy
+            spans the full width, so it runs bottom-to-top instead. Kept low
+            intensity - enough to carry white text, not enough to flatten the
+            render. */}
+        <div
+          aria-hidden
+          className="absolute inset-0 z-[1] pointer-events-none bg-gradient-to-t from-black/45 via-black/25 to-black/10 md:bg-gradient-to-l md:from-black/45 md:via-black/25 md:to-transparent"
+        />
 
         <ProjectStatusTag stage="Delivered" className="absolute top-5 right-5 md:top-8 md:right-8 z-20" />
 
         <div className="max-w-7xl mx-auto w-full px-6 pt-20 md:pt-4 pb-20 relative z-10">
-          {/* Left Content wrapper to keep it clean */}
-          <div className="max-w-2xl flex flex-col justify-center">
+          {/* Content sits on the right: the gate and its logo medallion occupy
+              the left of the render, and with only the bottom scrim dimming the
+              frame the copy was landing straight on top of the artwork. Below md the
+              block is full width anyway, so ml-auto only takes effect once
+              there is room beside the gate. */}
+          <div className="max-w-2xl flex flex-col justify-center md:ml-auto md:items-end md:text-right">
             <span className="text-xs md:text-sm font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               Residential Plots
             </span>
@@ -61,11 +75,11 @@ export default function DalanGreensPage() {
               DALAN <span className="text-[#C9922A] font-medium italic font-serif">Greens</span>
             </h1>
 
-            <p className="text-lg md:text-xl font-semibold text-gray-200 mb-4">
+            <p className="text-lg md:text-xl font-semibold text-white mb-4">
               Premium Plotted Living in Mau
             </p>
 
-            <div className="flex items-start gap-2.5 text-gray-300 mb-8 max-w-xl">
+            <div className="flex items-start gap-2.5 text-white mb-8 max-w-xl md:flex-row-reverse">
               <MapPin size={20} className="text-[#C9922A] shrink-0 mt-0.5" />
               <p className="text-sm md:text-base leading-relaxed">
                 <span className="font-semibold text-white">Village Mau, Near Mohanlalganj Tehsil</span>
@@ -75,35 +89,35 @@ export default function DalanGreensPage() {
             </div>
 
             {/* Quick Features List in Hero - Horizontal with icon on top */}
-            <div className="flex flex-wrap gap-6 md:gap-8 mb-8 justify-start">
+            <div className="flex flex-wrap gap-6 md:gap-8 mb-8 justify-start md:justify-end">
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Shield size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Gated Community</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Gated Community</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Compass size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Wide Roads</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Wide Roads</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Heart size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Secure & Peaceful</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Secure & Peaceful</span>
               </div>
               <div className="flex flex-col items-center gap-2 text-center group">
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center transition-all duration-300 group-hover:bg-[#C9922A]/20 group-hover:border-[#C9922A]/30">
                   <Leaf size={18} className="text-[#C9922A]" />
                 </div>
-                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-gray-300 uppercase">Green Env</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-wider text-white uppercase">Green Env</span>
               </div>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-row gap-2.5 items-center w-full sm:w-auto">
+            <div className="flex flex-row gap-2.5 items-center w-full sm:w-auto md:justify-end">
               <Link
                 href="/contact"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#C9922A] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-[#C9922A]/20 transition-all duration-300 hover:bg-[#a6741b] hover:shadow-[#C9922A]/30 hover:-translate-y-0.5 whitespace-nowrap"
