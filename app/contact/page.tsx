@@ -74,7 +74,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     { icon: MessageSquare, title: 'WhatsApp Us', lines: ['+91 6389088088'], link: 'https://wa.me/916389088088' },
-    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.com'] },
+    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.in'] },
     { icon: MapPin, title: 'Visit Us', lines: ['203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
   ]

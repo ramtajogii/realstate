@@ -24,7 +24,7 @@ export default function LegalPage() {
               <p><strong className="text-black">Information We Collect:</strong> We collect personal information that you voluntarily provide, including name, email address, phone number, and property preferences when you fill out enquiry forms or contact us directly.</p>
               <p><strong className="text-black">How We Use Information:</strong> Your information is used to respond to enquiries, send project updates, process transactions, and improve our services. We do not sell or share your personal information with third parties for marketing purposes.</p>
               <p><strong className="text-black">Data Security:</strong> We implement industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.</p>
-              <p><strong className="text-black">Contact:</strong> For privacy-related questions, email us at privacy@dalanbuilders.com.</p>
+              <p><strong className="text-black">Contact:</strong> For privacy-related questions, email us at privacy@dalanbuilders.in.</p>
             </div>
           </div>
 
