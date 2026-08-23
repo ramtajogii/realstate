@@ -81,35 +81,205 @@ const statusColors: Record<string, string> = {
 
 const testimonials = [
   {
-    name: 'Rajesh Tiwari',
-    role: 'Homeowner, Dalan Saubhagyam',
-    text: 'We were looking for a home near Ring Road for years, but everything was either too expensive or too far from the city. Dalan Saubhagyam gave us both — a beautiful duplex and a location we could only dream of. The EMI process was so smooth, our family moved in within months',
+    name: 'Maya Mishra',
+    role: 'Homeowner, Dalan Residency',
+    text: 'We were looking for a home near Ring Road for years, but everything was either too expensive or too far from the city. Dalan Residency gave us both — a beautiful duplex and a location we could only dream of. The EMI process was so smooth, our family moved in within months',
   },
   {
-    name: 'Sunita Gupta',
+    name: 'Jitendra Singh',
     role: 'Homeowner, Dalan Avenue',
     text: 'What impressed us most was the transparency. No hidden charges, no last-minute surprises — exactly what they promised on paper is what we got. Our sale deed was registered immediately, just as Dalan had assured us.',
   },
   {
-    name: 'Amit Srivastava',
-    role: 'Investor, Dalan Avenue Micro Society',
-    text: `I bought a plot in Dalan Avenue Micro Society as an investment two years ago, and the value has grown significantly since then. The location near Om Villas and the well-planned roads make it one of the smartest decisions I've made.`,
+    name: 'Anoop Rai',
+    role: 'Investor, Dalan Avenue',
+    text: `I bought a plot in Dalan Avenue as an investment two years ago, and the value has grown significantly since then. The location near Om Villas and the well-planned roads make it one of the smartest decisions I've made.`,
   },
   {
-    name: 'Pooja Mishra',
+    name: 'Vikas Shukla',
     role: 'Homeowner, Dalan Samridhi',
     text: `Being close to LBS Airport and Sarnath was important for our family, and Dalan Samridhi checked every box. The construction quality is excellent, and the ISO certification really shows in the finishing work`,
   },
   {
-    name: 'Vikas Singh',
+    name: 'Ajay Yadav',
     role: 'Homeowner, Shivdhara Residency',
     text: `My children study at St. Joseph's Convent School, so when we found Shivdhara Residency right in front of it, it felt like fate. The 24x7 security and CCTV give us so much peace of mind every single day.`,
   },
   {
-    name: 'Neha & Rohit Verma',
-    role: 'Homeowners, Dalan Saubhagyam',
+    name: 'Abhishek',
+    role: 'Homeowners, Dalan Residency',
     text: `From the first visit to the final registration, the entire Dalan Builders team was honest and supportive. We didn't feel like customers — we felt like family. Highly recommend them to anyone looking in Varanasi`,
-  }
+  },
+  {
+    name: 'Anand Jaiswal',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'We compared villa projects around Chandmari for months. What settled it for us was how openly the team answered every question about the plan and the paperwork — nothing was brushed aside or left vague.',
+  },
+  {
+    name: 'Anand Singh',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'We shifted into our duplex at Dalan Avenue and settled in quickly. The internal roads are wide, the water supply is steady, and the neighbourhood has a genuinely calm feel to it.',
+  },
+  {
+    name: 'Saurabh Rai',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'I visit the site every few weeks and the work has never felt rushed. Watching the structure come up the way it was described to us at booking is what gives me confidence about the handover.',
+  },
+  {
+    name: 'Avanish Kumar Singh',
+    role: 'Investor, Dalan Avenue',
+    text: 'I took two units in Dalan Avenue and both have held their value well. The location near Om Villas keeps demand steady in this pocket, which is exactly what I was counting on.',
+  },
+  {
+    name: 'Jhumma Brahmachari',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'The villa layout is what won me over — proper ventilation, sensible room sizes, and a plan that suits how a family actually lives rather than one that only looks good on paper.',
+  },
+  {
+    name: 'Pramod Rai',
+    role: 'Investor, Dalan Avenue',
+    text: 'Dalan Avenue was a considered investment rather than an impulse. Clear titles and prompt registration made the purchase itself completely painless.',
+  },
+  {
+    name: 'Neelam Singh',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'Booking a home while it is still under construction takes trust, so the regular updates from the Dalan team have meant a great deal. I always know what stage my villa is at.',
+  },
+  {
+    name: 'Sunita Pandey',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'Our duplex has been comfortable through every season. Power backup and the water arrangement are things you only notice when they are missing, and here they simply work.',
+  },
+  {
+    name: 'Durgesh & Roli Singh',
+    role: 'Homeowners, Dalan Samridhi',
+    text: 'We saw several projects before choosing Samridhi. The location near Chandmari works for both our workplaces, and at no point did the team pressure us while we were deciding.',
+  },
+  {
+    name: 'Babita Kumari',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'The handover came on the terms we were promised, with nothing added to the cost at the last moment. That alone set Dalan apart from what we had seen elsewhere.',
+  },
+  {
+    name: 'Dr. Dipt Kumar',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'Between the hospital and my family I had very little time to chase paperwork. The documentation was handled clearly and I was kept informed, which made the whole process manageable.',
+  },
+  {
+    name: 'Dinesh Singh',
+    role: 'Homeowner, Shivdhara Residency',
+    text: 'Shivpur has developed a great deal in recent years and Shivdhara sits right in the middle of it. The row house has been easy to live in and low on maintenance.',
+  },
+  {
+    name: 'Sunny Sonkar',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'What I appreciate most is the honesty about timelines. We were told what stage the project was at and what to expect next, without any exaggeration in either direction.',
+  },
+  {
+    name: 'Paras Nath Singh',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'After retirement I wanted somewhere quiet and well kept, but still close enough to the city. Dalan Avenue has given me that, and the common areas are looked after consistently.',
+  },
+  {
+    name: 'Praveen Singh',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'The approach road and the planning of the site impressed me as much as the villa itself. It is clear the layout was thought through properly before construction began.',
+  },
+  {
+    name: 'Amit Tripathi',
+    role: 'Homeowner, Dalan Residency',
+    text: 'The connectivity from Dalan Residency out to the Ring Road makes daily travel straightforward. Our duplex has been comfortable and the construction has held up well.',
+  },
+  {
+    name: 'Amit & Tanya Tiwari',
+    role: 'Homeowners, Dalan Samridhi',
+    text: 'This is our first home, so we arrived with endless questions. The team sat with us patiently through all of them and explained every clause before we signed anything.',
+  },
+  {
+    name: 'Sailendra Pandey',
+    role: 'Homeowner, Shivdhara Residency',
+    text: 'Having the school directly in front means the children walk across rather than being dropped off. That one small thing has changed our mornings completely.',
+  },
+  {
+    name: 'Sunita Singh',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'Being within easy reach of Sarnath and the airport road was a practical consideration for our family, and Samridhi sits well for both. The build quality has matched what we were shown.',
+  },
+  {
+    name: 'Rituraj Shrivastva',
+    role: 'Investor, Dalan Avenue',
+    text: 'I bought here on the strength of the location and the layout. Both units were registered without delay and the paperwork was in order from the first day.',
+  },
+  {
+    name: 'Ankita Raj',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'I wanted a home in a planned development rather than a standalone house, and the villa layout at Samridhi gave me exactly that without stretching my budget beyond what was sensible.',
+  },
+  {
+    name: 'Sujeet Maurya',
+    role: 'Homeowner, Dalan Residency',
+    text: 'We moved in with our parents and our children together, and the row house layout suits a joint family well — room enough for everyone without anything going to waste.',
+  },
+  {
+    name: 'Lal Mani Mishra',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'At my age I did not want any complications with documents. Everything was explained in plain terms and each step was completed in the order they said it would be.',
+  },
+  {
+    name: 'Shobhit Srivastva',
+    role: 'Homeowner, Shivdhara Residency',
+    text: 'The CCTV at the main gate and the round-the-clock security were what convinced my family, and we have had no reason to doubt that decision since.',
+  },
+  {
+    name: 'Chanchala Mishra',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'We booked for the family together and the team accommodated our requirements without any fuss. The coordination through the entire process has been steady and unhurried.',
+  },
+  {
+    name: 'Pawan Pandey',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'The green spaces and the park are what our children enjoy most. It is a safe layout for them to move around in, which mattered more to us than anything else.',
+  },
+  {
+    name: 'Hariom Mishra',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'I have followed the site from the ground up. The materials and the finishing standards have stayed consistent with what was committed at the very beginning.',
+  },
+  {
+    name: 'Akhilesh Singh',
+    role: 'Homeowner, Dalan Residency',
+    text: 'The buying process was refreshingly direct. The cost we discussed was the cost we paid, and the registration happened when they said it would.',
+  },
+  {
+    name: 'Jay Singh',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'The gated layout and the planning of the internal roads were the deciding factors for me. It feels like a community that has been designed, not one that simply grew.',
+  },
+  {
+    name: 'Vishvendu Dubey',
+    role: 'Homeowner, Shivdhara Residency',
+    text: 'The construction is solid and the finishing was done properly rather than hurriedly. Small details, but they are the ones that show over time.',
+  },
+  {
+    name: 'Rekha Gupta',
+    role: 'Homeowner, Dalan Samridhi',
+    text: 'As a woman buying on her own, I was treated with complete respect throughout. Every question about the plan and the payment schedule was answered directly, without condescension.',
+  },
+  {
+    name: 'Abhishek Verma',
+    role: 'Homeowner, Dalan Avenue',
+    text: 'Every commitment made at the time of booking was met at handover. In this market that counts for more than anything printed in a brochure.',
+  },
+  {
+    name: 'Manisha Pandey',
+    role: 'Homeowner, Dalan Residency',
+    text: 'What I value most is the sense of security. The gate is manned, the neighbours look out for one another, and I never feel uneasy when I am at home alone.',
+  },
+  {
+    name: 'Anand Pandey',
+    role: 'Homeowner, Shivdhara Residency',
+    text: 'From the first site visit to collecting the keys, the team was reachable whenever we called. That kind of responsiveness is rare and we noticed it throughout.',
+  },
 ]
 
 const extendedTestimonials = [
@@ -264,6 +434,24 @@ export default function HomePage() {
     setIsTestimonialTransitioning(true)
     setCurrentTestimonial((prev) => prev + 1)
   }
+
+  // currentTestimonial indexes extendedTestimonials, whose first and last items
+  // are clones that make the loop seamless. Map it back to a real testimonial.
+  const activeTestimonial =
+    currentTestimonial === 0
+      ? testimonials.length - 1
+      : currentTestimonial === extendedTestimonials.length - 1
+        ? 0
+        : currentTestimonial - 1
+
+  // One dot per testimonial stops scaling somewhere around a dozen; at forty the
+  // strip is wider than a phone. Show a window that travels with the active dot.
+  const DOT_WINDOW = 7
+  const dotStart = Math.max(0, Math.min(activeTestimonial - (DOT_WINDOW - 1) / 2, testimonials.length - DOT_WINDOW))
+  const dotIndexes = Array.from(
+    { length: Math.min(DOT_WINDOW, testimonials.length) },
+    (_, i) => dotStart + i
+  )
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -596,8 +784,11 @@ export default function HomePage() {
                 style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
                 onTransitionEnd={handleTestimonialTransitionEnd}
               >
+                {/* Every panel stretches to the tallest quote in the set, so the
+                    content is centred rather than sitting high in the card with
+                    the slack collecting underneath. */}
                 {extendedTestimonials.map((t, i) => (
-                  <div key={i} className="w-full shrink-0 p-8 md:p-12 text-center flex flex-col items-center">
+                  <div key={i} className="w-full shrink-0 p-8 md:p-12 text-center flex flex-col items-center justify-center">
                     {/* Gold Double Quote mark */}
                     <span className="text-[#C9922A] text-6xl font-serif leading-none h-6 select-none opacity-80 mb-4">“</span>
                     
@@ -636,12 +827,15 @@ export default function HomePage() {
             </button>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-8">
-            {testimonials.map((_, index) => {
-              const isActive = currentTestimonial === index + 1 ||
-                (currentTestimonial === 0 && index === testimonials.length - 1) ||
-                (currentTestimonial === extendedTestimonials.length - 1 && index === 0);
+          {/* Dots Indicator — a travelling window, not one dot per testimonial */}
+          <div className="flex justify-center items-center gap-2 mt-8">
+            {dotIndexes.map((index) => {
+              const isActive = index === activeTestimonial
+              // The dots at the edge of the window shrink when there is more
+              // list beyond them, so the strip reads as a section of a longer run.
+              const isFading =
+                (index === dotIndexes[0] && index > 0) ||
+                (index === dotIndexes[dotIndexes.length - 1] && index < testimonials.length - 1)
               return (
                 <button
                   key={index}
@@ -649,13 +843,22 @@ export default function HomePage() {
                     setIsTestimonialTransitioning(true)
                     setCurrentTestimonial(index + 1)
                   }}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${isActive ? 'bg-[#091e44] w-6' : 'bg-black/20 hover:bg-black/40'
+                  className={`h-2 rounded-full transition-all duration-300 ${isActive
+                    ? 'w-6 bg-[#091e44]'
+                    : isFading
+                      ? 'w-1.5 bg-black/15 hover:bg-black/40'
+                      : 'w-2 bg-black/20 hover:bg-black/40'
                     }`}
-                  aria-label={`Go to testimonial slide ${index + 1}`}
+                  aria-label={`Go to testimonial ${index + 1} of ${testimonials.length}`}
                 />
               )
             })}
           </div>
+
+          {/* With forty testimonials the dots alone no longer say where you are. */}
+          <p className="mt-3 text-center text-xs text-gray-400 tabular-nums" aria-live="polite">
+            {activeTestimonial + 1} of {testimonials.length}
+          </p>
 
           {/* Customer rating badge, linking to the Google Business Profile */}
           <div className="mt-8 md:mt-10 flex justify-center reveal">
