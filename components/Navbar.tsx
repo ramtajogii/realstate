@@ -62,7 +62,7 @@ const navLinks: NavLink[] = [
         label: 'Villa',
         href: '/projects?type=residential&category=villa',
         dropdown: [
-          { label: 'Dalan Samriddhi', href: '/projects/dalan-samridhi' },
+          { label: 'Dalan Samridhi', href: '/projects/dalan-samridhi' },
         ],
       },
       {

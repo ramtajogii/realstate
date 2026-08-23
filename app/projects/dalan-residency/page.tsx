@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import {
   MapPin,
   Plane,
@@ -18,6 +19,7 @@ import {
   Locate,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'Dalan Residency brings you premium 3 BHK duplex row houses designed for modern families who value comfort, style, and connectivity. Located in Village Lodhan, near Om Villas, Chandmari, Varanasi, this project offers the perfect balance of peaceful living and city convenience.',
@@ -72,7 +74,7 @@ export default function DalanResidencyPage() {
             <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
               Premium Duplex Row Houses
             </span>
-            <h1 className="font-display text-5xl md:text-6xl font-bold leading-none">
+            <h1 className="">
               <span className="text-white">DALAN</span>
               <br />
               <span className="text-[#C9922A]">RESIDENCY</span>
@@ -94,7 +96,7 @@ export default function DalanResidencyPage() {
                 <ArrowRight size={14} className="shrink-0" />
               </Link>
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN RESIDENCY')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#25D366] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 whitespace-nowrap"
@@ -196,7 +198,7 @@ export default function DalanResidencyPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Layout & Plans</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Floor Plans & Accessibility</h2>
+            <h2 className="text-black mt-2">Floor Plans & Accessibility</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -204,16 +206,17 @@ export default function DalanResidencyPage() {
             {/* Column 1: Ground Floor Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Ground Floor Plan</h3>
+                <h3 className="text-white">Ground Floor Plan</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
                 <div className="p-4 flex items-center justify-center flex-grow">
-                  <Image
+                  <ZoomableImage
                     src="/images/residency-ground-floor-plan.png"
                     alt="Dalan Residency Ground Floor Plan"
                     width={800}
                     height={950}
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    hint="Click to enlarge"
                   />
                 </div>
                 {/* Details Footer */}
@@ -233,16 +236,17 @@ export default function DalanResidencyPage() {
             {/* Column 2: First Floor Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">First Floor Plan</h3>
+                <h3 className="text-white">First Floor Plan</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden flex flex-col justify-between">
                 <div className="p-4 flex items-center justify-center flex-grow">
-                  <Image
+                  <ZoomableImage
                     src="/images/residency-first-floor-plan.png"
                     alt="Dalan Residency First Floor Plan"
                     width={800}
                     height={950}
-                    className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                    hint="Click to enlarge"
                   />
                 </div>
                 {/* Details Footer */}
@@ -264,7 +268,7 @@ export default function DalanResidencyPage() {
               <div>
                 <div className="flex items-center gap-2 mb-6">
                   <Locate className="text-[#C9922A]" size={20} />
-                  <h3 className="text-[#C9922A] font-semibold text-lg font-display tracking-wide">Accessibility</h3>
+                  <h3 className="text-[#C9922A]">Accessibility</h3>
                 </div>
                 <ul className="space-y-4">
                   {accessibility.map((item) => (
@@ -303,7 +307,7 @@ export default function DalanResidencyPage() {
             <span className="text-[#C9922A] font-semibold">DALAN Residency.</span>
           </p>
           <a
-            href="https://wa.me/916389088088"
+            href={whatsappEnquiryUrl('DALAN RESIDENCY')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 shrink-0"
