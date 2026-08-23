@@ -515,7 +515,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-white mb-2">Trusted Legacy</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-                15+ years of building trust and delivering value.
+                19+ years of building trust and delivering value.
               </p>
             </div>
             {/* Feature 2 */}
