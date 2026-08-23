@@ -69,7 +69,7 @@ export default async function AdminDashboardPage({
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <span className="text-xs font-semibold uppercase tracking-widest text-[#091e44]">Admin Dashboard</span>
-            <h1 className="mt-3 font-display text-4xl font-bold text-black">Contact Inquiries</h1>
+            <h1 className="mt-3 text-black">Contact Inquiries</h1>
             <p className="mt-2 text-sm text-gray-600">Logged in as {admin.email}</p>
           </div>
           <AdminLogoutButton />

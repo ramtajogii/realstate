@@ -28,10 +28,10 @@ export default function DalanNarayanPuramPage() {
 
             {/* Title Block */}
             <div className="mb-6 text-left">
-              <h1 className="font-serif text-5xl font-extrabold text-[#091e44] tracking-tight leading-none mb-2">
+              <h1 className="text-[#091e44] mb-2">
                 DALAN
               </h1>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#C9922A] leading-tight">
+              <h2 className="text-[#C9922A]">
                 Narayan Puram
               </h2>
               <div className="flex items-center gap-2 mt-4 text-gray-600 text-sm md:text-base font-semibold">

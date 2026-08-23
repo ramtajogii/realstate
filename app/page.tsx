@@ -11,6 +11,9 @@ const stats = [
   { value: '98%', label: 'Client Satisfaction', icon: TrendingUp },
 ]
 
+// Dalan Builders' Google Business Profile. The customer rating badge below links here.
+const GOOGLE_REVIEWS_URL = 'https://share.google/BrX0Qn6YwCqNrkW9C'
+
 const heroSlides = [
   {
     desktop: '/images/residency-desktop.jpg',
@@ -18,9 +21,9 @@ const heroSlides = [
     alt: 'Dalan Residency independent houses, Chandmari, Varanasi'
   },
   {
-    desktop: '/images/samridhi-desktop.png',
+    desktop: '/images/samridhi-desktop.jpg',
     mobile: '/images/samridhi.jpg',
-    alt: 'DALAN Builders banner'
+    alt: 'Dalan Samridhi duplex villas, Varanasi'
   },
 ]
 
@@ -29,6 +32,14 @@ const extendedHeroSlides = [
   ...heroSlides,
   heroSlides[0],
 ]
+
+function GoldStar({ className = 'w-5 h-5' }: { className?: string }) {
+  return (
+    <svg className={`${className} text-[#C9922A] fill-current`} viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.785.57-1.84-.2-1.54-1.118l1.288-3.97a1 1 0 00-.364-1.118L2.24 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
+    </svg>
+  )
+}
 
 
 
@@ -360,36 +371,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== ABOUT SECTION ===== */}
-      <section className="py-20 bg-[#ffffff]">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="reveal">
-            <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">About Us</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-black mt-3 mb-6 leading-tight">
-              Building More Than Homes
-            </h2>
-            <div className="w-14 h-1 bg-[#091e44] mx-auto mb-6" />
-            <p className="text-gray-600 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
-              DALAN Builders was founded with a single vision: to create spaces that enhance the quality of life.
-              For over 19+ years, we have delivered residential communities and commercial destinations that stand
-              the test of time.
-            </p>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
-            >
-              Know More <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ===== PROJECTS SECTION ===== */}
-      <section className="pt-18 pb-28 bg-[#ffffff]">
+      <section className="pt-14 md:pt-16 pb-4 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-16 reveal">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-3 mb-4">
+          <div className="text-center mb-10 reveal">
+            <h2 className="mt-3 mb-4">
               Featured Projects
             </h2>
             <div className="w-14 h-1 bg-[#091e44] mx-auto" />
@@ -423,7 +410,7 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <span className="text-[#C9922A] text-xs font-semibold uppercase tracking-wider">{project.type}</span>
-                    <h3 className="font-display text-xl font-bold text-white mt-1">{project.title}</h3>
+                    <h3 className="text-white mt-1">{project.title}</h3>
                     <p className="text-white/80 text-sm mt-1 flex items-center gap-1">
                       📍 {project.location}
                     </p>
@@ -436,7 +423,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="text-center mt-12 reveal">
+          <div className="text-center mt-8 reveal">
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#091e44] text-white font-medium rounded-full hover:bg-[#061632] transition-all duration-300"
@@ -446,13 +433,75 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===== FOUNDER SECTION ===== */}
+      <section className="py-14 md:py-16 bg-[#ffffff]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-14 items-center reveal">
+            {/* Portrait. The source is 1092x1280 against a 4:5 frame, so only
+                about 3% comes off each side; the subject is centred, so the
+                composition is essentially the full photograph. Width is capped
+                on mobile — a full bleed portrait crop would otherwise eat the
+                whole viewport. */}
+            <div className="md:col-span-4 relative w-full max-w-sm mx-auto md:max-w-none">
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/about/founder.jpg"
+                  alt="Brijesh Pandey, Founder of DALAN Builders"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 768px) 32vw, (min-width: 400px) 384px, 100vw"
+                />
+              </div>
+              {/* Logo chip breaking the corner. Filled rather than a bare
+                  outline so the mark reads cleanly where the frame crosses
+                  from the page background onto the photograph. */}
+              <div className="hidden md:grid place-items-center absolute -top-5 -left-5 w-24 h-24 rounded-2xl bg-white border-2 border-[#C9922A] shadow-sm">
+                <Image
+                  src="/logo/dalan-mark.png"
+                  alt="DALAN Builders"
+                  width={206}
+                  height={178}
+                  className="w-11 h-auto"
+                />
+              </div>
+            </div>
+
+            <div className="md:col-span-8 md:pl-4">
+              <span className="eyebrow text-[#C9922A]">From the Founder</span>
+              {/* The pull quote carries the section, so it takes the h2 slot
+                  the old "Building More Than Homes" heading used to hold. */}
+              <blockquote>
+                <h2 className="mt-4 mb-5 font-quote font-medium tracking-[-0.01em]">
+                  &ldquo;We don&rsquo;t just build structures. We build the places families grow into.&rdquo;
+                </h2>
+              </blockquote>
+              <div className="w-12 h-[3px] bg-[#C9922A] mb-6" />
+              <p className="font-quote-body text-gray-600 text-lg max-w-xl">
+                For over 19 years, DALAN Builders has delivered residential communities and commercial
+                destinations across Varanasi that stand the test of time.
+              </p>
+              <div className="mt-7">
+                <div className="font-quote-body text-xl font-bold text-[#091e44]">Brijesh Pandey</div>
+                <div className="eyebrow text-gray-500 mt-1.5">Founder</div>
+              </div>
+              <Link
+                href="/about"
+                className="mt-8 inline-flex items-center gap-2 px-8 py-4 border-2 border-[#091e44] text-[#091e44] font-medium rounded-full hover:bg-[#091e44] hover:text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#091e44]/20"
+              >
+                Know More <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ===== WHY CHOOSE DALAN SECTION ===== */}
-      <section className="bg-[#091e44] text-white py-20 px-6 overflow-hidden">
+      <section className="bg-[#091e44] text-white py-14 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16 reveal">
-            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Why Choose Dalan</span>
-            <h2 className="font-serif text-2xl md:text-4xl font-bold text-white mt-3 leading-tight">
+          <div className="text-center mb-10 reveal">
+            <span className="eyebrow text-[#C9922A]">Why Choose Dalan</span>
+            <h2 className="text-white mt-3">
               Built on Trust. Focused on You.
             </h2>
           </div>
@@ -464,7 +513,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Shield size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Trusted Legacy</h3>
+              <h3 className="text-white mb-2">Trusted Legacy</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 15+ years of building trust and delivering value.
               </p>
@@ -474,7 +523,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <MapPin size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Prime Locations</h3>
+              <h3 className="text-white mb-2">Prime Locations</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Carefully selected locations with excellent connectivity.
               </p>
@@ -484,7 +533,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Award size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Superior Quality</h3>
+              <h3 className="text-white mb-2">Superior Quality</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 High quality materials and modern construction practices.
               </p>
@@ -494,7 +543,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Handshake size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Transparent Process</h3>
+              <h3 className="text-white mb-2">Transparent Process</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Clear communication and transparency at every step.
               </p>
@@ -504,7 +553,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <Calendar size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Timely Delivery</h3>
+              <h3 className="text-white mb-2">Timely Delivery</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 On-time possession because we value your time.
               </p>
@@ -514,7 +563,7 @@ export default function HomePage() {
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
                 <BarChart3 size={24} />
               </div>
-              <h3 className="font-bold text-base text-white mb-2">Investment Growth</h3>
+              <h3 className="text-white mb-2">Investment Growth</h3>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                 Projects designed to offer high returns in the future.
               </p>
@@ -524,11 +573,11 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS SECTION ===== */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16 reveal">
-            <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Testimonials</span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3">
+          <div className="text-center mb-10 reveal">
+            <span className="eyebrow text-[#C9922A]">Testimonials</span>
+            <h2 className="mt-3">
               What Our Clients Say
             </h2>
             <div className="flex items-center justify-center gap-4 mt-4">
@@ -559,9 +608,7 @@ export default function HomePage() {
                     {/* 5 Stars gold indicator */}
                     <div className="flex items-center justify-center gap-1 mb-6">
                       {[...Array(5)].map((_, starIndex) => (
-                        <svg key={starIndex} className="w-5 h-5 text-[#C9922A] fill-current" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.39 2.46a1 1 0 00-.364 1.118l1.286 3.97c.3.921-.755 1.688-1.54 1.118l-3.39-2.46a1 1 0 00-1.175 0l-3.39 2.46c-.785.57-1.84-.2-1.54-1.118l1.288-3.97a1 1 0 00-.364-1.118L2.24 9.397c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.97z" />
-                        </svg>
+                        <GoldStar key={starIndex} />
                       ))}
                     </div>
 
@@ -609,21 +656,50 @@ export default function HomePage() {
               )
             })}
           </div>
+
+          {/* Customer rating badge, linking to the Google Business Profile */}
+          <div className="mt-8 md:mt-10 flex justify-center reveal">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Read our reviews on Google (opens in a new tab)"
+              className="block w-full max-w-md rounded-2xl border border-gray-100 bg-white px-8 py-8 text-center shadow-sm transition-all duration-300 hover:border-[#C9922A]/40 hover:shadow-lg hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9922A] focus-visible:ring-offset-2">
+              <Image
+                src="/images/google-customer-reviews.png"
+                alt="Google Customer Reviews — five star rating"
+                width={756}
+                height={241}
+                sizes="(min-width: 768px) 288px, 240px"
+                className="mx-auto w-60 md:w-72 h-auto"
+              />
+
+              <div className="mx-auto mt-5 flex items-center justify-center gap-3">
+                <div className="w-10 h-0.5 bg-[#C9922A]/30" />
+                <div className="w-1.5 h-1.5 bg-[#C9922A] rotate-45" />
+                <div className="w-10 h-0.5 bg-[#C9922A]/30" />
+              </div>
+
+              <p className="mt-5 font-serif text-lg md:text-xl font-bold leading-snug text-[#C9922A]">
+                One of the best Rated Real Estate Companies in Varanasi
+              </p>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* ===== COMMUNITY & EVENTS SECTION ===== */}
-      <section className="bg-white py-16 md:py-20 px-6 border-t border-gray-100">
+      <section className="bg-[#F7F7F7] py-12 md:py-14 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <span className="text-[#C9922A] text-xs uppercase tracking-widest font-black">Community & Events</span>
-          <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#091e44] mt-3 mb-4">
+          <span className="eyebrow text-[#C9922A]">Community &amp; Events</span>
+          <h2 className="mt-3 mb-4">
             Building Relationships, Not Just Buildings
           </h2>
-          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-12" />
+          <div className="w-14 h-1 bg-[#C9922A] mx-auto mb-8" />
 
           {/* Automatic Sliding Carousel of 12 images (showing 3 at a time on desktop, 2 on mobile) */}
           <div 
-            className="overflow-hidden w-full relative mb-10 cursor-pointer"
+            className="overflow-hidden w-full relative mb-6 cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -659,7 +735,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== READY TO FIND YOUR DREAM HOME SECTION ===== */}
-      <section className="bg-white py-12 px-6">
+      <section className="bg-white py-10 px-6">
         <div className="max-w-7xl mx-auto bg-[#091e44] rounded-3xl overflow-hidden shadow-xl relative">
           
           {/* Subtle house background vectors */}
@@ -674,9 +750,9 @@ export default function HomePage() {
             </svg>
           </div>
 
-          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-16 px-8 md:px-16">
+          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 py-12 px-8 md:px-16">
             <div className="max-w-2xl text-left border-l-4 border-[#C9922A] pl-6">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-white">
                 Ready to Find Your <br className="hidden md:block" />
                 <span className="text-[#C9922A]">Dream Home?</span>
               </h2>

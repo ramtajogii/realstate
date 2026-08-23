@@ -73,7 +73,7 @@ export default function DalanSamridhiPage() {
             <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
               Duplex Villa
             </span>
-            <h1 className="font-display text-5xl md:text-6xl font-bold leading-none">
+            <h1 className="">
               <span className="text-white">DALAN</span>
               <br />
               <span className="text-[#C9922A]">SAMRIDHI</span>
@@ -171,7 +171,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Amenities</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Every Comfort You Need, Right Where You Live</h2>
+            <h2 className="text-black mt-2">Every Comfort You Need, Right Where You Live</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -194,7 +194,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Layout & Plans</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Unit Plan & Project Overview</h2>
+            <h2 className="text-black mt-2">Unit Plan & Project Overview</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -202,7 +202,7 @@ export default function DalanSamridhiPage() {
             {/* Left Column: Project Overview & Location Map */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Overview & Location Map</h3>
+                <h3 className="text-white">Project Overview & Location Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
@@ -218,7 +218,7 @@ export default function DalanSamridhiPage() {
             {/* Right Column: Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Ground & First Floor</h3>
+                <h3 className="text-white">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
                 <Image
@@ -239,7 +239,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Connectivity</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Key Distances</h2>
+            <h2 className="text-black mt-2">Key Distances</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 

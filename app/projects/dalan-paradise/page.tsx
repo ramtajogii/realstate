@@ -38,7 +38,7 @@ export default function DalanParadisePage() {
               Premium 2 BHK Apartments
             </span>
             
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
+            <h1 className="text-white mb-4">
               DALAN <span className="text-[#C9922A] font-medium italic font-serif">Paradise</span>
             </h1>
 
@@ -164,7 +164,7 @@ export default function DalanParadisePage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               About Dalan Paradise
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+            <h2 className="text-gray-900 mb-6">
               Modern Homes,<br />Thoughtfully Designed
             </h2>
             <div className="w-14 h-1 bg-[#C9922A] mb-8" />
@@ -200,7 +200,7 @@ export default function DalanParadisePage() {
             <span className="text-xs font-bold uppercase tracking-widest text-[#C9922A] mb-3 inline-block">
               Amenities
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-900 mt-2">
+            <h2 className="text-gray-900 mt-2">
               Lifestyle Amenities For Modern Living
             </h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-6" />
@@ -297,7 +297,7 @@ export default function DalanParadisePage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-[#091e44] rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-white/5">
             <div className="text-center md:text-left w-full md:w-auto text-white">
-              <h3 className="font-serif text-2xl md:text-3xl font-semibold text-white mb-2">
+              <h3 className="text-white mb-2">
                 A Perfect Home Awaits You
               </h3>
               <p className="text-gray-300 text-sm md:text-base font-light">
