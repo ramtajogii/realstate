@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Content (Text) */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.1] text-[#091e44]">
+            <h2 className="text-[#091e44]">
               Built on Trust.<br />
               Driven by <span className="text-gold">Purpose.</span>
             </h2>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               <div className="w-12 h-[2px] bg-gold" />
             </div>
             
-            <h2 className="font-display text-3xl md:text-4xl lg:text-[42px] font-bold leading-[1.2] text-[#091e44]">
+            <h2 className="text-[#091e44]">
               Rooted in the City<br />
               We Call Home<span className="text-gold">.</span>
             </h2>
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
               <Eye size={28} className="text-gold" />
             </div>
-            <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+            <h3 className="eyebrow text-[#091e44] uppercase mb-4">
               OUR VISION
             </h3>
             <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[360px]">
@@ -122,7 +122,7 @@ export default function AboutPage() {
             <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
               <Target size={28} className="text-gold" />
             </div>
-            <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+            <h3 className="eyebrow text-[#091e44] uppercase mb-4">
               OUR MISSION
             </h3>
             <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[360px]">
@@ -141,7 +141,7 @@ export default function AboutPage() {
               <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
                 <ShieldCheck size={28} className="text-gold" />
               </div>
-              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+              <h3 className="eyebrow text-[#091e44] uppercase mb-4">
                 QUALITY FIRST
               </h3>
               <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
@@ -154,7 +154,7 @@ export default function AboutPage() {
               <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
                 <Handshake size={28} className="text-gold" />
               </div>
-              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+              <h3 className="eyebrow text-[#091e44] uppercase mb-4">
                 TRANSPARENT RELATIONSHIPS
               </h3>
               <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
@@ -167,7 +167,7 @@ export default function AboutPage() {
               <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">
                 <Users size={28} className="text-gold" />
               </div>
-              <h3 className="font-nav text-xs font-bold tracking-[0.15em] text-[#091e44] uppercase mb-4">
+              <h3 className="eyebrow text-[#091e44] uppercase mb-4">
                 BUILDING COMMUNITIES
               </h3>
               <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-[240px]">
@@ -181,7 +181,7 @@ export default function AboutPage() {
       {/* 5. Bottom Call To Action Section */}
       <section className="max-w-[1280px] mx-auto px-6 pt-20 reveal">
         <div className="max-w-4xl mx-auto border border-gold/30 bg-white rounded-lg p-10 md:p-14 text-center space-y-6 shadow-sm">
-          <h2 className="font-display text-3xl md:text-[38px] font-bold text-[#091e44] leading-tight">
+          <h2 className="text-[#091e44]">
             Ready to Begin Your Journey Home?
           </h2>
           <div className="w-12 h-[2px] bg-gold mx-auto" />

@@ -1,7 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import { ArrowLeft, MapPin } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function DalanAvenueMicroSocietyPage() {
   return (
@@ -15,7 +16,7 @@ export default function DalanAvenueMicroSocietyPage() {
             </span>
             <ProjectStatusTag stage="Delivered" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-black leading-tight">
+          <h2 className="text-black">
             DALAN Avenue Micro Society
           </h2>
           <p className="mt-3 text-gray-600 text-sm flex items-center gap-1.5 font-medium">
@@ -43,7 +44,7 @@ export default function DalanAvenueMicroSocietyPage() {
               Enquire Now
             </Link>
             <a
-              href="https://wa.me/916389088088"
+              href={whatsappEnquiryUrl('DALAN AVENUE MICRO SOCIETY')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-lg hover:shadow-green-500/30 gap-2 w-full sm:w-auto whitespace-nowrap"
@@ -62,7 +63,7 @@ export default function DalanAvenueMicroSocietyPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold tracking-wider">Layout & Amenities</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Society Layout & Overview</h2>
+            <h2 className="text-black mt-2">Society Layout & Overview</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -70,15 +71,16 @@ export default function DalanAvenueMicroSocietyPage() {
             {/* Left Column: Map */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Society Overview & Plots Map</h3>
+                <h3 className="text-white">Society Overview & Plots Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
-                <Image
+                <ZoomableImage
                   src="/microsociety/microplots.png"
                   alt="Dalan Avenue Micro Society Layout Plan"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -86,15 +88,16 @@ export default function DalanAvenueMicroSocietyPage() {
             {/* Right Column: Amenities */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Amenities Map</h3>
+                <h3 className="text-white">Project Amenities Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden p-4 flex items-center justify-center">
-                <Image
+                <ZoomableImage
                   src="/microsociety/amenities.png"
                   alt="Dalan Avenue Micro Society Amenities Map"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] rounded-lg"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>

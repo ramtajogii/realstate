@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import {
   MapPin,
   Plane,
@@ -21,6 +22,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'A new landmark of modern living rises in the heart of Varanasi — Welcome to DALAN Avenue — where every street tells a story of comfort, style, and belonging. Crafted by the trusted hands of Dalan Builders Pvt. Ltd., Dalan Avenue is more than just a residential community — it is a carefully designed world where thoughtful architecture meets the warmth of everyday life. Wide open roads, lush green surroundings, and a well-planned society create an environment where your family can truly breathe, grow, and thrive.',
@@ -75,7 +77,7 @@ export default function DalanAvenuePage() {
             <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
               Premium Row Houses
             </span>
-            <h1 className="font-display text-5xl md:text-6xl font-bold leading-none">
+            <h1 className="">
               <span className="text-white">DALAN</span>
               <br />
               <span className="text-[#C9922A]">AVENUE</span>
@@ -97,7 +99,7 @@ export default function DalanAvenuePage() {
                 <ArrowRight size={14} className="shrink-0" />
               </Link>
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN AVENUE')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#25D366] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 whitespace-nowrap"
@@ -193,7 +195,7 @@ export default function DalanAvenuePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Layout & Plans</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Unit Plans & Life at Dalan Avenue</h2>
+            <h2 className="text-black mt-2">Unit Plans & Life at Dalan Avenue</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -201,15 +203,16 @@ export default function DalanAvenuePage() {
             {/* Column 1: Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Ground & First Floor</h3>
+                <h3 className="text-white">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/avenue/avenueplan.png"
                   alt="DALAN Avenue Unit Plan - Ground & First Floor"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -217,22 +220,23 @@ export default function DalanAvenuePage() {
             {/* Column 2: Alternate Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Alternate Layout</h3>
+                <h3 className="text-white">Unit Plan - Alternate Layout</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/avenue/avenuemap.png"
                   alt="DALAN Avenue Unit Plan - Alternate Layout"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
 
             {/* Column 3: Life at Dalan Avenue */}
             <div className="flex flex-col bg-[#091e44] rounded-2xl overflow-hidden shadow-md p-8">
-              <h3 className="text-[#C9922A] font-semibold text-lg font-display tracking-wide mb-4">Life at Dalan Avenue</h3>
+              <h3 className="text-[#C9922A] mb-4">Life at Dalan Avenue</h3>
               <div className="space-y-5 text-white/75 text-sm leading-relaxed font-body">
                 {lifeAtAvenue.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
@@ -265,7 +269,7 @@ export default function DalanAvenuePage() {
           </div>
 
           <a
-            href="https://wa.me/916389088088"
+            href={whatsappEnquiryUrl('DALAN AVENUE')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] text-white px-6 py-3 md:px-8 md:py-3.5 rounded-full text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 shrink-0"

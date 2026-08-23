@@ -74,7 +74,7 @@ export default function ContactPage() {
 
   const contactInfo = [
     { icon: MessageSquare, title: 'WhatsApp Us', lines: ['+91 6389088088'], link: 'https://wa.me/916389088088' },
-    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.com'] },
+    { icon: Mail, title: 'Email Us', lines: ['info@dalanbuilders.in', 'sales@dalanbuilders.in'] },
     { icon: MapPin, title: 'Visit Us', lines: ['203, B - Block Sangam River Front Apartment, Varuna Vihar Colony, Kachahari (Near JP Mehata Inter College)', 'Varanasi UP 221002'] },
     { icon: Clock, title: 'Working Hours', lines: ['Mon–Sat: 9AM – 7PM', 'Sunday: 10AM – 5PM'] },
   ]
@@ -82,16 +82,16 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative h-72 flex items-center overflow-hidden">
+      <section className="relative overflow-hidden pt-10 md:pt-14">
         {/* <Image src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Contact" fill className="object-cover" /> */}
         <div className="absolute inset-0 bg-white/75" />
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <h1 className="font-display text-5xl font-bold text-black mt-3">Contact Us</h1>
+          <h1 className="text-black">Contact Us</h1>
         </div>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-[#ffffff]">
+      <section className="pt-8 pb-14 bg-[#ffffff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((item, i) => {
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <div className="w-12 h-12 bg-[#091e44]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <item.icon size={20} className="text-[#091e44]" />
                   </div>
-                  <h4 className="text-black font-semibold mb-2">{item.title}</h4>
+                  <h4 className="text-black mb-2">{item.title}</h4>
                   {item.lines.map((line, j) => (
                     <p key={j} className="text-gray-600 text-sm">{line}</p>
                   ))}
@@ -140,13 +140,13 @@ export default function ContactPage() {
             {submitted ? (
               <div className="bg-[#F7F7F7] border border-green-500/30 rounded-2xl p-10 text-center shadow-lg">
                 <CheckCircle size={48} className="text-green-500 mx-auto mb-4" />
-                <h3 className="font-display text-2xl font-bold text-black mb-2">Thank You!</h3>
+                <h3 className="text-black mb-2">Thank You!</h3>
                 <p className="text-gray-600">We have received your message. Our team will contact you within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 bg-[#091e44] rounded-2xl p-6 md:p-8 shadow-xl">
                 <div className="text-center mb-6">
-                  <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-1.5">
+                  <h3 className="text-white mb-1.5">
                     Book an Exclusive Experience
                   </h3>
                   <p className="text-white/90 text-xs md:text-sm uppercase tracking-wider font-medium leading-relaxed">
@@ -279,7 +279,7 @@ export default function ContactPage() {
           {/* Map embed */}
           <div className="flex flex-col h-full">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Find Us</span>
-            <h2 className="font-display text-3xl font-bold text-black mt-3 mb-8">Our Location</h2>
+            <h2 className="text-black mt-3 mb-8">Our Location</h2>
             <div className="rounded-2xl overflow-hidden flex-grow border border-black/10 shadow-xl min-h-[400px] lg:min-h-[500px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.313465805562!2d82.9772873!3d25.33413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e2db715159781%3A0x6b77209930f78505!2sSangam%20River%20Front%20Apartment!5e0!3m2!1sen!2sin!4v1715000000000!5m2!1sen!2sin"

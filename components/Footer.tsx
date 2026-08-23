@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="eyebrow text-black mb-5 uppercase">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((item) => (
                 <li key={item.label}>
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Projects */}
           <div>
-            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Our Projects</h4>
+            <h4 className="eyebrow text-black mb-5 uppercase">Our Projects</h4>
             <ul className="space-y-3">
               {[
                 { name: 'SHIVDHARA RESIDENCY', href: '/projects/shivdhara-residency' },
@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-black font-semibold mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
+            <h4 className="eyebrow text-black mb-5 uppercase">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-600 text-sm">
                 <MapPin size={16} className="text-[#091e44] mt-0.5 shrink-0" />

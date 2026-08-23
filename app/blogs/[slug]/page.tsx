@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <span className="inline-block px-3 py-1 bg-[#091e44] text-white text-[11px] font-semibold uppercase tracking-wider rounded-full">
             {post.category}
           </span>
-          <h1 className="font-display text-3xl md:text-4xl font-bold text-black leading-tight mt-5">{post.title}</h1>
+          <h1 className="text-black mt-5">{post.title}</h1>
 
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-gray-500 mt-5 pb-6 border-b border-gray-200">
             <span className="inline-flex items-center gap-1.5">
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Related */}
       <section className="py-16 bg-[#F7F7F7]">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="font-display text-2xl font-bold text-black mb-2">More Articles</h2>
+          <h2 className="text-black mb-2">More Articles</h2>
           <div className="w-10 h-1 bg-[#091e44] mb-10" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </div>
                 <div className="flex flex-col flex-1 p-6">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-[#C9922A]">{p.category}</span>
-                  <h3 className="font-display text-lg font-bold text-black leading-snug mt-2 group-hover:text-[#091e44] transition-colors">
+                  <h3 className="text-black mt-2 group-hover:text-[#091e44] transition-colors">
                     {p.title}
                   </h3>
                   <span className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-[#091e44] group-hover:gap-3 transition-all">
