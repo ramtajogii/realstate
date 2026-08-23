@@ -135,7 +135,7 @@ export default function AboutPage() {
       {/* 4. Core Values Cards Section */}
       <section className="bg-[#FCFBFA] py-20 border-t border-b border-black/5 reveal">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Value Card 1 */}
             <div className="bg-white border border-gray-100 rounded-2xl p-8 md:p-10 text-center flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
               <div className="w-16 h-16 rounded-full border border-gold flex items-center justify-center mb-6 bg-white shadow-sm">

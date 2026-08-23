@@ -695,7 +695,7 @@ export default function HomePage() {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-6 text-center divide-y divide-white/10 md:divide-y-0 lg:divide-x lg:divide-white/10">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-y-12 gap-x-6 text-center divide-y divide-white/10 md:divide-y-0 xl:divide-x xl:divide-white/10">
             {/* Feature 1 */}
             <div className="flex flex-col items-center px-4 pt-6 md:pt-0">
               <div className="w-12 h-12 rounded-full bg-[#C9922A]/10 flex items-center justify-center mb-4 text-[#C9922A]">
