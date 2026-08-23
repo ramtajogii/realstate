@@ -108,20 +108,18 @@ const extendedTestimonials = [
 ]
 
 const welcomeImages = [
-  '/welcome/image1.jpeg',
-  '/welcome/image2.jpeg',
-  '/welcome/image3.jpeg',
-  '/welcome/image4.jpeg',
   '/welcome/image5.jpeg',
+  '/welcome/image9.jpeg',
+  '/welcome/image11.jpeg',
+  '/welcome/image4.jpeg',
+  '/welcome/image8.jpeg',
+  '/welcome/image2.jpeg',
   '/welcome/image6.jpeg',
   '/welcome/image7.jpeg',
-  '/welcome/image8.jpeg',
-  '/welcome/image9.jpeg',
+  '/welcome/image1.jpeg',
   '/welcome/image10.jpeg',
-  '/welcome/image11.jpeg',
-  '/welcome/image12.jpeg',
   '/welcome/image13.jpeg',
-  '/welcome/image14.jpeg',
+  '/welcome/image3.jpeg',
 ]
 
 export default function HomePage() {
