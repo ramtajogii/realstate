@@ -20,7 +20,7 @@ type Project = {
 
 const projects: Project[] = [
   { id: 'shivdhara-residency', title: 'DALAN SHIVDHARA RESIDENCY', location: 'Bharlai, Shivpur, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Row House', price: 'Contact for Price', img: '/Shivdhara/shivdhara.png' },
-  { id: 'dalan-residency', title: 'DALAN RESIDENCY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex Row House', price: 'Contact for Price', img: '/images/residency1.jpg' },
+  { id: 'dalan-residency', title: 'DALAN RESIDENCY', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex Row House', price: 'Contact for Price', img: '/images/residency-card.jpg' },
   { id: 'dalan-paradise', title: 'DALAN PARADISE', location: 'Ganeshpur, Near BHEL, Airport Road, Varanasi', type: 'Residential', status: 'New Launch', beds: '2 BHK Flats', price: 'Contact for Price', img: '/apartments/dalanparadise.png' },
   { id: 'dalan-greens', title: 'DALAN GREENS', location: 'Mau, Lucknow - UP', type: 'Plots', status: 'Delivered', beds: '1000 - 1500 Sq.ft. Plots', price: 'Contact for Price', img: '/images/greens_hero.png' },
   { id: 'dalan-avenue', title: 'DALAN AVENUE', location: 'Village Lodhan, near Om Villas, Chandmari, Varanasi', type: 'Residential', status: 'Delivered', beds: '3 BHK Duplex', price: 'Contact for Price', img: '/avenue/avenue.png' },
