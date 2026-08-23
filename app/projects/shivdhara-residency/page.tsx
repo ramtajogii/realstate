@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import { MapPin, Shield, Leaf, Users, CheckCircle2, ChevronLeft } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function ShivdharaResidencyPage() {
   return (
@@ -15,7 +17,7 @@ export default function ShivdharaResidencyPage() {
           <div className="lg:col-span-5 flex flex-col text-left">
             {/* Title block */}
             <div className="flex flex-col items-start mb-6">
-              <h1 className="font-serif text-5xl md:text-6xl font-extrabold tracking-tight text-[#091e44] leading-none">
+              <h1 className="text-[#091e44]">
                 SHIVDHARA
               </h1>
               <div className="flex items-center gap-3 my-3 w-full">
@@ -36,7 +38,7 @@ export default function ShivdharaResidencyPage() {
                 About / Story
               </span>
               <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                Step into <strong className="text-gray-800">Shivdhara Residency</strong> – a peaceful, secure, and thoughtfully planned residential community located right in front of St. Joseph&apos;s Convent School in Bharlai, Shivpur, Varanasi. Designed for families who value both convenience and tranquility, Shivdhara Residency offers spacious homes wrapped in greenery, with wide pitch roads and round-the-clock security ensuring complete peace of mind. Every home here is Vaastu compliant built not just with bricks and beams, but with the belief that a true home brings prosperity, harmony, and happiness to those who live in it.
+                Step into <strong className="text-gray-800">Shivdhara Residency</strong> – a peaceful, secure, and thoughtfully planned residential community located in front of St. Joseph&apos;s Convent School in Bharlai, Shivpur, Varanasi. Designed for families who value both convenience and tranquility, Shivdhara Residency offers spacious homes wrapped in greenery, with wide pitch roads and round-the-clock security ensuring complete peace of mind. Every home here is Vaastu compliant built not just with bricks and beams, but with the belief that a true home brings prosperity, harmony, and happiness to those who live in it.
               </p>
             </div>
 
@@ -49,7 +51,7 @@ export default function ShivdharaResidencyPage() {
               </div>
               <div>
                 <strong className="text-[#091e44] text-sm md:text-base block font-bold leading-tight">
-                  Right in front of St. Joseph&apos;s Convent School
+                  In front of St. Joseph&apos;s Convent School
                 </strong>
                 <span className="text-gray-500 text-xs md:text-sm mt-0.5 block">
                   Bharlai, Shivpur, Varanasi
@@ -168,36 +170,47 @@ export default function ShivdharaResidencyPage() {
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Floor Plan */}
-          <div className="lg:col-span-8 flex flex-col">
-            <div className="relative border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-6 flex flex-col items-center h-full group">
+          {/* Floor Plan.
+              Held to the same rendered width as the plans and maps on the other
+              project pages (roughly 600px) rather than running the full row.
+              Centred, because the card no longer shares the row with anything.
+              Legibility now comes from click to enlarge, not from raw size. */}
+          <div className="lg:col-span-12 flex flex-col">
+            <div className="relative mx-auto w-full max-w-2xl border border-gray-100 bg-[#FAF9F6]/20 rounded-2xl p-4 flex flex-col items-center h-full group">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Floor Plan
               </span>
-              <div className="relative w-full aspect-[4/3] mt-4 overflow-hidden rounded-xl bg-white border border-gray-100 p-4 flex items-center justify-center">
-                <Image
+              {/* Frame matches the artwork's own 1378x992 ratio so the plan fills
+                  it edge to edge instead of sitting in a letterbox. */}
+              <div className="relative w-full aspect-[1378/992] mt-4 overflow-hidden rounded-xl bg-white border border-gray-100">
+                <ZoomableImage
                   src="/Shivdhara/firstfloor.png"
                   alt="Shivdhara Residency Floor Plan"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  className="object-contain p-2 group-hover:scale-102 transition-transform duration-300"
+                  sizes="(max-width: 1024px) 100vw, 640px"
+                  imageClassName="object-contain p-2 transition-transform duration-300 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
           </div>
 
           {/* Project Highlights Card */}
-          <div className="lg:col-span-4 flex flex-col">
-            <div className="relative border border-[#C9922A]/30 bg-[#FAF9F6] rounded-2xl p-6 flex flex-col items-center justify-between h-full">
+          <div className="lg:col-span-12 flex flex-col">
+            <div className="relative border border-[#C9922A]/30 bg-[#FAF9F6] rounded-2xl p-6 flex flex-col h-full">
               <span className="absolute -top-3 bg-[#091e44] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-md">
                 Project Highlights
               </span>
               
+              {/* Now that the card runs the full width, the list and the
+                  illustration sit side by side rather than stacked, and the
+                  list itself splits into two columns so the lines stay short. */}
+              <div className="mt-4 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+
               {/* Highlight list */}
-              <ul className="w-full text-left space-y-3.5 mt-4 mb-6">
+              <ul className="lg:col-span-7 w-full text-left grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
                 <li className="flex items-start gap-2.5 text-xs md:text-sm font-semibold text-gray-800">
                   <CheckCircle2 size={16} className="text-[#C9922A] shrink-0 mt-0.5" />
-                  <span>Right in front of St. Joseph&apos;s Convent School</span>
+                  <span>In front of St. Joseph&apos;s Convent School</span>
                 </li>
                 <li className="flex items-start gap-2.5 text-xs md:text-sm font-semibold text-gray-800">
                   <CheckCircle2 size={16} className="text-[#C9922A] shrink-0 mt-0.5" />
@@ -222,18 +235,20 @@ export default function ShivdharaResidencyPage() {
               </ul>
 
               {/* Family Image illustration */}
-              <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl border border-gray-200/50 shadow-sm mb-4">
+              <div className="lg:col-span-5 relative w-full aspect-[16/10] overflow-hidden rounded-xl border border-gray-200/50 shadow-sm">
                 <Image
                   src="/images/shivdhara_family.png"
                   alt="Family Walking in Green Park illustration"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 30vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
               </div>
 
+              </div>
+
               {/* Quotation text badge */}
-              <div className="w-full bg-[#091e44] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
+              <div className="mt-6 w-full bg-[#091e44] text-center py-2.5 px-4 rounded-xl text-xs font-semibold text-[#C9922A]/90 border border-white/5 tracking-wider leading-relaxed">
                 A home built with belief.
                 <br />
                 <span className="text-white">A life filled with happiness.</span>
@@ -263,7 +278,7 @@ export default function ShivdharaResidencyPage() {
               Enquire Now
             </Link>
             <a
-              href="https://wa.me/916389088088"
+              href={whatsappEnquiryUrl('DALAN SHIVDHARA RESIDENCY')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 whitespace-nowrap"

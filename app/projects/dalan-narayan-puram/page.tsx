@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import { MapPin, Phone, CheckCircle2, ChevronLeft, Gift } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 export default function DalanNarayanPuramPage() {
   const highlights = [
@@ -28,10 +30,10 @@ export default function DalanNarayanPuramPage() {
 
             {/* Title Block */}
             <div className="mb-6 text-left">
-              <h1 className="font-serif text-5xl font-extrabold text-[#091e44] tracking-tight leading-none mb-2">
+              <h1 className="text-[#091e44] mb-2">
                 DALAN
               </h1>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#C9922A] leading-tight">
+              <h2 className="text-[#C9922A]">
                 Narayan Puram
               </h2>
               <div className="flex items-center gap-2 mt-4 text-gray-600 text-sm md:text-base font-semibold">
@@ -144,7 +146,7 @@ export default function DalanNarayanPuramPage() {
                   Enquire Now
                 </Link>
                 <a
-                  href="https://wa.me/916389088088"
+                  href={whatsappEnquiryUrl('DALAN NARAYAN PURAM')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-lg hover:shadow-green-500/30 gap-2 w-full sm:w-auto whitespace-nowrap"
@@ -180,12 +182,13 @@ export default function DalanNarayanPuramPage() {
             {/* Layout Plot Plan Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white p-4 group">
               <div className="relative aspect-[3/4] w-full">
-                <Image
+                <ZoomableImage
                   src="/images/narayan_puram_map.png"
                   alt="Dalan Narayan Puram Layout Map"
-                  fill
+
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { whatsappEnquiryUrl } from '@/lib/whatsapp'
 import {
   MapPin,
   Plane,
@@ -20,6 +21,7 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import ProjectStatusTag from '@/components/ProjectStatusTag'
+import ZoomableImage from '@/components/ZoomableImage'
 
 const paragraphs = [
   'Welcome to Dalan Samridhi - a thoughtfully crafted residential community where the promise of a better life begins the moment you step through the gate. Built by the trusted name of Dalan Builders Pvt. Ltd., Dalan Samridhi is designed for families who believe that a home should not just shelter you, but inspire you. Set amidst wide open spaces, clean surroundings, and a warmly connected neighbourhood, every home here is a step towards the life you have always envisioned.',
@@ -73,7 +75,7 @@ export default function DalanSamridhiPage() {
             <span className="mb-4 inline-block w-fit rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#C9922A]">
               Duplex Villa
             </span>
-            <h1 className="font-display text-5xl md:text-6xl font-bold leading-none">
+            <h1 className="">
               <span className="text-white">DALAN</span>
               <br />
               <span className="text-[#C9922A]">SAMRIDHI</span>
@@ -95,7 +97,7 @@ export default function DalanSamridhiPage() {
                 <ArrowRight size={14} className="shrink-0" />
               </Link>
               <a
-                href="https://wa.me/916389088088"
+                href={whatsappEnquiryUrl('DALAN SAMRIDHI')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1 bg-[#25D366] text-white px-4 py-3 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-semibold tracking-wide shadow-lg shadow-green-500/20 transition-all duration-300 hover:bg-[#20ba5a] hover:shadow-green-500/30 hover:-translate-y-0.5 whitespace-nowrap"
@@ -171,7 +173,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Amenities</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Every Comfort You Need, Right Where You Live</h2>
+            <h2 className="text-black mt-2">Every Comfort You Need, Right Where You Live</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -194,7 +196,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Layout & Plans</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Unit Plan & Project Overview</h2>
+            <h2 className="text-black mt-2">Unit Plan & Project Overview</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
@@ -202,15 +204,16 @@ export default function DalanSamridhiPage() {
             {/* Left Column: Project Overview & Location Map */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Project Overview & Location Map</h3>
+                <h3 className="text-white">Project Overview & Location Map</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/samriddhi/facility.png"
                   alt="Dalan Samridhi Project Overview & Location Map"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -218,15 +221,16 @@ export default function DalanSamridhiPage() {
             {/* Right Column: Unit Plan */}
             <div className="flex flex-col bg-white rounded-2xl overflow-hidden border border-black/10 shadow-md hover:shadow-xl hover:border-[#091e44]/20 transition-all duration-300">
               <div className="bg-[#091e44] py-4 px-6 border-b border-black/10">
-                <h3 className="text-white font-semibold text-lg font-display tracking-wide">Unit Plan - Ground & First Floor</h3>
+                <h3 className="text-white">Unit Plan - Ground & First Floor</h3>
               </div>
               <div className="flex-grow bg-white group overflow-hidden">
-                <Image
+                <ZoomableImage
                   src="/samriddhi/samridhiplan.png"
                   alt="Dalan Samridhi Unit Plan - Ground & First Floor"
                   width={1200}
                   height={900}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  imageClassName="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  hint="Click to enlarge"
                 />
               </div>
             </div>
@@ -239,7 +243,7 @@ export default function DalanSamridhiPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-[#091e44] text-xs uppercase tracking-widest font-semibold">Connectivity</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-black mt-2">Key Distances</h2>
+            <h2 className="text-black mt-2">Key Distances</h2>
             <div className="w-14 h-1 bg-[#C9922A] mx-auto mt-4" />
           </div>
 
