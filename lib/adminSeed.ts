@@ -10,17 +10,21 @@ export async function ensureDefaultAdmin() {
     return;
   }
 
-  await dbConnect();
+  try {
+    await dbConnect();
 
-  const existingAdmin = await Admin.findOne({ email });
+    const existingAdmin = await Admin.findOne({ email });
 
-  if (existingAdmin) {
-    return;
+    if (existingAdmin) {
+      return;
+    }
+
+    await Admin.create({
+      email,
+      passwordHash: hashPassword(password),
+      role: 'admin',
+    });
+  } catch (error) {
+    console.error('Error seeding default admin:', error);
   }
-
-  await Admin.create({
-    email,
-    passwordHash: hashPassword(password),
-    role: 'admin',
-  });
 }
